@@ -4,7 +4,7 @@ date: 2026-01-16T08:00:00.000+0700
 weight: 100
 ---
 
-This guide summarizes the first configuration steps after installing Ananke.
+This guide summarizes the installation and first configuration steps after installing Ananke.
 
 ## 1. Install the theme
 
