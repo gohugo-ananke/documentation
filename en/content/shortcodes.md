@@ -9,8 +9,6 @@ Shortcodes are reusable content snippets that simplify complex HTML structures i
 
 Use shortcodes with the `{{/*< >*/}}` or `{{/*% %*/}}` syntax in your content files.
 
----
-
 ## Available Shortcodes
 
 | Name        | Purpose                        | Example Usage                                                    |
@@ -20,8 +18,6 @@ Use shortcodes with the `{{/*< >*/}}` or `{{/*% %*/}}` syntax in your content fi
 | `highlight` | Syntax highlighting (fallback) | `{{/*< highlight html >*/}}...{{/*< /highlight >*/}}`            |
 
 > 💡 These shortcodes can be extended or replaced in your own project. Place overrides under `layouts/shortcodes/`.
-
----
 
 ## Example: `figure` Shortcode
 
@@ -40,25 +36,14 @@ Use shortcodes with the `{{/*< >*/}}` or `{{/*% %*/}}` syntax in your content fi
 </figure>
 ```
 
----
-
 ## Notes
 
-* You can override or create new shortcodes by placing them in your project’s `layouts/shortcodes/` folder.
+* You can override or create new shortcodes by placing them in your project's `layouts/shortcodes/` folder.
 * Always prefer shortcodes over raw HTML in content files for portability.
 
-```
-
----
-
-### 📄 `partials-index`
-
-```md
 # Partials and Components
 
 Partials are reusable template blocks used in layouts and components. They simplify common rendering tasks.
-
----
 
 ## Breadcrumbs Partial
 
@@ -74,8 +59,6 @@ Renders a breadcrumb trail with microdata support. Automatically pulls from page
 * Configurable separator via SCSS variable.
 * Adds SEO microdata for search engines.
 * Can be disabled per page.
-
-
 
 ## Debug Toggle Partial
 
@@ -98,8 +81,6 @@ Includes toggles for:
 * Grid overlay
 * Outline borders
 * Spacing rulers
-
----
 
 ## Notes
 

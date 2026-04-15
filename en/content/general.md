@@ -3,8 +3,6 @@ title: General
 date: 2026-01-16T08:00:00.000+0700
 ---
 
-
-
 ### Read more link
 
 The homepage and other areas of the site use a `read more` link on the element. You can customize the copy of this link to make it more descriptive with the parameter `read_more_copy` available as a site and front matter parameter.
@@ -27,7 +25,7 @@ read_more_copy = "En savoir plus à ce sujet"
 Using front matter and cascade, this can be customized for a whole section, or just for one page.
 
 ```yaml
-# content/posts/tower-bridge-london
+# content/posts/tower-bridge-london.md
   title: The Tower Bridge of London
   read_more_copy: Read more about this bridge
 ```
