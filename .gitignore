@@ -1,1 +1,15 @@
-node_modules
+# Hugo default output directory
+public/
+
+# Hugo resources directory (generated images, CSS, etc.)
+resources/_gen/
+
+# Local development environment files
+.hugo_build.lock
+
+# Dependency directories
+node_modules/
+
+# OS-specific files
+.DS_Store
+Thumbs.db

@@ -32,6 +32,15 @@
       "CHANGELOG.md",
       "LICENSE.md",
       "node_modules"
+    ],
+    "dictionaries": [
+      "workspace-dictionary"
+    ],
+    "dictionaryDefinitions": [
+      {
+        "name": "workspace-dictionary",
+        "path": ".vscode/dictionary.txt"
+      }
     ]
   },
   "type": "module"

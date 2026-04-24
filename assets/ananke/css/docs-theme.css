@@ -1,0 +1,22 @@
+:root {
+    --color-ananke-0: #fffefb;
+    --color-ananke-25: #fffdf6;
+    --color-ananke-50: #fefbec;
+    --color-ananke-100: #fbf1c7;
+    --color-ananke-200: #f7e390;
+    --color-ananke-300: #f3cf56;
+    --color-ananke-400: #f0bc2f;
+    --color-ananke-500: #e99d17;
+    --color-ananke-600: #ce7811;
+    --color-ananke-700: #ab5512;
+    --color-ananke-800: #8b4315;
+    --color-ananke-900: #733714;
+    --color-ananke-950: #421b06;
+    --color-ananke-975: #2a1104;
+    --color-ananke-1000: #140802;
+}
+
+body {
+    background-color: var(--color-ananke-50);
+    color: var(--color-ananke-975);
+}

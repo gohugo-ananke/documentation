@@ -18,7 +18,6 @@
         "titleBar.inactiveBackground": "#1857a499",
         "titleBar.inactiveForeground": "#e7e7e799"
     },
-    "peacock.color": "#1857a4",
     "editor.formatOnSave": true,
     "files.autoSave": "afterDelay",
     "files.autoSaveWhenNoErrors": true,
@@ -26,7 +25,7 @@
     "cSpell.customDictionaries": {
         "workspace-dictionary": {
             "name": "workspace-dictionary",
-            "path": "${workspaceFolder}/.vscode/workspace-dictionary.txt",
+            "path": "${workspaceFolder}/.vscode/dictionary.txt",
             "addWords": true,
             "scope": "workspace"
         }

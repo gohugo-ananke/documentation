@@ -1,0 +1,20 @@
+[hugoVersion]
+min = "0.160.0"
+
+replacements = [
+    "github.com/gohugo-ananke/ananke/v2 => /home/patrick/github.com/gohugo-ananke/ananke"
+]
+
+[[mounts]]
+source = 'node_modules'
+target = 'assets'
+
+[[mounts]]
+source = 'assets'
+target = 'assets'
+
+[[imports]]
+disable = false
+ignoreConfig = false
+ignoreImports = false
+path = 'github.com/gohugo-ananke/ananke/v2'

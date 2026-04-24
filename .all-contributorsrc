@@ -2,7 +2,7 @@
   "projectName": "gohugo-theme-ananke-documentation",
   "projectOwner": "davidsneighbour",
   "files": [
-    "en/information/contributors.md"
+    "information/contributors.md"
   ],
   "commitType": "docs",
   "commitConvention": "angular",
@@ -15,7 +15,8 @@
       "profile": "https://kollitsch.dev/",
       "contributions": [
         "doc",
-        "bug"
+        "bug",
+        "code"
       ]
     }
   ]

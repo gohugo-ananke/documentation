@@ -1,0 +1,11 @@
+description = "Documentation for the Hugo Ananke theme."
+custom_css = ["docs-theme.css", "fixes.css", "highlighting.css", "fonts.css"]
+
+[ananke]
+show_recent_posts = false
+
+[ananke.home]
+content_alignment = "left" # options: left, center, right
+
+[ananke.pages]
+show_date = false
