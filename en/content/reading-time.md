@@ -30,6 +30,6 @@ reading_speed = 179
 * GoHugo's default assumption is 212 words per minute (and 500 for CJK languages) when using `.ReadingTime`; setting `reading_speed` lets you align the displayed value with your own targets per language. ([gohugo.io][2])
 * PR #801 proposed this feature for language params; the final implementation landed via commit `39e2145` (referencing #801) and applies the `reading_speed` override through `.Site.Params.reading_speed`. ([GitHub][3])
 
-[1]: https://github.com/theNewDynamic/gohugo-theme-ananke/commit/39e2145985954eac07dd343a456f5696c8f9e9d6 "theme(fix): add configurability to reading time display · theNewDynamic/gohugo-theme-ananke@39e2145 · GitHub"
+[1]: https://github.com/gohugo-ananke/ananke/commit/39e2145985954eac07dd343a456f5696c8f9e9d6 "theme(fix): add configurability to reading time display · gohugo-ananke/ananke@39e2145 · GitHub"
 [2]: https://gohugo.io/methods/page/readingtime/ "ReadingTime"
-[3]: https://github.com/theNewDynamic/gohugo-theme-ananke/pull/801 "Support reading_speed language param in single.html by D14rn · Pull Request #801 · theNewDynamic/gohugo-theme-ananke · GitHub"
+[3]: https://github.com/gohugo-ananke/ananke/pull/801 "Support reading_speed language param in single.html by D14rn · Pull Request #801 · gohugo-ananke/ananke · GitHub"

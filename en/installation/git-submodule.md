@@ -4,7 +4,7 @@ date: 2026-01-16T08:00:00.000+0700
 weight: 300
 ---
 
-Git Submodule based installation for the [Ananke theme](https://github.com/theNewDynamic/gohugo-theme-ananke) for [GoHugo](https://gohugo.io/).
+Git Submodule based installation for the [Ananke theme](https://github.com/gohugo-ananke/ananke) for [GoHugo](https://gohugo.io/).
 
 ## Methods
 
@@ -47,7 +47,7 @@ git init
 Clone the theme into the `themes` directory, adding it to your project as a [Git submodule].
 
 ```bash
-git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke.git themes/ananke
+git submodule add https://github.com/gohugo-ananke/ananke.git themes/ananke
 ```
 
 Append a line to the site configuration file, indicating the current theme.
@@ -64,4 +64,4 @@ hugo server
 
 Running this command will start the development server and you can see your website at [http://localhost:1313/](http://localhost:1313/). To stop the development server press `Ctrl + C`.
 
-To set up details like the comment system, follow the steps in the [Ananke theme's getting started guide](https://github.com/theNewDynamic/gohugo-theme-ananke#getting-started).
+To set up details like the comment system, follow the steps in the [Ananke theme's getting started guide](https://github.com/gohugo-ananke/ananke#getting-started).

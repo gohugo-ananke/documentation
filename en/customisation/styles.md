@@ -34,7 +34,7 @@ Ananke uses [Tachyons.io](https://tachyons.io/) utility class library.
 
 ## Custom CSS
 
-WARNING: Pending resolution of this [discussion](https://github.com/theNewDynamic/gohugo-theme-ananke/discussions/452#discussioncomment-1865301), Custom CSS only works with Hugo Extended
+WARNING: Pending resolution of this [discussion](https://github.com/gohugo-ananke/ananke/discussions/452#discussioncomment-1865301), Custom CSS only works with Hugo Extended
 
 In order to complement the default CSS with your own, you can add custom css files to the project.
 

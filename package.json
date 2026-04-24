@@ -1,5 +1,5 @@
 {
-  "name": "@davidsneighbour/gohugo-theme-ananke-documentation",
+  "name": "@gohugo-ananke/documentation",
   "description": "Documentation for Ananke, a Hugo theme and module.",
   "version": "0.0.1",
   "license": "MIT",

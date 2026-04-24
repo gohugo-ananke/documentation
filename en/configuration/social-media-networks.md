@@ -6,7 +6,7 @@ weight: 300
 
 Ananke automatically adds "follow" link icons to the header and footer and "Share" link icons to pages unless the `disable_share` parameter is set to true either on the site level (site params) or page level (front matter). Each services can show a label, an icon, and be formatted in a custom color.
 
-> MIGRATION: Read about how to migrate below in the Section [Migrate from versions before v2.11](https://github.com/theNewDynamic/gohugo-theme-ananke/wiki/Social-media-network-setup#migrate-from-versions-before-v211)
+> MIGRATION: Read about how to migrate below in the Section [Migrate from versions before v2.11](https://github.com/gohugo-ananke/ananke/wiki/Social-media-network-setup#migrate-from-versions-before-v211)
 
 ## Configuration
 
@@ -17,7 +17,7 @@ All configuration of Ananke's social media features is located under the `ananke
 * in `config/_default/params.toml` under `ananke.social` or
 * in `config/$ENVIRONMENTNAME/*` --- you know what you are doing
 
-All samples in this documentation will refer to configuration in `config/_default/params.toml` and use the TOML format. If you have problems translating that into your configuration situation and format (JSON, YAML) [please join us in the Discussion Forum](https://github.com/theNewDynamic/gohugo-theme-ananke/discussions).
+All samples in this documentation will refer to configuration in `config/_default/params.toml` and use the TOML format. If you have problems translating that into your configuration situation and format (JSON, YAML) [please join us in the Discussion Forum](https://github.com/gohugo-ananke/ananke/discussions).
 
 * `ananke.social.share` configures share buttons/links on single pages/posts
 * `ananke.social.follow` configures social network links in "follow us on social media" widgets
@@ -41,7 +41,7 @@ networks = [
 ```
 
 * `new_window_icon` (default is `false`): add a small indicator of an outgoing link to the icon if this is set to `true`.
-* `networks` (required, no default): a list of `slug` parameters of the networks you wish to link to. You can either choose one or more of [the included pre-configured networks](https://github.com/theNewDynamic/gohugo-theme-ananke/wiki/Social-media-network-setup#available-networks) or [configure your own networks](https://github.com/theNewDynamic/gohugo-theme-ananke/wiki/Social-media-network-setup#setup-individual-new-networks).
+* `networks` (required, no default): a list of `slug` parameters of the networks you wish to link to. You can either choose one or more of [the included pre-configured networks](https://github.com/gohugo-ananke/ananke/wiki/Social-media-network-setup#available-networks) or [configure your own networks](https://github.com/gohugo-ananke/ananke/wiki/Social-media-network-setup#setup-individual-new-networks).
 
 #### Set your profile or user name
 
@@ -212,7 +212,7 @@ To override the icon for a network add your own copy to your local `assets/anank
 
 ## Available networks
 
-This is a list of slugs for already configured networks in the theme. You can add missing networks without much hassle (see [Configure social media follow links](https://github.com/theNewDynamic/gohugo-theme-ananke/wiki/Social-media-network-setup#configure-social-media-follow-links)). If you experience issue doing that [feel free to reach out in our Forum](https://github.com/theNewDynamic/gohugo-theme-ananke/discussions).
+This is a list of slugs for already configured networks in the theme. You can add missing networks without much hassle (see [Configure social media follow links](https://github.com/gohugo-ananke/ananke/wiki/Social-media-network-setup#configure-social-media-follow-links)). If you experience issue doing that [feel free to reach out in our Forum](https://github.com/gohugo-ananke/ananke/discussions).
 
 | Slug          | profile | share | Notes                                                                                                  |
 | ------------- | :-----: | :---: | ------------------------------------------------------------------------------------------------------ |
@@ -251,7 +251,7 @@ Legend:
 
 Take your existing configuration under `params.ananke_social` and apply them to the new structure under `params.ananke.social` (note that `ananke` and `social` are two subsections now, not one combined label).
 
-Follow the instructions under [Configure social media follow links](https://github.com/theNewDynamic/gohugo-theme-ananke/wiki/Social-media-network-setup#configure-social-media-follow-links) to configure your social media links.
+Follow the instructions under [Configure social media follow links](https://github.com/gohugo-ananke/ananke/wiki/Social-media-network-setup#configure-social-media-follow-links) to configure your social media links.
 
 `params.ananke_social` (the *old* configuration with the underscore) can then be removed from your configuration.
 
