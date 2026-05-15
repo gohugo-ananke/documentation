@@ -1,0 +1,18 @@
+[build]
+  # The directory to publish after the build completes
+  publish = "public"
+  # The command to run to build your site
+  command = "hugo --gc --minify"
+
+[build.environment]
+  # Matches your local version (check with 'hugo version')
+  HUGO_VERSION = "0.161.1"
+  HUGO_ENV = "production"
+
+[context.deploy-preview]
+  # Build with the preview URL for Pull Requests
+  command = "hugo --gc --minify --buildFuture -b $DEPLOY_PRIME_URL"
+
+[context.branch-deploy]
+  # Build settings for non-production branches
+  command = "hugo --gc --minify -b $DEPLOY_PRIME_URL"
