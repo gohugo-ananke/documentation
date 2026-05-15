@@ -1,5 +1,5 @@
-description = "Documentation for the Hugo Ananke theme."
 custom_css = ["docs-theme.css", "fixes.css", "highlighting.css", "fonts.css"]
+description = "Documentation for the Hugo Ananke theme."
 
 [ananke]
 show_recent_posts = false
@@ -9,3 +9,10 @@ content_alignment = "left" # options: left, center, right
 
 [ananke.pages]
 show_date = false
+
+[ananke.social.follow]
+networks = ["mastodon"]
+
+[ananke.social.mastodon]
+profilelink = "https://mastodon.social/@ananke_theme"
+username = "ananke_theme"
