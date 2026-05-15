@@ -1,17 +1,18 @@
 # Hugo default output directory
-public/
+public
 
 # Hugo resources directory (generated images, CSS, etc.)
-resources/_gen/
+resources/_gen
 
 # Local development environment files
 .hugo_build.lock
 
 # Dependency directories
-node_modules/
+node_modules
 
 # OS-specific files
 .DS_Store
 Thumbs.db
 # Local Netlify folder
-.netlify
+.netlify/*
+!.netlify/state.json
