@@ -245,6 +245,34 @@ Legend:
 ❌ --- feature not configured and not available
 ❔ --- feature not configured, but might be available
 
+## Icons
+
+More and more icon sets are removing their icons for social media platforms due to the legal issues around the usage rights [⇗](https://lucide.dev/brand-logo-statement). Ananke is using [Simple Icons](https://simpleicons.org/) which is a free and open source icon set that is licensed under the CC0 License.
+
+The preferred way to add an icon is for you to download and add them to your collection. The theme itself will maintain all icons that are mentioned in the documentation and cookbook section for convenience.
+
+### Adding new icons
+
+* find the icon you want to add on [https://simpleicons.org/](https://simpleicons.org/)
+* download the SVG file for that icon
+* copy it into `/assets/ananke/socials/`
+* use the icon name as key in your configuration (if the files called `mastodon.svg` you use `mastodon` as key)
+
+```toml
+[ananke.social.follow]
+networks = ["mastodon"]
+
+[ananke.social.mastodon]
+profilelink = "https://mastodon.social/@ananke_theme"
+username = "ananke_theme"
+```
+
+### Further Reading
+
+* [https://github.com/simple-icons/simple-icons/tree/develop/icons](https://github.com/simple-icons/simple-icons/tree/develop/icons)
+* [https://simpleicons.org/](https://simpleicons.org/)
+* [https://lucide.dev/brand-logo-statement](https://lucide.dev/brand-logo-statement)
+
 ---
 
 ## Migrate from versions before v2.11
