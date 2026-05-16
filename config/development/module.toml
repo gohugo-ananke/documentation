@@ -1,3 +1,5 @@
+replacements = "github.com/gohugo-ananke/ananke/v2 -> ../../ananke"
+
 [hugoVersion]
 extended = false
 min = "0.161.0"

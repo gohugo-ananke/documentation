@@ -1,8 +1,8 @@
-custom_css = ["docs-theme.css", "fixes.css", "highlighting.css", "fonts.css"]
 description = "Documentation for the Hugo Ananke theme."
 
 [ananke]
 show_recent_posts = false
+custom_css = ["fonts.css", "docs-theme.css", "fixes.css", "highlighting.css"]
 
 [ananke.home]
 content_alignment = "left" # options: left, center, right
