@@ -3,7 +3,8 @@ title: General
 date: 2026-01-16T08:00:00.000+0700
 ---
 
-
+* [Read more link](#read-more-link)
+* [Show Reading Time and Word Count](#show-reading-time-and-word-count)
 
 ### Read more link
 

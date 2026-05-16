@@ -3,6 +3,28 @@ title: Social Media Networks
 date: 2026-01-16T08:00:00.000+0700
 ---
 
+* [Configuration](#configuration)
+  * [Configure social media follow links](#configure-social-media-follow-links)
+    * [Set up global options](#set-up-global-options)
+    * [Set your profile or user name](#set-your-profile-or-user-name)
+    * [Override the profile link](#override-the-profile-link)
+    * [Override the label of the social network](#override-the-label-of-the-social-network)
+    * [`rel` attributes on follow links](#rel-attributes-on-follow-links)
+  * [Configure social media share links](#configure-social-media-share-links)
+    * [Set up sharing networks](#set-up-sharing-networks)
+    * [Disable sharing partially or globally](#disable-sharing-partially-or-globally)
+  * [Setup individual new networks](#setup-individual-new-networks)
+* [Available networks](#available-networks)
+* [Icons](#icons)
+  * [Adding new icons](#adding-new-icons)
+  * [Further Reading](#further-reading)
+* [Migrate from versions before v2.11](#migrate-from-versions-before-v211)
+  * [Development changes](#development-changes)
+* [Notes](#notes)
+  * [Font Awesome](#font-awesome)
+  * [Customize Icons](#customize-icons)
+  * [Configuring networks with multiple hosts](#configuring-networks-with-multiple-hosts)
+
 Ananke automatically adds "follow" link icons to the header and footer and "Share" link icons to pages unless the `disable_share` parameter is set to true either on the site level (site params) or page level (front matter). Each services can show a label, an icon, and be formatted in a custom color.
 
 > MIGRATION: Read about how to migrate below in the Section [Migrate from versions before v2.11](https://github.com/gohugo-ananke/ananke/wiki/Social-media-network-setup#migrate-from-versions-before-v211)

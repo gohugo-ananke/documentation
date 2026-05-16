@@ -3,6 +3,13 @@ title: Getting Started
 date: 2026-01-16T08:00:00.000+0700
 ---
 
+* [1) Install the theme](#1-install-the-theme)
+* [2) Confirm Hugo version compatibility](#2-confirm-hugo-version-compatibility)
+* [3) Configure required basics](#3-configure-required-basics)
+* [4) Add content and front matter](#4-add-content-and-front-matter)
+* [5) Customize visual style](#5-customize-visual-style)
+* [6) Run and verify locally](#6-run-and-verify-locally)
+
 This guide summarizes the first configuration steps after installing Ananke.
 
 ## 1) Install the theme

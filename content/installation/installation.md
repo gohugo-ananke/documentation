@@ -3,6 +3,10 @@ title: Installation
 date: 2026-01-16T08:00:00.000+0700
 ---
 
+* [Installing the Ananke Theme for Hugo](#installing-the-ananke-theme-for-hugo)
+  * [Comparison: Hugo Module vs. Git Submodule](#comparison-hugo-module-vs-git-submodule)
+
+
 ## Installing the Ananke Theme for Hugo
 
 If you're following the [Hugo Quickstart guide](https://gohugo.io/getting-started/quick-start/), you'll notice that it currently recommends installing the Ananke theme as a **Git submodule**. While this is a valid approach, Hugo also offers a more powerful alternative: **Hugo Modules**, which leverage Go's module system for better dependency management.

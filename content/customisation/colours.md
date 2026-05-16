@@ -3,7 +3,7 @@ title: Colours
 date: 2026-01-16T08:00:00.000+0700
 ---
 
-
+* [Set Content Font Color](#set-content-font-color)
 
 ## Set Content Font Color
 

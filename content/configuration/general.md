@@ -3,6 +3,10 @@ title: General Configuration
 date: 2026-01-16T08:00:00.000+0700
 ---
 
+* [Activate the contact form](#activate-the-contact-form)
+* [Logo](#logo)
+* [Localize date format](#localize-date-format)
+
 > [!IMPORTANT]
 > Please note that Hugo is extensible configurable with more generic or more specific configuration. Please read the documentation about [configuration files](https://gohugo.io/configuration/introduction/#configuration-file) and [configuration directories](https://gohugo.io/configuration/introduction/#configuration-directory) to learn more about this topic. Whenever Ananke's documentation refers to the configuration file it refers to any of these possible locations.
 >

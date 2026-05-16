@@ -3,7 +3,9 @@ title: Hero Section
 date: 2026-01-16T08:00:00.000+0700
 ---
 
-
+* [Change the hero background](#change-the-hero-background)
+* [Featured image as Page Resources](#featured-image-as-page-resources)
+* [Other hero settings](#other-hero-settings)
 
 ## Change the hero background
 

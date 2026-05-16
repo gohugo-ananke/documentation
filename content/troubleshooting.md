@@ -3,6 +3,8 @@ title: Troubleshooting
 date: 2026-01-16T08:00:00.000+0700
 ---
 
+* [Sorry, but "$FEATURE does not work" doesn't work for us](#sorry-but-feature-does-not-work-doesnt-work-for-us)
+
 ## Sorry, but "$FEATURE does not work" doesn't work for us
 
 Long story short, ask yourself: If you start bleeding out of all your orifices, will you tell the doctor "Doctor please help, I am quite new to this whole health thing and know you will laugh about me but I suddenly started bleeding out of all my orifices."? Or will you tell the doctor "Doctor, after ingesting a couple of razor blades I suddenly started bleeding. The razor blades were quite sharp. Can you help me?"

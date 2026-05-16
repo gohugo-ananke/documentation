@@ -32,5 +32,6 @@
     },
     "markdownlint.configFile": ".markdownlint.jsonc",
     "markdown.extension.tableFormatter.enabled": false,
-    "markdown.extension.tableFormatter.normalizeIndentation": false
+    "markdown.extension.tableFormatter.normalizeIndentation": false,
+    "markdown.extension.toc.unorderedList.marker": "*"
 }

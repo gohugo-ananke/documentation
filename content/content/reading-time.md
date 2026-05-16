@@ -3,6 +3,9 @@ title: Calculate and show reading time
 date: 2026-01-16T08:00:00.000+0700
 ---
 
+* [Configuration](#configuration)
+* [Notes](#notes)
+
 The reading time displayed in `layouts/_default/single.html` can now be configured via a `reading_speed` parameter, instead of always using Hugo's computed `.ReadingTime`. ([GitHub][1])
 
 * The theme still only shows reading time when `show_reading_time = true` is enabled (page param or section param). ([GitHub][1])
