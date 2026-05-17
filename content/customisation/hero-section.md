@@ -7,6 +7,7 @@ date: 2026-01-16T08:00:00.000+0700
 * [Use the images front matter array](#use-the-images-front-matter-array)
 * [Featured image as Page Resources](#featured-image-as-page-resources)
 * [Other hero settings](#other-hero-settings)
+* [Set a background color behind transparent hero images](#set-a-background-color-behind-transparent-hero-images)
 
 ## Change the hero background
 
@@ -53,3 +54,26 @@ Set it site-wide under `[params]` in your configuration, or per page in front ma
 * Single pages with a featured image: `tc-l pv6 ph3 ph4-ns`
 
 Setting `header_section_class` replaces the default for every header that uses it, so include the alignment and horizontal padding classes you want to keep.
+
+## Set a background color behind transparent hero images
+
+If your featured image has transparency, add a Tachyons background color class to `featured_image_class`. This places the color behind the image while keeping the existing fitting and alignment classes.
+
+For the home page hero, set the value in your site configuration:
+
+```toml
+[params]
+featured_image_class = "cover bg-center bg-red"
+```
+
+For a single page or post hero, set the value in that page's front matter:
+
+```toml
+featured_image_class = "cover bg-center bg-yellow"
+```
+
+You can combine this with `cover_dimming_class` to control the overlay opacity. For transparent images, reduce or remove the dimming class if the background color should appear more strongly.
+
+```toml
+cover_dimming_class = "bg-black-20"
+```
