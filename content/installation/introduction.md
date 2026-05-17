@@ -13,7 +13,7 @@ aliases:
 There are two primary ways to install Ananke:
 
 1. **Hugo Module** --- Uses Hugo's built-in Go module system to fetch and manage the theme as a package.
-2. **Git Submodule** *(Legacy Method)* --- Links the theme repository as a submodule inside your Hugo project.
+2. **Git Submodule** --- Links the theme repository as a submodule inside your Hugo project.
 
 If you're following the [Hugo Quickstart guide](https://gohugo.io/getting-started/quick-start/), you'll notice that it currently recommends installing the Ananke theme as a **Git submodule**. While this is a valid approach, Hugo also offers a more powerful alternative: **Hugo Modules**, which leverage Go's module system for better dependency management.
 
@@ -24,4 +24,4 @@ If you're following the [Hugo Quickstart guide](https://gohugo.io/getting-starte
 | Method | Pros | Cons | Sample Repo |
 | --- | --- | --- | --- |
 | [Hugo Module](../gohugo-module/) *(Preferred)* | Easier version management, automatic updates, better integration | Requires Go installed and initial setup | [Sample Repo](https://github.com/gohugo-ananke/template-hugo-mod) |
-| [Git Submodule](../git-submodule/) *(Legacy Method)* | Simple if you are used to working with Git | Requires manual updates, can be tricky with Git workflows | [Sample Repo](https://github.com/gohugo-ananke/template-git-submod) |
+| [Git Submodule](../git-submodule/) | Simple if you are used to working with Git | Requires manual updates, can be tricky with Git workflows | [Sample Repo](https://github.com/gohugo-ananke/template-git-submod) |
