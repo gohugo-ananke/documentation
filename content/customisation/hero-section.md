@@ -41,3 +41,9 @@ example: `featured_image_class = "cover bg-center"` or `featured_image_class = "
 The default cover backdrop for the featured image is `bg-black-60`, but can be changed using the `cover_dimming_class`.  Choose a color dimming class for the page or site header from any on the [Tachyons](https://tachyons.io/docs/themes/skins/) library site, preface it with "bg-" and add the value such as "-X0" where X is in [1,9]
 
 example: `cover_dimming_class = "bg-black-20"` or `cover_dimming_class = "bg-white-40"`
+
+The default header text spacing controls the height of the hero area. You can change it with `header_section_class`. Choose Tachyons spacing classes and keep the text alignment and horizontal spacing classes unless you want to change the layout as well.
+
+example: `header_section_class = "tc-l pv3 pv4-l ph3 ph4-ns"`
+
+The default homepage and list page value with a featured image is `tc-l pv4 pv6-l ph3 ph4-ns`. The default single page value with a featured image is `tc-l pv6 ph3 ph4-ns`.
