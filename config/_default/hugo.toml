@@ -1,4 +1,4 @@
-baseURL = "https://ananke-documentation.netlify.app/"
+baseURL = "/"
 locale = "en-gb"
 title = "Ananke Documentation"
 enableRobotsTXT = true
