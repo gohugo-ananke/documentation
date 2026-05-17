@@ -1,8 +1,3 @@
-pre,
-.pre {
-  overflow: auto;
-}
-
 article {
 
   table {
@@ -23,11 +18,6 @@ article {
 
 }
 
-.lh-copy blockquote {
-  font-size: 1rem;
-  line-height: 1.6;
-}
-
 /* doing some evil font overriding stuff */
 .avenir,
 .serif {
@@ -38,33 +28,7 @@ article {
   font-family: var(--font-anton) !important;
 }
 
-/* codebox */
-pre {
-  position: relative;
-  border-radius: 0.75rem;
-  overflow: hidden;
-}
 
-pre code[data-lang] {
-  display: block;
-  position: relative;
-}
-
-pre code[data-lang]::before {
-  content: attr(data-lang);
-  position: absolute;
-  top: -0.75rem;
-  right: 0.75rem;
-  z-index: 2;
-
-  font-family: var(--font-anton);
-  padding: 0.35rem 0.55rem;
-  background-color: rgba(var(--color-ananke-400), 0.8);
-  display: inline-block;
-
-  text-transform: uppercase;
-  pointer-events: none;
-}
 
 /** headlines */
 h1,
