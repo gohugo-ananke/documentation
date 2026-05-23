@@ -9,11 +9,9 @@ Ananke lives from the work of its contributors.
 
 ## Contributors
 
-<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore-start -->
-<!-- markdownlint-disable -->
+Total contributors: **1**
 
-<!-- markdownlint-restore -->
-<!-- prettier-ignore-end -->
+| Contributor | Contributions | Repositories |
+|---|---|---|
+| [Patrick Kollitsch](https://kollitsch.dev/) | `bug`, `code`, `doc` | `documentation` |
 
-<!-- ALL-CONTRIBUTORS-LIST:END -->
