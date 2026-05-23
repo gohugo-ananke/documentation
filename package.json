@@ -21,6 +21,7 @@
     "markdownlint-rule-title-case-style": "0.4.3"
   },
   "scripts": {
+    "contributors:merge": "node ./scripts/merge-all-contributors.mjs",
     "lint:links": "lychee --config lychee.toml http://localhost:1313",
     "lint:markdown": "markdownlint-cli2 content/**/*.{md,mdx}",
     "lint:markdown:fix": "markdownlint-cli2 --fix content/**/*.{md,mdx}"
