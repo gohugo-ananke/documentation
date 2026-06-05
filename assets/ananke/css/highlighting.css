@@ -354,3 +354,85 @@
     background-color: #3c3836;
     font-weight: bold
 }
+
+/* ------------------------------------------------------------------ *
+ * Code block copy button (see layouts/_markup/render-codeblock.html)  *
+ * ------------------------------------------------------------------ */
+
+.code-block {
+    position: relative;
+}
+
+.code-block .code-copy {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    z-index: 2;
+    padding: 0.25rem 0.6rem;
+    font-size: 0.75rem;
+    line-height: 1.4;
+    color: #3c3836;
+    background-color: #ebdbb2;
+    border: 1px solid #d5c4a1;
+    border-radius: 4px;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.15s ease-in-out, background-color 0.15s ease-in-out;
+}
+
+/* Reveal on hover and when focused for keyboard users. */
+.code-block:hover .code-copy,
+.code-block .code-copy:focus-visible {
+    opacity: 1;
+}
+
+.code-block .code-copy:hover {
+    background-color: #d5c4a1;
+}
+
+.code-block .code-copy.is-copied {
+    color: #fbf1c7;
+    background-color: #79740e;
+    border-color: #79740e;
+}
+
+/* Touch devices have no hover; keep the button visible but subtle. */
+@media (hover: none) {
+    .code-block .code-copy {
+        opacity: 0.7;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .code-block .code-copy {
+        transition: none;
+    }
+}
+
+/* ------------------------------------------------------------------ *
+ * Heading anchor links (see layouts/_markup/render-heading.html)      *
+ * ------------------------------------------------------------------ */
+
+.heading-anchor {
+    margin-left: 0.35em;
+    font-weight: 400;
+    text-decoration: none;
+    opacity: 0;
+    transition: opacity 0.15s ease-in-out;
+}
+
+:is(h1, h2, h3, h4, h5, h6):hover .heading-anchor,
+.heading-anchor:focus-visible {
+    opacity: 0.6;
+}
+
+.heading-anchor:hover,
+.heading-anchor:focus-visible {
+    opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .heading-anchor {
+        transition: none;
+    }
+}

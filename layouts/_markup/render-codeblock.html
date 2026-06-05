@@ -1,0 +1,19 @@
+{{- /*
+  Code block render hook for the documentation site.
+
+  Wraps Hugo's standard syntax-highlighted output in a container with a
+  copy-to-clipboard button. Highlighting still honours the site's
+  [markup.highlight] configuration because we delegate to
+  transform.HighlightCodeBlock, which reads both the per-fence options and the
+  global config.
+
+  The copy button carries no code itself; the accompanying script
+  (layouts/_partials/site-scripts.html) reads the rendered text on click.
+*/ -}}
+{{- $result := transform.HighlightCodeBlock . -}}
+<div class="code-block">
+  <button class="code-copy" type="button" aria-label="Copy code to clipboard">
+    <span class="code-copy-label" aria-hidden="true">Copy</span>
+  </button>
+  {{ $result.Wrapped }}
+</div>
