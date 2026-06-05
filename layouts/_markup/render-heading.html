@@ -1,0 +1,16 @@
+{{- /*
+  Heading render hook for the documentation site.
+
+  Renders each heading with its auto-generated id (so in-page links and the
+  manual tables of contents resolve) and appends a hover-revealed anchor link
+  that lets readers grab a permalink to the section.
+*/ -}}
+{{- $anchor := .Anchor -}}
+<h{{ .Level }} id="{{ $anchor }}"
+  {{- with .Attributes.class }} class="{{ . }}"{{ end -}}
+>
+  {{- .Text | safeHTML -}}
+  {{- with $anchor }}
+  <a class="heading-anchor" href="#{{ . }}" aria-label="Link to this section">#</a>
+  {{- end }}
+</h{{ .Level }}>

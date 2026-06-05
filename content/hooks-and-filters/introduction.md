@@ -37,9 +37,9 @@ For example, this call:
 
 ```go-html-template
 {{- partials.Include "hook.html" "site-header" -}}
-````
+```
 
-looks for a partial in `layouts/partials/hooks/site-header.html`. If the partial exists, it is loaded. If it does not exist, the hook is treated as unused and, if enabled, a CLI debug message is printed.
+looks for a partial in `layouts/_partials/hooks/site-header.html`. If the partial exists, it is loaded. If it does not exist, the hook is treated as unused and, if enabled, a CLI debug message is printed.
 
 > [!IMPORTANT]
 > For now keep an eye on the file extension. We only implemented and tested it with `.html` partials. Using a different extension or format might not work as expected yet.
@@ -67,7 +67,7 @@ Example:
 This renders the output of:
 
 ```text
-layouts/partials/hooks/site-footer.html
+layouts/_partials/hooks/site-footer.html
 ```
 
 directly at the call position.
@@ -100,7 +100,7 @@ Example:
 A filter still loads a partial from the same `hooks/` namespace:
 
 ```text
-layouts/partials/hooks/content-after-title.html
+layouts/_partials/hooks/content-after-title.html
 ```
 
 The difference is only how the result is used.
@@ -109,7 +109,7 @@ The difference is only how the result is used.
 
 * A **hook** prints output immediately.
 * A **filter** returns output for further processing.
-* A **hook partial** is the user-provided partial in `layouts/partials/hooks/`.
+* A **hook partial** is the user-provided partial in `layouts/_partials/hooks/`.
 * A **hook point** is the location in the theme where `hook.html` or `filter.html` is called.
 
 ## Simple hook calls
@@ -140,7 +140,7 @@ Internally, this is normalised to an extended hook call with an empty dictionary
 
 The matching hook partial is still called with only the normalised `context` value. In the simple case, that context is an empty dictionary.
 
-Example hook partial in `layouts/partials/hooks/site-header.html` for the examples above:
+Example hook partial in `layouts/_partials/hooks/site-header.html` for the examples above:
 
 ```go-html-template
 <div class="custom-site-header">
@@ -178,9 +178,9 @@ The `hook` key defines which hook partial should be loaded.
 
 The `context` key defines what is passed into the hook partial.
 
-This example loads `layouts/partials/hooks/before-content.html` and passes the current template context, `.`, into that partial. You could pass anything though ;]
+This example loads `layouts/_partials/hooks/before-content.html` and passes the current template context, `.`, into that partial. You could pass anything though ;]
 
-Example hook partial in `layouts/partials/hooks/before-content.html` for the example above:
+Example hook partial in `layouts/_partials/hooks/before-content.html` for the example above:
 
 ```go-html-template
 {{- with .Title -}}
@@ -207,7 +207,7 @@ The name of the hook partial to load.
 This maps to:
 
 ```text
-layouts/partials/hooks/before-content.html
+layouts/_partials/hooks/before-content.html
 ```
 
 ### context
@@ -237,7 +237,7 @@ Example with a custom dictionary:
 Matching hook partial:
 
 ```go-html-template
-{{/* layouts/partials/hooks/custom-card.html */}}
+{{/* layouts/_partials/hooks/custom-card.html */}}
 
 <article class="custom-card">
   <h2>{{ .title }}</h2>
@@ -297,19 +297,26 @@ Avoid caching when the hook output depends on the current page unless the cache 
 All hook partials live in:
 
 ```text
-layouts/partials/hooks/
+layouts/_partials/hooks/
 ```
+
+> [!NOTE]
+> The directory is `_partials` (with a leading underscore), following Hugo's current template
+> system. You still reference the partial without the underscore when calling it
+> (`partials.Include "hooks/head-end.html"`), but the file on disk lives under `_partials/`.
 
 The hook name maps directly to a partial name.
 
-| Hook name        | Loaded partial                               |
-| ---------------- | -------------------------------------------- |
-| `site-header`    | `layouts/partials/hooks/site-header.html`    |
-| `before-content` | `layouts/partials/hooks/before-content.html` |
-| `after-content`  | `layouts/partials/hooks/after-content.html`  |
-| `head-end`       | `layouts/partials/hooks/head-end.html`       |
+| Hook name       | Loaded partial                               |
+| --------------- | -------------------------------------------- |
+| `head-end`      | `layouts/_partials/hooks/head-end.html`      |
+| `footer-before` | `layouts/_partials/hooks/footer-before.html` |
+| `content-after` | `layouts/_partials/hooks/content-after.html` |
 
-[See a list of all available hooks and filters](../all/).
+The names above are real hook points wired into the theme.
+[See the full list of available hooks](../all/) for every hook point and where it fires. The
+names used in the conceptual examples earlier on this page (such as `before-content` or
+`custom-card`) are illustrative — only the hooks listed on that page are called by the theme.
 
 ## Disabling unused hook messages
 
