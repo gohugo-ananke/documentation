@@ -5,6 +5,7 @@ date: 2026-01-16T08:00:00.000+0700
 
 * [Activate the contact form](#activate-the-contact-form)
 * [Logo](#logo)
+* [Main navigation menu](#main-navigation-menu)
 * [Localize date format](#localize-date-format)
 * [Show taxonomies on pages](#show-taxonomies-on-pages)
 * [Show or hide dates on pages](#show-or-hide-dates-on-pages)
@@ -31,6 +32,36 @@ You can replace the title of your site in the top left corner of each page with 
 [params]
 site_logo = "img/logo.svg"
 ```
+
+### Main navigation menu
+
+The navigation shown in the header (the hero area at the top of every page) is built from Hugo's `main` menu. Define entries for it in your site configuration and they appear next to the social links.
+
+```toml
+[menus]
+[[menus.main]]
+name = "About"
+url = "/about/"
+weight = 10
+
+[[menus.main]]
+name = "Posts"
+url = "/posts/"
+weight = 20
+```
+
+Entries are ordered by their `weight`, lowest first. `url` can point to an internal section or page (for example `/about/`) or to an external address.
+
+You can also add a single page to the menu from its own front matter instead of listing it in the configuration:
+
+```yaml
+---
+title: About
+menus: main
+---
+```
+
+For nested entries, menu parameters, and other options, see Hugo's [menu templates documentation](https://gohugo.io/templates/menu-templates/).
 
 ### Localize date format
 
