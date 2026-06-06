@@ -49,7 +49,7 @@ Start adding content and use front matter options supported by Ananke:
 * [Front Matter Options](/content/frontmatter/)
 * [General Content Features](/content/general/)
 * [Reading Time](/content/reading-time/)
-* [Shortcodes](/content/shortcodes/)
+* [Shortcodes](/shortcodes/)
 
 ## 5) Customize visual style
 
