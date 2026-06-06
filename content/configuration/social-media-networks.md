@@ -146,9 +146,19 @@ disable_share: true
 You can disable this feature completely by setting `ananke.social.share.disable_share` to `true` in your configuration:
 
 ```toml
+# config/_default/params.toml
+
 [ananke.social.share]
-disable_share: true
+disable_share = true
 ```
+
+> [!NOTE]
+> Privacy and UX: share links are plain anchor links built from the page's
+> permalink, title, and description — they do not load any third-party
+> tracking scripts, so they are privacy-friendly by default. Disable sharing on
+> pages where a public share action does not make sense (for example private
+> notes or internal pages) by setting `disable_share = true` in that page's
+> front matter.
 
 ### Setup individual new networks
 
@@ -318,7 +328,11 @@ url = "https://twitter.com/theNewDynamic"
 **New config:**
 
 ```toml
-[[ananke.social.twitter]]
+# enable the network in the follow list, then configure it
+[ananke.social.follow]
+networks = ["twitter"]
+
+[ananke.social.twitter]
 username = "theNewDynamic"
 profilelink = "https://twitter.com/theNewDynamic" # (optional, this would be covered by the username above)
 ```
