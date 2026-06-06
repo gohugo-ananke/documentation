@@ -19,9 +19,14 @@ If you're following the [Hugo Quickstart guide](https://gohugo.io/getting-starte
 
 **We prefer the Hugo Module approach**, as it provides a more flexible and future-proof way to manage themes.
 
+> [!NOTE]
+> Already using Ananke from the old `theNewDynamic` repository? See
+> [Migration from theNewDynamic](/installation/migration-from-thenewdynamic/) to
+> update your references to `github.com/gohugo-ananke/ananke`.
+
 ## Comparison: Hugo Module vs. Git Submodule
 
-| Method | Pros | Cons | Sample Repo |
-| --- | --- | --- | --- |
-| [Hugo Module](../gohugo-module/) *(Preferred)* | Easier version management, automatic updates, better integration | Requires Go installed and initial setup | [Sample Repo](https://github.com/gohugo-ananke/template-hugo-mod) |
-| [Git Submodule](../git-submodule/) | Simple if you are used to working with Git | Requires manual updates, can be tricky with Git workflows | [Sample Repo](https://github.com/gohugo-ananke/template-git-submod) |
+| Method                                         | Pros                                                             | Cons                                                      | Sample Repo                                                         |
+| ---------------------------------------------- | ---------------------------------------------------------------- | --------------------------------------------------------- | ------------------------------------------------------------------- |
+| [Hugo Module](../gohugo-module/) *(Preferred)* | Easier version management, automatic updates, better integration | Requires Go installed and initial setup                   | [Sample Repo](https://github.com/gohugo-ananke/template-hugo-mod)   |
+| [Git Submodule](../git-submodule/)             | Simple if you are used to working with Git                       | Requires manual updates, can be tricky with Git workflows | [Sample Repo](https://github.com/gohugo-ananke/template-git-submod) |
