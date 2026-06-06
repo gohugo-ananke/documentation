@@ -1,0 +1,52 @@
+---
+title: Shortcodes
+date: 2026-06-06T08:00:00.000+0700
+weight: 350
+---
+
+Shortcodes are small snippets you place in your Markdown content to render
+something the theme provides. Ananke ships the following shortcodes. Each entry
+lists what it does, its parameters, and an example.
+
+## form-contact
+
+* **Purpose:** render a styled, accessible contact form.
+* **Syntax:** `{{</* form-contact action="URL" */>}}`
+* **Parameters:**
+  * `action` (required) — the URL that receives the form `POST`.
+* **Output:** an HTML form with name, email, and message fields and a Send
+  button.
+* **Example:**
+
+  ```go-html-template
+  {{</* form-contact action="https://formspree.io/your@email.com" */>}}
+  ```
+
+* **Common mistakes:** omitting `action` (the form then has nowhere to submit);
+  expecting Netlify Forms to work without overriding the shortcode.
+
+See the [Contact Form](/shortcodes/contact-form/) page for full details,
+backends, and spam-protection notes.
+
+## page-index
+
+* **Purpose:** render an index of child pages for a section. Used by the
+  documentation's own section pages to list their contents.
+* **Syntax:** `{{</* page-index */>}}`
+* **Parameters:** none.
+* **Output:** a list of the current section's pages.
+* **Example:**
+
+  ```go-html-template
+  {{</* page-index */>}}
+  ```
+
+* **Common mistakes:** using it on a single page rather than a section
+  (`_index.md`) page, where there are no children to list.
+
+---
+
+> [!NOTE]
+> This list reflects the shortcodes in the theme's `layouts/_shortcodes`
+> directory. If you add your own shortcodes in your project's
+> `layouts/_shortcodes`, they are available too but are not documented here.
