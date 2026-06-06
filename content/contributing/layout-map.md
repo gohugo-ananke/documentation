@@ -14,14 +14,14 @@ contributors and advanced users who want to find the right file quickly.
 
 ## Which template renders which page
 
-| Page type | Template | Example URL |
-| --- | --- | --- |
-| Homepage | `layouts/home.html` | `/` |
-| Section list | `layouts/list.html` | `/posts/` |
-| Single page or post | `layouts/single.html` | `/about/`, `/posts/my-post/` |
-| Taxonomy list (a term) | `layouts/taxonomy.html` | `/tags/hugo/` |
-| Taxonomy terms index | `layouts/terms.html` | `/tags/` |
-| Not found | `layouts/404.html` | any missing URL |
+| Page type              | Template                | Example URL                  |
+| ---------------------- | ----------------------- | ---------------------------- |
+| Homepage               | `layouts/home.html`     | `/`                          |
+| Section list           | `layouts/list.html`     | `/posts/`                    |
+| Single page or post    | `layouts/single.html`   | `/about/`, `/posts/my-post/` |
+| Taxonomy list (a term) | `layouts/taxonomy.html` | `/tags/hugo/`                |
+| Taxonomy terms index   | `layouts/terms.html`    | `/tags/`                     |
+| Not found              | `layouts/404.html`      | any missing URL              |
 
 Summaries on list pages and the homepage are rendered by
 `layouts/summary-with-image.html` (and `layouts/summary.html`).
