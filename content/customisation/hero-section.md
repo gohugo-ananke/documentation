@@ -41,3 +41,15 @@ example: `featured_image_class = "cover bg-center"` or `featured_image_class = "
 The default cover backdrop for the featured image is `bg-black-60`, but can be changed using the `cover_dimming_class`.  Choose a color dimming class for the page or site header from any on the [Tachyons](https://tachyons.io/docs/themes/skins/) library site, preface it with "bg-" and add the value such as "-X0" where X is in [1,9]
 
 example: `cover_dimming_class = "bg-black-20"` or `cover_dimming_class = "bg-white-40"`
+
+The height of the header is driven by the vertical padding of the text block inside it. You can change it with the `header_section_class` parameter. The value is a list of [Tachyons](https://tachyons.io/docs/layout/spacing/) spacing classes; keep the text alignment (`tc-l`) and horizontal padding (`ph3 ph4-ns`) classes unless you also want to change those, and adjust the vertical padding classes (`pv*`) to make the header taller or shorter.
+
+example: `header_section_class = "tc-l pv3 ph3 ph4-ns"` (shorter) or `header_section_class = "tc-l pv7 ph3 ph4-ns"` (taller)
+
+Set it site-wide under `[params]` in your configuration, or per page in front matter to override a single page. Because the headers are different by design, the defaults differ depending on the header:
+
+* Home and list pages with a featured image: `tc-l pv4 pv6-l ph3 ph4-ns`
+* Home and list pages without a featured image: `tc-l pv3 ph3 ph4-ns`
+* Single pages with a featured image: `tc-l pv6 ph3 ph4-ns`
+
+Setting `header_section_class` replaces the default for every header that uses it, so include the alignment and horizontal padding classes you want to keep.
