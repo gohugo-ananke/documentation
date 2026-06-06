@@ -16,8 +16,8 @@ This guide summarizes the first configuration steps after installing Ananke.
 
 Choose one installation method:
 
-* [Installation as Hugo Module (recommended)](installation/gohugo-module)
-* [Installation as Git Submodule](installation/git-submodule)
+* [Installation as Hugo Module (recommended)](/installation/gohugo-module/)
+* [Installation as Git Submodule](/installation/git-submodule/)
 
 ## 2) Confirm Hugo version compatibility
 
@@ -38,27 +38,27 @@ At minimum, configure:
 
 See:
 
-* [General Configuration](configuration/general)
-* [SEO Configuration](configuration/seo)
-* [Social Media Networks](configuration/social-media-networks)
+* [General Configuration](/configuration/general/)
+* [SEO Configuration](/configuration/seo/)
+* [Social Media Networks](/configuration/social-media-networks/)
 
 ## 4) Add content and front matter
 
 Start adding content and use front matter options supported by Ananke:
 
-* [Front Matter Options](content/frontmatter)
-* [General Content Features](content/general)
-* [Reading Time](content/reading-time)
-* [Shortcodes](content/shortcodes)
+* [Front Matter Options](/content/frontmatter/)
+* [General Content Features](/content/general/)
+* [Reading Time](/content/reading-time/)
+* [Shortcodes](/content/shortcodes/)
 
 ## 5) Customize visual style
 
 For design and UI adjustments:
 
-* [Hero section](customisation/hero-section)
-* [Colors](customisation/colours)
-* [Styles and CSS](customisation/styles)
-* [Comments setup](customisation/comments)
+* [Hero section](/customisation/hero-section/)
+* [Colors](/customisation/colours/)
+* [Styles and CSS](/customisation/styles/)
+* [Comments setup](/customisation/comments/)
 
 ## 6) Run and verify locally
 
@@ -68,4 +68,4 @@ Run Hugo locally and verify pages, menus, metadata, and social links:
 hugo server
 ```
 
-If you hit issues, see [Troubleshooting](troubleshooting).
+If you hit issues, see [Troubleshooting](/troubleshooting/).

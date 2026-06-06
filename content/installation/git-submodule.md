@@ -11,8 +11,8 @@ Git Submodule based installation for the [Ananke theme](https://github.com/gohug
 
 ## Methods
 
-* [Install Ananke as Hugo Module](Installation-as-GoHugo-Module)
-* **[Install Ananke as Git Submodule](Installation-as-Git-Submodule) - this page**
+* [Install Ananke as Hugo Module](/installation/gohugo-module/)
+* **[Install Ananke as Git Submodule](/installation/git-submodule/) - this page**
 
 ## Requirements
 
