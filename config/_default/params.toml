@@ -16,3 +16,6 @@ networks = ["mastodon"]
 [ananke.social.mastodon]
 profilelink = "https://mastodon.social/@ananke_theme"
 username = "ananke_theme"
+
+[ananke.hooks]
+verbosity = "debug" # debug, info, warning, error
