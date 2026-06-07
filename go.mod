@@ -2,4 +2,4 @@ module github.com/gohugo-ananke/documentation
 
 go 1.24.4
 
-require github.com/gohugo-ananke/ananke/v2 v2.17.1 // indirect
+require github.com/gohugo-ananke/ananke/v2 v2.18.0 // indirect
