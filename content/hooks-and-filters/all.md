@@ -63,13 +63,39 @@ These fire inside the article header of a single post (`layouts/single.html`).
 
 | Hook                   | Where it fires                             | Default                                                 | Typical use                                    |
 | ---------------------- | ------------------------------------------ | ------------------------------------------------------- | ---------------------------------------------- |
-| `article/section-link` | Top of the article header, above the title | **Shipped** — the theme prints the current section name | Override to change or remove the section label |
+| `article/section-link` | Top of the article header, above the title | **Shipped** — the theme prints the current section name as a link to a page within the section | Override to change or remove the section label |
 
 > [!NOTE]
 > `article/section-link` is the one hook the theme ships a default partial for
 > (`layouts/_partials/hooks/article/section-link.html`). Providing your own partial of the same
 > name in your site **replaces** the default. All other hooks in this list ship empty (unused) and
 > render nothing until you add a partial.
+
+### Choosing where the section link points
+
+The shipped `article/section-link` partial renders the section label as a link. The destination is
+controlled by the `ananke.section_link` parameter. The visible label is always the section title;
+only the link target changes.
+
+Set it in a page's front matter for a single page, or under `[params.ananke]` in your site
+configuration for a site-wide default.
+
+| Value             | Link target                                                                         |
+| ----------------- | ----------------------------------------------------------------------------------- |
+| _unset_ (default) | The section index page (its `_index.md`)                                             |
+| `first`           | The first page of the section, honouring its sort order                              |
+| `"<path>"`        | A specific page, resolved relative to the section (e.g. `introduction` or `/about`)  |
+
+An unresolvable path falls back to the section index page.
+
+```yaml
+# content/installation/upgrading-from-thenewdynamic.md
+---
+title: Upgrading from theNewDynamic to gohugo-ananke
+ananke:
+  section_link: introduction
+---
+```
 
 ## How to use a hook
 
