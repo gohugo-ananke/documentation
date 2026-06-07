@@ -12,6 +12,15 @@ content_alignment = "left" # options: left, center, right
 # version. Without this the badge renders as plain text with no link.
 repo_url = "https://github.com/gohugo-ananke/ananke/releases/tag/v%s"
 
+[ananke.shortcodes.edit_page]
+# Base URL of the repository that holds this documentation. The "edit-page"
+# shortcode/hook builds GitHub /edit/ links from it; visitors without write
+# access are automatically offered GitHub's fork-and-propose-changes flow.
+repo_url = "https://github.com/gohugo-ananke/documentation"
+# Edits target the development branch of the documentation site.
+branch = "development"
+# content_dir defaults to "content" and matches this repository's layout.
+
 [ananke.pages]
 show_date = false
 
