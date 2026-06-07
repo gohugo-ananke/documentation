@@ -119,15 +119,15 @@ The author meta tag uses the page's `author`, falling back to the site-wide
 
 ## Which front matter affects SEO
 
-| Front matter     | Effect                                    |
-| ---------------- | ----------------------------------------- |
-| `title`          | Page title and `<title>` tag              |
-| `description`    | Meta description and social preview text  |
-| `images`         | Open Graph / Twitter card image           |
+| Front matter | Effect |
+| --- | --- |
+| `title` | Page title and `<title>` tag |
+| `description` | Meta description and social preview text |
+| `images` | Open Graph / Twitter card image |
 | `featured_image` | On-page hero image (not the social image) |
-| `canonicalUrl`   | Canonical link                            |
-| `private`        | Excludes the page from indexing           |
-| `author`         | Author meta tag                           |
+| `canonicalUrl` | Canonical link |
+| `private` | Excludes the page from indexing |
+| `author` | Author meta tag |
 
 ## Validating your metadata
 

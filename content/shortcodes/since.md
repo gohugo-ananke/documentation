@@ -40,9 +40,9 @@ page's `since` front matter:
 
 ## Parameter overview
 
-| Title   | Positional option | Named option | Required | Type   | Default | Description                                                                                                                 |
-| ------- | ----------------- | ------------ | -------- | ------ | ------- | --------------------------------------------------------------------------------------------------------------------------- |
-| Version | `1`               | `version`    | No\*     | String | `-`     | The version the feature was introduced in. Used as the badge text and, when a release URL is configured, to build the link. |
+| Title | Positional option | Named option | Required | Type | Default | Description |
+| --- | --- | --- | --- | --- | --- | --- |
+| Version | `1` | `version` | No\* | String | `-` | The version the feature was introduced in. Used as the badge text and, when a release URL is configured, to build the link. |
 
 \* The version is required *somewhere*: as the positional argument, as the named
 `version` argument, or as the page's `since` front matter value. If none is
@@ -220,11 +220,11 @@ custom HTML in the Markdown content.
 
 ## Configuration notes
 
-| Configuration location | Key                                       | Description                                                                                                                                               |
-| ---------------------- | ----------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `hugo.toml`            | `params.ananke.shortcodes.since.repo_url` | A printf format string for the release link. `%s` is replaced with the version. Not set by default, so the badge is plain text; set it to enable linking. |
-| `hugo.toml`            | `params.ananke.shortcodes.since.target`   | Link target. Defaults to `_blank` (new tab). Set to a custom value such as `"_top"`, or to `false` to open in the same window.                            |
-| Page front matter      | `since`                                   | Supplies the version when the shortcode is called with no argument.                                                                                       |
+| Configuration location | Key | Description |
+| --- | --- | --- |
+| `hugo.toml` | `params.ananke.shortcodes.since.repo_url` | A printf format string for the release link. `%s` is replaced with the version. Not set by default, so the badge is plain text; set it to enable linking. |
+| `hugo.toml` | `params.ananke.shortcodes.since.target` | Link target. Defaults to `_blank` (new tab). Set to a custom value such as `"_top"`, or to `false` to open in the same window. |
+| Page front matter | `since` | Supplies the version when the shortcode is called with no argument. |
 
 The badge label ("since") is a translatable interface string (`since`). Override
 it in your project's `i18n/<language>.toml` rather than editing the shortcode —
@@ -236,11 +236,11 @@ There are no closely related shortcodes.
 
 ## Troubleshooting
 
-| Problem                                   | Likely cause                                                                  | Fix                                                                          |
-| ----------------------------------------- | ----------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
-| The shortcode does not render.            | The shortcode name is misspelled or the theme version is too old to ship it.  | Check the shortcode name and theme version.                                  |
-| Nothing renders and a warning is printed. | No version was supplied as an argument or as `since` front matter.            | Add a version argument or a `since` front-matter value.                      |
-| The badge is plain text, not a link.      | `params.ananke.shortcodes.since.repo_url` is not set.                         | Set `repo_url` to your project's release URL pattern.                        |
-| The link returns a 404.                   | The configured URL pattern or the version does not match an existing release. | Check the URL format string (it needs `%s`) and that the release tag exists. |
-| The link opens in a new tab unexpectedly. | `target` defaults to `_blank`.                                                | Set `params.ananke.shortcodes.since.target` to `false` for the same window.  |
-| The shortcode fails with a build error.   | Positional and named options were mixed in one call.                          | Use only one option style per shortcode call.                                |
+| Problem | Likely cause | Fix |
+| --- | --- | --- |
+| The shortcode does not render. | The shortcode name is misspelled or the theme version is too old to ship it. | Check the shortcode name and theme version. |
+| Nothing renders and a warning is printed. | No version was supplied as an argument or as `since` front matter. | Add a version argument or a `since` front-matter value. |
+| The badge is plain text, not a link. | `params.ananke.shortcodes.since.repo_url` is not set. | Set `repo_url` to your project's release URL pattern. |
+| The link returns a 404. | The configured URL pattern or the version does not match an existing release. | Check the URL format string (it needs `%s`) and that the release tag exists. |
+| The link opens in a new tab unexpectedly. | `target` defaults to `_blank`. | Set `params.ananke.shortcodes.since.target` to `false` for the same window. |
+| The shortcode fails with a build error. | Positional and named options were mixed in one call. | Use only one option style per shortcode call. |

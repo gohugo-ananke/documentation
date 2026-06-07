@@ -22,47 +22,48 @@ matching partial receives a page and can use `.Title`, `.Permalink`, `.Params`, 
 * [Layout hooks](#layout-hooks)
 * [Content hooks](#content-hooks)
 * [Article hooks](#article-hooks)
+  * [Choosing where the section link points](#choosing-where-the-section-link-points)
 * [How to use a hook](#how-to-use-a-hook)
 
 ## Document hooks
 
 These fire in the document shell (`layouts/baseof.html`) and are available on every page.
 
-| Hook         | Where it fires                                     | Typical use                                                                  |
-| ------------ | -------------------------------------------------- | ---------------------------------------------------------------------------- |
-| `head-end`   | At the end of `<head>` (via `head-additions.html`) | Preloads, meta tags, third-party `<link>`/`<script>` tags, verification tags |
-| `body-start` | First element inside `<body>`                      | Skip-links, no-JS banners, `<noscript>` pixels, top-of-page banners          |
-| `body-end`   | Last element before `</body>`                      | Deferred analytics, chat widgets, scripts that must load last                |
+| Hook | Where it fires | Typical use |
+| --- | --- | --- |
+| `head-end` | At the end of `<head>` (via `head-additions.html`) | Preloads, meta tags, third-party `<link>`/`<script>` tags, verification tags |
+| `body-start` | First element inside `<body>` | Skip-links, no-JS banners, `<noscript>` pixels, top-of-page banners |
+| `body-end` | Last element before `</body>` | Deferred analytics, chat widgets, scripts that must load last |
 
 ## Layout hooks
 
 These wrap the main structural regions of the page (`layouts/baseof.html`).
 
-| Hook            | Where it fires                                   | Typical use                             |
-| --------------- | ------------------------------------------------ | --------------------------------------- |
-| `header-before` | Immediately before the site header               | Announcement bars, cookie notices       |
-| `header-after`  | Immediately after the site header                | Secondary navigation, breadcrumbs       |
-| `main-before`   | Start of `<main>`, before the page content block | Hero add-ons, page-level notices        |
-| `main-after`    | End of `<main>`, after the page content block    | Related-content blocks, calls to action |
-| `footer-before` | Immediately before the site footer               | Newsletter sign-up, sponsor strip       |
-| `footer-after`  | Immediately after the site footer                | Back-to-top button, legal line          |
+| Hook | Where it fires | Typical use |
+| --- | --- | --- |
+| `header-before` | Immediately before the site header | Announcement bars, cookie notices |
+| `header-after` | Immediately after the site header | Secondary navigation, breadcrumbs |
+| `main-before` | Start of `<main>`, before the page content block | Hero add-ons, page-level notices |
+| `main-after` | End of `<main>`, after the page content block | Related-content blocks, calls to action |
+| `footer-before` | Immediately before the site footer | Newsletter sign-up, sponsor strip |
+| `footer-after` | Immediately after the site footer | Back-to-top button, legal line |
 
 ## Content hooks
 
 These fire around the rendered Markdown content (`.Content`) in `layouts/single.html` and
 `layouts/page/single.html`.
 
-| Hook             | Where it fires                                  | Typical use                                       |
-| ---------------- | ----------------------------------------------- | ------------------------------------------------- |
-| `content-before` | Just before `.Content` inside the article body  | Lead-in notices, reading aids                     |
-| `content-after`  | Just after `.Content`, before tags and comments | Author bio, share prompts, "edit this page" links |
+| Hook | Where it fires | Typical use |
+| --- | --- | --- |
+| `content-before` | Just before `.Content` inside the article body | Lead-in notices, reading aids |
+| `content-after` | Just after `.Content`, before tags and comments | Author bio, share prompts, "edit this page" links |
 
 ## Article hooks
 
 These fire inside the article header of a single post (`layouts/single.html`).
 
-| Hook                   | Where it fires                             | Default                                                 | Typical use                                    |
-| ---------------------- | ------------------------------------------ | ------------------------------------------------------- | ---------------------------------------------- |
+| Hook | Where it fires | Default | Typical use |
+| --- | --- | --- | --- |
 | `article/section-link` | Top of the article header, above the title | **Shipped** — the theme prints the current section name as a link to a page within the section | Override to change or remove the section label |
 
 > [!NOTE]
@@ -80,11 +81,11 @@ only the link target changes.
 Set it in a page's front matter for a single page, or under `[params.ananke]` in your site
 configuration for a site-wide default.
 
-| Value             | Link target                                                                         |
-| ----------------- | ----------------------------------------------------------------------------------- |
-| _unset_ (default) | The section index page (its `_index.md`)                                             |
-| `first`           | The first page of the section, honouring its sort order                              |
-| `"<path>"`        | A specific page, resolved relative to the section (e.g. `introduction` or `/about`)  |
+| Value | Link target |
+| --- | --- |
+| *unset* (default) | The section index page (its `_index.md`) |
+| `first` | The first page of the section, honouring its sort order |
+| `"<path>"` | A specific page, resolved relative to the section (e.g. `introduction` or `/about`) |
 
 An unresolvable path falls back to the section index page.
 

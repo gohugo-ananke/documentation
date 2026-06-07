@@ -21,12 +21,12 @@ canonicalUrl: https://mydomain.com/path-to-the-original-content/
 
 ## Common Options
 
-| Key           | Type   | Description                                       | Default        |
-| ------------- | ------ | ------------------------------------------------- | -------------- |
-| `title`       | string | The title shown on the page and in metadata       | Required       |
-| `linktitle`   | string | Overrides the page title in menus and breadcrumbs | Uses `title`   |
-| `summary`     | string | Custom page summary shown in list views           | Auto-generated |
-| `description` | string | Meta description for SEO and previews             | Empty          |
+| Key | Type | Description | Default |
+| --- | --- | --- | --- |
+| `title` | string | The title shown on the page and in metadata | Required |
+| `linktitle` | string | Overrides the page title in menus and breadcrumbs | Uses `title` |
+| `summary` | string | Custom page summary shown in list views | Auto-generated |
+| `description` | string | Meta description for SEO and previews | Empty |
 
 ## Example: Disabling Breadcrumbs
 

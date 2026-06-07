@@ -307,9 +307,9 @@ layouts/_partials/hooks/
 
 The hook name maps directly to a partial name.
 
-| Hook name       | Loaded partial                               |
-| --------------- | -------------------------------------------- |
-| `head-end`      | `layouts/_partials/hooks/head-end.html`      |
+| Hook name | Loaded partial |
+| --- | --- |
+| `head-end` | `layouts/_partials/hooks/head-end.html` |
 | `footer-before` | `layouts/_partials/hooks/footer-before.html` |
 | `content-after` | `layouts/_partials/hooks/content-after.html` |
 

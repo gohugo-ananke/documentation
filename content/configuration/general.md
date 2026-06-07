@@ -16,7 +16,7 @@ date: 2026-01-16T08:00:00.000+0700
 >
 > Ananke's sample repositories are using configuration directories and you can find all referred configuration parameters in `config/_default/hugo.toml` and `config/_default/params.toml`.
 
-### Activate the contact form
+## Activate the contact form
 
 This theme includes a shortcode for a contact form that you can add to any page (there is an example on the contact page in the exampleSite folder). One option is to use [formspree.io](//formspree.io/) as proxy to send the actual email. Each month, visitors can send you up to fifty emails without incurring extra charges. Visit the Formspree site to get the "action" link and add it to your shortcode like this:
 
@@ -24,7 +24,7 @@ This theme includes a shortcode for a contact form that you can add to any page 
 {{</* form-contact action="https://formspree.io/your@email.com" */>}}
 ```
 
-### Logo
+## Logo
 
 You can replace the title of your site in the top left corner of each page with your own logo. To do that put your own logo into the `static` directory of your website, and add the `site_logo` parameter to the site params in your config file. For example:
 
@@ -33,7 +33,7 @@ You can replace the title of your site in the top left corner of each page with 
 site_logo = "img/logo.svg"
 ```
 
-### Main navigation menu
+## Main navigation menu
 
 The navigation shown in the header (the hero area at the top of every page) is built from Hugo's `main` menu. Define entries for it in your site configuration and they appear next to the social links.
 
@@ -63,7 +63,7 @@ menus: main
 
 For nested entries, menu parameters, and other options, see Hugo's [menu templates documentation](https://gohugo.io/templates/menu-templates/).
 
-### Localize date format
+## Localize date format
 
 Dates of blog posts and single pages are rendered with the default date format commonly used in the USA and Canada. It is possible to specify a different format.
 
@@ -74,7 +74,7 @@ date_format = "2. January 2006"
 
 With hugo 0.87.0 and above, you can also use predefined date layouts, like `:date_full`, and it will output localized dates or times. See hugo's documentation of the [`time.Format` function](https://gohugo.io/functions/dateformat/) for more details.
 
-### Show taxonomies on pages
+## Show taxonomies on pages
 
 Ananke shows linked terms for the `categories` and `tags` taxonomies on single pages when they are set in page front matter. For example:
 
@@ -97,7 +97,7 @@ Categories are shown by default. To hide the category terms on single pages site
 show_categories = false
 ```
 
-### Show or hide dates on pages
+## Show or hide dates on pages
 
 Ananke shows page dates by default where the template includes date output. You can hide dates across pages and summary cards by setting `ananke.pages.show_date` to `false`.
 
@@ -113,7 +113,7 @@ ananke:
   show_date: true
 ```
 
-### Show images on list page cards
+## Show images on list page cards
 
 By default, list pages render compact summary cards without images. You can opt in to image cards for list pages by enabling the `ananke.pages.show_list_images` parameter.
 

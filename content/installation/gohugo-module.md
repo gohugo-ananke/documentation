@@ -1,12 +1,12 @@
 ---
 title: Installation as a Hugo Module (recommended)
 date: 2026-01-16T08:00:00.000+0700
+weight: 150
 ---
 
 * [Methods](#methods)
 * [Requirements](#requirements)
 * [Installation](#installation)
-
 
 Hugo Module based installation for the [Ananke theme](https://github.com/gohugo-ananke/ananke) for [Hugo](https://gohugo.io/).
 

@@ -1,6 +1,7 @@
 ---
-title: Migration from theNewDynamic
+title: Upgrading from theNewDynamic to gohugo-ananke
 date: 2026-06-06T08:00:00.000+0700
+weight: 500
 ---
 
 * [What changed](#what-changed)
@@ -9,21 +10,9 @@ date: 2026-06-06T08:00:00.000+0700
 * [Confirm the theme is loaded](#confirm-the-theme-is-loaded)
 * [Common failure cases](#common-failure-cases)
 
-Ananke moved to its own organisation on 23 April 2026. The repository changed
-from:
+Ananke moved to its own organisation in April 2026. The repository changed from: `github.com/theNewDynamic/gohugo-theme-ananke` to `github.com/gohugo-ananke/ananke`.
 
-```text
-github.com/theNewDynamic/gohugo-theme-ananke
-```
-
-to:
-
-```text
-github.com/gohugo-ananke/ananke
-```
-
-Both URLs still resolve for now, so existing sites keep building, but you should
-update your references so future updates come from the new location.
+Both URLs still resolve for now, so existing sites will keep building, but you should update your references so future updates come from the new location.
 
 ## What changed
 
@@ -31,26 +20,13 @@ update your references so future updates come from the new location.
 * **Module path** changed from
   `github.com/theNewDynamic/gohugo-theme-ananke/v2` to
   `github.com/gohugo-ananke/ananke/v2`. The `/v2` suffix is unchanged and still
-  required.
-* **Installation methods are unchanged.** If you are installing fresh rather
-  than migrating, follow [Install as Hugo Module](/installation/gohugo-module/)
-  or [Install as Git Submodule](/installation/git-submodule/) instead of this
-  page.
+  required for the latest theme on the v2 branch.
+* **Installation methods are unchanged.** If you are installing fresh rather than migrating, follow [Install as Hugo Module](/installation/gohugo-module/) or [Install as Git Submodule](/installation/git-submodule/) instead of this page.
 
 ## Migrate a Hugo Module install
 
 Search your site configuration for the old module path and replace every
-instance of:
-
-```text
-github.com/theNewDynamic/gohugo-theme-ananke/v2
-```
-
-with:
-
-```text
-github.com/gohugo-ananke/ananke/v2
-```
+instance of `github.com/theNewDynamic/gohugo-theme-ananke/v2` with `github.com/gohugo-ananke/ananke/v2`.
 
 This usually appears in `config/_default/module.toml` (or your root
 configuration file) and in `go.mod`. After replacing it, update the module
@@ -74,17 +50,13 @@ cd ../..
 git submodule sync
 ```
 
-Then update the URL in the `.gitmodules` file at the root of your repository,
-replacing `theNewDynamic/gohugo-theme-ananke` with `gohugo-ananke/ananke`.
-Commit both `.gitmodules` and the updated submodule reference.
+Then update the URL in the `.gitmodules` file at the root of your repository, replacing `theNewDynamic/gohugo-theme-ananke` with `gohugo-ananke/ananke`. Commit both `.gitmodules` and the updated submodule reference.
 
 ## Confirm the theme is loaded
 
-After migrating with either method, verify the new path is in use and the site
-still builds.
+After migrating with either method, verify the new path is in use and the site still builds.
 
-For Hugo Modules, inspect the module graph — it should list
-`github.com/gohugo-ananke/ananke/v2` and no longer mention `theNewDynamic`:
+For Hugo Modules, inspect the module graph — it should list `github.com/gohugo-ananke/ananke/v2` and no longer mention `theNewDynamic`:
 
 ```bash
 hugo mod graph
