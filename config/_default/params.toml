@@ -7,6 +7,11 @@ custom_css = ["fonts.css", "docs-theme.css", "fixes.css", "highlighting.css"]
 [ananke.home]
 content_alignment = "left" # options: left, center, right
 
+[ananke.shortcodes.since]
+# printf format string for the `since` shortcode's release link; %s is the
+# version. Without this the badge renders as plain text with no link.
+repo_url = "https://github.com/gohugo-ananke/ananke/releases/tag/v%s"
+
 [ananke.pages]
 show_date = false
 

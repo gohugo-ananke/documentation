@@ -44,6 +44,29 @@ backends, and spam-protection notes.
 * **Common mistakes:** using it on a single page rather than a section
   (`_index.md`) page, where there are no children to list.
 
+## since
+
+* **Purpose:** render a small badge linking to the release where a feature was
+  introduced (for example "since 2.17.0").
+* **Syntax:** `{{</* since "2.17.0" */>}}` or, reading the version from front
+  matter, `{{</* since */>}}`.
+* **Parameters:**
+  * version (optional) — passed as the first positional argument or as a named
+    `version` argument. If omitted, the page's `since` front matter value is
+    used.
+* **Output:** an anchor styled as a badge linking to the matching release tag.
+* **Example:**
+
+  ```go-html-template
+  {{</* since "2.17.0" */>}}
+  ```
+
+* **Common mistakes:** calling it with no argument on a page that has no `since`
+  front matter (a build-time warning is printed and nothing is rendered).
+
+See the [Since](/shortcodes/since/) page for configuring the release URL and
+front-matter usage.
+
 ---
 
 > [!NOTE]
