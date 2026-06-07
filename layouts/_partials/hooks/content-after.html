@@ -1,0 +1,21 @@
+{{- /*
+  content-after hook
+
+  Renders an "Improve this page on GitHub" link below every single page's
+  content. The link points at the source file on the documentation's
+  development branch; visitors without write access are automatically offered
+  GitHub's fork-and-propose-changes flow. Configured under
+  params.ananke.shortcodes.edit_page.
+*/ -}}
+{{- /*
+  Guard against builds against a released theme that does not yet ship the
+  shared `edit-page.html` partial, so documentation previews keep building
+  until the feature lands in a tagged release.
+*/ -}}
+{{- if templates.Exists "_partials/edit-page.html" -}}
+  {{- with .File -}}
+    <footer class="mt4 pt3 bt b--moon-gray">
+      {{- partials.Include "edit-page.html" $ -}}
+    </footer>
+  {{- end -}}
+{{- end -}}

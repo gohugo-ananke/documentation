@@ -8,6 +8,31 @@ Shortcodes are small snippets you place in your Markdown content to render
 something the theme provides. Ananke ships the following shortcodes. Each entry
 lists what it does, its parameters, and an example.
 
+## edit-page
+
+* **Purpose:** render an "Improve this page on GitHub" link to edit the current
+  page's source file. Readers without write access are automatically offered
+  GitHub's fork-and-propose-changes flow.
+* **Syntax:** `{{</* edit-page */>}}` or, targeting a specific branch,
+  `{{</* edit-page branch="development" */>}}`.
+* **Parameters:**
+  * branch (optional) — passed as the first positional argument or as a named
+    `branch` argument. Overrides the configured branch for this page only.
+* **Output:** an anchor styled as a badge linking to the GitHub editor for the
+  page's source file.
+* **Example:**
+
+  ```go-html-template
+  {{</* edit-page */>}}
+  ```
+
+* **Common mistakes:** using it without setting
+  `params.ananke.shortcodes.edit_page.repo_url` (a build-time warning is printed
+  and nothing is rendered).
+
+See the [Edit page](/shortcodes/edit-page/) page for configuration and for
+showing the link automatically below every page.
+
 ## form-contact
 
 * **Purpose:** render a styled, accessible contact form.
