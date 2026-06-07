@@ -220,7 +220,7 @@ The data passed into the hook partial.
 "context" .
 ```
 
-The context can be any value supported by GoHugo templates, but a page context or dictionary is usually the most useful option.
+The context can be any value supported by Hugo templates, but a page context or dictionary is usually the most useful option.
 
 Example with a custom dictionary:
 

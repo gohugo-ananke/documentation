@@ -23,7 +23,7 @@ Hugo Module based installation for the [Ananke theme](https://github.com/gohugo-
 
 ## Installation
 
-To install or create a GoHugo website from scratch with the Ananke theme using the *GoHugo Module* method, follow these steps:
+To install or create a Hugo website from scratch with the Ananke theme using the *Hugo Module* method, follow these steps:
 
 Verify that you have installed Hugo 0.128.0 or later.
 
