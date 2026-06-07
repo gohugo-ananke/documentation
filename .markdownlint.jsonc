@@ -93,7 +93,7 @@
   },
   // table style must be compact (single spaces around cell content)
   "MD060": {
-    "style": "aligned",
+    "style": "compact",
     "aligned_delimiters": true
   },
   // @see https://www.npmjs.com/package/@github/markdownlint-github

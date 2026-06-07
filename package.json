@@ -18,13 +18,15 @@
     "markdownlint-rule-list-duplicates": "0.0.1",
     "markdownlint-rule-relative-links": "5.1.0",
     "markdownlint-rule-search-replace": "1.2.0",
-    "markdownlint-rule-title-case-style": "0.4.3"
+    "markdownlint-rule-title-case-style": "0.4.3",
+    "wireit": "0.14.12"
   },
   "scripts": {
     "contributors:merge": "node ./scripts/merge-all-contributors.mjs",
     "lint:links": "lychee --config lychee.toml http://localhost:1313",
     "lint:markdown": "markdownlint-cli2 content/**/*.{md,mdx}",
-    "lint:markdown:fix": "markdownlint-cli2 --fix content/**/*.{md,mdx}"
+    "lint:markdown:fix": "markdownlint-cli2 --fix content/**/*.{md,mdx}",
+    "server": "wireit"
   },
   "cspell": {
     "version": "0.2",
@@ -44,5 +46,20 @@
       }
     ]
   },
-  "type": "module"
+  "type": "module",
+  "wireit": {
+    "server": {
+      "command": "hugo server --watch --disableFastRender --tlsAuto",
+      "dependencies": [
+        "server:tls"
+      ],
+      "readyRegex": "Web Server is available at",
+      "env": {
+        "HUGO_ENV": "development"
+      }
+    },
+    "server:tls": {
+      "command": "hugo server trust"
+    }
+  }
 }
