@@ -1,0 +1,1 @@
+When writing about Hugo use "Hugo" instead of any other name or form. Keep in mind that the Hugo Github orgnisation as well as this organisation use gohugo as slug in their username though.
