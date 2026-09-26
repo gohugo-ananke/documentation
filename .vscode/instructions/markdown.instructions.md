@@ -1,0 +1,2 @@
+- DO use backticks (`) to format code snippets, file names, or any text that should be highlighted as code.
+- DO NOT use indentations to format code snippets. This may cause issues with rendering in some places
