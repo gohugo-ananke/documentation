@@ -1,0 +1,74 @@
+
+=== ananke-horizontal-dark.svg  (2106 bytes)
+viewBox 0 0 624 256 · aspect 2.438 (wide)
+colours 2: #f0bc2f #fffefb · gradients 0 · anchors 143
+margins L17.9 R41.9 T53.7 B54.1 · bbox fill 0.523
+▲ WARN [near-miss-angle] 1 straight edge(s) are 0.3–3° off a clean angle — they read as mistakes. Snap them: 72.5° (→75°) len 43.8 at (508,180). (Expected — and fine — for type set on a curve or deliberately rotated elements.)
+· INFO [precision] Coordinates with 4+ decimals: round to 0–2 decimals to reduce size and reveal misalignments.
+· INFO [off-centre-x] Horizontal margins differ (left 17.9, right 41.9). Intentional optical centring? Otherwise centre it.
+production-readiness score: 90/100 (heuristic)
+
+=== ananke-horizontal-mono.svg  (2096 bytes)
+viewBox 0 0 624 256 · aspect 2.438 (wide)
+colours 1: #2a1104 · gradients 0 · anchors 143
+margins L14.0 R41.9 T53.0 B53.3 · bbox fill 0.533
+▲ WARN [near-miss-angle] 1 straight edge(s) are 0.3–3° off a clean angle — they read as mistakes. Snap them: 72.5° (→75°) len 43.8 at (508,180). (Expected — and fine — for type set on a curve or deliberately rotated elements.)
+· INFO [precision] Coordinates with 4+ decimals: round to 0–2 decimals to reduce size and reveal misalignments.
+· INFO [off-centre-x] Horizontal margins differ (left 14.0, right 41.9). Intentional optical centring? Otherwise centre it.
+production-readiness score: 90/100 (heuristic)
+
+=== ananke-horizontal-reversed.svg  (2094 bytes)
+viewBox 0 0 624 256 · aspect 2.438 (wide)
+colours 1: #fffefb · gradients 0 · anchors 143
+margins L17.9 R41.9 T53.7 B54.1 · bbox fill 0.523
+▲ WARN [near-miss-angle] 1 straight edge(s) are 0.3–3° off a clean angle — they read as mistakes. Snap them: 72.5° (→75°) len 43.8 at (508,180). (Expected — and fine — for type set on a curve or deliberately rotated elements.)
+· INFO [precision] Coordinates with 4+ decimals: round to 0–2 decimals to reduce size and reveal misalignments.
+· INFO [off-centre-x] Horizontal margins differ (left 17.9, right 41.9). Intentional optical centring? Otherwise centre it.
+production-readiness score: 90/100 (heuristic)
+
+=== ananke-horizontal.svg  (2085 bytes)
+viewBox 0 0 624 256 · aspect 2.438 (wide)
+colours 2: #ab5512 #2a1104 · gradients 0 · anchors 143
+margins L14.0 R41.9 T53.0 B53.3 · bbox fill 0.533
+▲ WARN [near-miss-angle] 1 straight edge(s) are 0.3–3° off a clean angle — they read as mistakes. Snap them: 72.5° (→75°) len 43.8 at (508,180). (Expected — and fine — for type set on a curve or deliberately rotated elements.)
+· INFO [precision] Coordinates with 4+ decimals: round to 0–2 decimals to reduce size and reveal misalignments.
+· INFO [off-centre-x] Horizontal margins differ (left 14.0, right 41.9). Intentional optical centring? Otherwise centre it.
+production-readiness score: 90/100 (heuristic)
+
+=== ananke-stacked.svg  (2084 bytes)
+viewBox 0 0 384 430 · aspect 0.893 (square)
+colours 2: #ab5512 #2a1104 · gradients 0 · anchors 143
+margins L22.1 R21.6 T32.0 B39.1 · bbox fill 0.74
+▲ WARN [near-miss-angle] 1 straight edge(s) are 0.3–3° off a clean angle — they read as mistakes. Snap them: 72.5° (→75°) len 43.8 at (288,390). (Expected — and fine — for type set on a curve or deliberately rotated elements.)
+· INFO [precision] Coordinates with 4+ decimals: round to 0–2 decimals to reduce size and reveal misalignments.
+· INFO [complexity] 143 anchor points (library median 53.0, p75 95.5). Check every point earns its place.
+production-readiness score: 90/100 (heuristic)
+
+=== ananke-symbol-reversed.svg  (275 bytes)
+viewBox 0 0 256 256 · aspect 1.0 (square)
+colours 1: #fffefb · gradients 0 · anchors 17
+margins L23.0 R17.0 T33.0 B33.0 · bbox fill 0.626
+✔ no issues found
+production-readiness score: 100/100 (heuristic)
+
+=== ananke-symbol-small.svg  (272 bytes)
+viewBox 0 0 256 256 · aspect 1.0 (square)
+colours 1: #2a1104 · gradients 0 · anchors 17
+margins L18.0 R16.0 T32.0 B32.0 · bbox fill 0.65
+✔ no issues found
+production-readiness score: 100/100 (heuristic)
+
+=== ananke-symbol.svg  (266 bytes)
+viewBox 0 0 256 256 · aspect 1.0 (square)
+colours 1: #2a1104 · gradients 0 · anchors 17
+margins L18.0 R16.0 T32.0 B32.0 · bbox fill 0.65
+✔ no issues found
+production-readiness score: 100/100 (heuristic)
+
+=== ananke-wordmark.svg  (1908 bytes)
+viewBox 0 0 384 144 · aspect 2.667 (horizontal)
+colours 1: #2a1104 · gradients 0 · anchors 126
+margins L21.8 R21.9 T20.0 B19.1 · bbox fill 0.646
+▲ WARN [near-miss-angle] 1 straight edge(s) are 0.3–3° off a clean angle — they read as mistakes. Snap them: 72.5° (→75°) len 43.8 at (288,124). (Expected — and fine — for type set on a curve or deliberately rotated elements.)
+· INFO [precision] Coordinates with 4+ decimals: round to 0–2 decimals to reduce size and reveal misalignments.
+production-readiness score: 91/100 (heuristic)

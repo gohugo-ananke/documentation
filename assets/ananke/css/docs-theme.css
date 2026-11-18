@@ -65,3 +65,35 @@ pre code[data-lang]::before {
     text-transform: uppercase;
     pointer-events: none;
 }
+
+/* Documentation identity: use the dark-background lockup on ink. */
+.ananke-brand-background {
+    background-color: var(--color-ananke-975);
+}
+
+header nav img {
+    display: block;
+    width: 13rem;
+    max-width: 100%;
+    height: auto;
+}
+
+.ananke-docs-footer-logo {
+    display: block;
+    width: 10rem;
+    max-width: 100%;
+    height: auto;
+}
+
+.ananke-docs-copyright {
+    display: block;
+    margin-top: 0.25rem;
+    font-size: 0.875rem;
+}
+
+@media (max-width: 30rem) {
+    .ananke-docs-footer {
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+}

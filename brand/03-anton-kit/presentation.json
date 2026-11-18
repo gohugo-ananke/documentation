@@ -1,0 +1,49 @@
+{
+  "brand": "Ananke",
+  "tagline": "A theme for Hugo",
+  "brief": "A clear, content-led identity for the Hugo theme, using the documentation typeface and palette.",
+  "adjectives": [
+    "clear",
+    "dependable",
+    "editorial"
+  ],
+  "criteria": "Recognisable A; Anton wordmark; one-colour and small-size use.",
+  "industry": "software",
+  "mockups": [
+    "readme",
+    "website",
+    "favicon-tab",
+    "app-icon",
+    "sticker",
+    "social"
+  ],
+  "nav": [
+    "Documentation",
+    "Cookbook",
+    "GitHub"
+  ],
+  "brand_color": "#2a1104",
+  "greyscale": false,
+  "round": 3,
+  "concepts": [
+    {
+      "name": "Interleaved A + Anton",
+      "symbol": "masters/ananke-symbol.svg",
+      "lockup": "masters/ananke-horizontal.svg",
+      "symbol_on_tile": "masters/ananke-symbol-reversed.svg",
+      "lockup_on_dark": "masters/ananke-horizontal-dark.svg",
+      "tile_color": "#2a1104",
+      "idea": "Two interleaved bands form the initial A.",
+      "rationale": [
+        "Preserves the chosen split-band direction",
+        "Uses Anton from the documentation font files",
+        "Uses the existing warm documentation palette"
+      ]
+    }
+  ],
+  "recommendation": "B1 with Anton, as selected.",
+  "next_steps": [
+    "Review the kit",
+    "Install approved files into the site as a separate change"
+  ]
+}

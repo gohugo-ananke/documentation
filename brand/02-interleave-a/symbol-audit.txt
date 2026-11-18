@@ -1,0 +1,21 @@
+
+=== b1-interleaved-v2.svg  (370 bytes)
+viewBox 0 0 256 256 · aspect 1.0 (square)
+colours 1: #111111 · gradients 0 · anchors 18
+margins L18.0 R16.0 T32.0 B32.0 · bbox fill 0.65
+✔ no issues found
+production-readiness score: 100/100 (heuristic)
+
+=== b2-stepped-v2.svg  (366 bytes)
+viewBox 0 0 256 256 · aspect 1.0 (square)
+colours 1: #111111 · gradients 0 · anchors 18
+margins L16.0 R16.0 T32.0 B32.0 · bbox fill 0.656
+✔ no issues found
+production-readiness score: 100/100 (heuristic)
+
+=== b3-condensed-v2.svg  (416 bytes)
+viewBox 0 0 256 256 · aspect 1.0 (square)
+colours 1: #111111 · gradients 0 · anchors 18
+margins L35.6 R33.9 T32.0 B32.0 · bbox fill 0.546
+✔ no issues found
+production-readiness score: 100/100 (heuristic)

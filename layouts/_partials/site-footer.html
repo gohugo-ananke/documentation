@@ -1,0 +1,9 @@
+<footer class="{{ .Site.Params.background_color_class | default "bg-black" }} bottom-0 w-100 pa3" role="contentinfo">
+  <div class="ananke-docs-footer flex items-center justify-between">
+    <a class="dib pv2 ph3 no-underline" href="{{ .Site.Home.RelPermalink }}">
+      <img class="ananke-docs-footer-logo" src="{{ .Site.Params.site_logo | relURL }}" width="624" height="256" alt="{{ .Site.Title }}">
+      <span class="ananke-docs-copyright white-70">&copy; {{ .Site.Copyright | default .Site.Title }} {{ now.Format "2006" }}</span>
+    </a>
+    <div>{{ partials.IncludeCached "social/follow.html" . }}</div>
+  </div>
+</footer>
