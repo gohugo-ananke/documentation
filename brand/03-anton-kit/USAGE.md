@@ -14,7 +14,7 @@ Selected direction: B1, the interleaved A, with an Anton wordmark. This kit cont
 | Name without symbol | `masters/ananke-wordmark.svg` |
 | Symbol from 48 px upwards | `masters/ananke-symbol.svg` |
 | Symbol at 16–32 px | `masters/ananke-symbol-small.svg` |
-| Optically lighter reversed symbol | `masters/ananke-symbol-reversed.svg` |
+| Reversed symbol | `masters/ananke-symbol-reversed.svg` |
 | Browser, touch, and application icons | `exports/web/` |
 
 The SVG masters contain filled vector paths, including the wordmark. They require no installed fonts, embedded raster images, masks, or filters. The wordmark uses the actual `assets/webfonts/anton/anton-regular.ttf`, with tighter spacing. The supplied Anton SIL Open Font License is in `licences/Anton-OFL.txt`.
@@ -54,6 +54,6 @@ The generated manifest and head snippet assume that files will be installed at t
 - `presentation.html`: a portable five-slide board with README, website, browser-tab, app-icon, sticker, and social mockups. Generated but not visually verified in a browser; the static overview and icon checks were rendered and inspected.
 - `build.py`: builds the vector masters and overview from local font files. Run with `/usr/bin/python3` from the documentation repository root. Export scripts used for this kit are supplied by the invoked logo-design skill; they are not project dependencies.
 
-Earlier work remains in `brand/01-initial-concepts/` and `brand/02-interleave-a/`. The refined counter removes the small fragment in the previous B1. The reversed symbol has slightly lighter geometry and a wider opening. The small-size cut opens the counter further.
+Earlier work remains in `brand/01-initial-concepts/` and `brand/02-interleave-a/`. The refined counter removes the small fragment in the previous B1. The reversed symbol uses the same geometry and opening as the primary symbol; its counter joins the outer contour to prevent a rasterised line along the cut. The small-size cut opens the counter further.
 
 No trademark clearance has been performed. A clearance search is recommended before adopting the mark as a registered identity.

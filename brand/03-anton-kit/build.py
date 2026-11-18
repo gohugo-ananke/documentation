@@ -15,12 +15,13 @@ UP='M112 32H144L158 60L38 180Z'
 LOW='M166 76L240 224H192L170 180H86L64 224H18Z'
 COUNTER='M136 106L96 146H156Z'
 SMALL='M136 106L92 150H158Z'
-REV='M136 110L98 148H155Z'
+# Keep reversed artwork identical in shape, with no shared counter edge.
+REV_LOWER='M166 76L240 224H192L170 180H86L64 224H18L96 146H156L136 106Z'
 
 def symbol(color=INK,small=False,reverse=False):
-    upper=UP if not reverse else 'M113 33H143L157 61L41 177Z'
-    lower=LOW if not reverse else 'M167 79L239 223H193L172 181H84L63 223H23Z'
-    hole=REV if reverse else SMALL if small else COUNTER
+    upper=UP
+    lower=LOW if not reverse else REV_LOWER
+    hole='' if reverse else SMALL if small else COUNTER
     return f'<path fill="{color}" fill-rule="evenodd" d="{upper}{lower}{hole}"/>'
 
 font=TTFont('assets/webfonts/anton/anton-regular.ttf')
