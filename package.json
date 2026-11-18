@@ -29,6 +29,8 @@
     "lint:markdown:fix": "markdownlint-cli2 --fix content/**/*.{md,mdx}",
     "server": "wireit",
     "build": "hugo --gc --minify && npm run search:index",
+    "deploy": "npm run build && netlify deploy --no-build --dir public",
+    "deploy:production": "npm run deploy -- --prod --open",
     "search:index": "pagefind --site public",
     "search:serve": "pagefind --site public --serve"
   },

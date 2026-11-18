@@ -89,6 +89,15 @@ npm run build
 
 This runs Hugo and then Pagefind, which creates the search index and browser assets under `public/pagefind/`. The inline search field in the top navigation displays matching pages and sections in a dropdown. It supports keyboard navigation and the Ctrl+K/Cmd+K shortcut. Netlify also indexes deploy previews and branch deploys after Hugo builds their pages.
 
+With Netlify CLI installed, authenticated, and linked to this Netlify project, use these commands to build the site, update the Pagefind index, and deploy `public/`:
+
+```bash
+npm run deploy              # create a draft deploy
+npm run deploy:production   # deploy to production and open the site
+```
+
+Both commands stop if the build or indexing fails. The production command passes `--prod --open` to Netlify CLI.
+
 To preview the complete built site with working search:
 
 ```bash
