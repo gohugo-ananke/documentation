@@ -20,6 +20,7 @@ mechanics, and keep the [list of all hooks](../all/) handy for the available hoo
 * [Extend the footer (and cache it)](#extend-the-footer-and-cache-it)
 * [Add secondary navigation using the page context](#add-secondary-navigation-using-the-page-context)
 * [Add an author bio after the content](#add-an-author-bio-after-the-content)
+* [Add Commento comments](#add-commento-comments)
 * [Override the article section link](#override-the-article-section-link)
 * [Use a hook as a filter](#use-a-hook-as-a-filter)
 
@@ -191,6 +192,10 @@ avatar = "/img/authors/jane.jpg"
 
 The post's front matter sets `author = "jane"`; the hook looks that key up in `site.Data.authors`
 and renders a bio card. Use `content-before` instead if you want the card above the article.
+
+## Add Commento comments
+
+Use `content-after` to embed Commento below the page content. The [Commento hook recipe](/customisation/comments/#add-commento-with-a-hook) includes a complete partial, hosted and self-hosted script configuration, and a per-page switch. Add its block to your existing hook if you already use this hook for an author bio or other content.
 
 ## Override the article section link
 
