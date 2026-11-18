@@ -1,7 +1,7 @@
 {{- /*
   Code block render hook for the documentation site.
 
-  Wraps Hugo's standard syntax-highlighted output in a container with a
+  Wraps Hugo's standard syntax-highlighted output with a language header and
   copy-to-clipboard button. Highlighting still honours the site's
   [markup.highlight] configuration because we delegate to
   transform.HighlightCodeBlock, which reads both the per-fence options and the
@@ -12,8 +12,11 @@
 */ -}}
 {{- $result := transform.HighlightCodeBlock . -}}
 <div class="code-block">
-  <button class="code-copy" type="button" aria-label="Copy code to clipboard">
-    <span class="code-copy-label" aria-hidden="true">Copy</span>
-  </button>
+  <div class="code-block-header">
+    <span class="code-language">{{ .Type | default "text" }}</span>
+    <button class="code-copy" type="button" aria-label="Copy code to clipboard">
+      <span class="code-copy-label" aria-hidden="true">Copy</span>
+    </button>
+  </div>
   {{ $result.Wrapped }}
 </div>

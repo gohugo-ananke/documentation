@@ -12,10 +12,16 @@
     function copyFrom(button) {
       var container = button.closest(".code-block");
       if (!container) return;
-      var pre = container.querySelector("pre");
-      if (!pre) return;
-      var source = pre.querySelector("code") || pre;
-      var text = source.innerText;
+      // Table-style line numbers have their own first <pre>; copy only the code column.
+      var source = container.querySelector(".lntd:last-child code") ||
+        container.querySelector("pre code") || container.querySelector("pre");
+      if (!source) return;
+      var codeOnly = source.cloneNode(true);
+      codeOnly.querySelectorAll(".ln, .lnt").forEach(function (number) {
+        number.remove();
+      });
+      // textContent preserves source newlines without layout-generated blank lines.
+      var text = codeOnly.textContent;
 
       var done = function () {
         var label = button.querySelector(".code-copy-label");
