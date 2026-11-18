@@ -99,19 +99,39 @@ show_categories = false
 
 ## Show or hide dates on pages
 
-Ananke shows page dates by default where the template includes date output. You can hide dates across pages and summary cards by setting `ananke.pages.show_date` to `false`.
+Ananke shows dates by default on single pages and summary cards, including recent posts on the home page. Use these settings in `[params.ananke.pages]` in your site configuration or under `ananke` in page front matter:
+
+| Setting | Controls |
+| --- | --- |
+| `show_single_date` | The date on a single page. |
+| `show_summary_date` | The date on summary cards, including recent posts on the home page. |
+| `show_date` | The shared fallback for both settings. Existing configurations continue to work. |
+
+For example, show dates on single pages and hide them on cards across the site:
 
 ```toml
 [params.ananke.pages]
-show_date = false
+show_single_date = true
+show_summary_date = false
 ```
 
-You can override this per page with front matter:
+Use front matter to set the same behaviour for one page:
 
 ```yaml
 ananke:
-  show_date: true
+  show_single_date: true
+  show_summary_date: false
 ```
+
+For each date, Ananke uses the first boolean setting in this order:
+
+1. The specific page setting: `ananke.show_single_date` or `ananke.show_summary_date`.
+2. The shared page setting: `ananke.show_date`.
+3. The specific site setting: `params.ananke.pages.show_single_date` or `params.ananke.pages.show_summary_date`.
+4. The shared site setting: `params.ananke.pages.show_date`.
+5. The default: show the date.
+
+Page settings include values inherited through `cascade`. A page's own `ananke` map takes priority over the cascaded map, as explained below. Pages without a date never show one, even when a setting is `true`.
 
 ## Show or hide section titles on summary cards
 
@@ -133,7 +153,7 @@ The image summary cards, which the home page uses for recent posts, do not show 
 
 ## Set dates and section titles for one section
 
-To hide dates or section titles for all pages in one section, use `cascade` in the `_index.md` file of the section:
+To hide dates on cards and section titles for all pages in one section, use `cascade` in the `_index.md` file of the section:
 
 ```yaml
 ---
@@ -141,10 +161,12 @@ title: Posts
 cascade:
   params:
     ananke:
-      show_date: false
+      show_summary_date: false
       show_section_title: false
 ---
 ```
+
+The example keeps dates on single pages. Use `show_single_date: false` to hide those dates too, or `show_date: false` to hide both through the shared fallback.
 
 > [!NOTE]
 > Hugo does not merge an `ananke` map in the front matter of a page with the `ananke` map from `cascade`. If a page sets its own `ananke` values, it must also set all the values from `cascade` that it needs.
@@ -158,6 +180,6 @@ By default, list pages render compact summary cards without images. You can opt 
 show_list_images = true
 ```
 
-When enabled, list pages use the same image summary card that is used for recent posts on the home page. Pages without a configured featured image still render without an image. Date display is controlled separately with `ananke.pages.show_date`.
+When enabled, list pages use the same image summary card that is used for recent posts on the home page. Pages without a configured featured image still render without an image. Date display is controlled separately with `ananke.pages.show_summary_date`, with `ananke.pages.show_date` as its fallback.
 
 See [Hero section](/customisation/hero-section/) for information about configuring featured images.
