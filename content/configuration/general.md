@@ -113,6 +113,42 @@ ananke:
   show_date: true
 ```
 
+## Show or hide section titles on summary cards
+
+Ananke shows the title of the section above the post title on compact summary cards on list pages. You can hide the section title on all cards by setting `ananke.pages.show_section_title` to `false`.
+
+```toml
+[params.ananke.pages]
+show_section_title = false
+```
+
+You can override this per page with front matter:
+
+```yaml
+ananke:
+  show_section_title: true
+```
+
+The image summary cards, which the home page uses for recent posts, do not show a section title.
+
+## Set dates and section titles for one section
+
+To hide dates or section titles for all pages in one section, use `cascade` in the `_index.md` file of the section:
+
+```yaml
+---
+title: Posts
+cascade:
+  params:
+    ananke:
+      show_date: false
+      show_section_title: false
+---
+```
+
+> [!NOTE]
+> Hugo does not merge an `ananke` map in the front matter of a page with the `ananke` map from `cascade`. If a page sets its own `ananke` values, it must also set all the values from `cascade` that it needs.
+
 ## Show images on list page cards
 
 By default, list pages render compact summary cards without images. You can opt in to image cards for list pages by enabling the `ananke.pages.show_list_images` parameter.
