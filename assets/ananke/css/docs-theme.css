@@ -81,3 +81,54 @@ header nav img {
         gap: 1rem;
     }
 }
+
+.docs-site-search {
+    min-width: 0;
+    width: 100%;
+    position: relative;
+    z-index: 10;
+    --pf-font: var(--font-inter-variable);
+    --pf-text: var(--color-ananke-975);
+    --pf-text-secondary: var(--color-ananke-900);
+    --pf-text-muted: var(--color-ananke-800);
+    --pf-background: var(--color-ananke-0);
+    --pf-border: #d5c4a1;
+    --pf-border-focus: var(--color-ananke-700);
+    --pf-hover: var(--color-ananke-100);
+    --pf-mark: var(--color-ananke-975);
+    --pf-outline-focus: var(--color-ananke-700);
+    --pf-shadow-sm: none;
+    --pf-shadow-md: none;
+    --pf-shadow-lg: none;
+}
+
+/* Keep the search field in navigation and its dropdown above the page header. */
+.docs-nav-inner {
+    display: grid;
+    grid-template-columns: auto minmax(12rem, 28rem) auto;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+}
+
+.docs-site-search pagefind-searchbox {
+    display: block;
+}
+
+.docs-nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+@media (max-width: 48rem) {
+    .docs-nav-inner {
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 1rem;
+    }
+
+    .docs-site-search {
+        grid-column: 1 / -1;
+        grid-row: 2;
+    }
+}

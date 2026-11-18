@@ -84,8 +84,21 @@ theme change against real content.
 Netlify builds the site with:
 
 ```bash
-hugo --gc --minify
+npm run build
 ```
+
+This runs Hugo and then Pagefind, which creates the search index and browser assets under `public/pagefind/`. The inline search field in the top navigation displays matching pages and sections in a dropdown. It supports keyboard navigation and the Ctrl+K/Cmd+K shortcut. Netlify also indexes deploy previews and branch deploys after Hugo builds their pages.
+
+To preview the complete built site with working search:
+
+```bash
+npm run build
+npm run search:serve
+```
+
+A regular `hugo server` preview does not run the post-build indexer. For a build against a local theme checkout, set `HUGO_ENV=development` when running `npm run build`. After changing content, rebuild before testing search. Search uses the generated index; it does not require a search service or API key.
+
+`pagefind.yml` limits indexing to the page's main content and excludes code-block controls, heading links, and line numbers. Code examples remain searchable. The navigation uses Pagefind's searchbox component. Its browser assets load on all pages; the index is loaded when readers interact with search. Navigation, including search, is outside the indexed content.
 
 See [`netlify.toml`](netlify.toml) for the per-context build commands (production, deploy preview,
 branch deploy).

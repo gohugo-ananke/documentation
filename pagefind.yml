@@ -1,0 +1,9 @@
+site: public
+glob: "**/index.html"
+root_selector: main
+exclude_selectors:
+  - .code-block-header
+  - .code-copy
+  - .heading-anchor
+  - .lnt
+  - .ln
