@@ -14,6 +14,9 @@
     --color-ananke-950: #421b06;
     --color-ananke-975: #2a1104;
     --color-ananke-1000: #140802;
+
+    /* Inherited by code blocks and other scrollable regions. */
+    scrollbar-color: var(--color-ananke-700) var(--color-ananke-100);
 }
 
 body {
@@ -156,6 +159,23 @@ header nav img {
         align-self: flex-start;
         max-height: calc(100vh - 2rem);
         overflow-y: auto;
+        scrollbar-width: thin;
+        scrollbar-gutter: stable;
+        scrollbar-color: var(--color-ananke-700) transparent;
+    }
+}
+
+/* Keep the local rail quiet until mouse or keyboard interaction. Its space
+   stays reserved, and touch/high-contrast users retain a visible scrollbar. */
+@media (min-width: 60em) and (hover: hover) and (pointer: fine) and (forced-colors: none) {
+    aside:has(#TableOfContents):not(:hover):not(:focus-within) {
+        scrollbar-color: transparent transparent;
+    }
+}
+
+@media (min-width: 60em) and (hover: hover) and (pointer: fine) and (forced-colors: none) and (prefers-reduced-motion: no-preference) {
+    aside:has(#TableOfContents) {
+        transition: scrollbar-color 0.2s ease-out;
     }
 }
 
