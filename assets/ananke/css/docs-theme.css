@@ -124,6 +124,24 @@ header nav img {
     gap: 1rem;
 }
 
+/* Main menu: its own row below the logo, search, and social links. */
+.docs-nav-menu {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 1.5rem;
+}
+
+.docs-nav-menu a {
+    display: inline-block;
+    padding: 0.25rem 0;
+    border-bottom: 2px solid transparent;
+}
+
+.docs-nav-menu a[aria-current] {
+    border-bottom-color: currentColor;
+}
+
 @media (max-width: 48rem) {
     .docs-nav-inner {
         grid-template-columns: minmax(0, 1fr) auto;
@@ -133,6 +151,11 @@ header nav img {
     .docs-site-search {
         grid-column: 1 / -1;
         grid-row: 2;
+    }
+
+    .docs-nav-menu {
+        grid-row: 3;
+        gap: 0.25rem 1rem;
     }
 }
 

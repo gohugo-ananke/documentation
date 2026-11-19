@@ -1,0 +1,32 @@
+# Main navigation. The theme renders a single-level menu, so each entry links
+# to the overview page of a top-level content section.
+
+[[main]]
+name = "Get started"
+pageRef = "/get-started/"
+weight = 10
+
+[[main]]
+name = "Configuration"
+pageRef = "/configuration/"
+weight = 20
+
+[[main]]
+name = "Content"
+pageRef = "/content/"
+weight = 30
+
+[[main]]
+name = "Customisation"
+pageRef = "/customisation/"
+weight = 40
+
+[[main]]
+name = "Examples"
+pageRef = "/examples/"
+weight = 50
+
+[[main]]
+name = "Help"
+pageRef = "/help/"
+weight = 60
