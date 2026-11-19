@@ -43,7 +43,7 @@ Partials live in `layouts/_partials/`:
 
 * `site-header.html` — the hero/header on the homepage and list pages.
 * `page-header.html` — the header on single pages.
-* `site-navigation.html` — the main menu, logo, and follow links.
+* `site-navigation.html` — the main menu with its submenus, logo, and follow links.
 * `site-footer.html` — the footer.
 * `social/follow.html` and `social/share.html` — social follow and share links.
 * `categories.html` and `tags.html` — taxonomy links on single pages.
