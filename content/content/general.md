@@ -3,10 +3,6 @@ title: General
 date: 2026-01-16T08:00:00.000+0700
 ---
 
-* [Author](#author)
-* [Read more link](#read-more-link)
-* [Show Reading Time and Word Count](#show-reading-time-and-word-count)
-
 ## Author
 
 Add an author to a page by setting the `author` key in its front matter. The author is shown below the title on single pages and on image summary cards.

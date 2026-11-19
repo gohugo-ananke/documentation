@@ -3,12 +3,6 @@ title: Taxonomies
 date: 2026-06-06T08:00:00.000+0700
 ---
 
-* [Default taxonomies](#default-taxonomies)
-* [Adding terms to content](#adding-terms-to-content)
-* [Term list and terms pages](#term-list-and-terms-pages)
-* [Where taxonomy links appear](#where-taxonomy-links-appear)
-* [Changing or adding taxonomies](#changing-or-adding-taxonomies)
-
 Taxonomies group your content by shared terms. Ananke supports Hugo's two
 default taxonomies — tags and categories — out of the box.
 

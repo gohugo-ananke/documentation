@@ -4,13 +4,6 @@ date: 2026-01-16T08:00:00.000+0700
 weight: 100
 ---
 
-* [Disqus](#disqus)
-* [Commento.io](#commentoio)
-  * [Add Commento with a hook](#add-commento-with-a-hook)
-  * [Built-in Commento settings](#built-in-commento-settings)
-* [Disabling comments](#disabling-comments)
-* [Privacy](#privacy)
-
 Ananke supports Disqus and [Commento](https://commento.io/). You can also add Commento through a content hook, with a script URL for either the hosted service or your own instance.
 
 ## Disqus

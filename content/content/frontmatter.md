@@ -3,14 +3,6 @@ title: Frontmatter
 date: 2026-01-16T08:00:00.000+0700
 ---
 
-* [Using a canonical url](#using-a-canonical-url)
-* [Common Options](#common-options)
-* [Example: Disabling Breadcrumbs](#example-disabling-breadcrumbs)
-* [Example: Custom Layout](#example-custom-layout)
-* [Example: Using `linktitle`](#example-using-linktitle)
-* [Defaults \& Fallbacks](#defaults--fallbacks)
-* [Notes](#notes)
-
 ## Using a canonical url
 
 If you want to publish content that is already published on a different site you need to reference a canonical URL of the original content. By defining the `canonicalUrl` in the front matter definition the canonical url is set in the headers.

@@ -3,12 +3,6 @@ title: Analytics
 date: 2026-06-06T08:00:00.000+0700
 ---
 
-* [Google Analytics](#google-analytics)
-* [Production-only loading](#production-only-loading)
-* [Disabling analytics in development](#disabling-analytics-in-development)
-* [Verifying the output](#verifying-the-output)
-* [Privacy](#privacy)
-
 Ananke loads analytics through Hugo's embedded Google Analytics template. There
 is no theme-specific analytics parameter — you configure Hugo's standard
 service and the theme renders it.

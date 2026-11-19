@@ -3,20 +3,6 @@ title: Troubleshooting
 date: 2026-01-16T08:00:00.000+0700
 ---
 
-* [Diagnostic commands](#diagnostic-commands)
-* [Common problems](#common-problems)
-  * [The theme is not loading](#the-theme-is-not-loading)
-  * [The homepage is blank](#the-homepage-is-blank)
-  * [CSS / styling is missing](#css--styling-is-missing)
-  * [The menu is not showing](#the-menu-is-not-showing)
-  * [Images are not showing](#images-are-not-showing)
-  * [Social links are not showing](#social-links-are-not-showing)
-  * [Hugo Module path issues](#hugo-module-path-issues)
-  * [The old theNewDynamic path is still used](#the-old-thenewdynamic-path-is-still-used)
-  * [The Netlify build fails](#the-netlify-build-fails)
-  * [Local Hugo version mismatch](#local-hugo-version-mismatch)
-* [Sorry, but "$FEATURE does not work" doesn't work for us](#sorry-but-feature-does-not-work-doesnt-work-for-us)
-
 ## Diagnostic commands
 
 Before digging into a specific problem, these commands tell you most of what you

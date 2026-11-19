@@ -3,14 +3,6 @@ title: Header and Hero
 date: 2026-06-06T08:00:00.000+0700
 ---
 
-* [The two kinds of header](#the-two-kinds-of-header)
-* [Set a featured image](#set-a-featured-image)
-* [How the featured image is found](#how-the-featured-image-is-found)
-* [Image paths and static assets](#image-paths-and-static-assets)
-* [Show or hide the header text](#show-or-hide-the-header-text)
-* [Fallback when there is no image](#fallback-when-there-is-no-image)
-* [Accessibility](#accessibility)
-
 The header (or "hero") is the large area at the top of every page. It shows the
 page title and, optionally, a background image. This page explains how the
 header behaves and which front matter and configuration values control it. For

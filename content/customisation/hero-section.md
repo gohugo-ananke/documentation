@@ -3,12 +3,6 @@ title: Hero Section
 date: 2026-01-16T08:00:00.000+0700
 ---
 
-* [Change the hero background](#change-the-hero-background)
-* [Use the images front matter array](#use-the-images-front-matter-array)
-* [Featured image as Page Resources](#featured-image-as-page-resources)
-* [Other hero settings](#other-hero-settings)
-* [Set a background color behind transparent hero images](#set-a-background-color-behind-transparent-hero-images)
-
 ## Change the hero background
 
 For any page or post you can add a featured image by including the local path in front matter (see content in the `exampleSite/content/en/_readme` file for examples): `featured_image = '/images/gohugo-default-sample-hero-image.jpg'`

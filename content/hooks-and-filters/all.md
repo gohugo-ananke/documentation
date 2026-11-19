@@ -18,13 +18,6 @@ optional debug notice and renders nothing.
 Every hook in this list is called by the theme with the current **page** as its `context`, so the
 matching partial receives a page and can use `.Title`, `.Permalink`, `.Params`, `site`, and so on.
 
-* [Document hooks](#document-hooks)
-* [Layout hooks](#layout-hooks)
-* [Content hooks](#content-hooks)
-* [Article hooks](#article-hooks)
-  * [Choosing where the section link points](#choosing-where-the-section-link-points)
-* [How to use a hook](#how-to-use-a-hook)
-
 ## Document hooks
 
 These fire in the document shell (`layouts/baseof.html`) and are available on every page.

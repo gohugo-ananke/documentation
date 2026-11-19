@@ -3,12 +3,6 @@ title: Layout Map
 date: 2026-06-06T08:00:00.000+0700
 ---
 
-* [Which template renders which page](#which-template-renders-which-page)
-* [The base template](#the-base-template)
-* [Important partials](#important-partials)
-* [Shortcodes](#shortcodes)
-* [Overriding any of these](#overriding-any-of-these)
-
 This page maps Ananke's templates to the pages they render. It is aimed at
 contributors and advanced users who want to find the right file quickly.
 

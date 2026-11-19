@@ -2,3 +2,10 @@ baseURL = "https://ananke-documentation.netlify.app/"
 locale = "en-gb"
 title = "Ananke Documentation"
 enableRobotsTXT = true
+
+# Show the theme's automatic table of contents on all regular pages.
+[[cascade]]
+[cascade.params]
+toc = true
+[cascade.target]
+kind = 'page'

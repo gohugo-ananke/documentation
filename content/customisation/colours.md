@@ -3,14 +3,6 @@ title: Colours
 date: 2026-01-16T08:00:00.000+0700
 ---
 
-* [How the theme uses classes](#how-the-theme-uses-classes)
-* [Background colour](#background-colour)
-* [Body and font classes](#body-and-font-classes)
-* [Content text colour](#content-text-colour)
-* [Post content typeface](#post-content-typeface)
-* [Header and hero classes](#header-and-hero-classes)
-* [Accessibility and contrast](#accessibility-and-contrast)
-
 Ananke styles colours and typography with [Tachyons](https://tachyons.io/)
 utility classes. You choose a class name (for example `bg-blue` or `near-black`)
 and the theme applies it. This page lists the class-based settings.

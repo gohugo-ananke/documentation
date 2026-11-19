@@ -4,12 +4,6 @@ date: 2026-06-06T08:00:00.000+0700
 weight: 500
 ---
 
-* [What changed](#what-changed)
-* [Migrate a Hugo Module install](#migrate-a-hugo-module-install)
-* [Migrate a Git submodule install](#migrate-a-git-submodule-install)
-* [Confirm the theme is loaded](#confirm-the-theme-is-loaded)
-* [Common failure cases](#common-failure-cases)
-
 Ananke moved to its own organisation in April 2026. The repository changed from: `github.com/theNewDynamic/gohugo-theme-ananke` to `github.com/gohugo-ananke/ananke`.
 
 Both URLs still resolve for now, so existing sites will keep building, but you should update your references so future updates come from the new location.

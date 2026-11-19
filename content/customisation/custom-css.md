@@ -3,12 +3,6 @@ title: Custom CSS
 date: 2026-06-06T08:00:00.000+0700
 ---
 
-* [Where custom CSS goes](#where-custom-css-goes)
-* [Register your CSS](#register-your-css)
-* [Static files and external stylesheets](#static-files-and-external-stylesheets)
-* [Asset pipeline limitations](#asset-pipeline-limitations)
-* [Troubleshooting checklist](#troubleshooting-checklist)
-
 You can add your own CSS on top of the theme's styles without editing the theme.
 This page covers the common path; for the full stylesheet pipeline (build order,
 social hover colours, source maps) see [Styles](/customisation/styles/).

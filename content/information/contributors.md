@@ -1,9 +1,8 @@
 ---
 title: Contributors
 date: 2026-04-15T08:00:00.000+0700
+toc: false
 ---
-
-* [Contributors](#contributors)
 
 Ananke lives from the work of its contributors.
 

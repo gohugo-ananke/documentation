@@ -3,12 +3,6 @@ title: Overriding Partials
 date: 2026-06-06T08:00:00.000+0700
 ---
 
-* [How Hugo lookup order works](#how-hugo-lookup-order-works)
-* [The safe override pattern](#the-safe-override-pattern)
-* [A full example](#a-full-example)
-* [Keep overrides small](#keep-overrides-small)
-* [Update risks](#update-risks)
-
 Ananke is built from many small template files called partials. You can change
 any of them without editing the theme, by placing a file with the same path in
 your own project.

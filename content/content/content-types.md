@@ -3,13 +3,6 @@ title: Content Types and Archetypes
 date: 2026-06-06T08:00:00.000+0700
 ---
 
-* [Pages](#pages)
-* [Posts](#posts)
-* [List pages](#list-pages)
-* [Taxonomy pages](#taxonomy-pages)
-* [Archetypes](#archetypes)
-* [Front matter](#front-matter)
-
 Ananke builds on Hugo's standard content model. This page explains the kinds of
 content you will create and the front matter each one needs. For the full list
 of front matter keys, see [Frontmatter](/content/frontmatter/).

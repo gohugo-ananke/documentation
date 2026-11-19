@@ -3,15 +3,6 @@ title: SEO
 date: 2026-01-16T08:00:00.000+0700
 ---
 
-* [How the page title is built](#how-the-page-title-is-built)
-* [Description](#description)
-* [Social previews: Open Graph and Twitter cards](#social-previews-open-graph-and-twitter-cards)
-* [Canonical URLs](#canonical-urls)
-* [Content indexing](#content-indexing)
-* [Author](#author)
-* [Which front matter affects SEO](#which-front-matter-affects-seo)
-* [Validating your metadata](#validating-your-metadata)
-
 Ananke sets sensible SEO and social-sharing defaults using Hugo's embedded
 metadata templates (Open Graph, Twitter cards, and schema.org). This page
 explains what those defaults do and which front matter controls them.

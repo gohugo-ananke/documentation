@@ -3,15 +3,6 @@ title: Contact Form
 date: 2026-06-06T08:00:00.000+0700
 ---
 
-* [What it outputs](#what-it-outputs)
-* [Required configuration](#required-configuration)
-* [Form fields](#form-fields)
-* [A complete contact page](#a-complete-contact-page)
-* [Using a form backend](#using-a-form-backend)
-* [Spam protection](#spam-protection)
-* [Customising labels](#customising-labels)
-* [Limitations](#limitations)
-
 Ananke includes a `form-contact` shortcode that renders a ready-styled contact
 form you can drop into any page.
 

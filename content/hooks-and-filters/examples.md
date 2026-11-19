@@ -13,17 +13,6 @@ create, where the output lands, and **why** you would reach for that particular 
 If you have not read it yet, start with the [introduction](../introduction/) for the call
 mechanics, and keep the [list of all hooks](../all/) handy for the available hook names.
 
-* [Before you start](#before-you-start)
-* [Add a third-party script in the head](#add-a-third-party-script-in-the-head)
-* [Defer analytics to the end of the body](#defer-analytics-to-the-end-of-the-body)
-* [Add a site-wide announcement bar](#add-a-site-wide-announcement-bar)
-* [Extend the footer (and cache it)](#extend-the-footer-and-cache-it)
-* [Add secondary navigation using the page context](#add-secondary-navigation-using-the-page-context)
-* [Add an author bio after the content](#add-an-author-bio-after-the-content)
-* [Add Commento comments](#add-commento-comments)
-* [Override the article section link](#override-the-article-section-link)
-* [Use a hook as a filter](#use-a-hook-as-a-filter)
-
 ## Before you start
 
 Every example below is a file you create in **your site**, never in the theme:

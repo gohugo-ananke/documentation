@@ -3,12 +3,6 @@ title: robots.txt and Environments
 date: 2026-06-06T08:00:00.000+0700
 ---
 
-* [Enable robots.txt](#enable-robotstxt)
-* [How the environment changes the output](#how-the-environment-changes-the-output)
-* [Deploy previews](#deploy-previews)
-* [Testing the generated file](#testing-the-generated-file)
-* [Overriding the template](#overriding-the-template)
-
 Ananke ships a `robots.txt` template that changes its output depending on the
 build environment, so production sites are crawlable while previews and local
 builds are not.

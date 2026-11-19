@@ -132,3 +132,51 @@ header nav img {
         grid-row: 2;
     }
 }
+
+/* Table of contents: the theme renders it in an aside when `toc` is true
+   (set for all pages in config/_default/hugo.toml). */
+#TableOfContents ul {
+    margin: 0;
+}
+
+#TableOfContents li {
+    margin: 0.35rem 0;
+}
+
+#TableOfContents ul ul {
+    margin-top: 0.35rem;
+    padding-left: 1rem;
+}
+
+/* Wide screens: keep the table of contents in view while reading. */
+@media (min-width: 60em) {
+    aside:has(#TableOfContents) {
+        position: sticky;
+        top: 1rem;
+        align-self: flex-start;
+        max-height: calc(100vh - 2rem);
+        overflow-y: auto;
+    }
+}
+
+/* Small screens: the aside comes after the content, so show it after the
+   page header instead. */
+@media not all and (min-width: 60em) {
+    article:has(#TableOfContents) {
+        display: flex;
+        flex-direction: column;
+    }
+
+    article:has(#TableOfContents) > * {
+        order: 2;
+    }
+
+    article:has(#TableOfContents) > header {
+        order: 0;
+    }
+
+    article:has(#TableOfContents) > aside {
+        order: 1;
+        margin-top: 1.5rem;
+    }
+}
