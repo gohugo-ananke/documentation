@@ -180,3 +180,44 @@ header nav img {
         margin-top: 1.5rem;
     }
 }
+
+/* A clear secondary action; override the theme link's dim/colour utilities. */
+.docs-edit-page a[href] {
+    display: inline-flex;
+    align-items: center;
+    min-height: 2.75rem;
+    max-width: 100%;
+    padding: 0.625rem 1rem;
+    border: 1px solid var(--color-ananke-700);
+    border-radius: 4px;
+    color: var(--color-ananke-975);
+    background-color: var(--color-ananke-0);
+    font-family: var(--font-inter-variable);
+    font-size: 1rem;
+    line-height: 1.5;
+    text-decoration: none;
+    opacity: 1;
+    transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out;
+}
+
+.docs-edit-page a[href]:hover,
+.docs-edit-page a[href]:focus {
+    color: var(--color-ananke-0);
+    background-color: var(--color-ananke-700);
+    opacity: 1;
+}
+
+.docs-edit-page a[href]:focus-visible {
+    outline: 2px solid var(--color-ananke-700);
+    outline-offset: 3px;
+}
+
+.docs-edit-page a[href]:active {
+    background-color: var(--color-ananke-900);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .docs-edit-page a[href] {
+        transition: none;
+    }
+}
