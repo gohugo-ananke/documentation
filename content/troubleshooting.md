@@ -79,12 +79,20 @@ broken custom CSS reference.
 
 **Symptoms:** no navigation links appear in the header.
 
-**Likely causes:** no `main` menu is defined, or entries use nested children.
+**Likely causes:** no `main` menu is defined, or your project overrides `layouts/_partials/site-navigation.html` with a version that does not render the menu.
 
 **Fix:**
 
 * Define a `main` menu (see [Menus](/configuration/menus/)).
-* Keep it flat — the theme renders a single level only.
+* If your project has its own `layouts/_partials/site-navigation.html`, compare it with the theme's current version.
+
+### Submenus are always open
+
+**Symptoms:** child entries of the menu show as nested lists below their parent entry, and there are no toggle buttons.
+
+**Likely causes:** JavaScript is turned off in the browser, or your project overrides `layouts/_partials/site-scripts.html` without the submenu script. Without the script, Ananke shows the submenus open, so that readers can still reach every page.
+
+**Fix:** if your project overrides `layouts/_partials/site-scripts.html`, copy the submenu script block from the theme's version of the partial into your override. See [Menus → Common mistakes](/configuration/menus/#common-mistakes).
 
 ### Images are not showing
 
