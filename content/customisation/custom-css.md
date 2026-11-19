@@ -71,9 +71,11 @@ custom_css = ["css/custom.css"]   # loaded from static/css/custom.css
 
 * **Sass/SCSS is not compiled** by the theme. Precompile your Sass to CSS and
   reference the `.css` output, or process it in your own partial (see
-  [Styles → SASS/SCSS](/customisation/styles/#sassscss-and-other-pre-processors)).
+  [Styles → Sass, SCSS, and other preprocessors](/customisation/styles/#sass-scss-and-other-preprocessors)).
+* **Paths resolve from `assets/ananke/css/`.** The theme joins all files into one bundle before Hugo processes it, so `url()` paths starting with `./` or `../` resolve from `assets/ananke/css/`, not from your file's directory. An `@import` rule in your file is not included in the bundle. See [Paths in custom CSS](/customisation/styles/#paths-in-custom-css).
 * The bundle is minified and fingerprinted in production builds only; in
   development it stays readable with a linked source map.
+* **Upgrading from Ananke 2.15 or earlier?** Read [Upgrade from Ananke 2.15 or earlier](/customisation/styles/#upgrade-from-ananke-215-or-earlier).
 
 ## Troubleshooting checklist
 
