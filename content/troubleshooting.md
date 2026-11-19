@@ -143,7 +143,9 @@ missing Go for Module installs.
 reports an unsupported feature.
 
 **Fix:** check `hugo version` against the theme's minimum (declared in the
-theme's `module.toml`) and install the extended edition if needed.
+theme's `module.toml`). Use the same Hugo version locally and in production.
+We recommend the latest Hugo version. See
+[Confirm Hugo version compatibility](/getting-started/#2-confirm-hugo-version-compatibility).
 
 ## Sorry, but "$FEATURE does not work" doesn't work for us
 

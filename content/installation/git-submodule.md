@@ -17,14 +17,14 @@ Git Submodule based installation for the [Ananke theme](https://github.com/gohug
 
 ## Requirements
 
-1. [Install Hugo](https://gohugo.io/installation/linux/) (extended or extended/deploy edition, 0.128.0 or later)
+1. [Install Hugo](https://gohugo.io/installation/) v0.160.0 or later, standard or deploy edition. We recommend the latest Hugo version. See [Confirm Hugo version compatibility](/getting-started/#2-confirm-hugo-version-compatibility).
 2. [Install Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 
 ## Installation
 
 To install or create a Hugo website from scratch with the Ananke theme using the submodule method, follow these steps:
 
-Verify that you have installed Hugo 0.128.0 or later.
+Verify that you have installed Hugo v0.160.0 or later.
 
 ```bash
 hugo version

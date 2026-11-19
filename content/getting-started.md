@@ -21,11 +21,15 @@ Choose one installation method:
 
 ## 2) Confirm Hugo version compatibility
 
-Check what Hugo version you have installed with `hugo version` and then compare against the minimum requirement in `config/_default/module.toml`.
+Ananke requires Hugo v0.160.0 or later. The theme declares this minimum in its own `config/_default/module.toml` file. We recommend the latest Hugo version, because we test Ananke against the latest Hugo release.
+
+Check which Hugo version you have installed:
 
 ```bash
 hugo version
 ```
+
+Use the standard edition of Hugo, or the deploy edition if you deploy your site directly from Hugo. Since Hugo v0.170.0, the extended editions are no longer available or needed: the standard and deploy editions encode WebP images, and Hugo uses Dart Sass for Sass. If you use a Hugo version from v0.160.0 to v0.169.x, you need the extended edition only to process WebP images. For details, see [Hugo editions](https://gohugo.io/installation/linux/#editions).
 
 ## 3) Configure required basics
 
