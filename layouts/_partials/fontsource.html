@@ -1,0 +1,32 @@
+{{- /*
+  Returns the Fontsource @font-face rules for the site as one CSS string.
+
+  The theme loads this partial through ananke.custom_css (see
+  config/_default/params.toml) and adds the result to its CSS bundle.
+
+  The packages are npm devDependencies (see package.json). Hugo mounts
+  node_modules on assets, so each stylesheet resolves as an asset path.
+
+  The theme concatenates all stylesheets into one file before css.Build
+  bundles the font files. Relative URLs such as url(./files/x.woff2) then
+  do not resolve. This partial rewrites them to package paths, for example
+  url(@fontsource/anton/files/x.woff2).
+*/ -}}
+{{- $stylesheets := collections.Slice
+  "@fontsource/anton/index.css"
+  "@fontsource-variable/inter/wght.css"
+  "@fontsource-variable/inter/wght-italic.css"
+  "@fontsource/monaspace-krypton/400.css"
+  "@fontsource/monaspace-krypton/400-italic.css"
+  "@fontsource/monaspace-krypton/700.css"
+-}}
+{{- $css := collections.Slice -}}
+{{- range $stylesheets -}}
+  {{- with resources.Get . -}}
+    {{- $files := printf "url(%s/files/" (path.Dir .Name | strings.TrimPrefix "/") -}}
+    {{- $css = $css | collections.Append (strings.Replace .Content "url(./files/" $files) -}}
+  {{- else -}}
+    {{- errorf "[fontsource] Stylesheet %q was not found. Run npm ci to install the font packages." . -}}
+  {{- end -}}
+{{- end -}}
+{{- return collections.Delimit $css "\n" -}}
