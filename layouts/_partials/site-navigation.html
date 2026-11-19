@@ -14,18 +14,20 @@
     </div>
     <div class="docs-nav-actions items-center">
       {{ partials.Include "i18nlist.html" . }}
-      {{ if .Site.Menus.main }}
-        <ul class="{{ compare.Conditional (compare.Eq $.Site.Language.Direction "rtl") "pr0 ml3" "pl0 mr3" }}">
-          {{ range .Site.Menus.main }}
-          <li class="list f5 f4-ns fw4 dib {{ compare.Conditional (compare.Eq $.Site.Language.Direction "rtl") "pl3" "pr3" }}">
-            <a class="hover-white white-90 no-underline" href="{{ .URL }}" title="{{ lang.Translate "pageTitle" . }}">
+      {{ partials.IncludeCached "social/follow.html" . }}
+    </div>
+    {{ with .Site.Menus.main }}
+      {{/* Docs override: the menu has its own row, and the current section is marked with aria-current. */}}
+      <ul class="docs-nav-menu list pl0 ma0">
+        {{ range . }}
+          {{ $current := or ($.IsMenuCurrent "main" .) ($.HasMenuCurrent "main" .) }}
+          <li class="f5 fw4">
+            <a class="hover-white white-90 no-underline" href="{{ .URL }}" title="{{ lang.Translate "pageTitle" . }}"{{ if $.IsMenuCurrent "main" . }} aria-current="page"{{ else if $current }} aria-current="true"{{ end }}>
               {{ .Name }}
             </a>
           </li>
-          {{ end }}
-        </ul>
-      {{ end }}
-      {{ partials.IncludeCached "social/follow.html" . }}
-    </div>
+        {{ end }}
+      </ul>
+    {{ end }}
   </div>
 </nav>
