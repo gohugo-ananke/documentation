@@ -1,6 +1,8 @@
 ---
 title: Styles
+description: "Change fonts and body classes, and understand how Ananke builds its stylesheet."
 date: 2026-01-16T08:00:00.000+0700
+weight: 200
 ---
 
 ## Update font or body classes

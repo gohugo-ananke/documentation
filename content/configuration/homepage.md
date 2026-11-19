@@ -1,6 +1,8 @@
 ---
 title: Homepage
+description: "Control the homepage text and the list of recent posts below it."
 date: 2026-06-06T08:00:00.000+0700
+weight: 200
 ---
 
 The homepage is built from two parts: the body copy you write in your homepage

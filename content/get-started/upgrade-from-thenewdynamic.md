@@ -1,7 +1,11 @@
 ---
-title: Upgrading from theNewDynamic to gohugo-ananke
+title: Upgrade from theNewDynamic to gohugo-ananke
+description: "Move an existing site from the old theNewDynamic repository to github.com/gohugo-ananke/ananke."
 date: 2026-06-06T08:00:00.000+0700
-weight: 500
+weight: 400
+aliases:
+  - /installation/upgrading-from-thenewdynamic/
+  - /installation/migration-from-thenewdynamic/
 ---
 
 Ananke moved to its own organisation in April 2026. The repository changed from: `github.com/theNewDynamic/gohugo-theme-ananke` to `github.com/gohugo-ananke/ananke`.
@@ -15,7 +19,7 @@ Both URLs still resolve for now, so existing sites will keep building, but you s
   `github.com/theNewDynamic/gohugo-theme-ananke/v2` to
   `github.com/gohugo-ananke/ananke/v2`. The `/v2` suffix is unchanged and still
   required for the latest theme on the v2 branch.
-* **Installation methods are unchanged.** If you are installing fresh rather than migrating, follow [Install as Hugo Module](/installation/gohugo-module/) or [Install as Git Submodule](/installation/git-submodule/) instead of this page.
+* **Installation methods are unchanged.** If you are installing fresh rather than migrating, follow [Install as a Hugo Module](/get-started/hugo-module/) or [Install as a Git submodule](/get-started/git-submodule/) instead of this page.
 
 ## Migrate a Hugo Module install
 
@@ -81,7 +85,7 @@ hugo config | grep -i theme
   `git config --file .gitmodules --get-regexp url`.
 * **Styling missing after migration.** Clear Hugo's caches and rebuild:
   `hugo --gc` (Modules) or delete `resources/_gen` and rebuild. See
-  [Troubleshooting](/troubleshooting/).
+  [Troubleshooting](/help/troubleshooting/).
 * **Build still uses the old version.** For Modules, run
   `hugo mod get -u github.com/gohugo-ananke/ananke/v2` to force an update, then
   `hugo mod tidy`.

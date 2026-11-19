@@ -1,6 +1,8 @@
 ---
-title: Multilingual Site
+title: Multilingual site
+description: "A complete configuration for a site in English and German with translated menus."
 date: 2026-06-06T08:00:00.000+0700
+weight: 200
 ---
 
 A two-language site (English and German) with side-by-side content and

@@ -1,6 +1,10 @@
 ---
-title: "External Links"
+title: External links
+description: "CSS snippets that mark links that open in a new window and show link addresses in print."
 date: 2026-01-16T08:00:00.000+0700
+weight: 400
+aliases:
+  - /cookbook/socials/external-links/
 ---
 ```css
 a.ananke-social-link[target="_blank"]::after {

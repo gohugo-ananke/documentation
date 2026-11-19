@@ -1,7 +1,12 @@
 ---
 title: Contributors
+description: "The people who contribute to Ananke and its documentation."
 date: 2026-04-15T08:00:00.000+0700
+weight: 300
 toc: false
+aliases:
+  - /information/contributors/
+  - /information/
 ---
 
 Ananke lives from the work of its contributors.

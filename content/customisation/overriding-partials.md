@@ -1,6 +1,8 @@
 ---
-title: Overriding Partials
+title: Overriding partials
+description: "Replace a theme template with your own version without editing the theme."
 date: 2026-06-06T08:00:00.000+0700
+weight: 600
 ---
 
 Ananke is built from many small template files called partials. You can change
@@ -56,7 +58,7 @@ keeps coming from the theme.
 * Copy only the partial you need, not the whole `layouts/` tree.
 * Change as little as possible inside it.
 * If you only need to add markup at a specific point, check whether a
-  [layout hook](/hooks-and-filters/) already exists for that spot — hooks are
+  [layout hook](/customisation/hooks-and-filters/) already exists for that spot — hooks are
   safer than full overrides because they survive theme changes untouched.
 
 ## Update risks

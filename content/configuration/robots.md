@@ -1,6 +1,8 @@
 ---
-title: robots.txt and Environments
+title: robots.txt and environments
+description: "Control robots.txt and search engine indexing for production, preview, and local builds."
 date: 2026-06-06T08:00:00.000+0700
+weight: 700
 ---
 
 Ananke ships a `robots.txt` template that changes its output depending on the

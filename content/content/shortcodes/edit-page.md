@@ -1,7 +1,11 @@
 ---
 title: Edit page
+description: "Add a link that opens the source file of the current page in the GitHub editor."
 date: 2026-06-07T08:00:00.000+0700
+weight: 200
 since: "2.19.0"
+aliases:
+  - /shortcodes/edit-page/
 ---
 
 {{< since >}}
@@ -237,7 +241,7 @@ editing the theme — see
 
 | Shortcode | Use when |
 | --- | --- |
-| [`since`](/shortcodes/since/) | You want to mark which release introduced a feature. It also reads its settings from `params.ananke.shortcodes`. |
+| [`since`](/content/shortcodes/since/) | You want to mark which release introduced a feature. It also reads its settings from `params.ananke.shortcodes`. |
 
 ## Troubleshooting
 

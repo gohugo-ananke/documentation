@@ -1,6 +1,8 @@
 ---
-title: General
+title: Authors and read more links
+description: "Show the author of a page and change the text of read more links."
 date: 2026-01-16T08:00:00.000+0700
+weight: 200
 ---
 
 ## Author
@@ -67,6 +69,6 @@ Using front matter and cascade, this can be customized for a whole section, or j
   read_more_copy: Read more about this bridge
 ```
 
-## Show Reading Time and Word Count
+## Reading time and word count
 
-If you add a key of `show_reading_time` true to either the Config Params, a page or section's front matter, articles will show the reading time and word count.
+To show the reading time and word count on single pages, see [Summaries and reading time](/content/summaries-and-reading-time/#reading-time-and-word-count).

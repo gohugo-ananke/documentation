@@ -1,6 +1,8 @@
 ---
-title: General Configuration
+title: General configuration
+description: "Set the logo, menu, date format, taxonomies, dates, section titles, and list page images."
 date: 2026-01-16T08:00:00.000+0700
+weight: 100
 ---
 
 > [!IMPORTANT]
