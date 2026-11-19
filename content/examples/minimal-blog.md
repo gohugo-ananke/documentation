@@ -1,6 +1,8 @@
 ---
-title: Minimal Blog
+title: Minimal blog
+description: "A complete configuration for a small blog with posts and an about page."
 date: 2026-06-06T08:00:00.000+0700
+weight: 100
 ---
 
 A small blog: a homepage that lists recent posts, an about page, and a posts

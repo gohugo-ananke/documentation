@@ -1,8 +1,11 @@
 ---
-title: Introduction to Hooks & Filters
+title: "Introduction to hooks & filters"
+description: "How hooks and filters work, and how to add markup or change values without copying templates."
 date: 2026-05-17T08:00:00.000+0700
 weight: 100
 since: "2.17.0"
+aliases:
+  - /hooks-and-filters/introduction/
 ---
 
 {{< since >}}

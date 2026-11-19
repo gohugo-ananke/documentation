@@ -1,13 +1,15 @@
 ---
-title: Header and Hero
+title: Header and hero
+description: "Set a featured image for the header and learn how Ananke finds it."
 date: 2026-06-06T08:00:00.000+0700
+weight: 300
 ---
 
 The header (or "hero") is the large area at the top of every page. It shows the
 page title and, optionally, a background image. This page explains how the
 header behaves and which front matter and configuration values control it. For
 fine styling — image fitting, dimming overlay, header height, transparent
-images — see [Hero Section](/customisation/hero-section/).
+images — see [Hero section styling](/customisation/hero-section/).
 
 ## The two kinds of header
 

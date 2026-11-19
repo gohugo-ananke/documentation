@@ -1,6 +1,8 @@
 ---
 title: Taxonomies
+description: "Group content with tags and categories, or with your own taxonomies."
 date: 2026-06-06T08:00:00.000+0700
+weight: 600
 ---
 
 Taxonomies group your content by shared terms. Ananke supports Hugo's two

@@ -1,6 +1,10 @@
 ---
 title: Troubleshooting
+description: "Diagnostic commands, solutions for common problems, and what to include when you ask for help."
 date: 2026-01-16T08:00:00.000+0700
+weight: 100
+aliases:
+  - /troubleshooting/
 ---
 
 ## Diagnostic commands
@@ -115,7 +119,7 @@ no configured profile.
 `theNewDynamic/gohugo-theme-ananke`.
 
 **Fix:** follow the
-[Migration from theNewDynamic](/installation/migration-from-thenewdynamic/) guide.
+[Upgrade from theNewDynamic](/get-started/upgrade-from-thenewdynamic/) guide.
 
 ### The Netlify build fails
 
@@ -139,7 +143,7 @@ reports an unsupported feature.
 **Fix:** check `hugo version` against the theme's minimum (declared in the
 theme's `module.toml`). Use the same Hugo version locally and in production.
 We recommend the latest Hugo version. See
-[Confirm Hugo version compatibility](/getting-started/#2-confirm-hugo-version-compatibility).
+[Confirm Hugo version compatibility](/get-started/#2-confirm-hugo-version-compatibility).
 
 ## Sorry, but "$FEATURE does not work" doesn't work for us
 

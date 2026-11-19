@@ -1,6 +1,8 @@
 ---
-title: No-blog Static Site
+title: No-blog static site
+description: "A complete configuration for a brochure site with standalone pages and no blog."
 date: 2026-06-06T08:00:00.000+0700
+weight: 300
 ---
 
 A simple brochure site with a homepage and a few standalone pages — no blog or
@@ -100,6 +102,6 @@ The homepage shows only the introduction and hero image — no post list, becaus
 
 ## Common adjustments
 
-* Add a [contact form](/shortcodes/contact-form/) to a `contact.md` page.
+* Add a [contact form](/content/shortcodes/contact-form/) to a `contact.md` page.
 * Set a brand colour with `background_color_class` (see [Colours](/customisation/colours/)).
 * Add a hero image per page with `featured_image`.

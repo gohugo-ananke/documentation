@@ -1,7 +1,9 @@
 ---
 title: Shortcodes
 date: 2026-06-06T08:00:00.000+0700
-weight: 350
+weight: 700
+aliases:
+  - /shortcodes/
 ---
 
 Shortcodes are small snippets you place in your Markdown content to render
@@ -30,7 +32,7 @@ lists what it does, its parameters, and an example.
   `params.ananke.shortcodes.edit_page.repo_url` (a build-time warning is printed
   and nothing is rendered).
 
-See the [Edit page](/shortcodes/edit-page/) page for configuration and for
+See the [Edit page](/content/shortcodes/edit-page/) page for configuration and for
 showing the link automatically below every page.
 
 ## form-contact
@@ -50,24 +52,25 @@ showing the link automatically below every page.
 * **Common mistakes:** omitting `action` (the form then has nowhere to submit);
   expecting Netlify Forms to work without overriding the shortcode.
 
-See the [Contact Form](/shortcodes/contact-form/) page for full details,
+See the [Contact Form](/content/shortcodes/contact-form/) page for full details,
 backends, and spam-protection notes.
 
 ## page-index
 
-* **Purpose:** render an index of child pages for a section. Used by the
-  documentation's own section pages to list their contents.
+* **Purpose:** render an index of all regular pages of the site, grouped by
+  top-level section. The homepage of this documentation uses it.
 * **Syntax:** `{{</* page-index */>}}`
 * **Parameters:** none.
-* **Output:** a list of the current section's pages.
+* **Output:** one heading for each top-level section, sorted by the section's
+  `weight`, followed by a list of links to the pages in that section.
 * **Example:**
 
   ```go-html-template
   {{</* page-index */>}}
   ```
 
-* **Common mistakes:** using it on a single page rather than a section
-  (`_index.md`) page, where there are no children to list.
+* **Common mistakes:** expecting it to list only the pages of the current
+  section. It always lists the pages of the whole site.
 
 ## since
 
@@ -89,7 +92,7 @@ backends, and spam-protection notes.
 * **Common mistakes:** calling it with no argument on a page that has no `since`
   front matter (a build-time warning is printed and nothing is rendered).
 
-See the [Since](/shortcodes/since/) page for configuring the release URL and
+See the [Since](/content/shortcodes/since/) page for configuring the release URL and
 front-matter usage.
 
 ---

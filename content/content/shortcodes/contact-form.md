@@ -1,6 +1,10 @@
 ---
-title: Contact Form
+title: Contact form
+description: "Add a styled contact form to a page with the form-contact shortcode."
 date: 2026-06-06T08:00:00.000+0700
+weight: 100
+aliases:
+  - /shortcodes/contact-form/
 ---
 
 Ananke includes a `form-contact` shortcode that renders a ready-styled contact

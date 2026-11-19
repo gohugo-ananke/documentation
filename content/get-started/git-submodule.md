@@ -1,19 +1,22 @@
 ---
-title: Installation as Git Submodule
+title: Install as a Git submodule
+description: "Install Ananke as a Git submodule in the themes folder of your site."
 date: 2026-01-16T08:00:00.000+0700
-weight: 200
+weight: 300
+aliases:
+  - /installation/git-submodule/
 ---
 
 Git Submodule based installation for the [Ananke theme](https://github.com/gohugo-ananke/ananke) for [Hugo](https://gohugo.io/).
 
-## Methods
+## Installation methods
 
-* [Install Ananke as Hugo Module](/installation/gohugo-module/)
-* **[Install Ananke as Git Submodule](/installation/git-submodule/) - this page**
+* [Install as a Hugo Module](/get-started/hugo-module/)
+* **[Install as a Git submodule](/get-started/git-submodule/) (this page)**
 
 ## Requirements
 
-1. [Install Hugo](https://gohugo.io/installation/) v0.160.0 or later, standard or deploy edition. We recommend the latest Hugo version. See [Confirm Hugo version compatibility](/getting-started/#2-confirm-hugo-version-compatibility).
+1. [Install Hugo](https://gohugo.io/installation/) v0.160.0 or later, standard or deploy edition. We recommend the latest Hugo version. See [Confirm Hugo version compatibility](/get-started/#2-confirm-hugo-version-compatibility).
 2. [Install Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 
 ## Installation

@@ -1,6 +1,10 @@
 ---
-title: "Add a LinkedIn icon"
+title: Add a LinkedIn icon
+description: "Add the LinkedIn icon that Ananke cannot include, so that LinkedIn follow and share links show."
 date: 2026-09-26T08:00:00.000+0700
+weight: 500
+aliases:
+  - /cookbook/socials/linkedin-icon/
 ---
 
 Ananke has a pre-configured `linkedin` network, but the theme does not include a LinkedIn icon. If you add `linkedin` to your follow or share networks without an icon, the link does not show on your website.

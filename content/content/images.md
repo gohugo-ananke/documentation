@@ -1,6 +1,8 @@
 ---
 title: Images
+description: "Add images to pages, headers, and link previews, and avoid common path mistakes."
 date: 2026-06-06T08:00:00.000+0700
+weight: 400
 ---
 
 This page explains the ways to add images to an Ananke site and the paths each

@@ -1,6 +1,10 @@
 ---
-title: Layout Map
+title: Layout map
+description: "Find the template file that renders each type of page."
 date: 2026-06-06T08:00:00.000+0700
+weight: 700
+aliases:
+  - /contributing/layout-map/
 ---
 
 This page maps Ananke's templates to the pages they render. It is aimed at
@@ -41,17 +45,17 @@ Partials live in `layouts/_partials/`:
 * `site-footer.html` — the footer.
 * `social/follow.html` and `social/share.html` — social follow and share links.
 * `categories.html` and `tags.html` — taxonomy links on single pages.
-* `hook.html` — renders [layout hooks](/hooks-and-filters/) at defined points.
+* `hook.html` — renders [layout hooks](/customisation/hooks-and-filters/) at defined points.
 * `site-style.html` and `site-scripts.html` — the CSS and JS pipelines.
 
 ## Shortcodes
 
 Shortcodes live in `layouts/_shortcodes/`:
 
-* `form-contact.html` — the [contact form](/shortcodes/contact-form/).
+* `form-contact.html` — the [contact form](/content/shortcodes/contact-form/).
 * `page-index.html` — lists a section's child pages.
 
-See the [Shortcodes reference](/shortcodes/) for usage.
+See the [Shortcodes reference](/content/shortcodes/) for usage.
 
 ## Overriding any of these
 

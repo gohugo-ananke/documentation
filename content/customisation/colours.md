@@ -1,6 +1,8 @@
 ---
 title: Colours
+description: "Change the colours of the site with Tachyons classes."
 date: 2026-01-16T08:00:00.000+0700
+weight: 100
 ---
 
 Ananke styles colours and typography with [Tachyons](https://tachyons.io/)
@@ -76,7 +78,7 @@ post_content_classes = "lato"
 
 The hero/header has its own class settings — `featured_image_class`,
 `cover_dimming_class`, and `header_section_class`. These are documented with
-examples in [Hero Section](/customisation/hero-section/).
+examples in [Hero section styling](/customisation/hero-section/).
 
 ## Accessibility and contrast
 

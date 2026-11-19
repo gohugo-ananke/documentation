@@ -1,6 +1,8 @@
 ---
 title: Menus
+description: "Define the main navigation menu in the header, with optional submenus."
 date: 2026-06-06T08:00:00.000+0700
+weight: 400
 ---
 
 Ananke shows a navigation menu in the header, next to the site title (or logo)

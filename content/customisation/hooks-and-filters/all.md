@@ -1,8 +1,11 @@
 ---
-title: All Hooks & Filters
+title: "All hooks & filters"
+description: "The list of all hook points in the theme templates."
 date: 2026-05-17T08:00:00.000+0700
-weight: 500
+weight: 300
 since: "2.17.0"
+aliases:
+  - /hooks-and-filters/all/
 ---
 
 {{< since >}}

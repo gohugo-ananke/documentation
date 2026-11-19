@@ -1,6 +1,8 @@
 ---
-title: General Configuration
+title: General configuration
+description: "Set the logo, menu, date format, taxonomies, dates, section titles, and list page images."
 date: 2026-01-16T08:00:00.000+0700
+weight: 100
 ---
 
 > [!IMPORTANT]
@@ -174,4 +176,4 @@ show_list_images = true
 
 When enabled, list pages use the same image summary card that is used for recent posts on the home page. Pages without a configured featured image still render without an image. Date display is controlled separately with `ananke.pages.show_summary_date`, with `ananke.pages.show_date` as its fallback.
 
-See [Hero section](/customisation/hero-section/) for information about configuring featured images.
+See [Header and hero](/configuration/header-and-hero/) for information about configuring featured images.

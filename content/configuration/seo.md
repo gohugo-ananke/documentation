@@ -1,6 +1,8 @@
 ---
 title: SEO
+description: "Understand the SEO and link preview defaults, and the front matter that controls them."
 date: 2026-01-16T08:00:00.000+0700
+weight: 600
 ---
 
 Ananke sets sensible SEO and social-sharing defaults using Hugo's embedded

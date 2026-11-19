@@ -1,6 +1,8 @@
 ---
-title: Content Types and Archetypes
+title: Content types and archetypes
+description: "The types of content in an Ananke site and the front matter each type needs."
 date: 2026-06-06T08:00:00.000+0700
+weight: 300
 ---
 
 Ananke builds on Hugo's standard content model. This page explains the kinds of

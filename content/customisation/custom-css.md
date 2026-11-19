@@ -1,6 +1,8 @@
 ---
 title: Custom CSS
+description: "Add your own CSS files on top of the theme styles."
 date: 2026-06-06T08:00:00.000+0700
+weight: 300
 ---
 
 You can add your own CSS on top of the theme's styles without editing the theme.

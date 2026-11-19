@@ -1,8 +1,11 @@
 ---
 title: Hook examples
+description: "Worked examples for the theme's hook points."
 date: 2026-05-17T08:00:00.000+0700
-weight: 300
+weight: 200
 since: "2.17.0"
+aliases:
+  - /hooks-and-filters/examples/
 ---
 
 {{< since >}}

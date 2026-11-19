@@ -1,19 +1,22 @@
 ---
-title: Installation as a Hugo Module (recommended)
+title: Install as a Hugo Module (recommended)
+description: "Install Ananke as a Hugo Module, the recommended method."
 date: 2026-01-16T08:00:00.000+0700
-weight: 150
+weight: 200
+aliases:
+  - /installation/gohugo-module/
 ---
 
 Hugo Module based installation for the [Ananke theme](https://github.com/gohugo-ananke/ananke) for [Hugo](https://gohugo.io/).
 
-## Methods
+## Installation methods
 
-* **[Install Ananke as Hugo Module](/installation/gohugo-module/) - this page**
-* [Install Ananke as Git Submodule](/installation/git-submodule/)
+* **[Install as a Hugo Module](/get-started/hugo-module/) (this page)**
+* [Install as a Git submodule](/get-started/git-submodule/)
 
 ## Requirements
 
-1. [Install Hugo](https://gohugo.io/installation/) v0.160.0 or later, standard or deploy edition. We recommend the latest Hugo version. See [Confirm Hugo version compatibility](/getting-started/#2-confirm-hugo-version-compatibility).
+1. [Install Hugo](https://gohugo.io/installation/) v0.160.0 or later, standard or deploy edition. We recommend the latest Hugo version. See [Confirm Hugo version compatibility](/get-started/#2-confirm-hugo-version-compatibility).
 2. [Install Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 3. [Install Golang](https://golang.org/doc/install)
 

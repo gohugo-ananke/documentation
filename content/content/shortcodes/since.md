@@ -1,7 +1,11 @@
 ---
 title: Since
+description: "Show a badge with the theme release that introduced a feature."
 date: 2026-06-07T08:00:00.000+0700
+weight: 300
 since: "2.18.0"
+aliases:
+  - /shortcodes/since/
 ---
 
 {{< since >}}

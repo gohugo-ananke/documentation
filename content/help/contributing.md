@@ -1,6 +1,11 @@
 ---
-title: Documentation Style
+title: Contributing to the documentation
+description: "The writing rules for pages in this documentation."
 date: 2026-06-06T08:00:00.000+0700
+weight: 200
+aliases:
+  - /contributing/
+  - /contributing/documentation-style/
 ---
 
 These rules keep Ananke's documentation beginner-friendly and consistent. Follow

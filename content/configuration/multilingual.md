@@ -1,6 +1,8 @@
 ---
 title: Multilingual and i18n
+description: "Publish a site in more than one language and translate the theme's interface strings."
 date: 2026-06-06T08:00:00.000+0700
+weight: 900
 ---
 
 Ananke is fully multilingual. It ships interface translations for many languages
