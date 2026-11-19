@@ -22,7 +22,7 @@ partials, assets, i18n) belong in the
 
 * Fix typos, broken links, or outdated instructions.
 * Expand thin pages or add missing feature documentation.
-* Add recipes to the `cookbook/` section.
+* Add recipes to the `examples/` section.
 * Improve the docs site itself (display, navigation, accessibility).
 
 If you are documenting a feature that does not behave as described, please open an issue on the
@@ -137,7 +137,7 @@ Structure commits logically — do not dump unrelated changes into a single comm
 ## Contributors list
 
 The contributors table on the
-[contributors page](https://ananke-documentation.netlify.app/information/contributors/) is
+[contributors page](https://ananke-documentation.netlify.app/help/contributors/) is
 generated from `data/contributors/` by `scripts/merge-all-contributors.mjs`
 (`npm run contributors:merge`). Do not edit the generated list by hand.
 

@@ -5,7 +5,7 @@ flexible, production-ready starter theme for [Hugo](https://gohugo.io/).
 
 This site is itself **built with Ananke**, so it doubles as a living example of the theme in use.
 
-[![All Contributors](https://img.shields.io/github/all-contributors/davidsneighbour/gohugo-theme-ananke-documentation?color=ee8449&style=flat-square)](https://ananke-documentation.netlify.app/information/contributors/)
+[![All Contributors](https://img.shields.io/github/all-contributors/davidsneighbour/gohugo-theme-ananke-documentation?color=ee8449&style=flat-square)](https://ananke-documentation.netlify.app/help/contributors/)
 
 * **Live site:** [ananke-documentation.netlify.app](https://ananke-documentation.netlify.app/)
 * **Theme repository:** [github.com/gohugo-ananke/ananke](https://github.com/gohugo-ananke/ananke)
@@ -19,17 +19,17 @@ source (layouts, partials, assets, i18n) lives in the separate
 Hugo Module.
 
 ```text
-content/            # all documentation pages (Markdown)
-  installation/     # install as Hugo Module or git submodule
-  getting-started.md
-  configuration/    # site/params configuration (general, SEO, social…)
+content/            # all documentation pages (Markdown); one section per main menu entry
+  get-started/      # first steps, installation (Hugo Module, Git submodule), upgrading
+  configuration/    # site/params configuration (general, menus, SEO, social…)
   content/          # content & front-matter features
-  customisation/    # colours, comments, hero, styles
-  hooks-and-filters/# the theme's hooks & filters system
-  cookbook/         # copy-paste recipes
-  information/      # contributors, meta
+    shortcodes/     # the theme's shortcodes
+  customisation/    # colours, styles, hero, comments, partials
+    hooks-and-filters/ # the theme's hooks & filters system
+  examples/         # complete example sites and copy-paste recipes
+  help/             # troubleshooting, contributing, contributors
 config/             # Hugo configuration
-  _default/         # production config (uses the published ananke module)
+  _default/         # production config (uses the published ananke module; menus.toml holds the main menu)
   development/      # local config (replaces the module with ../ananke)
 assets/             # docs-only CSS, fonts (the theme provides its own)
 layouts/            # docs-only overrides (e.g. the `since` shortcode)
