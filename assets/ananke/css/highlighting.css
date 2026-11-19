@@ -472,15 +472,27 @@
  * Heading anchor links (see layouts/_markup/render-heading.html)      *
  * ------------------------------------------------------------------ */
 
+.heading-permalink {
+    position: relative;
+}
+
 .heading-anchor {
-    margin-left: 0.35em;
+    position: absolute;
+    inset-inline-end: 100%;
+    inset-block-start: 0.35em;
+    display: grid;
+    place-items: center;
+    inline-size: 1rem;
+    min-block-size: 1.5rem;
+    font-size: 1rem;
+    line-height: 1;
     font-weight: 400;
     text-decoration: none;
     opacity: 0;
     transition: opacity 0.15s ease-in-out;
 }
 
-:is(h1, h2, h3, h4, h5, h6):hover .heading-anchor,
+.heading-permalink:hover .heading-anchor,
 .heading-anchor:focus-visible {
     opacity: 0.6;
 }
@@ -488,6 +500,17 @@
 .heading-anchor:hover,
 .heading-anchor:focus-visible {
     opacity: 1;
+}
+
+.heading-anchor:focus-visible {
+    outline: 2px solid var(--color-ananke-700);
+    outline-offset: -2px;
+}
+
+@media (hover: none) {
+    .heading-anchor {
+        opacity: 1;
+    }
 }
 
 @media (prefers-reduced-motion: reduce) {
