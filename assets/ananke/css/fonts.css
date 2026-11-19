@@ -1,48 +1,16 @@
-@font-face {
-    font-family: "Anton Regular";
-    src:
-        url("webfonts/anton/anton-regular.woff2") format("woff2"),
-        url("webfonts/anton/anton-regular.woff") format("woff"),
-        url("webfonts/anton/anton-regular.ttf") format("truetype");
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-}
-
-@font-face {
-    font-display: swap;
-    font-family: 'Rubik';
-    font-style: normal;
-    font-weight: 300;
-    src: url('webfonts/rubik/rubik-v31-latin_latin-ext-regular.woff2') format('woff2');
-    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-}
-
-/* inter-latin-ext-wght-normal */
-@font-face {
-    font-family: 'Inter Variable';
-    font-style: normal;
-    font-display: swap;
-    font-weight: 100 900;
-    src: url(https://cdn.jsdelivr.net/fontsource/fonts/inter:vf@latest/latin-ext-wght-normal.woff2) format('woff2-variations');
-    unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-
-@font-face {
-    font-family: "Monaspace Krypton";
-    src:
-        url("webfonts/monaspace-krypton/monaspace-krypton-var.woff2") format("woff2"),
-        url("webfonts/monaspace-krypton/monaspace-krypton-var.woff") format("woff");
-    font-style: normal;
-    font-weight: 200 800;
-    font-display: swap;
-}
+/*
+ * Font files and @font-face rules come from Fontsource npm packages. They are
+ * loaded through ananke.custom_css in config/_default/params.toml.
+ *
+ * - Anton: @fontsource/anton (headings)
+ * - Inter Variable: @fontsource-variable/inter (body text)
+ * - Monaspace Krypton: @fontsource/monaspace-krypton (code, static weights)
+ */
 
 :root {
     --font-monaspace-krypton: "Monaspace Krypton", monospace;
-    --font-anton: "Anton Regular", sans-serif;
+    --font-anton: "Anton", sans-serif;
     --font-weight-headlines: 400;
-    --font-rubik: "Rubik", sans-serif;
     --font-inter-variable: "Inter Variable", sans-serif;
 }
 
@@ -77,7 +45,6 @@ samp {
     font-family: var(--font-monaspace-krypton);
     font-variant-ligatures: contextual;
     font-feature-settings: "calt" 1;
-    font-variation-settings: 'wght' 350, 'wdth' 100, 'slnt' 0;
     font-feature-settings:
         "ss01" 1,
         "ss02" 1,

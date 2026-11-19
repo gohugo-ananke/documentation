@@ -6,7 +6,15 @@ images = ["images/brand/ananke-social.png"]
 
 [ananke]
 show_recent_posts = false
-custom_css = ["fonts.css", "docs-theme.css", "fixes.css", "highlighting.css"]
+# fontsource.html is a partial that returns the Fontsource @font-face rules.
+# Keep it before fonts.css.
+custom_css = [
+  "fontsource.html",
+  "fonts.css",
+  "docs-theme.css",
+  "fixes.css",
+  "highlighting.css",
+]
 
 [ananke.home]
 content_alignment = "left" # options: left, center, right
