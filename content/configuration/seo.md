@@ -66,7 +66,7 @@ templates, so pages expose Open Graph and Twitter/X card metadata automatically.
 > ```
 >
 > If you want the same image as the hero and the social preview, set both
-> `featured_image` and `images` (see [Header and Hero](/configuration/header-and-hero/)).
+> `featured_image` and `images` (see [Page headers](/customisation/hero-section/)).
 
 You can also set a site-wide default `images` list in `params` so pages without
 their own image still get a social preview.

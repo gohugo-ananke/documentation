@@ -26,7 +26,7 @@ featured image, and for the footer. The default is `bg-black`:
 background_color_class = "bg-blue"
 ```
 
-See [Header and Hero → fallback](/configuration/header-and-hero/#fallback-when-there-is-no-image).
+See [Page headers → fallback](/customisation/hero-section/#choose-the-fallback-colour).
 
 ## Body and font classes
 
@@ -76,7 +76,7 @@ post_content_classes = "lato"
 
 The hero/header has its own class settings — `featured_image_class`,
 `cover_dimming_class`, and `header_section_class`. These are documented with
-examples in [Hero Section](/customisation/hero-section/).
+examples in [Page headers](/customisation/hero-section/).
 
 ## Accessibility and contrast
 

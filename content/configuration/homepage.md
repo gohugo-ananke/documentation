@@ -116,4 +116,4 @@ content_alignment = "left"
 The large image at the top of the homepage is the homepage's `featured_image`,
 set in the front matter of `content/_index.md` as shown above. The lookup rules,
 static vs page-bundle paths, and the colour fallback when no image is set are
-all described in [Header and Hero](/configuration/header-and-hero/).
+all described in [Page headers](/customisation/hero-section/).

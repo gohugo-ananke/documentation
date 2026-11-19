@@ -59,7 +59,7 @@ featured_image = "header.jpg"
 
 The full lookup order (front matter `featured_image`, then the `images` array,
 then a bundle resource named `cover`/`feature`) and the colour fallback are
-described in [Header and Hero](/configuration/header-and-hero/).
+described in [Page headers](/customisation/hero-section/).
 
 ## Social sharing images
 
@@ -89,7 +89,7 @@ load.
   readers skip them.
 * The hero/featured image is a CSS background and is treated as decorative — do
   not rely on it to convey information (see
-  [Header and Hero → Accessibility](/configuration/header-and-hero/#accessibility)).
+  [Page headers → Accessibility](/customisation/hero-section/#accessibility)).
 
 ## Common path mistakes
 

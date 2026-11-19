@@ -26,7 +26,7 @@ We build small, fast websites.
 ```
 
 The page is published at `/about/`. Add `featured_image` to give it a hero image
-(see [Header and Hero](/configuration/header-and-hero/)).
+(see [Page headers](/customisation/hero-section/)).
 
 ## Posts
 
