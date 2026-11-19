@@ -4,15 +4,6 @@ date: 2026-06-06T08:00:00.000+0700
 weight: 100
 ---
 
-* [Where configuration lives](#where-configuration-lives)
-* [How Hugo merges configuration](#how-hugo-merges-configuration)
-* [How theme defaults work](#how-theme-defaults-work)
-* [What belongs in your site, not the theme](#what-belongs-in-your-site-not-the-theme)
-* [Installing the theme: Hugo Module](#installing-the-theme-hugo-module)
-* [Installing the theme: Git submodule](#installing-the-theme-git-submodule)
-* [How to override defaults safely](#how-to-override-defaults-safely)
-* [Where each example goes](#where-each-example-goes)
-
 This page is the central reference for configuring an Ananke site. It explains
 where configuration files live, how Hugo combines them, and how the theme's
 defaults interact with your own settings. Individual options are documented on

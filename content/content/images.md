@@ -3,14 +3,6 @@ title: Images
 date: 2026-06-06T08:00:00.000+0700
 ---
 
-* [Static images](#static-images)
-* [Images in Markdown](#images-in-markdown)
-* [Page bundle images](#page-bundle-images)
-* [Featured images](#featured-images)
-* [Social sharing images](#social-sharing-images)
-* [Alt text](#alt-text)
-* [Common path mistakes](#common-path-mistakes)
-
 This page explains the ways to add images to an Ananke site and the paths each
 one uses.
 

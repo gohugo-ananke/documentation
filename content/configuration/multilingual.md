@@ -3,12 +3,6 @@ title: Multilingual and i18n
 date: 2026-06-06T08:00:00.000+0700
 ---
 
-* [Configure languages](#configure-languages)
-* [Translated content files](#translated-content-files)
-* [Translation fallback](#translation-fallback)
-* [Translating menus](#translating-menus)
-* [Overriding theme interface strings](#overriding-theme-interface-strings)
-
 Ananke is fully multilingual. It ships interface translations for many languages
 and works with Hugo's standard multilingual features.
 

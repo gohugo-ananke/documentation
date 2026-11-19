@@ -3,13 +3,6 @@ title: Menus
 date: 2026-06-06T08:00:00.000+0700
 ---
 
-* [The main menu](#the-main-menu)
-* [Adding entries](#adding-entries)
-* [External links](#external-links)
-* [Controlling the order](#controlling-the-order)
-* [Adding a page from its front matter](#adding-a-page-from-its-front-matter)
-* [What the theme does and does not render](#what-the-theme-does-and-does-not-render)
-
 Ananke shows a navigation menu in the header, next to the site title (or logo)
 and the social follow links. It is built from Hugo's `main` menu.
 

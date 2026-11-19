@@ -3,12 +3,6 @@ title: Documentation Style
 date: 2026-06-06T08:00:00.000+0700
 ---
 
-* [Principles](#principles)
-* [Examples](#examples)
-* [Configuration paths](#configuration-paths)
-* [Parameter names](#parameter-names)
-* [Defaults before overrides](#defaults-before-overrides)
-
 These rules keep Ananke's documentation beginner-friendly and consistent. Follow
 them when adding or editing pages.
 

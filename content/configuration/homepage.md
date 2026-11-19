@@ -3,14 +3,6 @@ title: Homepage
 date: 2026-06-06T08:00:00.000+0700
 ---
 
-* [The homepage content file](#the-homepage-content-file)
-* [Recent posts](#recent-posts)
-* [How many posts appear](#how-many-posts-appear)
-* [Which section recent posts come from](#which-section-recent-posts-come-from)
-* [A homepage without blog posts](#a-homepage-without-blog-posts)
-* [Content alignment](#content-alignment)
-* [The homepage hero image](#the-homepage-hero-image)
-
 The homepage is built from two parts: the body copy you write in your homepage
 content file, and an optional list of recent posts that Ananke adds below it.
 

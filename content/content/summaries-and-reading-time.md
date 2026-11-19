@@ -3,13 +3,6 @@ title: Summaries and Reading Time
 date: 2026-06-06T08:00:00.000+0700
 ---
 
-* [Automatic summaries](#automatic-summaries)
-* [The manual summary divider](#the-manual-summary-divider)
-* [A custom summary in front matter](#a-custom-summary-in-front-matter)
-* [The read more link](#the-read-more-link)
-* [Reading time and word count](#reading-time-and-word-count)
-* [How list pages use summaries](#how-list-pages-use-summaries)
-
 On list pages and the homepage, Ananke shows a short summary of each post rather
 than its full content. This page explains where that summary comes from and how
 to control it.

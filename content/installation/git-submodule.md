@@ -4,10 +4,6 @@ date: 2026-01-16T08:00:00.000+0700
 weight: 200
 ---
 
-* [Methods](#methods)
-* [Requirements](#requirements)
-* [Installation](#installation)
-
 Git Submodule based installation for the [Ananke theme](https://github.com/gohugo-ananke/ananke) for [Hugo](https://gohugo.io/).
 
 ## Methods

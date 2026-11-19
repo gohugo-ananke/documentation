@@ -3,18 +3,6 @@ title: Styles
 date: 2026-01-16T08:00:00.000+0700
 ---
 
-* [Update font or body classes](#update-font-or-body-classes)
-* [Stylesheet generation](#stylesheet-generation)
-* [Upgrade from Ananke 2.15 or earlier](#upgrade-from-ananke-215-or-earlier)
-  * [What changed](#what-changed)
-  * [Upgrade checklist](#upgrade-checklist)
-* [Custom CSS](#custom-css)
-  * [Paths in custom CSS](#paths-in-custom-css)
-  * [Sass, SCSS, and other preprocessors](#sass-scss-and-other-preprocessors)
-* [Built-in CSS order](#built-in-css-order)
-* [Social hover colours](#social-hover-colours)
-* [Output](#output)
-
 ## Update font or body classes
 
 The theme is set, by default, to use a near-white background color and the "Avenir" or serif typeface. You can change these in your config file with the `body_classes` parameter, like this:

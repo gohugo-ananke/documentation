@@ -7,21 +7,6 @@ since: "2.17.0"
 
 {{< since >}}
 
-* [Hooks and filters](#hooks-and-filters)
-* [Difference between hooks and filters](#difference-between-hooks-and-filters)
-  * [Hooks](#hooks)
-  * [Filters](#filters)
-* [Terminology](#terminology)
-* [Simple hook calls](#simple-hook-calls)
-* [Extended hook calls](#extended-hook-calls)
-* [Extended hook options](#extended-hook-options)
-  * [hook](#hook)
-  * [context](#context)
-  * [cache](#cache)
-* [Hook partial location](#hook-partial-location)
-* [Disabling unused hook messages](#disabling-unused-hook-messages)
-* [Recommended usage pattern](#recommended-usage-pattern)
-
 ## Hooks and filters
 
 Ananke provides a small hooks system that lets site projects inject or transform markup without changing the theme templates directly.

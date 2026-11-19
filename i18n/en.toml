@@ -1,0 +1,7 @@
+# Overrides for the theme's English strings. Keys not listed here come from
+# the theme.
+
+# Heading of the automatic table of contents. The theme default is
+# "What's in this {{ .Type }}", which shows the section name.
+[whatsInThis]
+other = "On this page"
