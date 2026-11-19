@@ -52,7 +52,7 @@ Start adding content and use front matter options supported by Ananke:
 
 For design and UI adjustments:
 
-* [Hero section](/customisation/hero-section/)
+* [Page headers](/customisation/hero-section/)
 * [Colors](/customisation/colours/)
 * [Styles and CSS](/customisation/styles/)
 * [Comments setup](/customisation/comments/)

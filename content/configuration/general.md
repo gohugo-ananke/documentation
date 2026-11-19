@@ -174,4 +174,4 @@ show_list_images = true
 
 When enabled, list pages use the same image summary card that is used for recent posts on the home page. Pages without a configured featured image still render without an image. Date display is controlled separately with `ananke.pages.show_summary_date`, with `ananke.pages.show_date` as its fallback.
 
-See [Hero section](/customisation/hero-section/) for information about configuring featured images.
+See [Page headers](/customisation/hero-section/) for information about configuring featured images.

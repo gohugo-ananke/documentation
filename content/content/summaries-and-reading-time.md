@@ -81,5 +81,5 @@ On list pages and the homepage:
 * a "read more" link points to the full page;
 * if reading time is enabled, it appears with the entry.
 
-Posts that have a [featured image](/configuration/header-and-hero/) show it
+Posts that have a [featured image](/customisation/hero-section/) show it
 alongside the summary as a card.
