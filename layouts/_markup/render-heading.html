@@ -2,12 +2,12 @@
   Heading render hook for the documentation site.
 
   Renders each heading with its auto-generated id (so in-page links and the
-  manual tables of contents resolve) and appends a hover-revealed anchor link
+  tables of contents resolve) and adds a gutter-positioned anchor link
   that lets readers grab a permalink to the section.
 */ -}}
 {{- $anchor := .Anchor -}}
 <h{{ .Level }} id="{{ $anchor }}"
-  {{- with .Attributes.class }} class="{{ . }}"{{ end -}}
+  class="heading-permalink{{ with .Attributes.class }} {{ . }}{{ end }}"
 >
   {{- .Text | safeHTML -}}
   {{- with $anchor }}
