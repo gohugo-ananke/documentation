@@ -53,7 +53,7 @@ menus: main
 ---
 ```
 
-For nested entries, menu parameters, and other options, see Hugo's [menu templates documentation](https://gohugo.io/templates/menu-templates/).
+To group entries in submenus, see [Menus](/configuration/menus/#submenus). For menu parameters and other options, see Hugo's [menu templates documentation](https://gohugo.io/templates/menu-templates/).
 
 ## Localize date format
 
