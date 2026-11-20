@@ -80,6 +80,12 @@ The hero/header has its own class settings — `featured_image_class`,
 `cover_dimming_class`, and `header_section_class`. These are documented with
 examples in [Page headers](/customisation/hero-section/).
 
+## Content link colours
+
+Links inside content use Tachyons `dark-blue` (`#00449E`) by default and `navy` (`#001B44`) on hover and keyboard focus. These colours provide contrast on the default white and near-white surfaces. Summary cards use `mid-gray` (`#555555`) for their text, dates, and section labels.
+
+These defaults do not guarantee contrast on custom backgrounds. If you override the content link colours with custom CSS, check normal, hover, and focus states.
+
 ## Accessibility and contrast
 
 > [!WARNING]

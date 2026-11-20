@@ -12,9 +12,9 @@ form you can drop into any page.
 
 ## What it outputs
 
-The shortcode outputs an accessible HTML `<form>` with name, email, and message
-fields and a submit button, styled to match the theme. It submits with `POST`
-to the address you give in the `action` parameter.
+The shortcode outputs an HTML `<form>` with name, email, and message fields and a submit button, styled to match the theme. Each field uses a native label. The email field also announces the email requirement as its accessible description. It submits with `POST` to the address you give in the `action` parameter.
+
+The fields and browser validation work without JavaScript. Name and email are required; the email field checks the email format. Your form backend must also validate submitted values.
 
 ## Required configuration
 
