@@ -21,18 +21,18 @@ The steps are the same as for [any other icon](/configuration/social-media-netwo
 2. Save the file as `assets/ananke/socials/linkedin.svg` in your website repository. The file name must be `linkedin.svg`, because the `icon` parameter of the pre-configured network is `linkedin`.
 3. Add `linkedin` to your networks and configure your profile:
 
-```toml
-# config/_default/params.toml
+   ```toml
+   # config/_default/params.toml
 
-[ananke.social.follow]
-networks = ["linkedin"]
+   [ananke.social.follow]
+   networks = ["linkedin"]
 
-[ananke.social.share]
-networks = ["linkedin"]
+   [ananke.social.share]
+   networks = ["linkedin"]
 
-[ananke.social.linkedin]
-username = "your-linkedin-username"
-```
+   [ananke.social.linkedin]
+   username = "your-linkedin-username"
+   ```
 
 4. Run `hugo server` and make sure that the LinkedIn icon shows in the follow and share sections.
 
