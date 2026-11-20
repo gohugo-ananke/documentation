@@ -106,7 +106,7 @@ load.
 
 ## Responsive header images
 
-In the development version of Ananke, home, list, and individual-page headers process local image resources. Put a shared image in `assets/images/header.jpg`, and select it in page front matter:
+From Ananke v2.21.0, home, list, and individual-page headers process local image resources. Put a shared image in `assets/images/header.jpg`, and select it in page front matter:
 
 ```yaml
 ---
