@@ -39,9 +39,7 @@ scripts/            # maintenance scripts
 
 ## Prerequisites
 
-* **Hugo (extended)** — the version pinned in [`netlify.toml`](netlify.toml) (`0.161.1` at time of
-  writing). Check yours with `hugo version`. The theme requires at least the version in the
-  theme's `config/_default/module.toml`.
+* **Hugo** — use the standard binary, currently v0.170.1 in [`netlify.toml`](netlify.toml) and the GitHub Pages workflow. The theme continues to support Hugo v0.160.0 or later. Check the installed version with `hugo version`.
 * **Go** — required by Hugo Modules to resolve the theme dependency.
 * **Node.js 22.18 or later** — required for the shared development launcher and npm tools.
 
@@ -80,39 +78,63 @@ To check the launcher without changing your real checkouts, run:
 node --test scripts/dev.test.ts
 ```
 
-The tests use temporary repositories and a substitute Hugo command.
+The tests use temporary repositories and a substitute Hugo command. Stop a running port 1313 preview before running this suite; the launcher tests currently require that port.
 
 ### Manual previews
 
 Use `hugo server --environment production` to preview the published module pinned in `go.mod`. Use `hugo server --environment development` to preview the sibling Ananke working tree without branch selection. The existing `npm run server` command provides the latter preview with local TLS through Wireit. These manual commands do not pair the repository branches.
 
-## Building for production
+## Build and deploy selection
 
-Netlify builds the site with:
+The shared development server and published builds deliberately select the theme differently:
+
+| Command | Theme source | Publishes anything? |
+| --- | --- | --- |
+| `npm run dev` | Branch-paired sibling working tree through `HUGO_MODULE_REPLACEMENTS` | No |
+| `npm run build` | Latest stable released Ananke module | No |
+| `npm run build:preview` | Remote `development`, or an explicit theme ref | No |
+| `npm run deploy` | Same selection as a preview build | Draft Netlify deploy |
+| `npm run deploy:production` | Latest stable released Ananke module | Production Netlify deploy |
+
+Builds use `scripts/build.ts`. It resolves the theme in a temporary source tree, clears inherited local module replacements, forces the production Hugo environment, runs Hugo and Pagefind, and removes the temporary tree afterwards. The checked-in `go.mod` and `go.sum` stay unchanged. The build log records the selected theme revision and Hugo version. A plain `hugo` command still uses the checked-in dependency pin.
+
+Production uses the latest stable release tag, not an unreleased commit on `main`. The theme's stable release process runs from `main`; publish that release before building the matching live documentation. Pass `--expect-theme-version` with the just-published tag to stop the build if the module resolver still returns an older version. Allow the release to become available, then rebuild; do not silently publish the older result.
+
+Preview builds default to `development`. Select another remote branch, tag, or commit with `--theme-ref` or `ANANKE_THEME_REF`:
 
 ```bash
-npm run build
+npm run build:preview -- --theme-ref rework/header
+npm run build:preview -- --theme-ref main --destination /tmp/ananke-main-preview
 ```
 
-This runs Hugo and then Pagefind, which creates the search index and browser assets under `public/pagefind/`. The inline search field in the top navigation displays matching pages and sections in a dropdown. It supports keyboard navigation and the Ctrl+K/Cmd+K shortcut. Netlify also indexes deploy previews and branch deploys after Hugo builds their pages.
+Slash-containing branch names are resolved to a commit before querying Go. Production ignores `ANANKE_THEME_REF` and rejects `--theme-ref`; use a preview for unreleased work. Netlify deploy previews and branch deploys use the preview command and their preview URL. GitHub Pages and the Netlify production context use the stable production command. Both platforms build the Pagefind search assets.
 
-With Netlify CLI installed, authenticated, and linked to this Netlify project, use these commands to build the site, update the Pagefind index, and deploy `public/`:
+With Netlify CLI installed, authenticated, and linked to this project:
 
 ```bash
-npm run deploy              # create a draft deploy
-npm run deploy:production   # deploy to production and open the site
+npm run deploy -- --theme-ref development
+npm run deploy:production
 ```
 
-Both commands stop if the build or indexing fails. The production command passes `--prod --open` to Netlify CLI.
+The commands build and index the site before invoking Netlify with `--no-build`. Only `deploy:production` passes `--prod`. Neither command changes the theme checkout or Git branches. Do not run these commands when you only want local validation.
 
-To preview the complete built site with working search:
+To preview a complete build with search:
 
 ```bash
 npm run build
 npm run search:serve
 ```
 
-A regular `hugo server` preview does not run the post-build indexer. For a build against a local theme checkout, set `HUGO_ENV=development` when running `npm run build`. After changing content, rebuild before testing search. Search uses the generated index; it does not require a search service or API key.
+For a complete build against the local theme working tree, use `hugo --environment development --minify`, then `npm run search:index`. Setting `HUGO_ENV=development` on `npm run build` does not enable a local replacement: production builds deliberately ignore it. A regular `hugo server` does not run Pagefind; rebuild the index after changing content.
+
+Test the selection and deployment arguments without downloading themes or publishing:
+
+```bash
+npm run test:build
+node --test scripts/dev.test.ts
+```
+
+The tests use temporary fixtures and substitute commands. See [the release and publication guide](content/help/development.md#release-and-publication-order) for release ordering and follow-up checks.
 
 `pagefind.yml` limits indexing to the page's main content and excludes code-block controls, heading links, and line numbers. Code examples remain searchable. The navigation uses Pagefind's searchbox component. Its browser assets load on all pages; the index is loaded when readers interact with search. Navigation, including search, is outside the indexed content.
 

@@ -43,6 +43,8 @@ You can also run `npm run dev` from the sibling `ananke` repository. Both comman
 
 Stop the server before selecting another branch pair. See the [README](README.md#running-locally) for manual previews, branch checks, and launcher tests.
 
+For production and preview theme selection, see [Build and deploy selection](README.md#build-and-deploy-selection). Builds resolve their theme in an isolated source tree and preserve the checked-in dependency files. Publish the stable theme release before the matching production documentation build.
+
 ## Writing style guide
 
 The documentation aims to be **beginner-safe**. A reader should be able to copy an example and get
