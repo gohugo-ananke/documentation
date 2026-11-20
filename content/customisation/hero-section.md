@@ -37,7 +37,7 @@ featured_image = "header.jpg"
 +++
 ```
 
-Place `header.jpg` in `content/posts/my-post/`. The theme looks for a matching page resource before treating the value as a static image URL. Keep image URLs valid: a missing file does not automatically select a different image.
+Place `header.jpg` in `content/posts/my-post/`. The theme looks for a matching page resource, then an asset relative to `assets/`, before treating the value as an image URL. Keep image URLs valid: a missing file does not automatically select a different image.
 
 ## How the featured image is found
 
@@ -68,7 +68,7 @@ featured_image = "/images/shared-header.jpg"
 +++
 ```
 
-Place the file at `static/images/shared-header.jpg`. Use a static URL for shared images: a filename in the homepage bundle is not a page resource of every descendant. A cascade in a section's `_index.md` can instead provide defaults for that section's descendants. Configure taxonomy and other generated pages explicitly if they do not inherit the cascade you expect.
+Place the file at `static/images/shared-header.jpg`. Alternatively, in the development version, place it at `assets/images/shared-header.jpg` and use `images/shared-header.jpg` in both parameters for responsive processing. Use assets or a static URL for shared images: a filename in the homepage bundle is not a page resource of every descendant. A cascade in a section's `_index.md` can instead provide defaults for that section's descendants. Configure taxonomy and other generated pages explicitly if they do not inherit the cascade you expect.
 
 Override the inherited image on any individual page with its own `params.featured_image`, as in the first example. The content section, documentation branch, and image filename do not need to share a name.
 
@@ -257,7 +257,7 @@ Keep page titles as real text. Test at narrow widths, with enlarged text, and wi
 * **Removing an image has no effect:** an empty `featured_image` still permits fallbacks. Remove or change the actual source.
 * **The same image appears on content cards:** the theme also uses featured images for some summary layouts. Changing the featured-image source can affect those cards.
 * **Headers still have different heights:** equal padding is not equal height. Check title wrapping, descriptions, navigation, the no-image layout, and custom overrides.
-* **An image looks soft or downloads too much data:** use an appropriately sized, compressed source. Individual-page headers can create resized backgrounds from suitable page resources; static URLs do not follow the same resource-processing path.
+* **An image looks soft or downloads too much data:** use an appropriately sized, compressed source. Home, list, and individual-page headers in the development version create resized backgrounds from suitable page or asset resources; static URLs do not follow the resource-processing path. See [Responsive header images](/content/images/#responsive-header-images).
 * **An overlay seems unchanged:** an empty class value restores the default. Use an explicit custom class and confirm that its stylesheet is registered.
 
 For related settings, see [Colours](/customisation/colours/), [Custom CSS](/customisation/custom-css/), and [Hugo's cascade reference](https://gohugo.io/content-management/front-matter/#cascade).

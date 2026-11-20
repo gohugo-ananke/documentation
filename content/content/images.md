@@ -101,3 +101,28 @@ load.
   and `header.jpg` are different files.
 * **Bundle image referenced with an absolute path.** Inside a page bundle,
   reference the resource by filename (`header.jpg`), not `/header.jpg`.
+
+## Responsive header images
+
+In the development version of Ananke, home, list, and individual-page headers process local image resources. Put a shared image in `assets/images/header.jpg`, and select it in page front matter:
+
+```yaml
+---
+title: Home
+params:
+  featured_image: images/header.jpg
+---
+```
+
+Ananke searches the page bundle first, then `assets/`. Bundle images can use a filename such as `header.jpg`. Existing static and external URLs still work, but are not resized. SVG images retain their original URL.
+
+The optional `ananke.responsive_image_widths` parameter defaults to `[480, 960, 1440, 1920]`. For example, in `config/_default/params.toml`:
+
+```toml
+[ananke]
+responsive_image_widths = [480, 960, 1440, 1920]
+```
+
+Page front matter under `params.ananke` overrides a cascade or site configuration. Widths must be positive integers in pixels.
+
+The header selects the next image width that covers the viewport. The original image supplies the largest size; Ananke does not enlarge smaller sources. These backgrounds are decorative, and the header's existing crop, overlay, and spacing settings still apply.
