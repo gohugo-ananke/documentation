@@ -8,13 +8,13 @@
   global config.
 
   The copy button carries no code itself; the accompanying script
-  (layouts/_partials/site-scripts.html) reads the rendered text on click.
+  (layouts/_partials/hooks/body-end.html) reads the rendered text on click.
 */ -}}
 {{- $result := transform.HighlightCodeBlock . -}}
 <div class="code-block">
   <div class="code-block-header">
     <span class="code-language">{{ .Type | default "text" }}</span>
-    <button class="code-copy" type="button" aria-label="Copy code to clipboard">
+    <button class="code-copy" type="button" aria-label="Copy code to clipboard" hidden>
       <span class="code-copy-label" aria-hidden="true">Copy</span>
     </button>
   </div>

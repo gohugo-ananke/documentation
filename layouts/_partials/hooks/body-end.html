@@ -1,13 +1,11 @@
-{{- /*
-  Overrides the theme's empty site-scripts partial.
-
-  Adds copy-to-clipboard behaviour for code blocks rendered by
-  layouts/_markup/render-codeblock.html. Uses a single delegated listener so the
-  script is emitted once per page regardless of how many code blocks exist.
-*/ -}}
+{{- /* Documentation code copying excludes rendered line numbers. */ -}}
 <script>
   (function () {
     "use strict";
+
+    document.querySelectorAll(".code-copy[hidden]").forEach(function (button) {
+      button.hidden = false;
+    });
 
     function copyFrom(button) {
       var container = button.closest(".code-block");

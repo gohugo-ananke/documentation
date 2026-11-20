@@ -105,57 +105,29 @@ header nav img {
     --pf-shadow-lg: none;
 }
 
-/* Keep the search field in navigation and its dropdown above the page header. */
-.docs-nav-inner {
-    display: grid;
-    grid-template-columns: auto minmax(12rem, 28rem) auto;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1.5rem;
-}
-
+/* Keep search above the header text and the theme menu on its own row. */
 .docs-site-search pagefind-searchbox {
     display: block;
 }
 
-.docs-nav-actions {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
+.ananke-nav-link[aria-current] {
+    text-decoration: underline;
+    text-underline-offset: 0.25em;
 }
 
-/* Main menu: its own row below the logo, search, and social links. */
-.docs-nav-menu {
-    grid-column: 1 / -1;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.25rem 1.5rem;
-}
-
-.docs-nav-menu a {
-    display: inline-block;
-    padding: 0.25rem 0;
-    border-bottom: 2px solid transparent;
-}
-
-.docs-nav-menu a[aria-current] {
-    border-bottom-color: currentColor;
-}
-
-@media (max-width: 48rem) {
-    .docs-nav-inner {
-        grid-template-columns: minmax(0, 1fr) auto;
-        gap: 1rem;
+@media screen and (min-width: 60em) {
+    .ananke-nav-panel {
+        flex-basis: 100%;
+        margin-top: 1rem;
     }
 
-    .docs-site-search {
-        grid-column: 1 / -1;
-        grid-row: 2;
+    .ananke-submenu {
+        min-width: 18rem;
     }
 
-    .docs-nav-menu {
-        grid-row: 3;
-        gap: 0.25rem 1rem;
+    .ananke-nav-menu {
+        flex: 1 1 auto;
+        margin-block: 0;
     }
 }
 
