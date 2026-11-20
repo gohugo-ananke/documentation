@@ -241,3 +241,38 @@ header nav img {
         transition: none;
     }
 }
+
+/* Keep the homepage photograph behind the existing dark-brown identity. */
+.is-home > header {
+    background-position: center 65%;
+}
+
+.is-home > header > div {
+    background-color: color-mix(in srgb, var(--color-ananke-975) 94%, transparent);
+}
+
+/* Preserve the no-image header's existing spacing when adding its photograph. */
+@media (min-width: 30em) and (max-width: 60em) {
+    .is-home > header > div {
+        padding-bottom: 1rem;
+    }
+}
+
+@media (min-width: 60em) {
+    .is-home > header > div {
+        padding-bottom: 8rem;
+    }
+}
+
+/* Flat single-page headers keep their compact layout and existing page title. */
+.is-page > header > .ananke-brand-background {
+    background-image:
+        linear-gradient(
+            color-mix(in srgb, var(--color-ananke-975) 94%, transparent),
+            color-mix(in srgb, var(--color-ananke-975) 94%, transparent)
+        ),
+        url("../../images/alexander-grey-YTGt96tGxSY-unsplash.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
