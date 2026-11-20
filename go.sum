@@ -6,3 +6,5 @@ github.com/gohugo-ananke/ananke/v2 v2.20.1-0.20261119231059-a9294ae4c2e1 h1:k4b+
 github.com/gohugo-ananke/ananke/v2 v2.20.1-0.20261119231059-a9294ae4c2e1/go.mod h1:HLy3O8WIkY0EmkMryllP6ilZVvAWz1XsLnfYLuD7dvE=
 github.com/gohugo-ananke/ananke/v2 v2.21.0 h1:EjxNC9KIlxkSmnQH4JlEy47ghAyvgsRR72ekCV1pd7g=
 github.com/gohugo-ananke/ananke/v2 v2.21.0/go.mod h1:HLy3O8WIkY0EmkMryllP6ilZVvAWz1XsLnfYLuD7dvE=
+github.com/gohugo-ananke/ananke/v2 v2.22.0 h1:0BNfxlpScfQDbjTdvXkUkPJQf/iLE8+DEcHq8QB8578=
+github.com/gohugo-ananke/ananke/v2 v2.22.0/go.mod h1:HLy3O8WIkY0EmkMryllP6ilZVvAWz1XsLnfYLuD7dvE=
