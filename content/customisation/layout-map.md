@@ -42,6 +42,7 @@ Partials live in `layouts/_partials/`:
 * `site-header.html` — the hero/header on the homepage and list pages.
 * `page-header.html` — the header on single pages.
 * `site-navigation.html` — the main menu with its submenus, logo, and follow links.
+* `navigation/menu.html` — reusable main-menu renderer with per-call mode selection.
 * `site-footer.html` — the footer.
 * `social/follow.html` and `social/share.html` — social follow and share links.
 * `categories.html` and `tags.html` — taxonomy links on single pages.
@@ -56,6 +57,8 @@ Shortcodes live in `layouts/_shortcodes/`:
 * `page-index.html` — lists a section's child pages.
 
 See the [Shortcodes reference](/content/shortcodes/) for usage.
+
+Header partial overrides are deprecated. For supported header extension points and migration, see [Header layout and hooks](/customisation/header/).
 
 ## Overriding any of these
 

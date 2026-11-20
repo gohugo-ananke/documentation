@@ -182,6 +182,12 @@ parent = "customisation"
 weight = 40
 
 [[main]]
+name = "Header layout and hooks"
+pageRef = "/customisation/header/"
+parent = "customisation"
+weight = 45
+
+[[main]]
 name = "Comments"
 pageRef = "/customisation/comments/"
 parent = "customisation"

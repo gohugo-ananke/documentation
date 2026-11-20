@@ -182,7 +182,7 @@ This does not change the mode of the header menu or any other menu on the page. 
 | `page` | Hugo page | none | Required | The current page, used for configuration and current-page markers. |
 | `submenu_mode` | string | Page, cascade, or site setting, then `split` | Optional | Overrides the mode for this call only. Valid values are `split`, `hover`, `click`, and `toplevel`. |
 | `id` | string | Generated unique ID for this page | Optional | ID of the menu list; also prefixes its submenu control IDs. Use a different value for each call if you supply IDs. |
-| `classes` | map of class strings | Navigation classes from site configuration and theme defaults | Optional | Complete class map for the renderer. Normally omit it and configure `[ananke.navigation.classes]` instead. |
+| `classes` | map of class strings | Navigation classes from site configuration and theme defaults | Optional | Complete class map for the renderer. Normally omit it and configure [navigation classes](/customisation/header/#style-navigation) instead. |
 
 The partial renders the menu list only. Add a `nav` element with a descriptive `aria-label` when the list forms a separate navigation region. Use normal partial inclusion for each instance so that each menu receives its own IDs.
 
@@ -290,7 +290,7 @@ The theme has this string only in English. If a language has no translation, Hug
 
 * **Existing child entries now show.** Older Ananke versions ignored child entries of the `main` menu. If your configuration already has entries with `parent`, they now show as submenus. Remove `parent` from these entries if you do not want submenus.
 * **Overridden `site-scripts.html`.** The submenu script is part of `layouts/_partials/site-scripts.html`. The theme adds the navigation script whenever the site has a `main` menu, and it does not depend on the `copy_code` setting. If your project overrides this partial, the menu still works, but it uses the version without JavaScript: the submenus are always open as nested lists. Remove an obsolete override to use the theme script, and put additional scripts in a `layouts/_partials/hooks/body-end.html` hook. If you must keep the override, include the current navigation script from the theme.
-* **Overridden `site-navigation.html`.** If your project overrides `layouts/_partials/site-navigation.html`, your version controls the menu markup. Compare it with the theme's current version to get submenus.
+* **Overridden `site-navigation.html`.** Your override still controls the menu markup, but overriding this partial is deprecated. Follow the [header migration guide](/customisation/header/#migrate-existing-header-overrides) to adopt the supported hooks and settings.
 
 ## What the theme does and does not render
 

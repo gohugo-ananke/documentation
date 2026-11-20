@@ -11,6 +11,7 @@ The pages in this section explain how to change the look and behaviour of Ananke
 * **Change colours, fonts, and body classes:** read [Colours](/customisation/colours/) and [Styles](/customisation/styles/).
 * **Add your own CSS:** read [Custom CSS](/customisation/custom-css/).
 * **Change the header background, overlay, or height:** read [Page headers](/customisation/hero-section/).
+* **Arrange header components, style navigation, or migrate header overrides:** read [Header layout and hooks](/customisation/header/).
 * **Add comments to posts:** read [Comments](/customisation/comments/).
 * **Add markup to a page without copying templates:** read [Hooks & filters](/customisation/hooks-and-filters/).
 * **Replace a theme template:** read [Overriding partials](/customisation/overriding-partials/) and the [Layout map](/customisation/layout-map/).

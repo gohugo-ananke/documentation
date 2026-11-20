@@ -18,8 +18,7 @@ A hook point does **nothing** until your site provides a matching partial at
 `layouts/_partials/hooks/<name>.html`. Until then the hook is "unused" — the theme prints an
 optional debug notice and renders nothing.
 
-Every hook in this list is called by the theme with the current **page** as its `context`, so the
-matching partial receives a page and can use `.Title`, `.Permalink`, `.Params`, `site`, and so on.
+Document, layout, content, and article hooks receive the current **page** as their context. Header component hooks receive a dictionary with the page in `.page`; see [Header hook context](/customisation/header/#header-hook-context).
 
 ## Document hooks
 
@@ -63,10 +62,7 @@ These fire inside the article header of a single post (`layouts/single.html`).
 | `article/section-link` | Top of the article header, above the title | **Shipped** — the theme prints the current section name as a link to a page within the section | Override to change or remove the section label |
 
 > [!NOTE]
-> `article/section-link` is the one hook the theme ships a default partial for
-> (`layouts/_partials/hooks/article/section-link.html`). Providing your own partial of the same
-> name in your site **replaces** the default. All other hooks in this list ship empty (unused) and
-> render nothing until you add a partial.
+> `article/section-link` and the built-in header components ship default partials. Providing a partial of the same name in your site replaces that default. Surrounding hooks remain empty until your site supplies them.
 
 ### Choosing where the section link points
 
@@ -93,6 +89,14 @@ ananke:
   section_link: introduction
 ---
 ```
+
+## Header component hooks
+
+Each component named `name` calls `header/name-before`, `header/name`, and `header/name-after`. The middle hook supplies the component; the other two add markup around it. The built-in names are `logo`, `languages`, `menu`, `social`, `title`, and `description`.
+
+Their partials live in `layouts/_partials/hooks/header/`. The configured `ananke.header.navigation` and `ananke.header.content` lists select their order. Unlike page hooks, they receive a dictionary, with the current page in `.page`.
+
+See [Header layout and hooks](/customisation/header/) for complete configuration, context fields, styling options, custom components, and migration from header partial overrides.
 
 ## How to use a hook
 

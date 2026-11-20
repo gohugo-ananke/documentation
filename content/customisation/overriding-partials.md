@@ -16,6 +16,9 @@ If a file exists at the same path in both places, **your** copy wins. This is
 what makes safe customisation possible: you never touch the theme, you just
 shadow the file you want to change.
 
+> [!IMPORTANT]
+> Overrides of `site-header.html`, `page-header.html`, and `site-navigation.html` now produce deprecation warnings and are scheduled to stop working as extension points in Ananke v3. Use [Header layout and hooks](/customisation/header/#migrate-existing-header-overrides) to migrate.
+
 ## The safe override pattern
 
 The theme ships its footer partial here:

@@ -21,6 +21,8 @@ inside.
 > those values under the `[ananke]` table. Deprecated flat parameters still emit
 > a warning in the build log.
 
+For `ananke.header.navigation`, `ananke.header.content`, and `ananke.navigation.classes`, see [Header layout and hooks](/customisation/header/). For `ananke.navigation.submenu_mode`, see [Menus](/configuration/menus/).
+
 ## Where configuration lives
 
 Hugo can be configured with a single file or a configuration directory. Ananke's
