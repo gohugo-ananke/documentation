@@ -43,41 +43,48 @@ scripts/            # maintenance scripts
   writing). Check yours with `hugo version`. The theme requires at least the version in the
   theme's `config/_default/module.toml`.
 * **Go** — required by Hugo Modules to resolve the theme dependency.
-* **Node.js** — only needed for the linting/maintenance scripts (`npm install`).
+* **Node.js 22.18 or later** — required for the shared development launcher and npm tools.
 
 ## Running locally
 
-There are two modes, depending on whether you want to render against the **published** theme or
-your **local** theme checkout.
+### Shared development server
 
-### Against the published theme (default)
-
-```bash
-hugo server
-```
-
-This uses `config/_default/` and pulls the released `github.com/gohugo-ananke/ananke/v2` module.
-
-### Against a local theme checkout (recommended when changing the theme)
-
-If you have the theme checked out as a sibling directory (`../ananke`), build with the
-`development` environment. [`config/development/module.toml`](config/development/module.toml)
-replaces the published module with your local working tree:
-
-```toml
-replacements = "github.com/gohugo-ananke/ananke/v2 -> ../../ananke"
-```
+Keep `ananke/` and `documentation/` next to each other, install the documentation dependencies with `npm install`, and use Node.js 22.18 or later. Run this command from either repository root:
 
 ```bash
-hugo server --environment development
+npm run dev
 ```
 
-Now any edit you make in `../ananke` is reflected live in the docs site — ideal for verifying a
-theme change against real content.
+Both commands use the launcher in `documentation/scripts/dev.ts` and serve the documentation site at `http://127.0.0.1:1313/`. The launcher sets `HUGO_MODULE_REPLACEMENTS` to the absolute path of the sibling Ananke working tree. Edits in either repository are included in the preview.
 
-> [!NOTE]
-> The relative path `../../ananke` is resolved from the module config, so the theme repo must sit
-> next to this one (`some-parent/ananke` and `some-parent/documentation`).
+The calling repository determines the companion branch:
+
+| Calling branch | Companion branch |
+| --- | --- |
+| `main` | `main` |
+| `development` | `development` |
+| Any other named branch that also exists locally in the companion | The same branch |
+| Any other named branch missing from the companion | `development` |
+
+For example, if both repositories have `feat/shared-dev-server`, the launcher selects that branch in the companion. If both are already on it, no switch is needed, and uncommitted edits are allowed.
+
+The caller stays on its current branch. The launcher prints both starting branches, states whether the companion was switched, and prints both branches used by the server. It uses existing local branches without fetching, pulling, or creating branches. Both repositories must contain the dev command and shared launcher after this change is integrated into their long-lived branches.
+
+If a switch is needed, the companion must have no uncommitted or untracked changes. The launcher stops instead of stashing or discarding work. Edits are allowed when the companion is already on the required branch. A detached caller is rejected. Files under `scratch/` are excluded from the dirty-worktree check.
+
+Port 1313 is fixed. If it is occupied, the launcher stops before switching branches and reports the server address. Stop the existing server and rerun the command to select a new branch pair. Restart after switching branches during a session; branch selection runs only at startup. Stopping the server leaves both repositories on the displayed branches.
+
+To check the launcher without changing your real checkouts, run:
+
+```bash
+node --test scripts/dev.test.ts
+```
+
+The tests use temporary repositories and a substitute Hugo command.
+
+### Manual previews
+
+Use `hugo server --environment production` to preview the published module pinned in `go.mod`. Use `hugo server --environment development` to preview the sibling Ananke working tree without branch selection. The existing `npm run server` command provides the latter preview with local TLS through Wireit. These manual commands do not pair the repository branches.
 
 ## Building for production
 

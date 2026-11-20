@@ -26,6 +26,7 @@
     "wireit": "0.15.0"
   },
   "scripts": {
+    "dev": "node scripts/dev.ts",
     "contributors:merge": "node ./scripts/merge-all-contributors.mjs",
     "lint:links": "lychee --config lychee.toml http://localhost:1313",
     "lint:markdown": "markdownlint-cli2 content/**/*.{md,mdx}",
