@@ -1,7 +1,8 @@
 ---
-title: Configuration Reference
+title: Configuration reference
+description: "Where configuration files go, how Hugo combines them, and the parameters that Ananke reads."
 date: 2026-06-06T08:00:00.000+0700
-weight: 100
+weight: 1000
 ---
 
 This page is the central reference for configuring an Ananke site. It explains
@@ -19,6 +20,8 @@ inside.
 > `recent_posts_number` or `custom_css`. If you are migrating an old site, move
 > those values under the `[ananke]` table. Deprecated flat parameters still emit
 > a warning in the build log.
+
+For `ananke.header.navigation`, `ananke.header.content`, and `ananke.navigation.classes`, see [Header layout and hooks](/customisation/header/). For `ananke.navigation.submenu_mode`, see [Menus](/configuration/menus/).
 
 ## Where configuration lives
 
@@ -153,7 +156,7 @@ hugo mod tidy
 ```
 
 Note the `/v2` suffix in the module path — it is required. For a full
-walk-through, see [Install as Hugo Module](/installation/gohugo-module/).
+walk-through, see [Install as Hugo Module](/get-started/hugo-module/).
 
 ## Installing the theme: Git submodule
 
@@ -170,7 +173,7 @@ git submodule add https://github.com/gohugo-ananke/ananke.git themes/ananke
 theme = "ananke"
 ```
 
-For a full walk-through, see [Install as Git Submodule](/installation/git-submodule/).
+For a full walk-through, see [Install as Git Submodule](/get-started/git-submodule/).
 
 ## How to override defaults safely
 

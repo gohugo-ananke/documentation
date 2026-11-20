@@ -1,6 +1,8 @@
 ---
 title: Analytics
+description: "Add Google Analytics through Hugo's built-in service configuration."
 date: 2026-06-06T08:00:00.000+0700
+weight: 800
 ---
 
 Ananke loads analytics through Hugo's embedded Google Analytics template. There

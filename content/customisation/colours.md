@@ -1,6 +1,8 @@
 ---
 title: Colours
+description: "Change the colours of the site with Tachyons classes."
 date: 2026-01-16T08:00:00.000+0700
+weight: 100
 ---
 
 Ananke styles colours and typography with [Tachyons](https://tachyons.io/)

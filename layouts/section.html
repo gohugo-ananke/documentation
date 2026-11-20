@@ -1,0 +1,34 @@
+{{/*
+  Docs override for section overview pages (the targets of the main menu).
+  The theme's list.html centres the section text and shows summary cards,
+  which render cut-off code blocks and alerts for documentation pages. This
+  layout shows the section text left-aligned, followed by a plain list of the
+  section's pages with a short description. Taxonomy pages still use the
+  theme's list.html.
+*/}}
+{{ define "main" }}
+  <article class="pa3 pa4-ns nested-copy-line-height">
+    <section class="cf ph3 ph5-l pv3 pv4-l f4 center measure-wide lh-copy nested-links {{ $.Param "text_color" | compare.Default "mid-gray" }}">
+      {{- .Content -}}
+    </section>
+    {{ with .Pages }}
+      <nav class="ph3 ph5-l pb4 center measure-wide" aria-labelledby="docs-section-pages">
+        <h2 id="docs-section-pages" class="f3 near-black">In this section</h2>
+        <ul class="list pl0 mt3">
+          {{ range . }}
+            {{ $description := .Description }}
+            {{ if not $description }}
+              {{ $description = .Summary | plainify | transform.HTMLUnescape | strings.TrimSpace }}
+            {{ end }}
+            <li class="mb4 lh-copy">
+              <a class="f4 b link blue dim" href="{{ .RelPermalink }}">{{ .Title }}</a>
+              {{ with $description }}
+                <p class="mt1 mb0 f5 mid-gray">{{ . | strings.Truncate 180 }}</p>
+              {{ end }}
+            </li>
+          {{ end }}
+        </ul>
+      </nav>
+    {{ end }}
+  </article>
+{{ end }}

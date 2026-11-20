@@ -87,7 +87,7 @@ jobs:
         run: |
           set -euo pipefail
 
-          if git diff --quiet -- data/contributors content/information/contributors.md; then
+          if git diff --quiet -- data/contributors content/help/contributors.md; then
             echo "No contributor changes detected."
             exit 0
           fi
@@ -95,6 +95,6 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          git add data/contributors content/information/contributors.md
+          git add data/contributors content/help/contributors.md
           git commit -m "docs(contributors): sync aggregated contributors"
           git push

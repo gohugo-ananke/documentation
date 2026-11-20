@@ -1,7 +1,8 @@
 ---
 title: Comments
+description: "Add Disqus or Commento comments to your pages."
 date: 2026-01-16T08:00:00.000+0700
-weight: 100
+weight: 500
 ---
 
 Ananke supports Disqus and [Commento](https://commento.io/). You can also add Commento through a content hook, with a script URL for either the hosted service or your own instance.
@@ -21,7 +22,7 @@ Note that the setup for Disqus is *NOT* done inside of the `params` section, but
 
 ### Add Commento with a hook
 
-The [content-after hook](/hooks-and-filters/all/#content-hooks) lets you add Commento without changing the theme templates. Hooks are available from Ananke 2.17.0. This example enables comments on regular pages and lets each page turn them off.
+The [content-after hook](/customisation/hooks-and-filters/all/#content-hooks) lets you add Commento without changing the theme templates. Hooks are available from Ananke 2.17.0. This example enables comments on regular pages and lets each page turn them off.
 
 Add these settings to your site's parameters file:
 

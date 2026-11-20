@@ -4,7 +4,7 @@ import path from "node:path";
 const inputDirectory = path.resolve(process.cwd(), "data/contributors");
 const outputFile = path.resolve(
   process.cwd(),
-  "content/information/contributors.md",
+  "content/help/contributors.md",
 );
 
 const listStartMarker =

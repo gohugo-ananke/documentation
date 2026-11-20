@@ -1,0 +1,266 @@
+# Main navigation: section links with child pages in submenus.
+# Keep the section overview available through each parent link.
+
+[[main]]
+name = "Get started"
+pageRef = "/get-started/"
+identifier = "get-started"
+weight = 10
+
+[[main]]
+name = "Configuration"
+pageRef = "/configuration/"
+identifier = "configuration"
+weight = 20
+
+[[main]]
+name = "Content"
+pageRef = "/content/"
+identifier = "content"
+weight = 30
+
+[[main]]
+name = "Customisation"
+pageRef = "/customisation/"
+identifier = "customisation"
+weight = 40
+
+[[main]]
+name = "Examples"
+pageRef = "/examples/"
+identifier = "examples"
+weight = 50
+
+[[main]]
+name = "Help"
+pageRef = "/help/"
+identifier = "help"
+weight = 60
+
+[[main]]
+name = "Choose an installation method"
+pageRef = "/get-started/installation/"
+parent = "get-started"
+weight = 10
+
+[[main]]
+name = "Install as a Hugo Module (recommended)"
+pageRef = "/get-started/hugo-module/"
+parent = "get-started"
+weight = 20
+
+[[main]]
+name = "Install as a Git submodule"
+pageRef = "/get-started/git-submodule/"
+parent = "get-started"
+weight = 30
+
+[[main]]
+name = "Upgrade from theNewDynamic to gohugo-ananke"
+pageRef = "/get-started/upgrade-from-thenewdynamic/"
+parent = "get-started"
+weight = 40
+
+[[main]]
+name = "General configuration"
+pageRef = "/configuration/general/"
+parent = "configuration"
+weight = 10
+
+[[main]]
+name = "Homepage"
+pageRef = "/configuration/homepage/"
+parent = "configuration"
+weight = 20
+
+[[main]]
+name = "Menus"
+pageRef = "/configuration/menus/"
+parent = "configuration"
+weight = 30
+
+[[main]]
+name = "Social media networks"
+pageRef = "/configuration/social-media-networks/"
+parent = "configuration"
+weight = 40
+
+[[main]]
+name = "SEO"
+pageRef = "/configuration/seo/"
+parent = "configuration"
+weight = 50
+
+[[main]]
+name = "robots.txt and environments"
+pageRef = "/configuration/robots/"
+parent = "configuration"
+weight = 60
+
+[[main]]
+name = "Analytics"
+pageRef = "/configuration/analytics/"
+parent = "configuration"
+weight = 70
+
+[[main]]
+name = "Multilingual and i18n"
+pageRef = "/configuration/multilingual/"
+parent = "configuration"
+weight = 80
+
+[[main]]
+name = "Configuration reference"
+pageRef = "/configuration/reference/"
+parent = "configuration"
+weight = 90
+
+[[main]]
+name = "Front matter"
+pageRef = "/content/frontmatter/"
+parent = "content"
+weight = 10
+
+[[main]]
+name = "Authors and read more links"
+pageRef = "/content/general/"
+parent = "content"
+weight = 20
+
+[[main]]
+name = "Content types and archetypes"
+pageRef = "/content/content-types/"
+parent = "content"
+weight = 30
+
+[[main]]
+name = "Images"
+pageRef = "/content/images/"
+parent = "content"
+weight = 40
+
+[[main]]
+name = "Summaries and reading time"
+pageRef = "/content/summaries-and-reading-time/"
+parent = "content"
+weight = 50
+
+[[main]]
+name = "Taxonomies"
+pageRef = "/content/taxonomies/"
+parent = "content"
+weight = 60
+
+[[main]]
+name = "Shortcodes"
+pageRef = "/content/shortcodes/"
+parent = "content"
+weight = 70
+
+[[main]]
+name = "Colours"
+pageRef = "/customisation/colours/"
+parent = "customisation"
+weight = 10
+
+[[main]]
+name = "Styles"
+pageRef = "/customisation/styles/"
+parent = "customisation"
+weight = 20
+
+[[main]]
+name = "Custom CSS"
+pageRef = "/customisation/custom-css/"
+parent = "customisation"
+weight = 30
+
+[[main]]
+name = "Page headers"
+pageRef = "/customisation/hero-section/"
+parent = "customisation"
+weight = 40
+
+[[main]]
+name = "Header layout and hooks"
+pageRef = "/customisation/header/"
+parent = "customisation"
+weight = 45
+
+[[main]]
+name = "Comments"
+pageRef = "/customisation/comments/"
+parent = "customisation"
+weight = 50
+
+[[main]]
+name = "Overriding partials"
+pageRef = "/customisation/overriding-partials/"
+parent = "customisation"
+weight = 60
+
+[[main]]
+name = "Layout map"
+pageRef = "/customisation/layout-map/"
+parent = "customisation"
+weight = 70
+
+[[main]]
+name = "Hooks & filters"
+pageRef = "/customisation/hooks-and-filters/"
+parent = "customisation"
+weight = 80
+
+[[main]]
+name = "Minimal blog"
+pageRef = "/examples/minimal-blog/"
+parent = "examples"
+weight = 10
+
+[[main]]
+name = "Multilingual site"
+pageRef = "/examples/multilingual-site/"
+parent = "examples"
+weight = 20
+
+[[main]]
+name = "No-blog static site"
+pageRef = "/examples/no-blog-static-site/"
+parent = "examples"
+weight = 30
+
+[[main]]
+name = "External links"
+pageRef = "/examples/external-links/"
+parent = "examples"
+weight = 40
+
+[[main]]
+name = "Add a LinkedIn icon"
+pageRef = "/examples/linkedin-icon/"
+parent = "examples"
+weight = 50
+
+[[main]]
+name = "Troubleshooting"
+pageRef = "/help/troubleshooting/"
+parent = "help"
+weight = 10
+
+[[main]]
+name = "Contributing to the documentation"
+pageRef = "/help/contributing/"
+parent = "help"
+weight = 20
+
+[[main]]
+name = "Contributors"
+pageRef = "/help/contributors/"
+parent = "help"
+weight = 30
+
+[[main]]
+name = "Developing across the Ananke repositories"
+pageRef = "/help/development/"
+parent = "help"
+weight = 40

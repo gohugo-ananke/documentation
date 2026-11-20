@@ -1,6 +1,10 @@
 ---
-title: Summaries and Reading Time
+title: Summaries and reading time
+description: "Control the summaries on list pages and show the reading time and word count."
 date: 2026-06-06T08:00:00.000+0700
+weight: 500
+aliases:
+  - /content/reading-time/
 ---
 
 On list pages and the homepage, Ananke shows a short summary of each post rather
@@ -59,7 +63,11 @@ for per-language and per-page examples.
 
 ## Reading time and word count
 
-Enable the reading time and word count display with `show_reading_time`:
+Ananke can show an estimated reading time and the word count below the title of a single page. The display is off by default. It shows when `show_reading_time` is `true` in one of these places:
+
+* the site parameters, for all pages;
+* the front matter of a section's `_index.md` file, for the pages in that section;
+* the front matter of a page, for that page only.
 
 ```toml
 # config/_default/params.toml
@@ -68,9 +76,33 @@ Enable the reading time and word count display with `show_reading_time`:
 show_reading_time = true
 ```
 
-You can also tune the words-per-minute used for the estimate with
-`reading_speed`. Both are covered in detail, including multilingual setup, on the
-[Reading Time](/content/reading-time/) page.
+### Reading speed
+
+By default, Ananke shows Hugo's [`.ReadingTime`](https://gohugo.io/methods/page/readingtime/) value. Hugo calculates it with 212 words per minute, or 500 words per minute for CJK languages.
+
+To use your own speed, set the optional `reading_speed` parameter to a number of words per minute. Ananke then divides the page's word count by this number and rounds the result up to a full minute.
+
+```toml
+# config/_default/params.toml
+
+[params]
+show_reading_time = true
+reading_speed = 228
+```
+
+Reading speeds differ between languages. On a multilingual site, set `reading_speed` for each language:
+
+```toml
+# config/_default/languages.toml
+
+[en.params]
+reading_speed = 228
+
+[de.params]
+reading_speed = 179
+```
+
+The text around the numbers comes from the `readingTime` and `wordCount` translation strings. To change them, see [Overriding theme interface strings](/configuration/multilingual/#overriding-theme-interface-strings).
 
 ## How list pages use summaries
 
@@ -78,8 +110,7 @@ On list pages and the homepage:
 
 * each entry shows its summary (manual divider, front matter `summary`, or the
   automatic excerpt — in that order of preference);
-* a "read more" link points to the full page;
-* if reading time is enabled, it appears with the entry.
+* a "read more" link points to the full page.
 
 Posts that have a [featured image](/customisation/hero-section/) show it
 alongside the summary as a card.

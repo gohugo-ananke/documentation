@@ -1,6 +1,8 @@
 ---
-title: Overriding Partials
+title: Overriding partials
+description: "Replace a theme template with your own version without editing the theme."
 date: 2026-06-06T08:00:00.000+0700
+weight: 600
 ---
 
 Ananke is built from many small template files called partials. You can change
@@ -13,6 +15,9 @@ When Hugo needs a partial, it looks in your project first and the theme second.
 If a file exists at the same path in both places, **your** copy wins. This is
 what makes safe customisation possible: you never touch the theme, you just
 shadow the file you want to change.
+
+> [!IMPORTANT]
+> Overrides of `site-header.html`, `page-header.html`, and `site-navigation.html` now produce deprecation warnings and are scheduled to stop working as extension points in Ananke v3. Use [Header layout and hooks](/customisation/header/#migrate-existing-header-overrides) to migrate.
 
 ## The safe override pattern
 
@@ -56,7 +61,7 @@ keeps coming from the theme.
 * Copy only the partial you need, not the whole `layouts/` tree.
 * Change as little as possible inside it.
 * If you only need to add markup at a specific point, check whether a
-  [layout hook](/hooks-and-filters/) already exists for that spot — hooks are
+  [layout hook](/customisation/hooks-and-filters/) already exists for that spot — hooks are
   safer than full overrides because they survive theme changes untouched.
 
 ## Update risks
