@@ -31,21 +31,17 @@ theme rather than the docs.
 
 ## Setting up
 
+Keep the theme and documentation repositories next to each other. With Node.js 22.18 or later, install the documentation dependencies and start the shared preview:
+
 ```bash
-git clone git@github.com:gohugo-ananke/documentation.git
 cd documentation
-npm install            # installs linters and git hooks
-hugo server            # builds against the published theme module
+npm install
+npm run dev
 ```
 
-To preview your content against a **local** theme checkout (sibling `../ananke` directory), use
-the development environment, which replaces the published module with your working tree:
+You can also run `npm run dev` from the sibling `ananke` repository. Both commands serve the documentation site with your local theme edits. The calling repository keeps its branch and selects the companion's branch: `main` selects `main`, `development` selects `development`, and other named branches select the same local branch in the companion when it exists. Otherwise, they select `development`. The launcher prints both branches and any switch it makes. It refuses to switch a companion with uncommitted or untracked changes, excluding `scratch/`.
 
-```bash
-hugo server --environment development
-```
-
-See the [README](README.md) for the full explanation of both build modes.
+Stop the server before selecting another branch pair. See the [README](README.md#running-locally) for manual previews, branch checks, and launcher tests.
 
 ## Writing style guide
 
