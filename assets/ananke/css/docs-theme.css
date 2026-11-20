@@ -271,3 +271,80 @@ header nav img {
     background-position: center center;
     background-repeat: no-repeat;
 }
+
+/* Let the article column shrink, and wrap long inline option names and paths. */
+article > .nested-copy-line-height {
+    min-width: 0;
+    max-width: 100%;
+    overflow-wrap: anywhere;
+}
+
+.docs-table-scroll {
+    max-width: 100%;
+}
+
+.docs-table-scroll table:has(th:nth-child(4)) {
+    min-width: 32rem;
+}
+
+.docs-table-scroll:focus-visible {
+    outline: 2px solid var(--color-ananke-700);
+    outline-offset: 3px;
+}
+
+.docs-table-scroll th,
+.docs-table-scroll td,
+.docs-options {
+    overflow-wrap: anywhere;
+}
+
+.docs-table-scroll thead,
+.docs-option-name {
+    background-color: var(--color-ananke-100);
+    color: var(--color-ananke-975);
+}
+
+.docs-option {
+    border-color: var(--color-ananke-200);
+    background-color: var(--color-ananke-25);
+}
+
+.docs-option-name code,
+.docs-options code,
+.docs-table-scroll code {
+    white-space: normal;
+    font-size: inherit;
+}
+
+.docs-option-meta {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.docs-option-meta > div {
+    min-width: 0;
+}
+
+.docs-option-notes {
+    border-top: 1px solid var(--color-ananke-200);
+}
+
+/* Keep labels and long defaults readable when the content column is narrow. */
+@media (max-width: 30em) {
+    .docs-option-meta {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+/* Keep small table links readable against the documentation backgrounds. */
+.docs-table-scroll a,
+.docs-options a {
+    color: var(--color-ananke-800);
+}
+
+.docs-table-scroll a:hover,
+.docs-table-scroll a:focus,
+.docs-options a:hover,
+.docs-options a:focus {
+    color: var(--color-ananke-975);
+}

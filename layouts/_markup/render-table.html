@@ -1,0 +1,70 @@
+{{- /*
+  Option references become definition lists: name, metadata, then notes.
+  Other Markdown tables retain table semantics inside a scrollable region.
+  The source Markdown and rendered inline formatting stay unchanged.
+*/ -}}
+{{- $headers := index .THead 0 -}}
+{{- $names := slice -}}
+{{- $labels := slice -}}
+{{- range $headers -}}
+  {{- $label := .Text | plainify | strings.TrimSpace -}}
+  {{- $labels = $labels | append $label -}}
+  {{- $names = $names | append (lower $label) -}}
+{{- end -}}
+{{- $options := and (eq (len .THead) 1) (in (slice "option" "parameter" "argument" "field" "key" "title") (index $names 0)) (in $names "type") -}}
+{{- if $options }}
+<dl class="docs-options f6 lh-copy mv3{{ with .Attributes.class }} {{ . }}{{ end }}"
+  {{- range $key, $value := .Attributes }}
+    {{- if and $value (ne $key "class") }}{{ printf " %s=%q" $key $value | safeHTMLAttr }}{{ end }}
+  {{- end }}>
+  {{- range .TBody }}
+  <div class="docs-option ba br2 mb3">
+    <dt class="docs-option-name pa3 f5 fw6">{{ (index . 0).Text }}</dt>
+    <dd class="ma0">
+      <dl class="docs-option-meta ma0">
+        {{- range $index, $cell := . }}
+        {{- $name := index $names $index }}
+        {{- if and (gt $index 0) (not (in (slice "description" "notes") $name)) }}
+        <div class="pa3">
+          <dt class="fw6 mb1">{{ (index $headers $index).Text }}</dt>
+          <dd class="ma0">{{ $cell.Text }}</dd>
+        </div>
+        {{- end }}
+        {{- end }}
+      </dl>
+      {{- range $index, $cell := . }}
+      {{- if and (in (slice "description" "notes") (index $names $index)) ($cell.Text | plainify | strings.TrimSpace) }}
+      <div class="docs-option-notes pa3">{{ $cell.Text }}</div>
+      {{- end }}
+      {{- end }}
+    </dd>
+  </div>
+  {{- end }}
+</dl>
+{{- else }}
+<div class="docs-table-scroll overflow-auto mv3" role="region" aria-label="Table: {{ delimit $labels ", " }}" tabindex="0">
+  <table class="w-100 collapse f6 lh-copy{{ with .Attributes.class }} {{ . }}{{ end }}"
+    {{- range $key, $value := .Attributes }}
+      {{- if and $value (ne $key "class") }}{{ printf " %s=%q" $key $value | safeHTMLAttr }}{{ end }}
+    {{- end }}>
+    <thead>
+      {{- range .THead }}
+      <tr>
+        {{- range . }}
+        <th scope="col" class="pa2"{{ with .Alignment }} style="text-align: {{ . }}"{{ end }}>{{ .Text }}</th>
+        {{- end }}
+      </tr>
+      {{- end }}
+    </thead>
+    <tbody>
+      {{- range .TBody }}
+      <tr>
+        {{- range . }}
+        <td class="pa2"{{ with .Alignment }} style="text-align: {{ . }}"{{ end }}>{{ .Text }}</td>
+        {{- end }}
+      </tr>
+      {{- end }}
+    </tbody>
+  </table>
+</div>
+{{- end }}
