@@ -32,6 +32,53 @@ workspace/
 
 Make shared theme changes in `ananke`. Test them in the documentation and both starter sites. Keep documentation-specific overrides in `documentation`. Each site has its own dependency selection, configuration, and Git history; placing the directories next to each other does not connect them automatically.
 
+## Shared development server
+
+`npm run dev` can be run from the theme or documentation repository. The launcher pairs the local branches, then sets `HUGO_MODULE_REPLACEMENTS` to the absolute sibling Ananke path and starts Hugo with `--environment development`. This environment variable overrides the module version recorded in `go.mod`. The preview includes uncommitted theme changes. Branch selection happens only at startup; restart the server after changing branches.
+
+## Production and preview builds
+
+Production and testing builds select their own module revision without changing the consuming site's checked-in dependency files:
+
+```bash
+# Latest stable release, with production configuration and search indexing.
+npm run build
+
+# An unreleased remote theme branch, with the same build and indexing steps.
+npm run build:preview -- --theme-ref development
+
+# A feature branch, including branch names containing a slash.
+npm run build:preview -- --theme-ref rework/header
+```
+
+Preview builds default to `development`; `ANANKE_THEME_REF` supplies an alternative default, and `--theme-ref` overrides it. The build log records the actual resolved module version. Production always queries the latest stable release, regardless of an inherited `ANANKE_THEME_REF`, `HUGO_ENV`, or local `HUGO_MODULE_REPLACEMENTS`. It rejects `--theme-ref` so that preview work is not selected by accident.
+
+Both build modes use a temporary source tree and force production configuration. They run Hugo and Pagefind, then remove the temporary tree. The source repository's `go.mod` and `go.sum` remain unchanged. Use a normal `hugo` command if you specifically want to test the revision pinned in those files.
+
+`npm run deploy` builds a preview revision and creates a draft Netlify deployment. `npm run deploy:production` builds the latest stable release and deploys to production. Both require an authenticated, linked Netlify CLI and stop if resolution, building, or indexing fails. Build commands alone do not publish anything.
+
+## Release and publication order
+
+A commit on `main` and a published stable release are different until the release tag exists. The theme's stable release command is restricted to `main`; documentation production builds select its latest stable version. Preview builds can target `main` when testing changes before tagging.
+
+For this test release:
+
+1. Complete the theme and documentation checks on `rework/header`, then merge both reviewed branches into their own `development` branches using the linear merge policy.
+2. Promote the theme to `main` and publish its stable release. Record the actual tag; do not guess the next version.
+3. Before promoting the documentation to `main`, build it with `npm run build`, passing `--expect-theme-version` and that tag. This stops the build if Go still resolves the previous release. Wait for the module version to become available and retry when necessary.
+4. Review the resulting pages, navigation, legacy URL redirects, search, and mobile layouts. Confirm the theme and Hugo versions printed in the build log.
+5. Promote the documentation to `main` only after the theme release is available. This starts the Netlify production and GitHub Pages builds with the stable build command. Local production publication uses `npm run deploy:production` instead.
+
+Merge timing alone does not prove that a release is available or that documentation has been deployed. A documentation build started before the theme tag exists can still resolve the previous stable release. The development environment remains useful for testing uncommitted changes, but it does not establish production behaviour.
+
+The documentation currently builds with Hugo v0.170.1; the theme supports Hugo v0.160.0 or later. A longer-term version policy is still to be decided.
+
+### Learn from this release
+
+Keep the resolved theme version, Hugo version, preview URL, and publication result with the release record. Note any module availability delay or manual correction. These are evidence for improving the next release, rather than proof that an unobserved deployment succeeded.
+
+Candidates for later automation are triggering documentation rebuilds after stable theme releases, passing the expected release tag between repositories, refreshing the reproducible dependency pins in the documentation and starter sites, defining the Hugo compatibility test range, and isolating launcher tests from an active preview on port 1313. These are follow-up ideas; the current process still requires the publication order above.
+
 ## Option 1: select a remote theme branch
 
 This is the preferred option for the documentation and the Hugo Module starter site. It lets another developer or a preview build download the same theme revision without a sibling checkout. Git, Go, and Hugo must be available.
@@ -121,11 +168,11 @@ To run the sites together, start each server in a separate terminal with a diffe
 
 * Inspect `go.mod`, `go.sum`, module replacements, environment configuration, and any changed submodule pointer in the PR diff.
 * State any blocking theme PR and temporary dependency clearly in the PR description.
-* Before merging into the main branches, select the approved theme release and review the resulting dependency changes. Do not guess a release version before it exists.
+* Before promoting the documentation to `main`, release the theme first and verify the production build with the actual expected tag. For the starter sites and manual Hugo builds, select the approved dependency deliberately and review its changes. Do not guess a release version before it exists.
 * Remove temporary local paths and test-only configuration added for the work. An established development-only configuration can remain if it is intentionally maintained and excluded from production builds.
 * Check the actual preview and production build commands. A build using the development environment could use a local path that does not exist on the build server.
 * Build again with the final dependency and normal production configuration. A successful local replacement test does not prove that the released module or submodule installation works.
 
-If the work still needs an unreleased theme revision, keep the dependency explicit and the PR blocked until the release or an agreed integration plan is ready. Do not merge a temporary branch dependency into the main branches merely because its preview works.
+If the work still needs an unreleased theme revision, use the preview build command or keep the manual dependency explicit. Follow the publication order above before promoting the documentation to `main`. A working preview does not make an unreleased dependency suitable for production.
 
 See Hugo's [module management guide](https://gohugo.io/hugo-modules/use-modules/) and [module replacement configuration](https://gohugo.io/configuration/module/#top-level-settings) for the underlying behaviour.

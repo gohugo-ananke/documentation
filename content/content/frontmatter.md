@@ -1,6 +1,8 @@
 ---
-title: Frontmatter
+title: Front matter
+description: "The front matter options that Ananke reads, with examples and defaults."
 date: 2026-01-16T08:00:00.000+0700
+weight: 100
 ---
 
 ## Using a canonical url

@@ -5,6 +5,8 @@ background_color_class = "ananke-brand-background"
 images = ["images/brand/ananke-social.png"]
 
 [ananke]
+# Documentation code copying uses hooks/body-end.html to omit line numbers.
+copy_code = false
 show_recent_posts = false
 # fontsource.html is a partial that returns the Fontsource @font-face rules.
 # Keep it before fonts.css.
@@ -15,6 +17,13 @@ custom_css = [
   "fixes.css",
   "highlighting.css",
 ]
+
+# Use the theme navigation and add the documentation search component.
+[ananke.header]
+navigation = [["logo"], ["search"], ["languages", "menu", "social"]]
+
+[ananke.navigation.classes]
+item = "list f5 fw4 dib pr3"
 
 [ananke.home]
 content_alignment = "left" # options: left, center, right

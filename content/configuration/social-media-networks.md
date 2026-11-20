@@ -1,6 +1,8 @@
 ---
-title: Social Media Networks
+title: Social media networks
+description: "Show follow and share links for social media networks, and add your own networks and icons."
 date: 2026-01-16T08:00:00.000+0700
+weight: 500
 ---
 
 Ananke automatically adds "follow" link icons to the header and footer and "Share" link icons to pages unless the `disable_share` parameter is set to true either on the site level (site params) or page level (front matter). Each services can show a label, an icon, and be formatted in a custom color.

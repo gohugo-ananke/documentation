@@ -5,14 +5,15 @@
   command = "npm run build"
 
 [build.environment]
-  # Matches your local version (check with 'hugo version')
-  HUGO_VERSION = "0.161.1"
+  # Hugo version verified for the documentation build
+  HUGO_VERSION = "0.170.1"
+  NODE_VERSION = "24"
   HUGO_ENV = "production"
 
 [context.deploy-preview]
   # Build with the preview URL for Pull Requests
-  command = "hugo --gc --minify --buildFuture -b $DEPLOY_PRIME_URL && npm run search:index"
+  command = "npm run build:preview -- --buildFuture"
 
 [context.branch-deploy]
   # Build settings for non-production branches
-  command = "hugo --gc --minify -b $DEPLOY_PRIME_URL && npm run search:index"
+  command = "npm run build:preview"

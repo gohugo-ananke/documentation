@@ -32,11 +32,13 @@
     "lint:markdown": "markdownlint-cli2 content/**/*.{md,mdx}",
     "lint:markdown:fix": "markdownlint-cli2 --fix content/**/*.{md,mdx}",
     "server": "wireit",
-    "build": "hugo --gc --minify && npm run search:index",
-    "deploy": "npm run build && netlify deploy --no-build --dir public",
-    "deploy:production": "npm run deploy -- --prod --open",
+    "build": "node scripts/build.ts --production",
+    "deploy": "node scripts/build.ts --deploy",
+    "deploy:production": "node scripts/build.ts --production --deploy",
     "search:index": "pagefind --site public",
-    "search:serve": "pagefind --site public --serve"
+    "search:serve": "pagefind --site public --serve",
+    "build:preview": "node scripts/build.ts",
+    "test:build": "node --test scripts/build.test.ts"
   },
   "cspell": {
     "version": "0.2",
