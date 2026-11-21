@@ -1,32 +1,88 @@
-:root {
-    --color-ananke-0: #fffefb;
-    --color-ananke-25: #fffdf6;
-    --color-ananke-50: #fefbec;
-    --color-ananke-100: #fbf1c7;
-    --color-ananke-200: #f7e390;
-    --color-ananke-300: #f3cf56;
-    --color-ananke-400: #f0bc2f;
-    --color-ananke-500: #e99d17;
-    --color-ananke-600: #ce7811;
-    --color-ananke-700: #ab5512;
-    --color-ananke-800: #8b4315;
-    --color-ananke-900: #733714;
-    --color-ananke-950: #421b06;
-    --color-ananke-975: #2a1104;
-    --color-ananke-1000: #140802;
-
-    /* Inherited by code blocks and other scrollable regions. */
-    scrollbar-color: var(--color-ananke-700) var(--color-ananke-100);
+body {
+    background-color: var(--docs-background);
+    color: var(--docs-text);
 }
 
-body {
-    background-color: var(--color-ananke-50);
-    color: var(--color-ananke-975);
+/* Bridge colour utilities inherited from Ananke's templates to our roles.
+ * Layout utilities and the shared theme's defaults remain unchanged.
+ */
+.bg-near-white,
+.bg-white {
+    background-color: var(--docs-background);
+}
+
+.bg-light-gray,
+.bg-black {
+    background-color: var(--docs-surface);
+}
+
+.black,
+.near-black,
+.dark-gray,
+.mid-gray,
+.white {
+    color: var(--docs-text);
+}
+
+.white-80,
+.white-90 {
+    color: var(--docs-text-secondary);
+}
+
+.gray,
+.silver,
+.light-silver,
+.white-70 {
+    color: var(--docs-text-muted);
+}
+
+.b--moon-gray,
+.b--white-20 {
+    border-color: var(--docs-border);
+}
+
+a,
+.blue,
+.nested-links a {
+    color: var(--docs-accent);
+    text-underline-offset: 0.2em;
+}
+
+a:hover,
+a:focus-visible,
+.nested-links a:hover,
+.nested-links a:focus {
+    color: var(--docs-accent-hover);
+}
+
+/* Colour feedback keeps links readable instead of dimming them. */
+a.dim:hover,
+a.dim:focus {
+    opacity: 1;
+}
+
+.ananke-nav-link[aria-current],
+.ananke-submenu-link[aria-current="page"] {
+    color: var(--docs-accent);
+}
+
+.hover-white:hover,
+.hover-white:focus {
+    color: var(--docs-accent-hover);
+}
+
+.hover-bg-white-10:hover,
+.hover-bg-white-10:focus {
+    background-color: var(--docs-surface-raised);
+}
+
+.lh-copy blockquote {
+    border-color: var(--docs-control-border);
+    color: var(--docs-text-secondary);
 }
 
 p code {
-    background-color: var(--color-ananke-100);
-    font-size: .95 rem;
+    background-color: var(--docs-surface-raised);
 }
 
 /* Centre the capped column; section, taxonomy, and term templates do not add `center`. */
@@ -55,9 +111,9 @@ pre {
     line-height: 1.4;
 }
 
-/* Documentation identity: use the dark-background lockup on ink. */
+/* Dark surfaces for the header, dropdowns, and footer. */
 .ananke-brand-background {
-    background-color: var(--color-ananke-975);
+    background-color: var(--docs-surface);
 }
 
 header nav img {
@@ -93,15 +149,21 @@ header nav img {
     position: relative;
     z-index: 10;
     --pf-font: var(--font-inter-variable);
-    --pf-text: var(--color-ananke-975);
-    --pf-text-secondary: var(--color-ananke-900);
-    --pf-text-muted: var(--color-ananke-800);
-    --pf-background: var(--color-ananke-0);
-    --pf-border: #d5c4a1;
-    --pf-border-focus: var(--color-ananke-700);
-    --pf-hover: var(--color-ananke-100);
-    --pf-mark: var(--color-ananke-975);
-    --pf-outline-focus: var(--color-ananke-700);
+    --pf-text: var(--docs-text);
+    --pf-text-secondary: var(--docs-text-secondary);
+    --pf-text-muted: var(--docs-text-muted);
+    --pf-skeleton: var(--docs-surface-raised);
+    --pf-skeleton-shine: var(--color-olive-700);
+    --pf-error-bg: var(--docs-surface);
+    --pf-error-border: var(--docs-code-error);
+    --pf-error-text: var(--docs-code-error);
+    --pf-error-text-secondary: var(--docs-text-secondary);
+    --pf-background: var(--docs-surface);
+    --pf-border: var(--docs-control-border);
+    --pf-border-focus: var(--docs-accent);
+    --pf-hover: var(--docs-surface-raised);
+    --pf-mark: var(--docs-accent);
+    --pf-outline-focus: var(--docs-accent);
     --pf-shadow-sm: none;
     --pf-shadow-md: none;
     --pf-shadow-lg: none;
@@ -110,6 +172,10 @@ header nav img {
 /* Keep search above the header text and the theme menu on its own row. */
 .docs-site-search pagefind-searchbox {
     display: block;
+    /* Pagefind resets inherited browser colours with `all: initial`. */
+    color-scheme: dark;
+    scrollbar-color: var(--color-olive-500) var(--docs-surface);
+    caret-color: var(--docs-accent);
 }
 
 .ananke-nav-link[aria-current] {
@@ -158,7 +224,7 @@ header nav img {
         overflow-y: auto;
         scrollbar-width: thin;
         scrollbar-gutter: stable;
-        scrollbar-color: var(--color-ananke-700) transparent;
+        scrollbar-color: var(--docs-accent) transparent;
     }
 }
 
@@ -205,10 +271,10 @@ header nav img {
     min-height: 2.75rem;
     max-width: 100%;
     padding: 0.625rem 1rem;
-    border: 1px solid var(--color-ananke-700);
+    border: 1px solid var(--docs-accent);
     border-radius: 4px;
-    color: var(--color-ananke-975);
-    background-color: var(--color-ananke-0);
+    color: var(--docs-text);
+    background-color: var(--docs-surface);
     font-family: var(--font-inter-variable);
     font-size: 1rem;
     line-height: 1.5;
@@ -219,18 +285,18 @@ header nav img {
 
 .docs-edit-page a[href]:hover,
 .docs-edit-page a[href]:focus {
-    color: var(--color-ananke-0);
-    background-color: var(--color-ananke-700);
+    color: var(--docs-on-accent);
+    background-color: var(--docs-accent);
     opacity: 1;
 }
 
 .docs-edit-page a[href]:focus-visible {
-    outline: 2px solid var(--color-ananke-700);
+    outline: 2px solid var(--docs-accent);
     outline-offset: 3px;
 }
 
 .docs-edit-page a[href]:active {
-    background-color: var(--color-ananke-900);
+    background-color: var(--docs-accent-hover);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -239,13 +305,13 @@ header nav img {
     }
 }
 
-/* Keep the homepage photograph behind the existing dark-brown identity. */
+/* Retain the photographs beneath the dark olive surface. */
 .is-home > header {
     background-position: center 65%;
 }
 
 .is-home > header > div {
-    background-color: color-mix(in srgb, var(--color-ananke-975) 94%, transparent);
+    background-color: color-mix(in srgb, var(--docs-surface) 94%, transparent);
 }
 
 /* Preserve the no-image header's existing spacing when adding its photograph. */
@@ -265,8 +331,8 @@ header nav img {
 .is-page > header > .ananke-brand-background {
     background-image:
         linear-gradient(
-            color-mix(in srgb, var(--color-ananke-975) 94%, transparent),
-            color-mix(in srgb, var(--color-ananke-975) 94%, transparent)
+            color-mix(in srgb, var(--docs-surface) 94%, transparent),
+            color-mix(in srgb, var(--docs-surface) 94%, transparent)
         ),
         url("../../images/alexander-grey-YTGt96tGxSY-unsplash.jpg");
     background-size: cover;
@@ -290,7 +356,7 @@ article > .nested-copy-line-height {
 }
 
 .docs-table-scroll:focus-visible {
-    outline: 2px solid var(--color-ananke-700);
+    outline: 2px solid var(--docs-accent);
     outline-offset: 3px;
 }
 
@@ -302,13 +368,13 @@ article > .nested-copy-line-height {
 
 .docs-table-scroll thead,
 .docs-option-name {
-    background-color: var(--color-ananke-100);
-    color: var(--color-ananke-975);
+    background-color: var(--docs-surface-raised);
+    color: var(--docs-text);
 }
 
 .docs-option {
-    border-color: var(--color-ananke-200);
-    background-color: var(--color-ananke-25);
+    border-color: var(--docs-border);
+    background-color: var(--docs-surface);
 }
 
 .docs-option-name code,
@@ -328,7 +394,7 @@ article > .nested-copy-line-height {
 }
 
 .docs-option-notes {
-    border-top: 1px solid var(--color-ananke-200);
+    border-top: 1px solid var(--docs-border);
 }
 
 /* Keep labels and long defaults readable when the content column is narrow. */
@@ -341,12 +407,12 @@ article > .nested-copy-line-height {
 /* Keep small table links readable against the documentation backgrounds. */
 .docs-table-scroll a,
 .docs-options a {
-    color: var(--color-ananke-800);
+    color: var(--docs-accent);
 }
 
 .docs-table-scroll a:hover,
 .docs-table-scroll a:focus,
 .docs-options a:hover,
 .docs-options a:focus {
-    color: var(--color-ananke-975);
+    color: var(--docs-accent-hover);
 }

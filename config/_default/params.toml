@@ -13,6 +13,7 @@ show_recent_posts = false
 custom_css = [
   "fontsource.html",
   "fonts.css",
+  "docs-colors.css",
   "docs-theme.css",
   "fixes.css",
   "highlighting.css",

@@ -37,6 +37,12 @@ data/contributors/  # all-contributors source data
 scripts/            # maintenance scripts
 ```
 
+## Documentation colours
+
+The documentation uses a fixed dark palette built from Tailwind CSS's yellow and olive colour ranges. These are plain CSS custom properties; Tailwind is not a dependency. The shared Ananke theme keeps its own default colours.
+
+Edit the palette and semantic roles in [`docs-colors.css`](assets/ananke/css/docs-colors.css). Components use roles such as `--docs-background`, `--docs-text`, and `--docs-accent`. [`docs-theme.css`](assets/ananke/css/docs-theme.css) maps inherited colour utilities to these roles, while [`highlighting.css`](assets/ananke/css/highlighting.css) styles code examples and their controls. Check text contrast, focus indicators, search results, and mobile rendering when changing these colours.
+
 ## Prerequisites
 
 * **Hugo** — use the standard binary, currently v0.170.1 in [`netlify.toml`](netlify.toml) and the GitHub Pages workflow. The theme continues to support Hugo v0.160.0 or later. Check the installed version with `hugo version`.

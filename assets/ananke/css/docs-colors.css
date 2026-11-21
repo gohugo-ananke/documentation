@@ -1,0 +1,63 @@
+/* Tailwind CSS palette values, used without the Tailwind framework.
+ * Source: https://github.com/tailwindlabs/tailwindcss/blob/main/packages/tailwindcss/theme.css
+ * Keep palette steps separate from the documentation's semantic roles.
+ */
+:root {
+    color-scheme: dark;
+
+    --color-olive-50: oklch(98.8% 0.003 106.5);
+    --color-olive-100: oklch(96.6% 0.005 106.5);
+    --color-olive-200: oklch(93% 0.007 106.5);
+    --color-olive-300: oklch(88% 0.011 106.6);
+    --color-olive-400: oklch(73.7% 0.021 106.9);
+    --color-olive-500: oklch(58% 0.031 107.3);
+    --color-olive-600: oklch(46.6% 0.025 107.3);
+    --color-olive-700: oklch(39.4% 0.023 107.4);
+    --color-olive-800: oklch(28.6% 0.016 107.4);
+    --color-olive-900: oklch(22.8% 0.013 107.4);
+    --color-olive-950: oklch(15.3% 0.006 107.1);
+
+    --color-yellow-50: oklch(98.7% 0.026 102.212);
+    --color-yellow-100: oklch(97.3% 0.071 103.193);
+    --color-yellow-200: oklch(94.5% 0.129 101.54);
+    --color-yellow-300: oklch(90.5% 0.182 98.111);
+    --color-yellow-400: oklch(85.2% 0.199 91.936);
+    --color-yellow-500: oklch(79.5% 0.184 86.047);
+    --color-yellow-600: oklch(68.1% 0.162 75.834);
+    --color-yellow-700: oklch(55.4% 0.135 66.442);
+    --color-yellow-800: oklch(47.6% 0.114 61.907);
+    --color-yellow-900: oklch(42.1% 0.095 57.708);
+    --color-yellow-950: oklch(28.6% 0.066 53.813);
+
+    --docs-background: var(--color-olive-950);
+    --docs-surface: var(--color-olive-900);
+    --docs-surface-raised: var(--color-olive-800);
+    --docs-border: var(--color-olive-800);
+    --docs-control-border: var(--color-olive-500);
+    --docs-text: var(--color-olive-100);
+    --docs-text-secondary: var(--color-olive-300);
+    --docs-text-muted: var(--color-olive-400);
+    --docs-accent: var(--color-yellow-400);
+    --docs-accent-hover: var(--color-yellow-300);
+    --docs-on-accent: var(--color-olive-950);
+
+    /* Syntax and status colours remain distinct from navigation accents. */
+    --docs-code-keyword: oklch(82.8% 0.111 230.318); /* sky-300 */
+    --docs-code-string: oklch(87.1% 0.15 154.449); /* green-300 */
+    --docs-code-number: oklch(81.1% 0.111 293.571); /* violet-300 */
+    --docs-code-error: oklch(80.8% 0.114 19.571); /* red-300 */
+
+    scrollbar-color: var(--color-olive-500) var(--docs-surface);
+    accent-color: var(--docs-accent);
+    caret-color: var(--docs-accent);
+}
+
+::selection {
+    color: var(--docs-on-accent);
+    background-color: var(--docs-accent);
+}
+
+:focus-visible {
+    outline: 2px solid var(--docs-accent);
+    outline-offset: 3px;
+}
