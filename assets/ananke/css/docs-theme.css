@@ -29,8 +29,10 @@ p code {
     font-size: .95 rem;
 }
 
+/* Centre the capped column; section, taxonomy, and term templates do not add `center`. */
 article {
     max-width: 64rem;
+    margin-inline: auto;
 }
 
 article.mw7 {
