@@ -45,6 +45,18 @@ custom_css = ["custom.css"]
 Your CSS is bundled into the theme's stylesheet after Tachyons and the theme's
 own CSS, so your rules win through the normal cascade.
 
+## Override a theme class
+
+To change a class that the theme defines, redefine it in your custom CSS file. Use the same selector, so that your rule wins because it comes later. For example, to turn off the automatic [hyphenation](/customisation/styles/#hyphenation) of post content:
+
+```css
+/* assets/ananke/css/custom.css */
+
+.hyphenate {
+  hyphens: manual;
+}
+```
+
 > [!NOTE]
 > The current parameter is `ananke.custom_css`. The old top-level
 > `params.custom_css` still works but is deprecated and prints a build warning —
