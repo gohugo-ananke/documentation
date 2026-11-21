@@ -43,3 +43,39 @@
     });
   })();
 </script>
+
+{{- /* Match the contents disclosure and DOM order to the reading layout. */ -}}
+<script>
+  (function () {
+    "use strict";
+
+    var contents = document.querySelector(".docs-toc");
+    if (!contents) return;
+    var aside = contents.closest("aside");
+    var article = contents.closest("article");
+    var body = article && article.querySelector(":scope > .nested-copy-line-height");
+    if (!aside || !body) return;
+
+    var desktop = window.matchMedia("(min-width: 60em)");
+    var summary = contents.querySelector("summary");
+
+    function adaptContents() {
+      var hadFocus = contents.contains(document.activeElement);
+      if (desktop.matches) {
+        article.appendChild(aside);
+        contents.open = true;
+        if (hadFocus && document.activeElement === summary) {
+          var firstLink = contents.querySelector("a");
+          if (firstLink) firstLink.focus({ preventScroll: true });
+        }
+      } else {
+        article.insertBefore(aside, body);
+        contents.open = false;
+        if (hadFocus) summary.focus({ preventScroll: true });
+      }
+    }
+
+    adaptContents();
+    desktop.addEventListener("change", adaptContents);
+  })();
+</script>

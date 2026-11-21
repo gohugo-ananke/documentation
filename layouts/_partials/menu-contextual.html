@@ -1,0 +1,21 @@
+{{- /* Keep the desktop contents rail; enhance it to a disclosure on mobile. */ -}}
+{{- if and .Params.toc (findRE `<a\s` .TableOfContents) -}}
+  {{- $label := lang.Translate "whatsInThis" . -}}
+  <details id="docs-on-this-page" class="docs-toc bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links" aria-label="{{ $label }}" data-pagefind-ignore="all" open>
+    <summary class="docs-toc-summary f5 b">{{ $label }}</summary>
+    <p class="docs-toc-title f5 b mb3">{{ $label }}</p>
+    {{ .TableOfContents }}
+  </details>
+{{- end -}}
+
+{{- $related := .Site.RegularPages.Related . | collections.First 15 -}}
+{{- with $related -}}
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">{{ lang.Translate "related" }}</p>
+    <ul class="pa0 list">
+      {{- range . -}}
+        <li class="mb2"><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+      {{- end -}}
+    </ul>
+  </div>
+{{- end -}}

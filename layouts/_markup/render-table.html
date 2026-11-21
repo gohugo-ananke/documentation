@@ -1,6 +1,7 @@
 {{- /*
   Option references become definition lists: name, metadata, then notes.
-  Other Markdown tables retain table semantics inside a scrollable region.
+  Other setting references stack their rows on mobile and remain tables on
+  desktop. Comparison tables stay scrollable at every width.
   The source Markdown and rendered inline formatting stay unchanged.
 */ -}}
 {{- $headers := index .THead 0 -}}
@@ -12,6 +13,7 @@
   {{- $names = $names | append (lower $label) -}}
 {{- end -}}
 {{- $options := and (eq (len .THead) 1) (in (slice "option" "parameter" "argument" "field" "key" "title") (index $names 0)) (in $names "type") -}}
+{{- $stacked := and (not $options) (eq (len .THead) 1) (in (slice "setting" "option" "parameter" "argument" "field" "key" "front matter") (index $names 0)) -}}
 {{- if $options }}
 <dl class="docs-options f6 lh-copy mv3{{ with .Attributes.class }} {{ . }}{{ end }}"
   {{- range $key, $value := .Attributes }}
@@ -42,25 +44,29 @@
   {{- end }}
 </dl>
 {{- else }}
-<div class="docs-table-scroll overflow-auto mv3" role="region" aria-label="Table: {{ delimit $labels ", " }}" tabindex="0">
-  <table class="w-100 collapse f6 lh-copy{{ with .Attributes.class }} {{ . }}{{ end }}"
+<div class="docs-table-scroll{{ if $stacked }} docs-table-stack{{ end }} overflow-auto mv3" role="region" aria-label="Table: {{ delimit $labels ", " }}" tabindex="0">
+  <table class="w-100 collapse f6 lh-copy{{ with .Attributes.class }} {{ . }}{{ end }}"{{ if $stacked }} role="table"{{ end }}
     {{- range $key, $value := .Attributes }}
       {{- if and $value (ne $key "class") }}{{ printf " %s=%q" $key $value | safeHTMLAttr }}{{ end }}
     {{- end }}>
-    <thead>
+    <thead{{ if $stacked }} role="rowgroup"{{ end }}>
       {{- range .THead }}
-      <tr>
+      <tr{{ if $stacked }} role="row"{{ end }}>
         {{- range . }}
-        <th scope="col" class="pa2"{{ with .Alignment }} style="text-align: {{ . }}"{{ end }}>{{ .Text }}</th>
+        <th scope="col" class="pa2"{{ if $stacked }} role="columnheader"{{ end }}{{ with .Alignment }} style="text-align: {{ . }}"{{ end }}>{{ .Text }}</th>
         {{- end }}
       </tr>
       {{- end }}
     </thead>
-    <tbody>
+    <tbody{{ if $stacked }} role="rowgroup"{{ end }}>
       {{- range .TBody }}
-      <tr>
-        {{- range . }}
-        <td class="pa2"{{ with .Alignment }} style="text-align: {{ . }}"{{ end }}>{{ .Text }}</td>
+      <tr{{ if $stacked }} role="row"{{ end }}>
+        {{- range $index, $cell := . }}
+        {{- if and $stacked (eq $index 0) }}
+        <th scope="row" role="rowheader" class="pa2"{{ with .Alignment }} style="text-align: {{ . }}"{{ end }}>{{ .Text }}</th>
+        {{- else }}
+        <td class="pa2"{{ if $stacked }} role="cell"{{ end }}{{ with .Alignment }} style="text-align: {{ . }}"{{ end }}>{{ if $stacked }}<span class="docs-table-label" aria-hidden="true" data-pagefind-ignore>{{ (index $headers $index).Text }}</span>{{ end }}{{ .Text }}</td>
+        {{- end }}
         {{- end }}
       </tr>
       {{- end }}

@@ -201,6 +201,25 @@ header nav img {
 
 /* Table of contents: the theme renders it in an aside when `toc` is true
    (set for all pages in config/_default/hugo.toml). */
+.docs-toc-summary {
+    min-height: 2.75rem;
+    align-content: center;
+    cursor: pointer;
+}
+
+.docs-toc-summary::marker {
+    color: var(--docs-accent);
+}
+
+.docs-toc-title,
+.docs-toc-return {
+    display: none;
+}
+
+.docs-toc[open] .docs-toc-summary {
+    margin-bottom: 1rem;
+}
+
 #TableOfContents ul {
     margin: 0;
 }
@@ -216,6 +235,14 @@ header nav img {
 
 /* Wide screens: keep the table of contents in view while reading. */
 @media (min-width: 60em) {
+    .docs-toc-summary {
+        display: none;
+    }
+
+    .docs-toc-title {
+        display: block;
+    }
+
     aside:has(#TableOfContents) {
         position: sticky;
         top: 1rem;
@@ -242,26 +269,31 @@ header nav img {
     }
 }
 
-/* Small screens: the aside comes after the content, so show it after the
-   page header instead. */
+/* JavaScript moves the aside before the prose on small screens so visual
+   order and keyboard order agree. Without it, contents stay expanded below. */
 @media not all and (min-width: 60em) {
-    article:has(#TableOfContents) {
-        display: flex;
-        flex-direction: column;
-    }
-
-    article:has(#TableOfContents) > * {
-        order: 2;
-    }
-
-    article:has(#TableOfContents) > header {
-        order: 0;
-    }
-
     article:has(#TableOfContents) > aside {
-        order: 1;
-        margin-top: 1.5rem;
+        margin-block: 1.5rem;
     }
+
+    .ananke-js .docs-toc-return {
+        display: inline-flex;
+        align-items: center;
+        min-height: 2.75rem;
+        margin-top: 1rem;
+    }
+}
+
+/* Documentation sections lead with their introduction, not a tall masthead. */
+.is-section > header > div {
+    padding-bottom: 2rem;
+}
+
+.is-section > header h1 {
+    margin-block: 0;
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.15;
+    color: var(--docs-text);
 }
 
 /* A clear secondary action; override the theme link's dim/colour utilities. */
@@ -351,6 +383,15 @@ article > .nested-copy-line-height {
     max-width: 100%;
 }
 
+.docs-table-label {
+    display: none;
+}
+
+.docs-table-stack tbody th {
+    min-width: 12rem;
+    font-weight: 400;
+}
+
 .docs-table-scroll table:has(th:nth-child(4)) {
     min-width: 32rem;
 }
@@ -398,9 +439,61 @@ article > .nested-copy-line-height {
 }
 
 /* Keep labels and long defaults readable when the content column is narrow. */
-@media (max-width: 30em) {
+@media (max-width: 48em) {
+    .docs-options {
+        font-size: 1rem;
+    }
+
     .docs-option-meta {
         grid-template-columns: minmax(0, 1fr);
+    }
+
+    /* Keep one semantic table and one copy of each cell for all viewports. */
+    .docs-table-stack table,
+    .docs-table-stack table:has(th:nth-child(4)) {
+        display: block;
+        min-width: 0;
+        font-size: 1rem;
+    }
+
+    .docs-table-stack thead {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        overflow: hidden;
+        clip-path: inset(50%);
+    }
+
+    .docs-table-stack tbody {
+        display: grid;
+        gap: 1rem;
+    }
+
+    .docs-table-stack tr {
+        display: block;
+        border-color: var(--docs-border);
+        background-color: var(--docs-surface);
+    }
+
+    .docs-table-stack tbody th,
+    .docs-table-stack td {
+        display: block;
+        min-width: 0;
+        padding: 1rem;
+        text-align: start;
+    }
+
+    .docs-table-stack tbody th {
+        background-color: var(--docs-surface-raised);
+        font-weight: 600;
+    }
+
+    .docs-table-label {
+        display: block;
+        margin-bottom: 0.25rem;
+        color: var(--docs-text-secondary);
+        font-weight: 600;
     }
 }
 

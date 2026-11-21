@@ -43,6 +43,12 @@ The documentation uses a fixed dark palette built from Tailwind CSS's yellow and
 
 Edit the palette and semantic roles in [`docs-colors.css`](assets/ananke/css/docs-colors.css). Components use roles such as `--docs-background`, `--docs-text`, and `--docs-accent`. [`docs-theme.css`](assets/ananke/css/docs-theme.css) maps inherited colour utilities to these roles, while [`highlighting.css`](assets/ananke/css/highlighting.css) styles code examples and their controls. Check text contrast, focus indicators, search results, and mobile rendering when changing these colours.
 
+## Documentation layout
+
+Section pages use compact headers. On small screens, “On this page” starts collapsed above the article, with a return link after the content. On desktop, the contents stay expanded in the sticky side rail. Without JavaScript, they remain expanded after the article.
+
+Settings tables use labelled, stacked rows on mobile and keep their columns on desktop. Existing option definition lists also stack their metadata on mobile. Comparison tables retain their columns inside a scrollable region. These behaviours live in the documentation's table render hook, contextual menu partial, body-end hook, and `docs-theme.css`; they do not change the shared theme.
+
 ## Prerequisites
 
 * **Hugo** — use the standard binary, currently v0.170.1 in [`netlify.toml`](netlify.toml) and the GitHub Pages workflow. The theme continues to support Hugo v0.160.0 or later. Check the installed version with `hugo version`.

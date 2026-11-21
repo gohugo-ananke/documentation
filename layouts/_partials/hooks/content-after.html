@@ -12,6 +12,9 @@
   shared `edit-page.html` partial, so documentation previews keep building
   until the feature lands in a tagged release.
 */ -}}
+{{- if and .Params.toc (findRE `<a\s` .TableOfContents) -}}
+  <a class="docs-toc-return" href="#docs-on-this-page" data-pagefind-ignore>Back to contents</a>
+{{- end -}}
 {{- if templates.Exists "_partials/edit-page.html" -}}
   {{- with .File -}}
     <footer class="docs-edit-page mt4 pt3 bt b--moon-gray">
