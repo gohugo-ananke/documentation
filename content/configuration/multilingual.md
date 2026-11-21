@@ -10,24 +10,26 @@ and works with Hugo's standard multilingual features.
 
 ## Configure languages
 
-Declare your languages in the configuration. Each language has a name, a code, a
+Declare your languages in the configuration. Each language has a label, a locale, a
 weight (controls order), and its own title:
 
 ```toml
 # config/_default/languages.toml
 
 [en]
-languageName = "English"
-languageCode = "en-gb"
+label = "English"
+locale = "en-GB"
 weight = 1
 title = "Example site"
 
 [de]
-languageName = "Deutsch"
-languageCode = "de-de"
+label = "Deutsch"
+locale = "de-DE"
 weight = 2
 title = "Beispielseite"
 ```
+
+Hugo 0.158.0 replaced `languageName` with `label` and `languageCode` with `locale`. Hugo still reads the older keys when the new keys are not set, but use the new keys in new configurations.
 
 The language with the lowest `weight` is the default. Per-language `params` can
 override site parameters — for example a translated `read_more_copy` (see
@@ -46,6 +48,28 @@ content/about.de.md
 Hugo pairs these as translations of the same page and links them in the language
 switcher. The same pattern works for section index files
 (`_index.md` / `_index.de.md`).
+
+## Language switcher
+
+{{< since "2.24.0" >}}
+
+On a page with translations, the `languages` component of the header shows a link to each translation. The link text is the `label` of the language. If a language has no `label`, the link text is the language key, for example `de`. Each link has `lang` and `hreflang` attributes with the `locale` of the language, so screen readers read the label in the correct language.
+
+* **Parameter:** `label` in each language of `languages.toml`.
+* **Type:** string.
+* **Required:** no.
+* **Default:** the language key.
+
+```toml
+# config/_default/languages.toml
+
+[pt-br]
+label = "Português"
+locale = "pt-BR"
+weight = 3
+```
+
+The switcher then shows `Português` instead of `pt-br`. A label can be any text, for example a full name or an abbreviation in capital letters. Do not use flag emoji as the only label: a flag stands for a country, not a language, and screen readers announce the country name.
 
 ## Translation fallback
 
