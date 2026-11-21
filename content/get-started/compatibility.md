@@ -10,53 +10,44 @@ A declared minimum is the requirement recorded by a theme release. A tested mini
 
 ## Tested compatibility
 
-Last execution: 2026-11-21T01:34:48.548Z. Release discovery: 2026-11-21T01:34:57.778Z. Latest stable Hugo in this snapshot: v0.170.1. Platform: linux/amd64.
+Last execution: 2026-11-21T05:04:16.962Z. Release discovery: 2026-11-21T05:04:14.090Z. Latest stable Hugo in this snapshot: v0.170.1. Platform: linux/amd64.
 
 | Ananke | Minimum tested Hugo | Maximum tested Hugo | Notes |
 | --- | --- | --- | --- |
-| [v2.22.0](https://github.com/gohugo-ananke/ananke/releases/tag/v2.22.0) | v0.158.0 | v0.170.1 (latest tested) | standard; declared minimum 0.160.0; builds with warnings |
-| [v2.22.0](https://github.com/gohugo-ananke/ananke/releases/tag/v2.22.0) | v0.158.0 | v0.169.0 (tested interval) | extended; declared minimum 0.160.0; builds with warnings |
-| [v2.21.0](https://github.com/gohugo-ananke/ananke/releases/tag/v2.21.0) | v0.158.0 | v0.170.1 (latest tested) | standard; declared minimum 0.160.0; builds with warnings |
-| [v2.21.0](https://github.com/gohugo-ananke/ananke/releases/tag/v2.21.0) | v0.158.0 | v0.169.0 (tested interval) | extended; declared minimum 0.160.0; builds with warnings |
-| [v2.20.0](https://github.com/gohugo-ananke/ananke/releases/tag/v2.20.0) | v0.158.0 | v0.170.1 (latest tested) | standard; declared minimum 0.160.0; builds with warnings |
-| [v2.20.0](https://github.com/gohugo-ananke/ananke/releases/tag/v2.20.0) | v0.158.0 | v0.169.0 (tested interval) | extended; declared minimum 0.160.0; builds with warnings |
-| [v2.19.2](https://github.com/gohugo-ananke/ananke/releases/tag/v2.19.2) | v0.158.0 | v0.170.1 (latest tested) | standard; declared minimum 0.160.0; builds with warnings |
-| [v2.19.2](https://github.com/gohugo-ananke/ananke/releases/tag/v2.19.2) | v0.158.0 | v0.169.0 (tested interval) | extended; declared minimum 0.160.0; builds with warnings |
-| [v2.19.1](https://github.com/gohugo-ananke/ananke/releases/tag/v2.19.1) | v0.158.0 | v0.170.1 (latest tested) | standard; declared minimum 0.160.0; builds with warnings |
-| [v2.19.1](https://github.com/gohugo-ananke/ananke/releases/tag/v2.19.1) | v0.158.0 | v0.169.0 (tested interval) | extended; declared minimum 0.160.0; builds with warnings |
-| [v2.19.0](https://github.com/gohugo-ananke/ananke/releases/tag/v2.19.0) | v0.158.0 | v0.170.1 (latest tested) | standard; declared minimum 0.160.0; builds with warnings |
-| [v2.19.0](https://github.com/gohugo-ananke/ananke/releases/tag/v2.19.0) | v0.158.0 | v0.169.0 (tested interval) | extended; declared minimum 0.160.0; builds with warnings |
-| [v2.18.0](https://github.com/gohugo-ananke/ananke/releases/tag/v2.18.0) | v0.158.0 | v0.170.1 (latest tested) | standard; declared minimum 0.160.0; builds with warnings |
-| [v2.18.0](https://github.com/gohugo-ananke/ananke/releases/tag/v2.18.0) | v0.158.0 | v0.169.0 (tested interval) | extended; declared minimum 0.160.0; builds with warnings |
-| [v2.17.1](https://github.com/gohugo-ananke/ananke/releases/tag/v2.17.1) | v0.158.0 | v0.170.1 (latest tested) | standard; declared minimum 0.160.0; builds with warnings |
-| [v2.17.1](https://github.com/gohugo-ananke/ananke/releases/tag/v2.17.1) | v0.158.0 | v0.169.0 (tested interval) | extended; declared minimum 0.160.0; builds with warnings |
-| [v2.17.0](https://github.com/gohugo-ananke/ananke/releases/tag/v2.17.0) | v0.158.0 | v0.170.1 (latest tested) | standard; declared minimum 0.160.0; builds with warnings |
-| [v2.17.0](https://github.com/gohugo-ananke/ananke/releases/tag/v2.17.0) | v0.158.0 | v0.169.0 (tested interval) | extended; declared minimum 0.160.0; builds with warnings |
-| [v2.16.0](https://github.com/gohugo-ananke/ananke/releases/tag/v2.16.0) | v0.158.0 | v0.170.1 (latest tested) | standard; declared minimum 0.160.0; builds with warnings |
-| [v2.16.0](https://github.com/gohugo-ananke/ananke/releases/tag/v2.16.0) | v0.158.0 | v0.169.0 (tested interval) | extended; declared minimum 0.160.0; builds with warnings |
-| [v2.15.0](https://github.com/gohugo-ananke/ananke/releases/tag/v2.15.0) | v0.170.0 | v0.170.1 (latest tested) | standard; declared minimum 0.160.0; builds with warnings |
-| [v2.15.0](https://github.com/gohugo-ananke/ananke/releases/tag/v2.15.0) | v0.158.0 | v0.169.0 (tested interval) | extended; declared minimum 0.160.0; builds with warnings |
-| [v2.13.3](https://github.com/gohugo-ananke/ananke/releases/tag/v2.13.3) | v0.170.0 | v0.170.1 (latest tested) | standard; declared minimum 0.160.0; builds with warnings |
-| [v2.13.3](https://github.com/gohugo-ananke/ananke/releases/tag/v2.13.3) | v0.158.0 | v0.169.0 (tested interval) | extended; declared minimum 0.160.0; builds with warnings |
-| [v2.13.0](https://github.com/gohugo-ananke/ananke/releases/tag/v2.13.0) | v0.170.0 | v0.170.1 (latest tested) | standard; declared minimum 0.160.0; builds with warnings |
-| [v2.13.0](https://github.com/gohugo-ananke/ananke/releases/tag/v2.13.0) | v0.158.0 | v0.169.0 (tested interval) | extended; declared minimum 0.160.0; builds with warnings |
-| [v2.12.1](https://github.com/gohugo-ananke/ananke/releases/tag/v2.12.1) | v0.170.0 | v0.170.1 (latest tested) | standard; declared minimum 0.128.0; builds with warnings |
-| [v2.12.1](https://github.com/gohugo-ananke/ananke/releases/tag/v2.12.1) | v0.128.0 | v0.139.4 (tested interval) | extended; declared minimum 0.128.0; builds with warnings; separate intervals, with gaps |
-| [v2.12.1](https://github.com/gohugo-ananke/ananke/releases/tag/v2.12.1) | v0.140.0 | v0.169.0 (tested interval) | extended; declared minimum 0.128.0; builds with warnings; separate intervals, with gaps |
-| [v2.12.0](https://github.com/gohugo-ananke/ananke/releases/tag/v2.12.0) | v0.170.0 | v0.170.1 (latest tested) | standard; declared minimum 0.128.0; builds with warnings |
-| [v2.12.0](https://github.com/gohugo-ananke/ananke/releases/tag/v2.12.0) | v0.128.0 | v0.139.4 (tested interval) | extended; declared minimum 0.128.0; builds with warnings; separate intervals, with gaps |
-| [v2.12.0](https://github.com/gohugo-ananke/ananke/releases/tag/v2.12.0) | v0.140.0 | v0.169.0 (tested interval) | extended; declared minimum 0.128.0; builds with warnings; separate intervals, with gaps |
-| [v2.11.2](https://github.com/gohugo-ananke/ananke/releases/tag/v2.11.2) | v0.170.0 | v0.170.1 (latest tested) | standard; declared minimum 0.128.0; builds with warnings |
-| [v2.11.2](https://github.com/gohugo-ananke/ananke/releases/tag/v2.11.2) | v0.128.0 | v0.139.4 (tested interval) | extended; declared minimum 0.128.0; builds with warnings; separate intervals, with gaps |
-| [v2.11.2](https://github.com/gohugo-ananke/ananke/releases/tag/v2.11.2) | v0.140.0 | v0.169.0 (tested interval) | extended; declared minimum 0.128.0; builds with warnings; separate intervals, with gaps |
-| [v2.11.1](https://github.com/gohugo-ananke/ananke/releases/tag/v2.11.1) | v0.170.0 | v0.170.1 (latest tested) | standard; declared minimum 0.128.0; builds with warnings |
-| [v2.11.1](https://github.com/gohugo-ananke/ananke/releases/tag/v2.11.1) | v0.128.0 | v0.139.4 (tested interval) | extended; declared minimum 0.128.0; builds with warnings; separate intervals, with gaps |
-| [v2.11.1](https://github.com/gohugo-ananke/ananke/releases/tag/v2.11.1) | v0.140.0 | v0.169.0 (tested interval) | extended; declared minimum 0.128.0; builds with warnings; separate intervals, with gaps |
-| [v2.11.0](https://github.com/gohugo-ananke/ananke/releases/tag/v2.11.0) | v0.170.0 | v0.170.1 (latest tested) | standard; declared minimum 0.128.0; builds with warnings |
-| [v2.11.0](https://github.com/gohugo-ananke/ananke/releases/tag/v2.11.0) | v0.128.0 | v0.139.4 (tested interval) | extended; declared minimum 0.128.0; builds with warnings; separate intervals, with gaps |
-| [v2.11.0](https://github.com/gohugo-ananke/ananke/releases/tag/v2.11.0) | v0.140.0 | v0.169.0 (tested interval) | extended; declared minimum 0.128.0; builds with warnings; separate intervals, with gaps |
-| [v2.10.0](https://github.com/gohugo-ananke/ananke/releases/tag/v2.10.0) | None established | Unknown | standard; declared minimum 0.84.0 |
-| [v2.10.0](https://github.com/gohugo-ananke/ananke/releases/tag/v2.10.0) | v0.128.0 | v0.135.0 (tested interval) | extended; declared minimum 0.84.0; builds with warnings |
+| [v2.23.0](https://github.com/gohugo-ananke/ananke/releases/tag/v2.23.0) | v0.158.0 | v0.170.1 (latest tested) | [1] [2] [3] |
+| [v2.22.0](https://github.com/gohugo-ananke/ananke/releases/tag/v2.22.0) | v0.158.0 | v0.170.1 (latest tested) | [1] [2] |
+| [v2.21.0](https://github.com/gohugo-ananke/ananke/releases/tag/v2.21.0) | v0.158.0 | v0.170.1 (latest tested) | [1] [2] |
+| [v2.20.0](https://github.com/gohugo-ananke/ananke/releases/tag/v2.20.0) | v0.158.0 | v0.170.1 (latest tested) | [1] [2] |
+| [v2.19.2](https://github.com/gohugo-ananke/ananke/releases/tag/v2.19.2) | v0.158.0 | v0.170.1 (latest tested) | [1] [2] |
+| [v2.19.1](https://github.com/gohugo-ananke/ananke/releases/tag/v2.19.1) | v0.158.0 | v0.170.1 (latest tested) | [1] [2] |
+| [v2.19.0](https://github.com/gohugo-ananke/ananke/releases/tag/v2.19.0) | v0.158.0 | v0.170.1 (latest tested) | [1] [2] |
+| [v2.18.0](https://github.com/gohugo-ananke/ananke/releases/tag/v2.18.0) | v0.158.0 | v0.170.1 (latest tested) | [1] [2] |
+| [v2.17.1](https://github.com/gohugo-ananke/ananke/releases/tag/v2.17.1) | v0.158.0 | v0.170.1 (latest tested) | [1] [2] |
+| [v2.17.0](https://github.com/gohugo-ananke/ananke/releases/tag/v2.17.0) | v0.158.0 | v0.170.1 (latest tested) | [1] [2] |
+| [v2.16.0](https://github.com/gohugo-ananke/ananke/releases/tag/v2.16.0) | v0.158.0 | v0.170.1 (latest tested) | [1] [2] |
+| [v2.15.0](https://github.com/gohugo-ananke/ananke/releases/tag/v2.15.0) | v0.158.0 | v0.170.1 (latest tested) | [1] [2] [4] |
+| [v2.13.3](https://github.com/gohugo-ananke/ananke/releases/tag/v2.13.3) | v0.158.0 | v0.170.1 (latest tested) | [1] [2] [4] |
+| [v2.13.0](https://github.com/gohugo-ananke/ananke/releases/tag/v2.13.0) | v0.158.0 | v0.170.1 (latest tested) | [1] [2] [4] |
+| [v2.12.1](https://github.com/gohugo-ananke/ananke/releases/tag/v2.12.1) | v0.128.0 | v0.170.1 (latest tested) | [2] [5] [6] [7] |
+| [v2.12.0](https://github.com/gohugo-ananke/ananke/releases/tag/v2.12.0) | v0.128.0 | v0.170.1 (latest tested) | [2] [5] [6] [7] |
+| [v2.11.2](https://github.com/gohugo-ananke/ananke/releases/tag/v2.11.2) | v0.128.0 | v0.170.1 (latest tested) | [2] [5] [6] [7] |
+| [v2.11.1](https://github.com/gohugo-ananke/ananke/releases/tag/v2.11.1) | v0.128.0 | v0.170.1 (latest tested) | [2] [5] [6] [7] |
+| [v2.11.0](https://github.com/gohugo-ananke/ananke/releases/tag/v2.11.0) | v0.128.0 | v0.170.1 (latest tested) | [2] [5] [6] [7] |
+| [v2.10.0](https://github.com/gohugo-ananke/ananke/releases/tag/v2.10.0) | v0.128.0 | v0.135.0 | [2] [8] [9] |
+
+<!-- markdownlint-disable MD033 -->
+<div class="docs-footnotes">
+<p><sup>1</sup> Declared minimum Hugo version: 0.160.0.</p>
+<p><sup>2</sup> Builds with warnings.</p>
+<p><sup>3</sup> No passing build between v0.159.0 and v0.159.2, and between v0.160.1 and v0.168.0.</p>
+<p><sup>4</sup> Requires Hugo Extended for v0.158.0 to v0.169.0.</p>
+<p><sup>5</sup> Declared minimum Hugo version: 0.128.0.</p>
+<p><sup>6</sup> Requires Hugo Extended for v0.128.0 to v0.169.0.</p>
+<p><sup>7</sup> No passing build between v0.139.4 and v0.140.0.</p>
+<p><sup>8</sup> Declared minimum Hugo version: 0.84.0.</p>
+<p><sup>9</sup> Requires Hugo Extended for v0.128.0 to v0.135.0.</p>
+</div>
+<!-- markdownlint-enable MD033 -->
 
 ## How the testing works
 
@@ -76,7 +67,7 @@ Ananke v2.12.1 and later audited releases do not include the historical example 
 
 ## Standard and Extended Hugo
 
-The table separates standard and Extended results. Older Ananke releases can require Hugo Extended, particularly when their CSS pipeline uses LibSass. The exact requirement depends on both the Ananke and Hugo versions. Select an edition with passing evidence for your chosen combination.
+The table shows one row for each Ananke release. A Hugo version counts as passing when the standard or the Extended edition builds the release. Older Ananke releases can require Hugo Extended, particularly when their CSS pipeline uses LibSass. The notes column shows the Hugo versions that need Extended. The compact facts keep the separate results for each edition.
 
 [Hugo v0.170.0 removed the Extended edition](https://github.com/gohugoio/hugo/releases/tag/v0.170.0). Its Extended archive names are compatibility aliases for the single remaining binary. The matrix marks the Extended edition unavailable from that release; it does not count an alias as a separate Extended build.
 
@@ -87,11 +78,11 @@ Warnings can report deprecated functions, configuration changes, optional resour
 ## Choose a suitable version
 
 1. Find your exact Ananke release in the table.
-2. Select a Hugo version inside a tested interval for an available edition.
-3. Check the declared requirement, warning count, and any gaps.
+2. Select a Hugo version between the minimum and maximum tested Hugo versions.
+3. Check the notes for the declared requirement, Extended requirements, warnings, and gaps.
 4. Build your own site and review its output before deployment.
 
-A tested interval contains only consecutive passing patch releases in the discovery snapshot. An unavailable, failed, or untested release breaks the interval. If compatibility returns in a later release, the table records a separate interval. Do not assume that a gap is supported.
+A tested interval contains only consecutive passing patch releases in the discovery snapshot. An unavailable, failed, or untested release breaks the interval. If compatibility returns in a later release, the notes column shows the gap. Do not assume that a gap is supported.
 
 The label `latest tested` identifies the newest discovered stable Hugo release when it passes. It does not promise support for a future release or establish an absolute maximum.
 

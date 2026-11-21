@@ -438,6 +438,15 @@ article > .nested-copy-line-height {
     border-top: 1px solid var(--docs-border);
 }
 
+/* Numbered notes directly below a generated table. */
+.docs-footnotes {
+    font-size: 85%;
+}
+
+.docs-footnotes p {
+    margin: 0.25em 0;
+}
+
 /* Keep labels and long defaults readable when the content column is narrow. */
 @media (max-width: 48em) {
     .docs-options {
