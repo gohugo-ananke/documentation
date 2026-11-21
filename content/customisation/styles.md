@@ -131,6 +131,53 @@ The bundle order is fixed:
 
 Later files can override earlier files through normal CSS cascade rules. Files that the theme loads from `static` or from an external URL come after the bundle, in separate `<link>` elements.
 
+## Hyphenation
+
+{{< since "2.23.0" >}}
+
+Tachyons has no hyphenation class, so Ananke adds the `hyphenate` utility class in `_styles.css`. The theme puts this class on the content of single pages. Browsers then break long words at the end of a line and add a hyphen. This gives a more regular right edge, particularly on narrow screens.
+
+The theme defines the class like this:
+
+```css
+.hyphenate {
+  hyphens: auto;
+  hyphenate-limit-chars: 6 3 3;
+}
+
+.hyphenate :where(h1, h2, h3, h4, h5, h6, code, kbd, samp) {
+  hyphens: manual;
+}
+```
+
+* Browsers hyphenate only text in a language that they have a hyphenation dictionary for. Ananke sets the `lang` attribute of the `<html>` element from the locale of the site language. Set `locale` (or the older `languageCode`) to the language of your content, for example `locale = "de-de"`. On a [multilingual site](/configuration/multilingual/), set it for each language.
+* Only words with six or more letters are hyphenated, with at least three letters before and after the break. Browsers that do not support `hyphenate-limit-chars` use their own limits.
+* Headings, inline code, keyboard input, and sample output keep their words whole. Code blocks are not hyphenated.
+
+### Change or disable hyphenation
+
+Redefine the class in a [custom CSS file](#custom-css). The theme adds your files after its own CSS, so your rules win.
+
+To disable automatic hyphenation:
+
+```css
+.hyphenate {
+  hyphens: manual;
+}
+```
+
+With `manual`, browsers break words only at soft hyphens (`&shy;`) that you add to the text. Use `none` to prevent these breaks too.
+
+To hyphenate shorter words:
+
+```css
+.hyphenate {
+  hyphenate-limit-chars: 5 2 2;
+}
+```
+
+To hyphenate text in other places, add the `hyphenate` class to an element in your own layouts.
+
 ## Social hover colours
 
 The theme generates hover colours from `params.ananke.social`. It uses the networks in `params.ananke.social.follow.networks` and in `params.ananke.social.share.networks`. Networks without a `color` value get no rule.
