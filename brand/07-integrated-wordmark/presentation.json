@@ -1,0 +1,50 @@
+{
+  "brand": "Ananke",
+  "tagline": "A theme for Hugo",
+  "title": "Integrated wordmark",
+  "final": true,
+  "brief": "The original interleaved A becomes the first letter of ANANKE.",
+  "adjectives": [
+    "clear",
+    "dependable",
+    "editorial"
+  ],
+  "criteria": "Keep the A; use Anton uppercase; tuck the first N into the right-hand whitespace.",
+  "industry": "software",
+  "mockups": [
+    "readme",
+    "website",
+    "favicon-tab",
+    "app-icon",
+    "sticker",
+    "social"
+  ],
+  "nav": [
+    "Documentation",
+    "Cookbook",
+    "GitHub"
+  ],
+  "brand_color": "#0c0c09",
+  "greyscale": false,
+  "concepts": [
+    {
+      "name": "Integrated A + NANKE",
+      "symbol": "masters/ananke-symbol.svg",
+      "lockup": "masters/ananke-horizontal.svg",
+      "symbol_on_tile": "masters/ananke-symbol-dark.svg",
+      "symbol_on_dark": "masters/ananke-symbol-dark.svg",
+      "lockup_on_dark": "masters/ananke-horizontal-dark.svg",
+      "tile_color": "#0c0c09",
+      "idea": "One A, one name: the symbol starts the word.",
+      "rationale": [
+        "Approved tucked spacing",
+        "Actual local Anton outlines",
+        "Colours derived from current documentation tokens"
+      ]
+    }
+  ],
+  "recommendation": "Use the dark integrated wordmark for documentation; keep the standalone A for icons.",
+  "next_steps": [
+    "Accepted logo and icons installed in the documentation source; deployment is separate."
+  ]
+}

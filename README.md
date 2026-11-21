@@ -43,6 +43,12 @@ The documentation uses a fixed dark palette built from Tailwind CSS's yellow and
 
 Edit the palette and semantic roles in [`docs-colors.css`](assets/ananke/css/docs-colors.css). Components use roles such as `--docs-background`, `--docs-text`, and `--docs-accent`. [`docs-theme.css`](assets/ananke/css/docs-theme.css) maps inherited colour utilities to these roles, while [`highlighting.css`](assets/ananke/css/highlighting.css) styles code examples and their controls. Check text contrast, focus indicators, search results, and mobile rendering when changing these colours.
 
+## Documentation branding
+
+The header and footer use the integrated Ananke wordmark: the interleaved A symbol supplies the first letter, followed by outlined uppercase NANKE in Anton. The dark version uses the documentation's yellow and pale olive colours; the light version uses dark olive and a darker yellow from the same palette. Preserve the supplied geometry, spacing, and aspect ratio when replacing the SVG files in `static/images/brand/`.
+
+`config/_default/params.toml` selects the shared logo and the default social preview, `images/brand/ananke-social.png`. The social image is 1200 by 630 px and uses the dark wordmark on dark olive. The standalone A remains the favicon: `static/icons/` contains light and dark SVG variants, PNG alternatives, and the touch icon. `static/favicon.ico` contains 16, 32, and 48 px versions on a dark olive tile. The favicon partial sets the browser theme colour to dark olive.
+
 ## Documentation layout
 
 Section pages use compact headers. On small screens, “On this page” starts collapsed above the article, with a return link after the content. On desktop, the contents stay expanded in the sticky side rail. Without JavaScript, they remain expanded after the article.

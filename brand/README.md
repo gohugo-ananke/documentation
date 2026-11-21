@@ -4,12 +4,12 @@ Exploratory artwork for Ananke, the Hugo theme. These files are design history, 
 
 ## Rounds
 
-- `01-initial-concepts/concepts.png`: initial Open A, Interleave, and Imprint proposals. The user selected Interleave (B), requested a stronger A shape, and specified the documentation's existing font setup.
-- `02-interleave-a/shapes-v1.png`: first A-shaped refinements of B, retained for comparison.
-- `02-interleave-a/shapes-v2.png`: revised split positions to reduce thin fragments. B1 is the recommended direction; B2 is simpler, and B3 is narrower.
-- `02-interleave-a/typography.png`: the same B1 mark paired with Anton Regular, Inter at weight 600, and Rubik Regular, taken directly from `assets/webfonts`.
-- `02-interleave-a/checks.png`: white on black, mirror, rotation, and true 64, 32, and 16 px examples.
-- `02-interleave-a/interactive-tests.html`: additional browser-based inspection sheet; generated, but not visually verified in a browser.
+* `01-initial-concepts/concepts.png`: initial Open A, Interleave, and Imprint proposals. The user selected Interleave (B), requested a stronger A shape, and specified the documentation's existing font setup.
+* `02-interleave-a/shapes-v1.png`: first A-shaped refinements of B, retained for comparison.
+* `02-interleave-a/shapes-v2.png`: revised split positions to reduce thin fragments. B1 is the recommended direction; B2 is simpler, and B3 is narrower.
+* `02-interleave-a/typography.png`: the same B1 mark paired with Anton Regular, Inter at weight 600, and Rubik Regular, taken directly from `assets/webfonts`.
+* `02-interleave-a/checks.png`: white on black, mirror, rotation, and true 64, 32, and 16 px examples.
+* `02-interleave-a/interactive-tests.html`: additional browser-based inspection sheet; generated, but not visually verified in a browser.
 
 ## Typography and construction
 
@@ -38,3 +38,7 @@ The user chose Anton. Continue with B1 + Anton in `03-anton-kit/`. See `03-anton
 ## Local site integration
 
 The selected kit has now been applied to the local documentation site. See `04-site-integration/README.md` for the runtime files, asset provenance, screenshots, and checks. This supersedes earlier statements about installation status. The design history is included with the site branding change. Deployment remains a separate step.
+
+## Accepted integrated wordmark
+
+The user accepted the integrated A + NANKE wordmark in `07-integrated-wordmark/`. It preserves the original interleaved A, uses uppercase Anton outlines, and adopts the documentation's current olive and yellow palette. The site now uses this wordmark in its header, footer, and dark default social preview, with the standalone A retained for browser and touch icons. Earlier rounds remain design history.

@@ -1,0 +1,18 @@
+{
+  "master_svgs": 16,
+  "all_master_text_outlined": true,
+  "original_a_path_preserved": true,
+  "ico_sizes": [
+    16,
+    32,
+    48
+  ],
+  "colour_contrast": {
+    "accent/background": 12.45,
+    "text/background": 17.76,
+    "light_accent/text": 6.2
+  },
+  "presentation_slides": 5,
+  "presentation_broken_images": 0,
+  "pdf_pages": 1
+}
