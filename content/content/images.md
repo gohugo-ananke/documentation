@@ -65,20 +65,7 @@ described in [Page headers](/customisation/hero-section/).
 
 ## Social sharing images
 
-> [!IMPORTANT]
-> The image used in social previews (Open Graph / Twitter cards) comes from the
-> `images` front matter array, **not** from `featured_image`:
->
-> ```toml
-> +++
-> title = "A post"
-> images = ["/images/posts/my-post-social.jpg"]
-> +++
-> ```
->
-> Set `images` when you want a controlled preview image; set both
-> `featured_image` and `images` to use the same picture for the hero and the
-> share preview. See [SEO → Social previews](/configuration/seo/#social-previews-open-graph-and-twitter-cards).
+Social previews use the `images` front matter array, not `featured_image`. See [SEO → Social previews](/configuration/seo/#social-previews-open-graph-and-twitter-cards).
 
 ## Alt text
 

@@ -43,7 +43,7 @@ hugo new content posts/my-first-post.md
 +++
 title = "My first post"
 date = 2026-06-06T10:00:00+07:00
-description = "A short description used for summaries and metadata."
+description = "A short description for metadata and the page header."
 tags = ["hugo", "ananke"]
 featured_image = "/images/posts/my-first-post.jpg"
 +++
@@ -51,19 +51,7 @@ featured_image = "/images/posts/my-first-post.jpg"
 The body of the post goes here.
 ```
 
-> [!IMPORTANT]
-> Ananke's homepage shows recent posts from the `post` section by default. If
-> you name your section `posts` (as above) or anything else, tell the theme
-> where to look:
->
-> ```toml
-> # config/_default/params.toml
->
-> [params]
-> mainSections = ["posts"]
-> ```
->
-> See [Homepage](/configuration/homepage/) for details.
+The homepage lists recent posts from your main sections. If you do not set `mainSections`, Hugo uses the section with the most pages; see [Which section recent posts come from](/configuration/homepage/#which-section-recent-posts-come-from).
 
 ## List pages
 
@@ -99,29 +87,30 @@ For configuring and customising taxonomies, see
 Archetypes are templates for the front matter of new content. When you run
 `hugo new content`, Hugo fills the new file from the matching archetype.
 
-Ananke ships a default archetype that pre-fills the fields most pages need:
+`hugo new site` creates `archetypes/default.md` in your project. Its files start with `draft = true`, so remove that line or set it to `false` before you publish the page. Your project's archetypes take precedence over the theme's.
 
-```toml
-+++
-title = '{{ replace .File.ContentBaseName "-" " " | title }}'
-date = '{{ .Date }}'
-tags = []
-featured_image = ""
-description = ""
-+++
+Ananke ships an archetype too. Hugo uses it only when your project has no matching archetype, for example after you delete `archetypes/default.md`:
+
+```yaml
+---
+title: '{{ replace .File.ContentBaseName "-" " " | title }}'
+date: '{{ .Date }}'
+tags: []
+featured_image: ""
+description: ""
+---
 ```
 
-To customise it, copy it into your own project at `archetypes/default.md` and
-edit it there. You can also add per-section archetypes, for example
-`archetypes/posts.md`, which Hugo uses for `hugo new content posts/...`.
+You can also add per-section archetypes, for example `archetypes/posts.md`, which Hugo uses for `hugo new content posts/...`.
 
 ## Front matter
 
 Every content file starts with a front matter block. Required and common fields:
 
 * `title` — **required**; the page title.
-* `date` — publication date; needed for ordering posts.
-* `description` — used for summaries and SEO metadata.
+* `date` — publication date; orders posts, after `weight`.
+* `draft` — `true` excludes the page from normal builds.
+* `description` — the meta description and the text below the title in the header.
 * `tags` / `categories` — taxonomy terms.
 * `featured_image` — hero image for the page.
 

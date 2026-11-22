@@ -23,7 +23,7 @@ To set a default author for the whole site, add `author` to your site parameters
 author = "Jane Doe"
 ```
 
-You can credit more than one author by providing a list. The names are joined with commas.
+You can credit more than one author by providing a list. On single pages, the names are joined with commas.
 
 ```yaml
 ---
@@ -34,11 +34,14 @@ author:
 ---
 ```
 
-Author names are rendered as Markdown, so you can link to a profile:
+On single pages, author names are rendered as Markdown, so you can link to a profile:
 
 ```yaml
 author: "[Jane Doe](https://example.com/jane)"
 ```
+
+> [!WARNING]
+> In Ananke v2.23.0, image summary cards show the author as plain text after the fixed English word "By". Markdown is not rendered there, and a list appears in brackets without commas, for example `By [Jane Doe John Smith]`. On single pages, the translated word "by" is not shown. Use a single plain name if your homepage shows image cards.
 
 A publication date is added with Hugo's standard `date` front matter key. See [Show or hide dates on pages](/configuration/general/#show-or-hide-dates-on-pages) for controlling whether dates appear, and [Localize date format](/configuration/general/#localize-date-format) for changing the format.
 
