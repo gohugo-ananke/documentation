@@ -9,7 +9,7 @@ This site is itself **built with Ananke**, so it doubles as a living example of 
 
 * **Live site:** [gohugo-ananke.github.io/documentation](https://gohugo-ananke.github.io/documentation/)
 * **Theme repository:** [github.com/gohugo-ananke/ananke](https://github.com/gohugo-ananke/ananke)
-* **Theme demo:** [ananke-theme.netlify.app](https://ananke-theme.netlify.app/)
+* **Theme demo:** [gohugo-ananke.github.io/documentation](https://gohugo-ananke.github.io/documentation/)
 
 ## What lives here
 
