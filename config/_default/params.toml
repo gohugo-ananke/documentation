@@ -1,5 +1,5 @@
 description = "Documentation for the Hugo Ananke theme."
-site_logo = "images/brand/ananke-horizontal-dark.svg"
+site_logo = "images/brand/ananke-horizontal-dark.svg?v=300c0e2aa7fc"
 favicon = "favicon.ico"
 background_color_class = "ananke-brand-background"
 images = ["images/brand/ananke-social.png"]

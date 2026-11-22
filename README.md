@@ -45,7 +45,7 @@ Edit the palette and semantic roles in [`docs-colors.css`](assets/ananke/css/doc
 
 ## Documentation branding
 
-The header and footer use the integrated Ananke wordmark: the interleaved A symbol supplies the first letter, followed by outlined uppercase NANKE in Anton. The dark version uses the documentation's yellow and pale olive colours; the light version uses dark olive and a darker yellow from the same palette. Preserve the supplied geometry, spacing, and aspect ratio when replacing the SVG files in `static/images/brand/`.
+The header and footer use the integrated Ananke wordmark: the interleaved A symbol supplies the first letter, followed by outlined uppercase NANKE in Anton. The dark version uses the documentation's yellow and pale olive colours; the light version uses dark olive and a darker yellow from the same palette. Preserve the supplied geometry, spacing, and aspect ratio when replacing the SVG files in `static/images/brand/`. The shared logo URL includes a content revision query; update it when replacing the artwork so browsers request the new version.
 
 `config/_default/params.toml` selects the shared logo and the default social preview, `images/brand/ananke-social.png`. The social image is 1200 by 630 px and uses the dark wordmark on dark olive. The standalone A remains the favicon: `static/icons/` contains light and dark SVG variants, PNG alternatives, and the touch icon. `static/favicon.ico` contains 16, 32, and 48 px versions on a dark olive tile. The favicon partial sets the browser theme colour to dark olive.
 
