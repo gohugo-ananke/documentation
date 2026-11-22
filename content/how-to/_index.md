@@ -20,6 +20,7 @@ Use these guides when you have a specific result in mind. If you want a guided l
 * [Add social follow and share links](/configuration/social-media-networks/).
 * [Publish in more than one language](/configuration/multilingual/).
 * [Configure analytics](/configuration/analytics/) and [search engine indexing](/configuration/robots/).
+* [Set up robots.txt and sitemaps on GitHub Pages]({{< relref "how-to/github-deploy-specifics.md" >}}) for project sites on a shared domain.
 
 ## Write and customise
 
