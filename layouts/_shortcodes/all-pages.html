@@ -1,0 +1,21 @@
+{{- /*
+  Lists every page of the site, grouped by top-level section.
+  Unlike the theme's page-index shortcode, it also lists section pages
+  (_index.md), so entry pages and topic hubs appear. Sections and pages are
+  sorted by weight, then by title.
+*/ -}}
+{{- range site.Home.Sections.ByWeight -}}
+  <h2 id="{{ .Section | anchorize }}"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+  {{- with .Description }}<p>{{ . }}</p>{{ end }}
+  {{- $pages := .RegularPagesRecursive | append .Sections -}}
+  {{- range .Sections -}}
+    {{- $pages = $pages | append .Sections -}}
+  {{- end -}}
+  {{- with $pages -}}
+    <ul>
+      {{- range sort (sort . "Title") "Weight" -}}
+        <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+      {{- end -}}
+    </ul>
+  {{- end -}}
+{{- end -}}
