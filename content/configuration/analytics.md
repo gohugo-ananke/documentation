@@ -24,9 +24,7 @@ With an ID set, the theme includes Hugo's analytics snippet in the page head.
 
 ## Production-only loading
 
-The theme only emits the analytics snippet in **production** builds. During
-`hugo server` and any non-production environment, no tracking code is rendered,
-so your local development and deploy previews are not counted.
+The theme only emits the analytics snippet in **production** builds. During `hugo server` and in any other non-production environment, no tracking code is rendered, so local development is not counted. A deploy preview counts visits unless it builds in another environment; see [Deploy previews](/configuration/robots/#deploy-previews).
 
 This means a plain `hugo server` already behaves correctly for local work — you
 do not need to remove your ID.
@@ -67,7 +65,7 @@ grep -r "googletagmanager\|gtag" public/index.html
 Analytics scripts collect visitor data and may set cookies, so disclose them in
 your privacy policy. Hugo's
 [privacy configuration](https://gohugo.io/configuration/privacy/) offers options
-such as `respectDoNotTrack` and anonymising IPs for Google Analytics:
+such as `respectDoNotTrack` for Google Analytics:
 
 ```toml
 # config/_default/hugo.toml
