@@ -25,6 +25,15 @@ filename = "sitemap.xml"
 
 `baseURL` must include the project path and trailing slash. Hugo generates the sitemap by default; the explicit filename keeps the address used by the root site stable. `enableRobotsTXT` is optional in Hugo and defaults to `false`; setting it explicitly records this deployment choice.
 
+Enable Hugo's built-in link resolver in `config/_default/markup.toml` so that Markdown page links such as `/overview/` include the project path in the rendered site:
+
+```toml
+[goldmark.renderHooks.link]
+useEmbedded = "fallback"
+```
+
+The default is `auto`, which does not enable this resolver for a single-language site. `fallback` enables it when the site and its theme have no custom link render hook. See [Hugo's link render hooks](https://gohugo.io/render-hooks/links/) for details.
+
 The [robots exclusion standard](https://www.rfc-editor.org/rfc/rfc9309.html#section-2.3) places robots.txt at the domain root. A file at `/documentation/robots.txt` does not control crawling of the documentation site. The root file applies to project paths on the same domain.
 
 ## 2. Publish the root robots.txt
