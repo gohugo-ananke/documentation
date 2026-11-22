@@ -10,7 +10,7 @@ Read these pages when you want to understand how the parts of an Ananke site fit
 ## Installation and configuration
 
 * [Choose an installation method](/get-started/installation/): compare Hugo Modules and Git submodules.
-* [Understand configuration files and defaults](/configuration/reference/): learn where settings live and how Hugo combines them.
+* [How Ananke configuration works](/explanation/configuration/): learn where settings live, how Hugo combines them with the theme defaults, and how page values replace site values.
 
 ## Content and appearance
 

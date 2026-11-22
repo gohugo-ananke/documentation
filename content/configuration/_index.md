@@ -15,3 +15,4 @@ Ananke reads its settings from your Hugo site configuration and from the front m
 * **Track visitors:** read [Analytics](/configuration/analytics/).
 * **Publish in more than one language:** read [Multilingual and i18n](/configuration/multilingual/).
 * **Look up a parameter:** use the [Configuration reference](/configuration/reference/).
+* **Understand where settings go and how defaults work:** read [How Ananke configuration works](/explanation/configuration/).

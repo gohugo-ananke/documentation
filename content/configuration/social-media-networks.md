@@ -5,7 +5,7 @@ date: 2026-01-16T08:00:00.000+0700
 weight: 500
 ---
 
-Ananke automatically adds "follow" link icons to the header and footer and "Share" link icons to pages unless the `disable_share` parameter is set to true either on the site level (site params) or page level (front matter). Each services can show a label, an icon, and be formatted in a custom color.
+Ananke adds "follow" link icons to the header and footer for the networks that you select, and "Share" link icons to single pages. To hide the share links on one page, set `disable_share` in its front matter; see [Disable sharing partially or globally](#disable-sharing-partially-or-globally). Each network can show a label, an icon, and be formatted in a custom colour.
 
 > MIGRATION: Read about how to migrate below in the Section [Migrate from versions before v2.11](https://github.com/gohugo-ananke/ananke/wiki/Social-media-network-setup#migrate-from-versions-before-v211)
 
@@ -33,7 +33,6 @@ You can setup the display of your follow links with these options:
 
 ```toml
 [ananke.social.follow]
-new_window_icon = false
 networks = [
   "facebook",
   "bluesky",
@@ -41,7 +40,7 @@ networks = [
 ]
 ```
 
-* `new_window_icon` (default is `false`): add a small indicator of an outgoing link to the icon if this is set to `true`.
+* `new_window_icon`: the theme defaults contain this option, but Ananke v2.23.0 does not use it. Setting it has no effect.
 * `networks` (required, no default): a list of `slug` parameters of the networks you wish to link to. You can either choose one or more of [the included pre-configured networks](https://github.com/gohugo-ananke/ananke/wiki/Social-media-network-setup#available-networks) or [configure your own networks](https://github.com/gohugo-ananke/ananke/wiki/Social-media-network-setup#setup-individual-new-networks).
 
 #### Set your profile or user name
@@ -111,11 +110,11 @@ networks = [
 
 * networks (required): To set your preferred networks and their order you define them in the `networks` parameter
 * icons (optional, default `true`): show icons for each network
-* sharetext (optional, default `false`): show share text for each network
+* sharetext (optional, default `true`): give each link the text "Share on" and the network name. With icons, this text is the link's title and accessible name. Do not set both `icons` and `sharetext` to `false`, because the links are then empty.
 
 #### Disable sharing partially or globally
 
-By default sharing links on each single page are enabled. To disable this behaviour set `disable_share` in your pages front matter to `true`:
+By default sharing links on each single page are enabled. To disable them on one page, set `disable_share` in its front matter to `true`:
 
 ```yaml
 ---
@@ -123,14 +122,19 @@ disable_share: true
 ---
 ```
 
-You can disable this feature completely by setting `ananke.social.share.disable_share` to `true` in your configuration:
+> [!WARNING]
+> In Ananke v2.23.0, any `disable_share` value in front matter hides the share links, also `disable_share: false`. Remove the key to show share links on a page.
+
+To remove share links from all pages, do not set `ananke.social.share.networks`, or set it to an empty list. The theme ships no share networks by default:
 
 ```toml
 # config/_default/params.toml
 
 [ananke.social.share]
-disable_share = true
+networks = []
 ```
+
+The option `ananke.social.share.disable_share` in the site configuration has no effect in Ananke v2.23.0.
 
 > [!NOTE]
 > Privacy and UX: share links are plain anchor links built from the page's

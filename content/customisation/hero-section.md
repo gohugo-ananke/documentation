@@ -9,7 +9,7 @@ aliases:
 
 A page header is the banner above the main content. It can show a title, a description, and a background image. This area is also called a hero. It is separate from the headings inside an article and from the navigation menu, although the navigation sits inside the default header.
 
-This guide describes the standard Ananke header templates used by this site's published theme dependency, v2.19.1. A site that overrides those templates can behave differently. Check your installed version before copying a template override, especially when adopting a newer header implementation.
+This guide describes the standard header templates of Ananke v2.23.0. Where a section names an earlier release, the behaviour starts with that release. A site that overrides those templates can behave differently. Check your installed version before copying a template override.
 
 ## Add an image to one page
 
