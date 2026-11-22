@@ -64,7 +64,7 @@ For one language of a multilingual site:
 # config/_default/languages.toml
 
 [fr]
-languageName = "Français"
+label = "Français"
 weight = 2
 
 [fr.params]

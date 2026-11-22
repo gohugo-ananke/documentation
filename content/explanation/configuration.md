@@ -75,7 +75,7 @@ Some options apply only to the whole site, and a front matter value has no effec
 
 Some settings always belong to your site:
 
-* `baseURL`, `title`, and `languageCode`, which identify the site.
+* `baseURL`, `title`, and `locale`, which identify the site.
 * `theme`, or the imports in `module.toml`, which declare how the theme is installed.
 * Menus, which describe your navigation.
 * Taxonomies, output formats, and other Hugo settings, which describe your content model.

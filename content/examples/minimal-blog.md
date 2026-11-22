@@ -31,7 +31,7 @@ example-site/
 # config/_default/hugo.toml
 
 baseURL = "https://example.com/"
-languageCode = "en-gb"
+locale = "en-gb"
 title = "My Minimal Blog"
 enableRobotsTXT = true
 
