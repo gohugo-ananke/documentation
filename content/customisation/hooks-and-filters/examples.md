@@ -185,6 +185,35 @@ avatar = "/img/authors/jane.jpg"
 The post's front matter sets `author = "jane"`; the hook looks that key up in `site.Data.authors`
 and renders a bio card. Use `content-before` instead if you want the card above the article.
 
+## Add an edit link below every page
+
+**Hook:** `content-after`. Use the shared `edit-page` partial to show an "Improve this page on GitHub" link below the content of every single page, without the [`edit-page` shortcode](/content/shortcodes/edit-page/) in each file.
+
+1. Set the repository in your site configuration:
+
+   ```toml
+   # config/_default/params.toml
+
+   [ananke.shortcodes.edit_page]
+   repo_url = "https://github.com/owner/repo"
+   branch = "main"
+   ```
+
+2. Add the hook:
+
+   ```go-html-template
+   {{/* layouts/_partials/hooks/content-after.html */}}
+   {{- with .File -}}
+     <footer class="mt4 pt3 bt b--moon-gray">
+       {{- partials.Include "edit-page.html" $ -}}
+     </footer>
+   {{- end -}}
+   ```
+
+3. Run `hugo server` and open a single page. The link is below the content.
+
+`with .File` skips pages without a source file. The [Edit page reference](/content/shortcodes/edit-page/#configuration) lists the other settings. If you already use `content-after`, for example for an author bio, add the block to the same file.
+
 ## Add Commento comments
 
 Use `content-after` to embed Commento below the page content. The [Commento hook recipe](/customisation/comments/#add-commento-with-a-hook) includes a complete partial, hosted and self-hosted script configuration, and a per-page switch. Add its block to your existing hook if you already use this hook for an author bio or other content.
