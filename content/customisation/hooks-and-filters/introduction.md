@@ -21,6 +21,9 @@ There are two entry points:
 
 Both entry points look for a matching partial in the `hooks/` partial namespace.
 
+> [!NOTE]
+> Hook names such as `site-header`, `site-footer`, `before-content`, and `content-after-title` on this page are examples for calls in your own templates. The theme templates call only the hooks in the [hook catalogue](/customisation/hooks-and-filters/all/). A partial such as `layouts/_partials/hooks/site-header.html` has no effect unless a template calls it.
+
 For example, this call:
 
 ```go-html-template

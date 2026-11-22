@@ -75,7 +75,7 @@ Keep `commentoEnable = false` when using the hook, and remove `services.disqus.s
 
 ### Built-in Commento settings
 
-Ananke 2.19.1 still includes a Commento partial. If you use that integration instead of the hook, configure it as follows:
+Ananke v2.23.0 still includes a Commento partial. If you use that integration instead of the hook, configure it as follows:
 
 ```toml
 # config/_default/params.toml
