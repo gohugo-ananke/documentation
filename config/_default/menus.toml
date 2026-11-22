@@ -98,6 +98,12 @@ parent = "configuration"
 weight = 40
 
 [[main]]
+name = "Social network reference"
+pageRef = "/configuration/social-networks-reference/"
+parent = "configuration"
+weight = 41
+
+[[main]]
 name = "SEO"
 pageRef = "/configuration/seo/"
 parent = "configuration"

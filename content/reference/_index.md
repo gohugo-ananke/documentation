@@ -12,7 +12,8 @@ Use reference material to check a name, type, default, supported version, or tem
 * [Hugo version compatibility](/get-started/compatibility/).
 * [Configuration reference](/configuration/reference/): every site parameter, with its type, default, and scope.
 * [General settings](/configuration/general/), [homepage settings](/configuration/homepage/), and [menu settings](/configuration/menus/).
-* [Social network settings](/configuration/social-media-networks/) and [SEO metadata](/configuration/seo/).
+* [Social network reference](/configuration/social-networks-reference/): built-in networks and network definitions.
+* [SEO metadata](/configuration/seo/).
 * [Front matter](/content/frontmatter/) and [summary and reading-time settings](/content/summaries-and-reading-time/).
 * [Colour and typeface classes](/customisation/colours/), [header layout settings](/customisation/header/), and [page header behaviour](/customisation/hero-section/).
 

@@ -124,7 +124,7 @@ These options are directly under `[params]`. See [Summaries and reading time](/c
 
 ## Social links
 
-These options are under `[params.ananke.social]`. See [Social media networks](/configuration/social-media-networks/) for complete examples.
+These options are under `[params.ananke.social]`. See [Social media networks](/configuration/social-media-networks/) for complete examples, and the [social network reference](/configuration/social-networks-reference/) for the built-in networks and the keys of a network definition.
 
 | Option | Type | Default | Set in | Description |
 | --- | --- | --- | --- | --- |
@@ -136,7 +136,7 @@ These options are under `[params.ananke.social]`. See [Social media networks](/c
 | `<network>.profilelink` | String | None | Site | A complete profile address. Replaces the address made from `username`. |
 | `<network>.label` | String | The network label | Site | Network name in the title and accessible name of your follow link. |
 | `<network>.rel` | String | None | Site | Value added to the link's `rel` attribute, for example `me`. |
-| `networks.<network>` | Table | 24 networks | Site | Definition of a network: `slug`, `label`, `color`, `profile`, `icon`, and, for sharing, `link` and `particles`. Add a table to define a new network or change one key of an existing definition. |
+| `networks.<network>` | Table | 24 networks | Site | Definition of a network. See [Network definition](/configuration/social-networks-reference/#network-definition). |
 
 Share links on a page are hidden when its front matter contains `disable_share`. In v2.23.0, this includes `disable_share: false`.
 
