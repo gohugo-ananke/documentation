@@ -32,8 +32,7 @@ lists what it does, its parameters, and an example.
   `params.ananke.shortcodes.edit_page.repo_url` (a build-time warning is printed
   and nothing is rendered).
 
-See the [Edit page](/content/shortcodes/edit-page/) page for configuration and for
-showing the link automatically below every page.
+See the [Edit page reference](/content/shortcodes/edit-page/) for configuration and output. To show the link below every page, see [Add an edit link below every page](/customisation/hooks-and-filters/examples/#add-an-edit-link-below-every-page).
 
 ## form-contact
 

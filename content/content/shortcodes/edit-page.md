@@ -1,6 +1,6 @@
 ---
 title: Edit page
-description: "Add a link that opens the source file of the current page in the GitHub editor."
+description: "Reference for the edit-page shortcode, which links to the GitHub editor for the source file of the current page."
 date: 2026-06-07T08:00:00.000+0700
 weight: 200
 since: "2.19.0"
@@ -10,245 +10,122 @@ aliases:
 
 {{< since >}}
 
-## Quick summary
+The `edit-page` shortcode renders a link to the GitHub editor for the source file of the current page. It is the "Improve this page on GitHub" link that documentation sites often put at the foot of a page.
 
-The `edit-page` shortcode renders a link that takes readers straight to the
-GitHub editor for the current page's source file. It is the "Improve this page
-on GitHub" link that documentation sites commonly place at the foot of a page.
+The link uses GitHub's `/edit/` address. Readers with write access open the file in the editor. GitHub offers all other readers its "fork this repository and propose changes" flow, so outside contributors need no extra setup.
 
-Because the link uses GitHub's `/edit/` URL, readers who do **not** have write
-access to the repository are automatically offered GitHub's standard
-"fork this repository and propose changes" flow — no extra configuration is
-needed to support outside contributors.
+To show the link below every page without the shortcode, see [Add an edit link below every page](/customisation/hooks-and-filters/examples/#add-an-edit-link-below-every-page).
 
-The same behaviour is also available as the shared `edit-page` partial, which is
-what this documentation site uses to show the link automatically below every
-page (see [How it works](#how-it-works)).
+<!-- markdownlint-disable-next-line MD033 -->
+<span id="quick-summary"></span><span id="syntax-overview"></span><span id="without-arguments"></span><span id="positional-options"></span><span id="named-options"></span><span id="usage-rules"></span><span id="intended-use"></span><span id="basic-examples"></span><span id="use-the-configured-branch"></span><span id="example-catalogue"></span><span id="minimal-usage"></span><span id="common-mistake-mixing-positional-and-named-options"></span>
 
-## Syntax overview
-
-The shortcode takes no required arguments — it reads everything else from site
-configuration. You may optionally override the branch to edit.
-
-### Without arguments
+## Syntax
 
 ```go-html-template
 {{</* edit-page */>}}
-```
-
-### Positional options
-
-```go-html-template
 {{</* edit-page "development" */>}}
-```
-
-### Named options
-
-```go-html-template
 {{</* edit-page branch="development" */>}}
 ```
 
-Do not mix positional and named options in the same call.
+Use positional or named arguments. Hugo stops the build if one call mixes both.
 
-## Parameter overview
+<!-- markdownlint-disable-next-line MD033 -->
+<span id="parameter-overview"></span><span id="override-the-branch-for-one-page"></span>
 
-| Title | Positional option | Named option | Required | Type | Default | Description |
-| --- | --- | --- | --- | --- | --- | --- |
-| Branch | `1` | `branch` | No | String | `main` (or the configured branch) | Overrides, for this page only, the branch the edit link targets. |
+## Arguments
 
-The repository URL, default branch, content directory, and link target are not
-shortcode arguments — they are set in site configuration (see
-[Configuration notes](#configuration-notes)).
+| Argument | Position | Required | Type | Default | Description |
+| --- | --- | --- | --- | --- | --- |
+| `branch` | `0` | No | String | The configured branch | Branch of the edit link, for this call only. |
 
-## Usage rules
+<!-- markdownlint-disable-next-line MD033 -->
+<span id="configuration-notes"></span>
 
-* Use either positional options or named options. Do not mix both styles in the
-  same shortcode call.
-* Set `params.ananke.shortcodes.edit_page.repo_url`. Without it the shortcode
-  renders nothing and prints a build-time warning.
-* Prefer configuring the branch site-wide; only pass the `branch` argument when a
-  single page must point somewhere different.
+## Configuration
 
-## How it works
+The repository and the defaults are site parameters under `[params.ananke.shortcodes.edit_page]`. The [`edit-page` partial](#output) uses the same settings.
 
-The link is built as `{repo_url}/edit/{branch}/{content_dir}/{file path}`, where
-the file path is the page's source file relative to the content directory. For
-example, this page becomes:
+| Parameter | Required | Type | Default | Description |
+| --- | --- | --- | --- | --- |
+| `repo_url` | Yes | String | None | Address of the GitHub repository, for example `https://github.com/owner/repo`. Without it, nothing renders and the build log shows a warning. |
+| `branch` | No | String | `"main"` | Branch of the edit link. |
+| `content_dir` | No | String | `"content"` | Content directory, relative to the repository root. |
+| `target` | No | String or `false` | `"_blank"` | Link target. Use `false` to open the link in the same window. |
+
+```toml
+# config/_default/params.toml
+
+[ananke.shortcodes.edit_page]
+repo_url = "https://github.com/owner/repo"
+branch = "main"
+content_dir = "content"
+```
+
+<!-- markdownlint-disable-next-line MD033 -->
+<span id="how-it-works"></span>
+
+## Link address
+
+The shortcode builds the address from the configuration and the source file of the page:
 
 ```text
-https://github.com/gohugo-ananke/documentation/edit/development/content/shortcodes/edit-page.md
+{repo_url}/edit/{branch}/{content_dir}/{path of the file in the content directory}
 ```
 
-GitHub's `/edit/` URL does the rest:
+With the configuration above, the file `content/posts/my-first-post.md` gets this address:
 
-* Readers with write access open the file directly in GitHub's editor.
-* Readers without write access are prompted to create a fork; when they save,
-  GitHub commits to their fork and opens a pull request for them. This is
-  GitHub's built-in behaviour, so contributors never have to fork manually first.
+```text
+https://github.com/owner/repo/edit/main/content/posts/my-first-post.md
+```
 
-When `repo_url` is not configured, nothing is rendered and a build-time warning
-names the page so the missing setting is easy to find.
+<!-- markdownlint-disable-next-line MD033 -->
+<span id="output-explanation"></span><span id="showing-the-link-automatically"></span><span id="show-the-link-automatically-below-every-page"></span>
 
-### Showing the link automatically
+## Output
 
-The link logic lives in a shared `edit-page` partial. Besides calling it through
-the shortcode, you can render it automatically below the content of every page by
-adding a `content-after` hook to your project:
+The shortcode renders one `<a>` element in a badge style. The link text is the `editPage` translation string. The default target is `_blank`; when the target is not `_self` or `false`, the link also has `rel="noopener"`.
+
+The shortcode calls the shared partial `edit-page.html`. You can call this partial from your own templates and hooks with a page, or with a map that contains `page` and, optionally, `branch`:
 
 ```go-html-template
-{{/* layouts/_partials/hooks/content-after.html */}}
-{{- with .File -}}
-  <footer class="mt4 pt3 bt b--moon-gray">
-    {{- partials.Include "edit-page.html" $ -}}
-  </footer>
-{{- end -}}
+{{ partials.Include "edit-page.html" . }}
+{{ partials.Include "edit-page.html" (dict "page" . "branch" "development") }}
 ```
 
-This documentation site uses exactly this approach, which is why every page shows
-the link without anyone adding the shortcode by hand.
+<!-- markdownlint-disable-next-line MD033 -->
+<span id="i18n-strings"></span>
 
-## Intended use
+## Translation strings
 
-Use this shortcode (or the partial) when:
-
-* you host your content on GitHub and want to invite contributions
-* you want a consistent "improve this page" affordance at the foot of pages
-* you want outside contributors to be able to propose changes without manual
-  forking
-
-Avoid it when:
-
-* your content is not stored in a public GitHub repository
-* the page has no source file (for example a fully generated page)
-
-## Basic examples
-
-### Use the configured branch
-
-```go-html-template
-{{</* edit-page */>}}
-```
-
-Renders a link to edit this page on the branch configured in
-`params.ananke.shortcodes.edit_page.branch`.
-
-### Override the branch for one page
-
-```go-html-template
-{{</* edit-page branch="main" */>}}
-```
-
-Renders a link that targets the `main` branch instead of the configured default.
-
-## Example catalogue
-
-### Minimal usage
-
-```go-html-template
-{{</* edit-page */>}}
-```
-
-Result:
-
-A badge-styled "Improve this page on GitHub" link to the page's source file on
-the configured branch.
-
-### Override the branch for one page
-
-```go-html-template
-{{</* edit-page branch="main" */>}}
-```
-
-Result:
-
-The same link, but targeting the `main` branch instead of the configured
-default.
-
-### Show the link automatically below every page
-
-Instead of placing the shortcode in content, render the shared partial from a
-`content-after` hook:
-
-```go-html-template
-{{/* layouts/_partials/hooks/content-after.html */}}
-{{- with .File -}}
-  <footer class="mt4 pt3 bt b--moon-gray">
-    {{- partials.Include "edit-page.html" $ -}}
-  </footer>
-{{- end -}}
-```
-
-Result:
-
-Every single page shows the link below its content, with no per-page shortcode.
-This is how this documentation site renders the link.
-
-### Common mistake: mixing positional and named options
-
-Do not use this:
-
-```go-html-template
-{{</* edit-page "main" branch="main" */>}}
-```
-
-Use positional options:
-
-```go-html-template
-{{</* edit-page "main" */>}}
-```
-
-Or use named options:
-
-```go-html-template
-{{</* edit-page branch="main" */>}}
-```
-
-## Output explanation
-
-This shortcode renders a single anchor styled as a badge, with the translatable
-label `editPage` ("Improve this page on GitHub" by default). The link opens in a
-new tab (`target="_blank"`, with `rel="noopener"`) unless you change
-`params.ananke.shortcodes.edit_page.target`.
-
-## Accessibility notes
-
-* The link is a real anchor with descriptive text, so it is announced
-  meaningfully by assistive technology.
-* By default the link opens in a new tab; the visible text makes its destination
-  clear. Set `target = false` if you prefer to keep readers in the same window.
-
-## Configuration notes
-
-| Configuration location | Key | Description |
+| Key | Default English value | Used for |
 | --- | --- | --- |
-| `hugo.toml` | `params.ananke.shortcodes.edit_page.repo_url` | Base URL of the GitHub repository, e.g. `https://github.com/owner/repo`. Required; without it nothing renders. |
-| `hugo.toml` | `params.ananke.shortcodes.edit_page.branch` | Branch the edit link targets. Defaults to `main`. |
-| `hugo.toml` | `params.ananke.shortcodes.edit_page.content_dir` | Directory the content lives in inside the repository. Defaults to `content`. |
-| `hugo.toml` | `params.ananke.shortcodes.edit_page.target` | Link target. Defaults to `_blank` (new tab). Set to a custom value such as `"_top"`, or to `false` to open in the same window. |
+| `editPage` | `Improve this page on GitHub` | The link text. |
 
-The label ("Improve this page on GitHub") is a translatable interface string
-(`editPage`). Override it in your project's `i18n/<language>.toml` rather than
-editing the theme — see
-[Overriding theme interface strings](/configuration/multilingual/#overriding-theme-interface-strings).
+To change the text, override the string in your project's `i18n/<language>.toml`. See [Overriding theme interface strings](/configuration/multilingual/#overriding-theme-interface-strings).
 
-## i18n strings
+<!-- markdownlint-disable-next-line MD033 -->
+<span id="troubleshooting"></span>
 
-| Key | Default English value | Used for | Notes |
-| --- | --- | --- | --- |
-| `editPage` | `Improve this page on GitHub` | Visible link text. | The only string the shortcode renders; supplied via `T` from the theme's `i18n/en.toml`. |
+## Build messages
 
-## Related shortcodes
-
-| Shortcode | Use when |
+| Message | Cause |
 | --- | --- |
-| [`since`](/content/shortcodes/since/) | You want to mark which release introduced a feature. It also reads its settings from `params.ananke.shortcodes`. |
+| `the 'edit-page' partial in "<path>" needs params.ananke.shortcodes.edit_page.repo_url to be set` | `repo_url` is not set. Nothing renders. |
+| `the 'edit-page' shortcode was used on a page without a source file` | The page has no file, for example a generated page. Nothing renders. |
 
-## Troubleshooting
+If the link returns "404 Not Found", check that `repo_url`, `branch`, and `content_dir` match the repository.
 
-| Problem | Likely cause | Fix |
-| --- | --- | --- |
-| Nothing renders and a warning is printed. | `params.ananke.shortcodes.edit_page.repo_url` is not set. | Set `repo_url` to your repository's base URL. |
-| The link returns a 404. | The configured branch, content directory, or repository URL does not match the real layout. | Check `branch`, `content_dir`, and `repo_url`. |
-| The link points at the wrong branch. | The site-wide `branch` is not what you want for this page. | Set the site-wide `branch`, or pass a `branch` argument on the page. |
-| The link opens in a new tab unexpectedly. | `target` defaults to `_blank`. | Set `params.ananke.shortcodes.edit_page.target` to `false` for the same window. |
-| The shortcode fails with a build error. | Positional and named options were mixed in one call. | Use only one option style per shortcode call. |
+<!-- markdownlint-disable-next-line MD033 -->
+<span id="accessibility-notes"></span>
+
+## Accessibility
+
+The link is a real anchor with descriptive text. It opens in a new tab by default; set `target = false` to keep readers in the same window.
+
+<!-- markdownlint-disable-next-line MD033 -->
+<span id="related-shortcodes"></span>
+
+## Related pages
+
+* [Since](/content/shortcodes/since/): marks the release that introduced a feature. It also reads its settings from `params.ananke.shortcodes`.
+* [Configuration reference](/configuration/reference/#shortcodes): all shortcode parameters.
