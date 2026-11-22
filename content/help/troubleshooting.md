@@ -35,7 +35,7 @@ not set.
   is set. If the folder is empty, run `git submodule update --init --recursive`.
 * Hugo Module installs: confirm the import in `module.toml` and run
   `hugo mod get github.com/gohugo-ananke/ananke/v2 && hugo mod tidy`.
-* Verify with `hugo config | grep -i theme`.
+* Verify with `hugo mod graph` (Hugo Module) or `git -C themes/ananke describe --tags` (Git submodule).
 
 ### The homepage is blank
 
@@ -48,8 +48,7 @@ disabled or there are no posts in the expected section.
 
 * Add a `content/_index.md` with body text (see [Homepage](/configuration/homepage/)).
 * Confirm `ananke.show_recent_posts = true` and that posts exist.
-* If your posts are not in the `post` section, set `mainSections` to your
-  section name.
+* Set `mainSections` to the section of your posts. Without it, Hugo uses the section with the most pages, which can be a section without posts. See [Which section recent posts come from](/configuration/homepage/#which-section-recent-posts-come-from).
 
 ### CSS / styling is missing
 

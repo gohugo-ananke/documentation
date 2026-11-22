@@ -17,7 +17,8 @@ example-site/
 │       ├── hugo.toml
 │       ├── module.toml
 │       ├── languages.toml
-│       ├── menus.toml
+│       ├── menus.en.toml
+│       ├── menus.de.toml
 │       └── params.toml
 └── content/
     ├── _index.md
@@ -61,14 +62,18 @@ title = "Beispielseite"
 ```
 
 ```toml
-# config/_default/menus.toml
+# config/_default/menus.en.toml
 
-[[en.main]]
+[[main]]
 name = "About"
 pageRef = "/about/"
 weight = 10
+```
 
-[[de.main]]
+```toml
+# config/_default/menus.de.toml
+
+[[main]]
 name = "Über uns"
 pageRef = "/about/"
 weight = 10

@@ -15,7 +15,7 @@ LinkedIn belongs to Microsoft. Microsoft does not allow free use of its brand ic
 
 ## Add the icon
 
-The steps are the same as for [any other icon](/configuration/social-media-networks/#adding-new-icons). The only difference is where you get the icon.
+The steps are the same as for [any other icon](/configuration/social-media-networks/#replace-or-add-icons). The only difference is where you get the icon.
 
 1. Download a LinkedIn icon in SVG format. [Font Awesome Free](https://fontawesome.com/icons/linkedin?f=brands) has one. You can download the file directly from [the Font Awesome repository on GitHub](https://raw.githubusercontent.com/FortAwesome/Font-Awesome/7.x/svgs/brands/linkedin.svg).
 2. Save the file as `assets/ananke/socials/linkedin.svg` in your website repository. The file name must be `linkedin.svg`, because the `icon` parameter of the pre-configured network is `linkedin`.
