@@ -3,6 +3,10 @@ locale = "en-gb"
 title = "Ananke Documentation"
 enableRobotsTXT = true
 
+# Keep this filename stable: the root site's sitemap index links to it.
+[sitemap]
+filename = "sitemap.xml"
+
 # Show the theme's automatic table of contents on all regular pages.
 [[cascade]]
 [cascade.params]

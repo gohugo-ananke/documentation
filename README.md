@@ -159,6 +159,12 @@ The tests use temporary fixtures and substitute commands. See [the release and p
 See [`netlify.toml`](netlify.toml) for the per-context build commands (production, deploy preview,
 branch deploy).
 
+## Documentation sitemap
+
+Hugo generates `sitemap.xml` on every build. The GitHub Pages workflow sets the production base URL, so the sitemap is published at `https://gohugo-ananke.github.io/documentation/sitemap.xml` and lists documentation URLs under `/documentation/`.
+
+The separate `gohugo-ananke.github.io` project owns the root sitemap index and root `robots.txt`. Its index links to the documentation sitemap at this fixed address. Keep the filename in `config/_default/hugo.toml` stable; documentation deployments update the generated sitemap without changes to the root project. Do not add a static copy of the generated sitemap to this repository.
+
 ## Contributing
 
 Documentation contributions are very welcome. Please read [CONTRIBUTING.md](CONTRIBUTING.md) for
