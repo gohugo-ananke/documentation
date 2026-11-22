@@ -11,6 +11,8 @@ builds are not.
 
 ## Enable robots.txt
 
+For a GitHub Pages project site under a path such as `/documentation/`, use the [GitHub Pages robots.txt and sitemap guide]({{< relref "how-to/github-deploy-specifics.md" >}}). The domain-root site owns robots.txt for that setup.
+
 Tell Hugo to generate `robots.txt` by enabling it in your configuration:
 
 ```toml
