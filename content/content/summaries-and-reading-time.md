@@ -48,18 +48,48 @@ This is useful when the first paragraph does not make a good preview.
 
 ## The read more link
 
-List summaries are followed by a "read more" link. Customise its text with
-`read_more_copy`, site-wide or per page:
+Each summary card on list pages and the homepage has a "read more" link to the full page. The default text comes from the `readMore` translation string of the site language. To make the link more descriptive, set `read_more_copy`.
+
+For all pages:
 
 ```toml
 # config/_default/params.toml
 
-[params]
 read_more_copy = "Read more about this entry"
 ```
 
-See [General content features → Read more link](/content/general/#read-more-link)
-for per-language and per-page examples.
+For one language of a multilingual site:
+
+```toml
+# config/_default/languages.toml
+
+[fr]
+languageName = "Français"
+weight = 2
+
+[fr.params]
+read_more_copy = "En savoir plus à ce sujet"
+```
+
+For one page, set the value in its front matter. The card of that page then uses your text:
+
+```yaml
+---
+title: The Tower Bridge of London
+read_more_copy: Read more about this bridge
+---
+```
+
+For all pages of a section, set the value with `cascade` in the section's `_index.md`:
+
+```yaml
+---
+title: Bridges
+cascade:
+  params:
+    read_more_copy: Read more about this bridge
+---
+```
 
 ## Reading time and word count
 
