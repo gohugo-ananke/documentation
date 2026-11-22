@@ -54,7 +54,7 @@ Partials live in `layouts/_partials/`:
 Shortcodes live in `layouts/_shortcodes/`:
 
 * `form-contact.html` — the [contact form](/content/shortcodes/contact-form/).
-* `page-index.html` — lists a section's child pages.
+* `page-index.html` — lists all regular pages of the site, grouped by top-level section.
 
 See the [Shortcodes reference](/content/shortcodes/) for usage.
 

@@ -26,4 +26,4 @@ Ananke is a theme for [Hugo](https://gohugo.io/). This documentation shows you h
 
 ## All pages
 
-{{< page-index >}}
+The [overview](/overview/) lists every page of the documentation.

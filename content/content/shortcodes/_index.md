@@ -57,7 +57,7 @@ backends, and spam-protection notes.
 ## page-index
 
 * **Purpose:** render an index of all regular pages of the site, grouped by
-  top-level section. The homepage of this documentation uses it.
+  top-level section. Section pages (`_index.md`) are not listed.
 * **Syntax:** `{{</* page-index */>}}`
 * **Parameters:** none.
 * **Output:** one heading for each top-level section, sorted by the section's
