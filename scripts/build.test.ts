@@ -169,24 +169,16 @@ test("preview defaults to development when no theme ref is set", () => {
   );
 });
 
-test("only production deployment receives --prod", () => {
-  for (const production of [false, true]) {
-    const r = fixture().run([
-      "--deploy",
-      ...(production ? ["--production"] : []),
-    ]);
-    assert.equal(r.status, 0, r.stderr);
-    const deploy = r.calls.find((c) => c.tool === "netlify");
-    assert.ok(deploy);
-    assert.equal(deploy.args.includes("--prod"), production);
-    assert.ok(deploy.args.includes("--no-build"));
-  }
+test("removed deployment option fails before running external commands", () => {
+  const r = fixture().run(["--deploy"]);
+  assert.notEqual(r.status, 0);
+  assert.match(r.stderr, /Unknown option.*--deploy/);
+  assert.equal(r.calls.length, 0);
 });
 
-test("a release version mismatch prevents building or deployment", () => {
+test("a release version mismatch prevents building", () => {
   const r = fixture().run([
     "--production",
-    "--deploy",
     "--expect-theme-version",
     "v2.21.0",
   ]);

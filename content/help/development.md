@@ -55,7 +55,7 @@ Preview builds default to `development`; `ANANKE_THEME_REF` supplies an alternat
 
 Both build modes use a temporary source tree and force production configuration. They run Hugo and Pagefind, then remove the temporary tree. The source repository's `go.mod` and `go.sum` remain unchanged. Use a normal `hugo` command if you specifically want to test the revision pinned in those files.
 
-`npm run deploy` builds a preview revision and creates a draft Netlify deployment. `npm run deploy:production` builds the latest stable release and deploys to production. Both require an authenticated, linked Netlify CLI and stop if resolution, building, or indexing fails. Build commands alone do not publish anything.
+GitHub Pages is the only production documentation host, at `https://gohugo-ananke.github.io/documentation/`. Pushes to `main` or manual dispatch of the GitHub Pages workflow build and publish the site. Build commands alone do not publish anything. Netlify production serves permanent redirects to the matching GitHub Pages paths; Netlify deploy previews and branch deploys still build review sites, with indexing disabled by an HTTP header. See the [build and deploy settings](https://github.com/gohugo-ananke/documentation#build-and-deploy-selection) for the configuration.
 
 ## Release and publication order
 
@@ -67,7 +67,7 @@ For this test release:
 2. Promote the theme to `main` and publish its stable release. Record the actual tag; do not guess the next version.
 3. Before promoting the documentation to `main`, build it with `npm run build`, passing `--expect-theme-version` and that tag. This stops the build if Go still resolves the previous release. Wait for the module version to become available and retry when necessary.
 4. Review the resulting pages, navigation, legacy URL redirects, search, and mobile layouts. Confirm the theme and Hugo versions printed in the build log.
-5. Promote the documentation to `main` only after the theme release is available. This starts the Netlify production and GitHub Pages builds with the stable build command. Local production publication uses `npm run deploy:production` instead.
+5. Promote the documentation to `main` only after the theme release is available. Push the promoted `main` branch to start the GitHub Pages production build with the stable build command. Netlify production publishes only the redirects to GitHub Pages.
 
 Merge timing alone does not prove that a release is available or that documentation has been deployed. A documentation build started before the theme tag exists can still resolve the previous stable release. The development environment remains useful for testing uncommitted changes, but it does not establish production behaviour.
 

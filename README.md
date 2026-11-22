@@ -5,9 +5,9 @@ flexible, production-ready starter theme for [Hugo](https://gohugo.io/).
 
 This site is itself **built with Ananke**, so it doubles as a living example of the theme in use.
 
-[![All Contributors](https://img.shields.io/github/all-contributors/davidsneighbour/gohugo-theme-ananke-documentation?color=ee8449&style=flat-square)](https://ananke-documentation.netlify.app/help/contributors/)
+[![All Contributors](https://img.shields.io/github/all-contributors/davidsneighbour/gohugo-theme-ananke-documentation?color=ee8449&style=flat-square)](https://gohugo-ananke.github.io/documentation/help/contributors/)
 
-* **Live site:** [ananke-documentation.netlify.app](https://ananke-documentation.netlify.app/)
+* **Live site:** [gohugo-ananke.github.io/documentation](https://gohugo-ananke.github.io/documentation/)
 * **Theme repository:** [github.com/gohugo-ananke/ananke](https://github.com/gohugo-ananke/ananke)
 * **Theme demo:** [ananke-theme.netlify.app](https://ananke-theme.netlify.app/)
 
@@ -111,8 +111,6 @@ The shared development server and published builds deliberately select the theme
 | `npm run dev` | Branch-paired sibling working tree through `HUGO_MODULE_REPLACEMENTS` | No |
 | `npm run build` | Latest stable released Ananke module | No |
 | `npm run build:preview` | Remote `development`, or an explicit theme ref | No |
-| `npm run deploy` | Same selection as a preview build | Draft Netlify deploy |
-| `npm run deploy:production` | Latest stable released Ananke module | Production Netlify deploy |
 
 Builds use `scripts/build.ts`. It resolves the theme in a temporary source tree, clears inherited local module replacements, forces the production Hugo environment, runs Hugo and Pagefind, and removes the temporary tree afterwards. The checked-in `go.mod` and `go.sum` stay unchanged. The build log records the selected theme revision and Hugo version. A plain `hugo` command still uses the checked-in dependency pin.
 
@@ -125,16 +123,9 @@ npm run build:preview -- --theme-ref rework/header
 npm run build:preview -- --theme-ref main --destination /tmp/ananke-main-preview
 ```
 
-Slash-containing branch names are resolved to a commit before querying Go. Production ignores `ANANKE_THEME_REF` and rejects `--theme-ref`; use a preview for unreleased work. Netlify deploy previews and branch deploys use the preview command and their preview URL. GitHub Pages and the Netlify production context use the stable production command. Both platforms build the Pagefind search assets.
+Slash-containing branch names are resolved to a commit before querying Go. Production ignores `ANANKE_THEME_REF` and rejects `--theme-ref`; use a preview for unreleased work. GitHub Pages is the only production documentation host and runs the stable production command on pushes to `main` or manual workflow dispatch. The build script builds and indexes the site; it does not publish it.
 
-With Netlify CLI installed, authenticated, and linked to this project:
-
-```bash
-npm run deploy -- --theme-ref development
-npm run deploy:production
-```
-
-The commands build and index the site before invoking Netlify with `--no-build`. Only `deploy:production` passes `--prod`. Neither command changes the theme checkout or Git branches. Do not run these commands when you only want local validation.
+Netlify production publishes only `netlify/redirects/`, which permanently redirects each old URL to its matching path under `https://gohugo-ananke.github.io/documentation/`. It does not build a second documentation site. Netlify deploy previews and branch deploys override the publish directory with `public/`, use the preview build command and their preview URL, and include the Pagefind search assets. The production redirect file is outside the Hugo source and is not included in these previews or GitHub Pages builds. Netlify sends `X-Robots-Tag: noindex` for preview content.
 
 To preview a complete build with search:
 
@@ -145,7 +136,7 @@ npm run search:serve
 
 For a complete build against the local theme working tree, use `hugo --environment development --minify`, then `npm run search:index`. Setting `HUGO_ENV=development` on `npm run build` does not enable a local replacement: production builds deliberately ignore it. A regular `hugo server` does not run Pagefind; rebuild the index after changing content.
 
-Test the selection and deployment arguments without downloading themes or publishing:
+Test build selection and argument validation without downloading themes or publishing:
 
 ```bash
 npm run test:build

@@ -34,7 +34,6 @@ function main(): void {
   const { values } = parseArgs({
     options: {
       production: { type: "boolean", default: false },
-      deploy: { type: "boolean", default: false },
       "theme-ref": { type: "string" },
       "expect-theme-version": { type: "string" },
       destination: { type: "string" },
@@ -45,11 +44,6 @@ function main(): void {
   if (values.production && values["theme-ref"]) {
     throw new Error(
       "Production always selects the latest stable release. Use a preview build for --theme-ref.",
-    );
-  }
-  if (values.deploy && values.destination) {
-    throw new Error(
-      "Deploy builds always use public/. Use --destination for build-only checks.",
     );
   }
   const ref = values.production
@@ -154,11 +148,6 @@ function main(): void {
       root,
       env,
     );
-    if (values.deploy) {
-      const deployArgs = ["deploy", "--no-build", "--dir", destination];
-      if (values.production) deployArgs.push("--prod");
-      run("netlify", deployArgs, root, env);
-    }
   } finally {
     rmSync(source, { recursive: true, force: true });
   }

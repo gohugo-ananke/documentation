@@ -1,8 +1,7 @@
 [build]
-  # The directory to publish after the build completes
-  publish = "public"
-  # The command to run to build your site
-  command = "npm run build"
+  # Production serves permanent redirects, without building a duplicate site.
+  publish = "netlify/redirects"
+  command = "echo 'Production redirects to GitHub Pages'"
 
 [build.environment]
   # Hugo version verified for the documentation build
@@ -13,7 +12,15 @@
 [context.deploy-preview]
   # Build with the preview URL for Pull Requests
   command = "npm run build:preview -- --buildFuture"
+  publish = "public"
 
 [context.branch-deploy]
   # Build settings for non-production branches
   command = "npm run build:preview"
+  publish = "public"
+
+# All content served by Netlify is for review, not search indexing.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Robots-Tag = "noindex"

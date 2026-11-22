@@ -69,7 +69,7 @@ a working result without prior knowledge of the theme internals.
 
 ## Page skeleton
 
-Each page serves one reader need. Choose the document type first, then use its structure. Put the page under the topic section where readers look for it, and link it from the matching entry page: [Tutorials](https://ananke-documentation.netlify.app/tutorials/), [How-to guides](https://ananke-documentation.netlify.app/how-to/), [Explanation](https://ananke-documentation.netlify.app/explanation/), or [Reference](https://ananke-documentation.netlify.app/reference/).
+Each page serves one reader need. Choose the document type first, then use its structure. Put the page under the topic section where readers look for it, and link it from the matching entry page: [Tutorials](https://gohugo-ananke.github.io/documentation/tutorials/), [How-to guides](https://gohugo-ananke.github.io/documentation/how-to/), [Explanation](https://gohugo-ananke.github.io/documentation/explanation/), or [Reference](https://gohugo-ananke.github.io/documentation/reference/).
 
 * **Tutorial**: the reader learns by doing.
   1. What the reader builds and what they need before they start.
@@ -145,7 +145,7 @@ Structure commits logically — do not dump unrelated changes into a single comm
 ## Contributors list
 
 The contributors table on the
-[contributors page](https://ananke-documentation.netlify.app/help/contributors/) is
+[contributors page](https://gohugo-ananke.github.io/documentation/help/contributors/) is
 generated from `data/contributors/` by `scripts/merge-all-contributors.mjs`
 (`npm run contributors:merge`). Do not edit the generated list by hand.
 

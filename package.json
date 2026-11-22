@@ -33,8 +33,6 @@
     "lint:markdown:fix": "markdownlint-cli2 --fix content/**/*.{md,mdx}",
     "server": "wireit",
     "build": "node scripts/build.ts --production",
-    "deploy": "node scripts/build.ts --deploy",
-    "deploy:production": "node scripts/build.ts --production --deploy",
     "search:index": "pagefind --site public",
     "search:serve": "pagefind --site public --serve",
     "build:preview": "node scripts/build.ts",
