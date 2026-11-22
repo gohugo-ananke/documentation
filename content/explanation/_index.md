@@ -15,7 +15,7 @@ Read these pages when you want to understand how the parts of an Ananke site fit
 ## Content and appearance
 
 * [Understand content types and archetypes](/content/content-types/): distinguish pages, posts, lists, and taxonomies.
-* [Understand the stylesheet pipeline](/customisation/styles/): learn how theme styles and your CSS become the published stylesheet.
+* [How Ananke builds its stylesheet](/explanation/stylesheet-pipeline/): learn how theme styles and your CSS become the published stylesheet.
 
 ## Extending Ananke
 
