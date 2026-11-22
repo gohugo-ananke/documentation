@@ -145,6 +145,32 @@ theme's `module.toml`). Use the same Hugo version locally and in production.
 We recommend the latest Hugo version. See
 [Confirm Hugo version compatibility](/get-started/#2-confirm-hugo-version-compatibility).
 
+### Content denied after an upgrade
+
+**Symptoms:** the build reports that `text/html` or `text/org` is not permitted by `security.allowContent`.
+
+Hugo blocks HTML content files by default from v0.162.0 and Org content files from v0.166.0. This is a Hugo security policy, not an Ananke setting. Markdown content is not blocked by these defaults.
+
+**Fix:** use Markdown, or explicitly allow the required format in your project's `hugo.toml` when you trust that content. For example, this optional setting permits HTML while retaining the default block on Org:
+
+```toml
+[security]
+allowContent = ["! ^text/org$"]
+```
+
+For trusted Org content instead, permit Org while keeping HTML blocked:
+
+```toml
+[security]
+allowContent = ["! ^text/html$"]
+```
+
+These settings replace the default list. HTML content and Org export blocks can include raw HTML, so keep the defaults when content is untrusted. Configure this in the consuming project; Ananke does not enable these formats for you. See Hugo's [content security policy](https://gohugo.io/configuration/security/#allowcontent), [v0.162.0 release notes](https://github.com/gohugoio/hugo/releases/tag/v0.162.0), and [v0.166.0 release notes](https://github.com/gohugoio/hugo/releases/tag/v0.166.0).
+
+### Extended archives are no longer published
+
+Hugo v0.170.0 removed the extended edition. Use the standard Hugo archive in new installations and CI configuration. Ananke's native CSS pipeline does not require the extended edition; its minimum remains Hugo v0.160.0. See the [Hugo v0.170.0 release notes](https://github.com/gohugoio/hugo/releases/tag/v0.170.0).
+
 ## Sorry, but "$FEATURE does not work" doesn't work for us
 
 Long story short, ask yourself: If you start bleeding out of all your orifices, will you tell the doctor "Doctor please help, I am quite new to this whole health thing and know you will laugh about me but I suddenly started bleeding out of all my orifices."? Or will you tell the doctor "Doctor, after ingesting a couple of razor blades I suddenly started bleeding. The razor blades were quite sharp. Can you help me?"
