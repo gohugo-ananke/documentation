@@ -39,11 +39,11 @@ Last execution: 2026-11-21T05:04:16.962Z. Release discovery: 2026-11-21T05:04:14
 <div class="docs-footnotes">
 <p><sup>1</sup> Declared minimum Hugo version: 0.160.0.</p>
 <p><sup>2</sup> Builds with warnings.</p>
-<p><sup>3</sup> No passing build between v0.159.0 and v0.159.2, and between v0.160.1 and v0.168.0.</p>
+<p><sup>3</sup> No test result between v0.159.0 and v0.159.2, and between v0.160.1 and v0.168.0.</p>
 <p><sup>4</sup> Requires Hugo Extended for v0.158.0 to v0.169.0.</p>
 <p><sup>5</sup> Declared minimum Hugo version: 0.128.0.</p>
 <p><sup>6</sup> Requires Hugo Extended for v0.128.0 to v0.169.0.</p>
-<p><sup>7</sup> No passing build between v0.139.4 and v0.140.0.</p>
+<p><sup>7</sup> No test result between v0.139.4 and v0.140.0.</p>
 <p><sup>8</sup> Declared minimum Hugo version: 0.84.0.</p>
 <p><sup>9</sup> Requires Hugo Extended for v0.128.0 to v0.135.0.</p>
 </div>
