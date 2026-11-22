@@ -10,6 +10,8 @@ The pages in this section explain how to change the look and behaviour of Ananke
 
 * **Change colours, fonts, and body classes:** read [Colours](/customisation/colours/) and [Styles](/customisation/styles/).
 * **Add your own CSS:** read [Custom CSS](/customisation/custom-css/).
+* **Understand how the stylesheet is built:** read [How Ananke builds its stylesheet](/explanation/stylesheet-pipeline/).
+* **Change or turn off hyphenation, or upgrade stylesheets from Ananke 2.15 or earlier:** read [Styles](/customisation/styles/).
 * **Change the header background, overlay, or height:** read [Page headers](/customisation/hero-section/).
 * **Arrange header components, style navigation, or migrate header overrides:** read [Header layout and hooks](/customisation/header/).
 * **Add comments to posts:** read [Comments](/customisation/comments/).

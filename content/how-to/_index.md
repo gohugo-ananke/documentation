@@ -26,6 +26,7 @@ Use these guides when you have a specific result in mind. If you want a guided l
 * [Control summaries and reading time](/content/summaries-and-reading-time/).
 * [Add a contact form](/content/shortcodes/contact-form/) or [comments](/customisation/comments/).
 * [Add custom CSS](/customisation/custom-css/), [configure page headers](/customisation/hero-section/), or [override a partial](/customisation/overriding-partials/).
+* [Use Sass or another preprocessor](/customisation/custom-css/#use-sass-scss-or-another-preprocessor) with your custom CSS.
 * [Use a hook](/customisation/hooks-and-filters/examples/) or [add a LinkedIn icon](/examples/linkedin-icon/).
 
 ## Recipes and diagnostics
