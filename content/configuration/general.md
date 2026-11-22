@@ -1,22 +1,15 @@
 ---
 title: General configuration
-description: "Set the logo, menu, date format, taxonomies, dates, section titles, and list page images."
+description: "Set the logo, the date format, taxonomy terms, dates, section titles, and list page images."
 date: 2026-01-16T08:00:00.000+0700
 weight: 100
 ---
 
-> [!IMPORTANT]
-> Please note that Hugo is extensible configurable with more generic or more specific configuration. Please read the documentation about [configuration files](https://gohugo.io/configuration/introduction/#configuration-file) and [configuration directories](https://gohugo.io/configuration/introduction/#configuration-directory) to learn more about this topic. Whenever Ananke's documentation refers to the configuration file it refers to any of these possible locations.
->
-> Ananke's sample repositories are using configuration directories and you can find all referred configuration parameters in `config/_default/hugo.toml` and `config/_default/params.toml`.
+This page covers site-wide display settings: the logo, dates, taxonomy terms, section titles, and list card images. To learn where configuration files go and how Hugo combines them with the theme defaults, read [How Ananke configuration works](/explanation/configuration/). Every option is listed in the [configuration reference](/configuration/reference/).
 
 ## Activate the contact form
 
-This theme includes a shortcode for a contact form that you can add to any page (there is an example on the contact page in the exampleSite folder). One option is to use [formspree.io](//formspree.io/) as proxy to send the actual email. Each month, visitors can send you up to fifty emails without incurring extra charges. Visit the Formspree site to get the "action" link and add it to your shortcode like this:
-
-```go-html-template
-{{</* form-contact action="https://formspree.io/your@email.com" */>}}
-```
+To add a contact form to a page, see [Contact form](/content/shortcodes/contact-form/).
 
 ## Logo
 
@@ -29,33 +22,7 @@ site_logo = "img/logo.svg"
 
 ## Main navigation menu
 
-The navigation shown in the header (the hero area at the top of every page) is built from Hugo's `main` menu. Define entries for it in your site configuration and they appear next to the social links.
-
-```toml
-[menus]
-[[menus.main]]
-name = "About"
-url = "/about/"
-weight = 10
-
-[[menus.main]]
-name = "Posts"
-url = "/posts/"
-weight = 20
-```
-
-Entries are ordered by their `weight`, lowest first. `url` can point to an internal section or page (for example `/about/`) or to an external address.
-
-You can also add a single page to the menu from its own front matter instead of listing it in the configuration:
-
-```yaml
----
-title: About
-menus: main
----
-```
-
-To group entries in submenus, see [Menus](/configuration/menus/#submenus). For menu parameters and other options, see Hugo's [menu templates documentation](https://gohugo.io/templates/menu-templates/).
+To add entries to the header menu, from the configuration or from page front matter, see [Menus](/configuration/menus/).
 
 ## Localize date format
 
@@ -66,7 +33,7 @@ Dates of blog posts and single pages are rendered with the default date format c
 date_format = "2. January 2006"
 ```
 
-With hugo 0.87.0 and above, you can also use predefined date layouts, like `:date_full`, and it will output localized dates or times. See hugo's documentation of the [`time.Format` function](https://gohugo.io/functions/dateformat/) for more details.
+You can also use predefined date layouts, like `:date_full`, and it will output localized dates or times. See hugo's documentation of the [`time.Format` function](https://gohugo.io/functions/dateformat/) for more details.
 
 ## Show taxonomies on pages
 
