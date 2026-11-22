@@ -3,5 +3,9 @@ anchorLineNos = true
 codeFences = true
 noClasses = false
 
+# Resolve Markdown page links against baseURL, including /documentation/.
+[goldmark.renderHooks.link]
+useEmbedded = "fallback"
+
 [goldmark.renderer]
 unsafe = true # meh, no like, but required for contributors list
