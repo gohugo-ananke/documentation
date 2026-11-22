@@ -69,4 +69,5 @@ Some releases need changes in your site. The release notes link to the guide:
 
 * Ananke 2.16.0 changed the stylesheet pipeline: see [Upgrade from Ananke 2.15 or earlier](/customisation/styles/#upgrade-from-ananke-215-or-earlier).
 * Ananke 2.21.0 deprecated overrides of the header partials: see [Migrate existing header overrides](/customisation/header/#migrate-existing-header-overrides).
+* Ananke 2.11.0 replaced the social settings: see [Upgrade social links from Ananke 2.10 or earlier](/get-started/upgrade-social-links/).
 * Ananke 2.13.0 and later use the module path `github.com/gohugo-ananke/ananke/v2`: see [Upgrade from theNewDynamic to gohugo-ananke](/get-started/upgrade-from-thenewdynamic/).

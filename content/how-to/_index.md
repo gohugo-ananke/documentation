@@ -11,13 +11,13 @@ Use these guides when you have a specific result in mind. If you want a guided l
 
 * [Install as a Hugo Module](/get-started/hugo-module/), the recommended method.
 * [Install as a Git submodule](/get-started/git-submodule/).
-* [Update Ananke to a newer release](/get-started/update-ananke/).
+* [Update Ananke to a newer release](/get-started/update-ananke/), including [social links from Ananke 2.10 or earlier](/get-started/upgrade-social-links/).
 * [Upgrade from theNewDynamic](/get-started/upgrade-from-thenewdynamic/).
 
 ## Configure your site
 
 * [Configure the homepage](/configuration/homepage/) and [navigation menus](/configuration/menus/).
-* [Add social links](/configuration/social-media-networks/).
+* [Add social follow and share links](/configuration/social-media-networks/).
 * [Publish in more than one language](/configuration/multilingual/).
 * [Configure analytics](/configuration/analytics/) and [search engine indexing](/configuration/robots/).
 

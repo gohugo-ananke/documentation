@@ -1,131 +1,112 @@
 ---
 title: Social media networks
-description: "Show follow and share links for social media networks, and add your own networks and icons."
+description: "Add follow links to your profiles and share links to your pages, add your own networks, and replace icons."
 date: 2026-01-16T08:00:00.000+0700
 weight: 500
 ---
 
-Ananke adds "follow" link icons to the header and footer for the networks that you select, and "Share" link icons to single pages. To hide the share links on one page, set `disable_share` in its front matter; see [Disable sharing partially or globally](#disable-sharing-partially-or-globally). Each network can show a label, an icon, and be formatted in a custom colour.
+Ananke can show follow links to your social profiles in the header and the footer, and share links on single pages. Both are off until you select networks. This page shows how to set them up. The [social network reference](/configuration/social-networks-reference/) lists the built-in networks and the keys of a network definition.
 
-> MIGRATION: Read about how to migrate below in the Section [Migrate from versions before v2.11](https://github.com/gohugo-ananke/ananke/wiki/Social-media-network-setup#migrate-from-versions-before-v211)
+The examples use `config/_default/params.toml`. In a single `hugo.toml`, put each table under `[params]`, for example `[params.ananke.social.follow]`.
 
-## Configuration
+<!-- markdownlint-disable-next-line MD033 -->
+<span id="configuration"></span><span id="configure-social-media-follow-links"></span><span id="set-up-global-options"></span>
 
-All configuration of Ananke's social media features is located under the `ananke.social` section in your websites `params` section. This can be found at one of the following locations:
+## Add follow links
 
-* in `hugo.toml` or `config.toml` in your website root under `params.ananke.social`
-* in `config/_default/hugo.toml` or `config/_default/config.toml` under `params.ananke.social`
-* in `config/_default/params.toml` under `ananke.social` or
-* in `config/$ENVIRONMENTNAME/*` --- you know what you are doing
+1. Select the networks and their order:
 
-All samples in this documentation will refer to configuration in `config/_default/params.toml` and use the TOML format. If you have problems translating that into your configuration situation and format (JSON, YAML) [please join us in the Discussion Forum](https://github.com/gohugo-ananke/ananke/discussions).
+   ```toml
+   # config/_default/params.toml
 
-* `ananke.social.share` configures share buttons/links on single pages/posts
-* `ananke.social.follow` configures social network links in "follow us on social media" widgets
-* `ananke.social.networks` configures single networks. if user wants to extend, they add a new item to their local param section
-* `ananke.social.$slugname` is individual configuration for the networks defined in `ananke.social.networks` that is to be set for the implementing site in the individual configuration
+   [ananke.social.follow]
+   networks = ["github", "bluesky", "mastodon"]
+   ```
 
-### Configure social media follow links
+2. Set your profile for each network. For most networks, `username` is enough; Ananke inserts it into the network's profile address:
 
-#### Set up global options
+   ```toml
+   # config/_default/params.toml
 
-You can setup the display of your follow links with these options:
+   [ananke.social.github]
+   username = "jdoe"
 
-```toml
-[ananke.social.follow]
-networks = [
-  "facebook",
-  "bluesky",
-  "linkedin"
-]
-```
+   [ananke.social.bluesky]
+   username = "jdoe.bsky.social"
+   ```
 
-* `new_window_icon`: the theme defaults contain this option, but Ananke v2.23.0 does not use it. Setting it has no effect.
-* `networks` (required, no default): a list of `slug` parameters of the networks you wish to link to. You can either choose one or more of [the included pre-configured networks](https://github.com/gohugo-ananke/ananke/wiki/Social-media-network-setup#available-networks) or [configure your own networks](https://github.com/gohugo-ananke/ananke/wiki/Social-media-network-setup#setup-individual-new-networks).
+3. Some networks have no fixed profile address: Mastodon, RSS, and Slack. Set the complete address with `profilelink`:
 
-#### Set your profile or user name
+   ```toml
+   # config/_default/params.toml
 
-In the simplest case, add a slug for the network, and below that, add your username in that network:
+   [ananke.social.mastodon]
+   profilelink = "https://mastodon.social/@jdoe"
+   ```
 
-```toml
-[params.ananke.social.linkedin]
-username = "patrickkollitsch"
-```
+4. Run `hugo server`. The header and the footer show an icon for each network, in the order of `networks`.
 
-The theme will then create a profile link without intervention.
+The [built-in networks table](/configuration/social-networks-reference/#built-in-networks) shows which networks need `profilelink`.
 
-#### Override the profile link
+<!-- markdownlint-disable-next-line MD033 -->
+<span id="set-your-profile-or-user-name"></span><span id="override-the-profile-link"></span><span id="override-the-label-of-the-social-network"></span><span id="rel-attributes-on-follow-links"></span>
 
-If you wish to override the profile link for the follow link then set the parameter `profilelink`:
+## Change a follow link
 
-```toml
-[params.ananke.social.linkedin]
-username = "patrickkollitsch"
-profilelink = "https://th.linkedin.com/in/patrickkollitsch/"
-```
+Use these keys in the network's table, for example `[ananke.social.github]`:
 
-Setting the username in that case might make sense if you want to use the username with the share link (for instance in networks that link to your user profile).
-
-#### Override the label of the social network
-
-Each social network is already set up with a proper label. If the user wishes to override the profiles network name they can do this via the label attribute:
+* `profilelink`: a complete address that replaces the address made from `username`.
+* `label`: the network name in the link title and accessible name, for example `label = "GitHub (work)"`.
+* `rel`: values for the link's `rel` attribute. Ananke always adds `noopener`. For example, `rel = "me"` lets a service such as Mastodon verify that the profile is yours.
 
 ```toml
-[params.ananke.social.linkedin]
-label = "Linked In"
-```
+# config/_default/params.toml
 
-This will override the globally set up label.
-
-#### `rel` attributes on follow links
-
-All social follow links use by default the attribute `rel="noopener"` to keep the privacy of people clicking on it. In some cases you wish to add other items to these links (like `me` to verify your ownership of the social media profile or your website). In that case you may add a `rel` parameter to this setup:
-
-```toml
-[params.ananke.social.linkedin]
-username = "patrickkollitsch"
-profilelink = "https://th.linkedin.com/in/patrickkollitsch/"
+[ananke.social.mastodon]
+profilelink = "https://mastodon.social/@jdoe"
 rel = "me"
 ```
 
-Having multiple `rel` parameter separated by space is valid usage of this attribute. This will be extended by the noopener attribute in any case.
+<!-- markdownlint-disable-next-line MD033 -->
+<span id="configure-social-media-share-links"></span><span id="set-up-sharing-networks"></span>
 
-### Configure social media share links
+## Add share links
 
-#### Set up sharing networks
-
-Setup sharing  the `ananke.social.share` section:
+Select the share networks and their order:
 
 ```toml
+# config/_default/params.toml
+
 [ananke.social.share]
-icons = true
-sharetext = true
-networks = [
-  "email",
-  "facebook",
-  "bluesky",
-  "linkedin"
-]
+networks = ["email", "facebook", "bluesky", "linkedin"]
 ```
 
-* networks (required): To set your preferred networks and their order you define them in the `networks` parameter
-* icons (optional, default `true`): show icons for each network
-* sharetext (optional, default `true`): give each link the text "Share on" and the network name. With icons, this text is the link's title and accessible name. Do not set both `icons` and `sharetext` to `false`, because the links are then empty.
+Single pages then show a share link for each network. Use only networks that define a share address; the [built-in networks table](/configuration/social-networks-reference/#built-in-networks) marks them.
 
-#### Disable sharing partially or globally
+Share links are plain links built from the page address, title, and summary. They load no third-party scripts.
 
-By default sharing links on each single page are enabled. To disable them on one page, set `disable_share` in its front matter to `true`:
+Two options change the link content:
+
+* `icons` (default `true`): show the network icon in each link. When `false`, the link shows its text.
+* `sharetext` (default `true`): give each link the text "Share on" and the network name. With icons, this text is the link title and accessible name.
+
+Do not set both `icons` and `sharetext` to `false`, because the links are then empty.
+
+## Disable sharing partially or globally
+
+To hide the share links on one page, add `disable_share` to its front matter:
 
 ```yaml
 ---
+title: Private notes
 disable_share: true
 ---
 ```
 
 > [!WARNING]
-> In Ananke v2.23.0, any `disable_share` value in front matter hides the share links, also `disable_share: false`. Remove the key to show share links on a page.
+> In Ananke v2.23.0, any `disable_share` value in front matter hides the share links, also `disable_share: false`. Remove the key to show share links on a page. See [ananke#1140](https://github.com/gohugo-ananke/ananke/issues/1140).
 
-To remove share links from all pages, do not set `ananke.social.share.networks`, or set it to an empty list. The theme ships no share networks by default:
+To remove share links from all pages, leave `ananke.social.share.networks` unset, or set it to an empty list. The theme ships no share networks by default:
 
 ```toml
 # config/_default/params.toml
@@ -136,218 +117,55 @@ networks = []
 
 The option `ananke.social.share.disable_share` in the site configuration has no effect in Ananke v2.23.0.
 
-> [!NOTE]
-> Privacy and UX: share links are plain anchor links built from the page's
-> permalink, title, and description — they do not load any third-party
-> tracking scripts, so they are privacy-friendly by default. Disable sharing on
-> pages where a public share action does not make sense (for example private
-> notes or internal pages) by setting `disable_share = true` in that page's
-> front matter.
+<!-- markdownlint-disable-next-line MD033 -->
+<span id="icons"></span><span id="adding-new-icons"></span><span id="further-reading"></span><span id="notes"></span><span id="font-awesome"></span><span id="customize-icons"></span>
 
-### Setup individual new networks
+## Replace or add icons
 
-> [NOTE]
-> The information in this section is for developer that want to extend the capabilities of Ananke above the pre-configured networks. Ignore this if you work only with the available networks.
+Ananke shows the SVG file `assets/ananke/socials/<icon>.svg` in each link, where `<icon>` is the network's `icon` value. A file with the same path in your site replaces the theme's file.
 
-It is fairly easy to extend the pre-configured networks with the following setup (for example for LinkedIn, which is already pre-configured):
+In v2.23.0, some built-in networks have no icon file: email, Hacker News, LinkedIn, Slack, Stack Overflow, Twitter, and X. Their links have no visible content. Add your own icon for each network that you use:
 
-```toml
-[ananke.social.linkedin]
-username = "patrick.kollitsch"
+1. Get an SVG icon for the network, and check that its licence allows your use.
+2. Save it with the name from the [Icon column](/configuration/social-networks-reference/#built-in-networks), for example `assets/ananke/socials/linkedin.svg` or `assets/ananke/socials/envelope.svg`.
+3. Run `hugo server` and check that the link shows the icon.
 
-[ananke.social.networks.linkedin]
-slug = "linkedin"
-label = "LinkedIn"
-color = "#0077b5"
-profile = "http://linkedin.com/in/%s"
-icon = "linkedin" # font awesome brand icon name
-link = "https://www.linkedin.com/shareArticle"
-#separator = "&"
-[ananke.social.networks.linkedin.particles]
-url = "permalink"
-title = "title"
-summary = "description"
-source = "permalink"
-params = "mini=true"
-```
+Ananke sets `fill: currentColor` on the icons, so use an SVG without its own fill colour.
 
-Every new network requires an entry in the `[ananke.social.networks.$NETWORK_SLUG]` table. The entries below that can be:
+<!-- markdownlint-disable-next-line MD033 -->
+<span id="setup-individual-new-networks"></span><span id="configuring-networks-with-multiple-hosts"></span>
 
-* slug (required): lower case alphanumerical string naming the network. use the networks name. if you want to add two profiles for one single network, you can achieve that by adding a slug like `linkedin2` and configure the profile in your local config with this slug.
-* label (required): Title of the network (will be printed out in strings)
-* color (optional): Color for the icon of this network
-* profile (required): Either false, to disable the listing of this network in the follow section, or a string containing the link to the network profile. A `%s` marks the place that will be replaced with the users set up `username` under `ananke.social.$SLUGNAME` (in our case `ananke.social.linkedin`).
-* icon (required): icon name under `assets/ananke/socials/` without `.svg`. The icon is part of [Fontawesome Brand Icons](https://fontawesome.com/search?o=r&f=brands) and you can find it more convenient on their page.
-* share (optional, default is `true`): marks if this network functionality.
-* link (required, if `share` is `true`): The start of the share link for this network
+## Add a network
 
-Then in `ananke.social.networks.$NETWORK_SLUG.particles` you can add as much as required parts that will be rendered as parameters in the share URL. The format for this system is this:
+To link to a network that Ananke does not define, add a network definition and your profile. This example adds Codeberg, for which the theme ships an icon:
 
 ```toml
-[ananke.social.networks.$NETWORK_SLUG.particles]
-url = "permalink"
-title = "title"
-summary = "description"
-source = "permalink"
-params = "mini=true"
-```
+# config/_default/params.toml
 
-This will result in the following share link:
+[ananke.social.networks.codeberg]
+slug = "codeberg"
+label = "Codeberg"
+color = "#2185d0"
+profile = "https://codeberg.org/%s"
+icon = "codeberg"
 
-```plaintext
-https://www.linkedin.com/shareArticle?url=%PERMALINK&title=%TITLE&summary=%DESCRIPTION&source=%PERMALINK&mini=true
-```
+[ananke.social.codeberg]
+username = "jdoe"
 
-Long story short: on the the label on the left is included as is, followed by `=` and the replaced value of the setting you name in the particle. This works pretty much like the page variables in Hugo:
-
-* `permalink` is replaced with the permalink of the page (urlencoded)
-* `title` is replaced with the title of the page (urlencoded)
-* `description` is replaced with the frontmatter description
-* `username` is replaced with the configured `username` for that network (under the `ananke.social.$NETWORKSLUG` section)
-
-Adding to that everything in `params` is added blindly to the resulting link.
-
-This way you can create a share for nearly any network.
-
-I am writing "nearly" because some networks do not like adding parameters the "normal" way. This is where the `separator` parameter comes into play:
-
-```toml
-separator = ";"
-```
-
-Using this parameter in the configuration above would result in our example URL looking like this:
-
-```plaintext
-https://www.linkedin.com/shareArticle?url=%PERMALINK;title=%TITLE;summary=%DESCRIPTION;source=%PERMALINK;mini=true
-```
-
-To override any of the existing networks add the **full** configuration row (including it's particles) into your local configuration and override the values you want to change.
-
-To override the icon for a network add your own copy to your local `assets/ananke/socials/` directory.
-
-## Available networks
-
-This is a list of slugs for already configured networks in the theme. You can add missing networks without much hassle (see [Configure social media follow links](https://github.com/gohugo-ananke/ananke/wiki/Social-media-network-setup#configure-social-media-follow-links)). If you experience issue doing that [feel free to reach out in our Forum](https://github.com/gohugo-ananke/ananke/discussions).
-
-| Slug | profile | share | Notes |
-| --- | :---: | :---: | --- |
-| bluesky | ✅ | ✅ | Read notes about [configuring networks with multiple hosts](#configuring-networks-with-multiple-hosts) |
-| email | ❌ | ✅ | |
-| facebook | ✅ | ✅ | |
-| github | ✅ | ❌ | |
-| gitlab | ✅ | ❌ | |
-| hackernews | ✅ | ✅ | |
-| instagram | ✅ | ❔ | |
-| keybase | ✅ | ❌ | |
-| linkedin | ✅ | ✅ | |
-| medium | ✅ | ❔ | |
-| mastodon | ✅ | ❌ | Read notes about [configuring networks with multiple hosts](#configuring-networks-with-multiple-hosts) |
-| pinterest | ✅ | ✅ | |
-| reddit | ✅ | ✅ | |
-| rss | ✅ | ❌ | add `profilelink` to link to your RSS feed |
-| slack | ✅ | ❔ | add `profilelink` to your slack channel |
-| stackoverflow | ✅ | ❌ | your `username` is your profile's ID |
-| telegram | ✅ | ✅ | |
-| tiktok | ✅ | ✅ | |
-| tumblr | ✅ | ✅ | |
-| twitter | ✅ | ✅ | |
-| whatsapp | ❌ | ✅ | |
-| xing | ✅ | ✅ | |
-| x-twitter | ✅ | ✅ | |
-| youtube | ✅ | ❔ | |
-
-Legend:
-✅ --- feature configured
-❌ --- feature not configured and not available
-❔ --- feature not configured, but might be available
-
-## Icons
-
-More and more icon sets are removing their icons for social media platforms due to the legal issues around the usage rights [⇗](https://lucide.dev/brand-logo-statement). Ananke is using [Simple Icons](https://simpleicons.org/) which is a free and open source icon set that is licensed under the CC0 License.
-
-The preferred way to add an icon is for you to download and add them to your collection. The theme itself will maintain all icons that are mentioned in the documentation and cookbook section for convenience.
-
-### Adding new icons
-
-* find the icon you want to add on [https://simpleicons.org/](https://simpleicons.org/)
-* download the SVG file for that icon
-* copy it into `/assets/ananke/socials/`
-* use the icon name as key in your configuration (if the files called `mastodon.svg` you use `mastodon` as key)
-
-```toml
 [ananke.social.follow]
-networks = ["mastodon"]
-
-[ananke.social.mastodon]
-profilelink = "https://mastodon.social/@ananke_theme"
-username = "ananke_theme"
+networks = ["github", "codeberg"]
 ```
 
-### Further Reading
+To use the network for sharing, also set `link` and `particles`. To change one key of a built-in network, set only that key, for example `[ananke.social.networks.linkedin]` with `color = "#0a66c2"`. The [network definition reference](/configuration/social-networks-reference/#network-definition) describes every key.
 
-* [https://github.com/simple-icons/simple-icons/tree/develop/icons](https://github.com/simple-icons/simple-icons/tree/develop/icons)
-* [https://simpleicons.org/](https://simpleicons.org/)
-* [https://lucide.dev/brand-logo-statement](https://lucide.dev/brand-logo-statement)
+To link two profiles on the same network, define a second network with its own slug, for example `github2`, and the same values.
 
----
+<!-- markdownlint-disable-next-line MD033 -->
+<span id="available-networks"></span>
 
-## Migrate from versions before v2.11
+## Upgrade from Ananke 2.10 or earlier
 
-Take your existing configuration under `params.ananke_social` and apply them to the new structure under `params.ananke.social` (note that `ananke` and `social` are two subsections now, not one combined label).
+<!-- markdownlint-disable-next-line MD033 -->
+<span id="migrate-from-versions-before-v211"></span><span id="development-changes"></span>
 
-Follow the instructions under [Configure social media follow links](https://github.com/gohugo-ananke/ananke/wiki/Social-media-network-setup#configure-social-media-follow-links) to configure your social media links.
-
-`params.ananke_social` (the *old* configuration with the underscore) can then be removed from your configuration.
-
-TLDR:
-
-**Old config:**
-
-```toml
-[[ananke_socials]]
-name = "twitter"
-url = "https://twitter.com/theNewDynamic"
-```
-
-**New config:**
-
-```toml
-# enable the network in the follow list, then configure it
-[ananke.social.follow]
-networks = ["twitter"]
-
-[ananke.social.twitter]
-username = "theNewDynamic"
-profilelink = "https://twitter.com/theNewDynamic" # (optional, this would be covered by the username above)
-```
-
-### Development changes
-
-* all functions in `partial/func/socials` are removed
-* If you were using the following partials anywhere:
-
-  ```go-html-template
-  {{ partial "social-follow.html" . }}
-  {{ partial "social-share.html" . }}
-  ```
-
-  you should be able to replace the functionality with this change
-
-  ```go-html-template
-  {{ partial "social/follow.html" . }}
-  {{ partial "social/share.html" . }}
-  ```
-
-## Notes
-
-### Font Awesome
-
-This project uses Font Awesome brand icons, which are licensed under the [Creative Commons Attribution 4.0 International License (CC BY 4.0)](https://github.com/FortAwesome/Font-Awesome/blob/6.x/LICENSE.txt). For more information, visit [Font Awesome](https://fontawesome.com/).
-
-### Customize Icons
-
-This theme comes with Font Awesome brand icons. If you wish to use your own icon set you can override all icons by copying them into your own repository under `assets/ananke/socials`. Icons need to be in the SVG format with a `.svg` extension. Their name needs to match the `slug` parameter in the `ananke.social.networks` setup for the selected network.
-
-### Configuring networks with multiple hosts
-
-Due to the nature of Mastodon and Bluesky instances there is no way to configure all networks without too much noise. Configuration, for now, requires a `profilelink` parameter with the full URL to your profile. `username` can be ignored in that case.
+Ananke 2.11.0 replaced the old social settings. See [Upgrade social links from Ananke 2.10 or earlier](/get-started/upgrade-social-links/).
