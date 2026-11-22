@@ -1,78 +1,41 @@
 ---
 title: Get started
+description: "Install Ananke, check Hugo compatibility, update the theme, or move from the old theNewDynamic repository."
 date: 2026-01-16T08:00:00.000+0700
 weight: 100
 aliases:
   - /getting-started/
 ---
 
-This section takes you from an empty Hugo site to a working site with Ananke. Follow the steps below in order. If you already use Ananke from the old `theNewDynamic` repository, read [Upgrade from theNewDynamic to gohugo-ananke](/get-started/upgrade-from-thenewdynamic/) first.
+This section covers everything you need before you write content: the requirements, the installation, and later updates of the theme.
 
-## 1) Install the theme
+## New to Ananke and Hugo
 
-Choose one installation method. To compare the two methods, read [Choose an installation method](/get-started/installation/).
+Follow [Build your first Ananke site](/tutorials/first-site/). The exercise installs the theme and creates a homepage, a post, and a menu.
 
-* [Install as a Hugo Module (recommended)](/get-started/hugo-module/)
-* [Install as a Git submodule](/get-started/git-submodule/)
+<!-- markdownlint-disable-next-line MD033 -->
+<span id="1-install-the-theme"></span><span id="2-confirm-hugo-version-compatibility"></span><span id="6-run-and-verify-locally"></span>
 
-## 2) Confirm Hugo version compatibility
+## Install the theme
 
-Ananke requires Hugo v0.160.0 or later. The theme declares this minimum in its own `config/_default/module.toml` file. We recommend the latest Hugo version, because we test Ananke against the latest Hugo release.
+* [Hugo version compatibility](/get-started/compatibility/): the Hugo versions that each Ananke release supports, and the standard and Extended editions.
+* [Choose an installation method](/get-started/installation/): Hugo Module or Git submodule.
+* [Install as a Hugo Module](/get-started/hugo-module/), the recommended method.
+* [Install as a Git submodule](/get-started/git-submodule/).
 
-Check which Hugo version you have installed:
+## Keep the theme up to date
 
-```bash
-hugo version
-```
+* [Update Ananke](/get-started/update-ananke/) to a newer release.
+* [Upgrade from theNewDynamic to gohugo-ananke](/get-started/upgrade-from-thenewdynamic/) if your site still uses the old repository or module path.
 
-Use the standard edition of Hugo, or the deploy edition if you deploy your site directly from Hugo. Since Hugo v0.170.0, the extended editions are no longer available or needed: the standard and deploy editions encode WebP images, and Hugo uses Dart Sass for Sass. If you use a Hugo version from v0.160.0 to v0.169.x, you need the extended edition only to process WebP images. For details, see [Hugo editions](https://gohugo.io/installation/linux/#editions).
+<!-- markdownlint-disable-next-line MD033 -->
+<span id="3-configure-required-basics"></span><span id="4-add-content-and-front-matter"></span><span id="5-customise-the-visual-style"></span>
 
-## 3) Configure required basics
+## After the installation
 
-At minimum, configure:
+* [Configuration](/configuration/): site title, menus, homepage, social links, SEO, and languages.
+* [Content](/content/): front matter, images, summaries, taxonomies, and shortcodes.
+* [Customisation](/customisation/): colours, styles, custom CSS, page headers, and hooks.
+* [Examples and recipes](/examples/): complete site configurations.
 
-* Site `title`
-* `baseURL`
-* Theme/module setup
-* `params` values you want to customise
-
-See:
-
-* [General configuration](/configuration/general/)
-* [Menus](/configuration/menus/)
-* [SEO](/configuration/seo/)
-* [Social media networks](/configuration/social-media-networks/)
-
-All configuration topics are in the [Configuration](/configuration/) section.
-
-## 4) Add content and front matter
-
-Start adding content and use front matter options supported by Ananke:
-
-* [Front matter](/content/frontmatter/)
-* [Content types and archetypes](/content/content-types/)
-* [Images](/content/images/)
-* [Shortcodes](/content/shortcodes/)
-
-All content topics are in the [Content](/content/) section.
-
-## 5) Customise the visual style
-
-For design and UI adjustments:
-
-* [Colours](/customisation/colours/)
-* [Styles](/customisation/styles/)
-* [Custom CSS](/customisation/custom-css/)
-* [Page headers](/customisation/hero-section/)
-
-All customisation topics are in the [Customisation](/customisation/) section. For complete site configurations, see [Examples and recipes](/examples/).
-
-## 6) Run and verify locally
-
-Run Hugo locally and verify pages, menus, metadata, and social links:
-
-```bash
-hugo server
-```
-
-If you hit issues, see [Troubleshooting](/help/troubleshooting/).
+If something does not work, see [Troubleshooting](/help/troubleshooting/).
