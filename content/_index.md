@@ -8,6 +8,15 @@ params:
 
 Ananke is a theme for [Hugo](https://gohugo.io/). This documentation shows you how to install, configure, and customise it. This site is built with Ananke.
 
+## Find the help you need
+
+* **[Tutorials](/tutorials/)**: learn by building [your first Ananke site](/tutorials/first-site/).
+* **[How-to guides](/how-to/)**: complete a specific task, from installation to customisation.
+* **[Explanation](/explanation/)**: understand configuration, content, styles, and extension points.
+* **[Reference](/reference/)**: look up versions, settings, front matter, shortcodes, and hooks.
+
+## Browse by topic
+
 * **[Get started](/get-started/)**: install the theme and set up a first site.
 * **[Configuration](/configuration/)**: set site parameters, menus, SEO, social links, and languages.
 * **[Content](/content/)**: write pages and posts with front matter, images, taxonomies, and shortcodes.
