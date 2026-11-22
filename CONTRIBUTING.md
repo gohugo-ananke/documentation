@@ -69,14 +69,26 @@ a working result without prior knowledge of the theme internals.
 
 ## Page skeleton
 
-New feature pages should follow this structure so the docs stay consistent:
+Each page serves one reader need. Choose the document type first, then use its structure. Put the page under the topic section where readers look for it, and link it from the matching entry page: [Tutorials](https://ananke-documentation.netlify.app/tutorials/), [How-to guides](https://ananke-documentation.netlify.app/how-to/), [Explanation](https://ananke-documentation.netlify.app/explanation/), or [Reference](https://ananke-documentation.netlify.app/reference/).
 
-1. **Summary** — one or two sentences on what the feature does and why you would use it.
-2. **Quick start** — the smallest copy-paste example that works.
-3. **Options reference** — a table of every parameter with type, default, and required/optional.
-4. **How it works** — the internals: which partial/template implements it, resolution order, etc.
-5. **Gotchas** — common mistakes and edge cases.
-6. **See also** — links to related pages and the relevant Hugo documentation.
+* **Tutorial**: the reader learns by doing.
+  1. What the reader builds and what they need before they start.
+  2. Numbered steps, each with a visible result.
+  3. A check of the final result and links to the next tasks.
+* **How-to guide**: the reader completes one task on their own site.
+  1. The result and the prerequisites, in one or two sentences.
+  2. Numbered steps with complete, copy-paste examples.
+  3. How to check the result, and the most common problems.
+* **Reference**: the reader looks up an exact fact.
+  1. One sentence on what the page lists and for which release.
+  2. Tables with name, type, default, required or optional, and scope.
+  3. Short examples only where they make a value clear.
+* **Explanation**: the reader wants to understand a concept or a choice.
+  1. The question that the page answers.
+  2. How the parts fit together, and the trade-offs.
+  3. Links to the tasks and the reference material.
+
+Do not repeat a fact on several pages. Give each fact one owner page and link to it. If a page starts to serve two reader needs, split it, keep the old address for the main part, and keep its important fragment links working.
 
 Front matter every page should set:
 
@@ -108,16 +120,14 @@ emergency, add `--no-verify` to your `git commit` or `git push` command.
 
 ## Branch and pull request workflow
 
-This repository uses a simple, rebase-based model with a single long-lived branch, `main`.
+This repository uses a rebase-based model with two long-lived branches. `development` collects reviewed changes; `main` holds the published documentation.
 
-1. Create a short-lived, focused branch off `main`. Use a descriptive prefix, for example
-   `docs/document-shortcodes` or `fix/broken-installation-links`.
+1. Create a short-lived, focused branch off `development`. Use a descriptive prefix, for example `docs/document-shortcodes` or `fix/broken-installation-links`.
 2. Make your changes and ensure the linters pass.
-3. Open a pull request targeting `main`. Keep it focused on one topic.
-4. Netlify builds a deploy preview for every pull request — check that your pages render correctly
-   there before requesting review.
+3. Open a pull request targeting `development`. Keep it focused on one topic.
+4. Netlify builds a deploy preview for every pull request. Check that your pages render correctly there before requesting review.
 
-Keep history linear; avoid merge commits. Rebase on `main` if your branch falls behind.
+Only a promotion pull request from `development` targets `main`. Keep history linear; avoid merge commits. Rebase on `development` if your branch falls behind. The site's "Improve this page on GitHub" links open files on `development`.
 
 ## Commit messages
 

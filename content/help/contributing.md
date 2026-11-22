@@ -21,6 +21,17 @@ them when adding or editing pages.
 * **Avoid undocumented magic values.** If a value matters (a class name, a slug,
   a path), say where it comes from and what valid values look like.
 
+## Document types
+
+Each page serves one reader need. Choose the type before you write:
+
+* A **tutorial** teaches a new reader by a guided exercise with a visible result. See [Tutorials](/tutorials/).
+* A **how-to guide** gives the steps for one task on the reader's own site. See [How-to guides](/how-to/).
+* A **reference** page lists exact facts: names, types, defaults, scope, and supported releases. Short examples are allowed. See [Reference](/reference/).
+* An **explanation** describes how parts fit together and why. It links to tasks and reference material instead of repeating them. See [Explanation](/explanation/).
+
+Give each fact one owner page and link to it from other pages. If a page serves two reader needs, split it, keep the old address for the main part, and keep important fragment links working. The [contributing guide](https://github.com/gohugo-ananke/documentation/blob/main/CONTRIBUTING.md#page-skeleton) gives a structure for each type.
+
 ## Examples
 
 * **Prefer full examples over fragments.** A reader should be able to copy an
@@ -43,9 +54,7 @@ them when adding or editing pages.
 
 ## Parameter names
 
-* Use the current `[ananke]` parameter namespace (for example
-  `ananke.show_recent_posts`). Document any legacy flat parameter only as a
-  deprecation note, never as the recommended form.
+* Use the table where the theme reads each option. Most options are in the `[ananke]` namespace, for example `ananke.show_recent_posts`. Some current options are flat `params` values, for example `recent_posts_number`. The [configuration reference](/configuration/reference/) shows the table for each option. Document a deprecated parameter only as a deprecation note, never as the recommended form.
 * Verify a parameter against the theme before documenting it, rather than
   copying it from an older page.
 
