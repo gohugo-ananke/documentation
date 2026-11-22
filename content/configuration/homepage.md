@@ -64,9 +64,7 @@ reach older content without a full archive page.
 
 ## Which section recent posts come from
 
-Recent posts are drawn from your site's main sections. By default that is the
-`post` section (so content under `content/post/`). To use a different section —
-for example `posts` or `blog` — set `mainSections`:
+Recent posts are drawn from your site's main sections. If you do not set them, Hugo uses the section with the most pages, which is not always your blog. To select the section, for example `posts` or `blog`, set `mainSections`:
 
 ```toml
 # config/_default/params.toml
@@ -75,8 +73,7 @@ for example `posts` or `blog` — set `mainSections`:
 mainSections = ["posts"]
 ```
 
-Posts are ordered by Hugo's default page ordering (date, then weight, then
-title), so the newest posts appear first.
+Posts are in Hugo's default order: by `weight` first, then by date with the newest first, then by title. A post with a `weight` in its front matter therefore comes before newer posts without one.
 
 ## A homepage without blog posts
 
