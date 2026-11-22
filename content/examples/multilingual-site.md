@@ -48,14 +48,14 @@ path = "github.com/gohugo-ananke/ananke/v2"
 # config/_default/languages.toml
 
 [en]
-languageName = "English"
-languageCode = "en-gb"
+label = "English"
+locale = "en-gb"
 weight = 1
 title = "Example site"
 
 [de]
-languageName = "Deutsch"
-languageCode = "de-de"
+label = "Deutsch"
+locale = "de-de"
 weight = 2
 title = "Beispielseite"
 ```

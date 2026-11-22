@@ -10,21 +10,20 @@ and works with Hugo's standard multilingual features.
 
 ## Configure languages
 
-Declare your languages in the configuration. Each language has a name, a code, a
-weight (controls order), and its own title:
+Declare your languages in the configuration. Each language has a label, a locale, a weight that controls the order, and its own title:
 
 ```toml
 # config/_default/languages.toml
 
 [en]
-languageName = "English"
-languageCode = "en-gb"
+label = "English"
+locale = "en-gb"
 weight = 1
 title = "Example site"
 
 [de]
-languageName = "Deutsch"
-languageCode = "de-de"
+label = "Deutsch"
+locale = "de-de"
 weight = 2
 title = "Beispielseite"
 ```
@@ -53,28 +52,31 @@ If a page is not translated into the current language, Hugo does not invent one
 — that page simply does not exist in that language, and the language switcher
 only offers languages where a translation is present.
 
-Interface strings (button labels, "read more", and so on) do fall back: if a
-string is missing in the active language, Ananke uses the default language's
-value, and ultimately English.
+Interface strings (button labels, "read more", and so on) do fall back: if a string is missing in the active language, Hugo uses the string of the default content language.
 
 ## Translating menus
 
-Define a menu per language so navigation labels are localised. Put each
-language's menu under that language:
+Define a menu per language so navigation labels are localised. Put each language's menu in its own file, named with the language key:
 
 ```toml
-# config/_default/menus.toml
+# config/_default/menus.en.toml
 
-[[en.main]]
+[[main]]
 name = "About"
 pageRef = "/about/"
 weight = 10
+```
 
-[[de.main]]
+```toml
+# config/_default/menus.de.toml
+
+[[main]]
 name = "Über uns"
 pageRef = "/about/"
 weight = 10
 ```
+
+`pageRef` points to the translation of the page in each language. Do not put language keys such as `[[en.main]]` in `menus.toml`: Hugo then stops with `failed to decode "menus"`.
 
 See [Menus](/configuration/menus/) for the available entry fields.
 
