@@ -17,8 +17,7 @@ The HTML `<title>` is built from the page title and the site title:
 Page Title | Site Title
 ```
 
-On the homepage, only the site title is shown. Set the page title in front
-matter and the site title in your configuration:
+A page without a `title`, for example a homepage without `content/_index.md`, shows only the site title. A homepage with a title in `content/_index.md` shows `Homepage Title | Site Title`. Set the page title in front matter and the site title in your configuration:
 
 ```toml
 # config/_default/hugo.toml
@@ -99,8 +98,7 @@ private = true
 +++
 ```
 
-In non-production builds (for example `hugo server` or deploy previews) every
-page is marked `noindex, nofollow` automatically. See
+In builds for any other environment, every page is marked `noindex, nofollow` automatically. `hugo server` uses the `development` environment. A deploy preview is a production build unless its build command sets another environment, for example `hugo --environment staging`. See
 [robots.txt and environments](/configuration/robots/) for the site-level
 equivalent.
 

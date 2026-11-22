@@ -49,14 +49,22 @@ output is kept out of search engines.
 
 ## Deploy previews
 
-Branch and pull-request previews (for example Netlify deploy previews) should
-not be indexed. Build them in a non-production environment so the disallow
-output is produced. Netlify sets a non-production context for previews
-automatically; if you build previews yourself, pass a non-production
-environment:
+Branch and pull-request previews (for example Netlify deploy previews) should not be indexed. Hugo builds in the production environment unless you choose another one, and a hosting service does not change Hugo's environment by itself. Set a non-production environment for previews. For Netlify, add this to `netlify.toml`:
+
+```toml
+# netlify.toml
+
+[context.deploy-preview.environment]
+HUGO_ENVIRONMENT = "staging"
+
+[context.branch-deploy.environment]
+HUGO_ENVIRONMENT = "staging"
+```
+
+If you build previews yourself, pass the environment on the command line:
 
 ```bash
-hugo --environment development
+hugo --environment staging
 ```
 
 Only your live production deploy should run in the production environment.
