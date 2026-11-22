@@ -1,7 +1,9 @@
 baseURL = "https://gohugo-ananke.github.io/documentation/"
 locale = "en-gb"
 title = "Ananke Documentation"
-enableRobotsTXT = true
+# Crawlers use /robots.txt at the domain root, not /documentation/robots.txt.
+# The gohugo-ananke.github.io repository manages the root site's robots.txt.
+enableRobotsTXT = false
 
 # Keep this filename stable: the root site's sitemap index links to it.
 [sitemap]
