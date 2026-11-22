@@ -31,7 +31,7 @@ title = "Beispielseite"
 
 The language with the lowest `weight` is the default. Per-language `params` can
 override site parameters — for example a translated `read_more_copy` (see
-[General content features](/content/general/#read-more-link)).
+[The read more link](/content/summaries-and-reading-time/#the-read-more-link)).
 
 ## Translated content files
 
