@@ -23,6 +23,10 @@ custom_css = [
 [ananke.header]
 navigation = [["logo"], ["search"], ["languages", "menu", "social"]]
 
+# Open submenus on hover with a mouse on large screens; the parent stays a link.
+[ananke.navigation]
+submenu_mode = "hover"
+
 [ananke.navigation.classes]
 item = "list f5 fw4 dib pr3"
 
