@@ -1,91 +1,86 @@
 ---
 title: Install as a Hugo Module (recommended)
-description: "Install Ananke as a Hugo Module, the recommended method."
+description: "Create a Hugo site and install Ananke as a Hugo Module, the recommended method."
 date: 2026-01-16T08:00:00.000+0700
 weight: 200
 aliases:
   - /installation/gohugo-module/
 ---
 
-Hugo Module based installation for the [Ananke theme](https://github.com/gohugo-ananke/ananke) for [Hugo](https://gohugo.io/).
+This guide creates a new Hugo site named `quickstart` and installs the [Ananke theme](https://github.com/gohugo-ananke/ananke) as a Hugo Module. Hugo then downloads the theme and records its exact version in your project. To compare this method with a Git submodule, read [Choose an installation method](/get-started/installation/).
 
-## Installation methods
-
-* **[Install as a Hugo Module](/get-started/hugo-module/) (this page)**
-* [Install as a Git submodule](/get-started/git-submodule/)
+<!-- markdownlint-disable-next-line MD033 -->
+<span id="installation-methods"></span>
 
 ## Requirements
 
-1. [Install Hugo](https://gohugo.io/installation/) v0.160.0 or later, standard or deploy edition. We recommend the latest Hugo version. See [Confirm Hugo version compatibility](/get-started/#2-confirm-hugo-version-compatibility).
-2. [Install Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
-3. [Install Golang](https://golang.org/doc/install)
+* [Hugo](https://gohugo.io/installation/), in a version that the current Ananke release supports. See [Hugo version compatibility](/get-started/compatibility/). We recommend the latest Hugo release.
+* [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
+* [Go](https://go.dev/doc/install). Hugo uses Go to download modules.
 
-## Installation
-
-To install or create a Hugo website from scratch with the Ananke theme using the *Hugo Module* method, follow these steps:
-
-Verify that you have installed Hugo v0.160.0 or later.
+Check the installed versions:
 
 ```bash
 hugo version
+git --version
+go version
 ```
 
-Create the project structure `quickstart` directory:
+## Installation
 
-```bash
-hugo new site quickstart
-```
+1. Create the site and change into its directory:
 
-Change into the newly created directory:
+   ```bash
+   hugo new site quickstart
+   cd quickstart
+   git init
+   ```
 
-```bash
-cd quickstart
-```
+2. Make the site a Hugo Module. Replace the path with the address of your own repository, for example `github.com/username/reponame`. Hugo does not check the path, but your repository address makes it unique:
 
-Initialize Git in the current directory:
+   ```bash
+   hugo mod init github.com/username/reponame
+   ```
 
-```bash
-git init
-```
+   Hugo creates a `go.mod` file.
 
-Initialize your repository as a Hugo Module:
+3. Add the theme import to the end of `hugo.toml`:
 
-```bash
-hugo mod init github.com/username/reponame
-```
+   ```toml
+   # hugo.toml
 
-Note: replace username and reponame with the path to your repository. This is a convention that is not enforced, of course your module can be named anything you like, but it is recommended to use the same path as your repository.
+   [[module.imports]]
+   path = "github.com/gohugo-ananke/ananke/v2"
+   ```
 
-Add the Ananke theme as a Hugo Module:
+   The `/v2` at the end of the path is required. If your site uses a configuration directory, put the import in `config/_default/module.toml` as `[[imports]]` instead.
 
-```toml
-[module]
-[[module.imports]]
-disable = false
-ignoreConfig = false
-ignoreImports = false
-path = 'github.com/gohugo-ananke/ananke/v2'
-```
+4. Download the theme:
 
-Note: Hugo configuration can have various formats and locations. The previous lines are written in the `hugo.toml` or `config.toml` file at the root of the project. If you have a different configuration file or format it could be that you need to add the module configuration in a different way.
+   ```bash
+   hugo mod get github.com/gohugo-ananke/ananke/v2
+   hugo mod tidy
+   ```
 
-Note: `v2` is required to use the latest published version of Ananke.
+   Hugo adds the latest Ananke release to `go.mod` and records checksums in `go.sum`. Commit both files.
 
-Now update the module configuration by running:
+5. Start the development server:
 
-```bash
-hugo mod get -u ./...
-hugo mod tidy
-```
+   ```bash
+   hugo server
+   ```
 
-This will load the module into the cache and create/update the `go.mod` and `go.sum` files. These two files should be added to your repository.
+## Check the result
 
-Start Hugo's development server to view the site.
+* `hugo mod graph` lists `github.com/gohugo-ananke/ananke/v2@` followed by the installed version.
+* [http://localhost:1313/](http://localhost:1313/) shows the site with a dark header bar and the site title. The new site has no content yet.
 
-```bash
-hugo server
-```
+Stop the server with `Ctrl + C`.
 
-Running this command will start the development server and you can see your website at [http://localhost:1313/](http://localhost:1313/). To stop the development server press `Ctrl + C`.
+If the build fails, compare your Hugo version with [Hugo version compatibility](/get-started/compatibility/), and see [Troubleshooting](/help/troubleshooting/).
 
-To set up details like the comment system, follow the steps in the [Ananke theme's getting started guide](https://github.com/gohugo-ananke/ananke#getting-started).
+## Next steps
+
+* Add a homepage, a post, and a menu: [Build your first Ananke site](/tutorials/first-site/#give-the-site-a-name).
+* Set your site's options: [Configuration](/configuration/).
+* Update the theme later: [Update Ananke](/get-started/update-ananke/#update-a-hugo-module).

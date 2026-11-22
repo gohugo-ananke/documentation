@@ -1,70 +1,93 @@
 ---
 title: Install as a Git submodule
-description: "Install Ananke as a Git submodule in the themes folder of your site."
+description: "Create a Hugo site and install Ananke as a Git submodule in the themes directory."
 date: 2026-01-16T08:00:00.000+0700
 weight: 300
 aliases:
   - /installation/git-submodule/
 ---
 
-Git Submodule based installation for the [Ananke theme](https://github.com/gohugo-ananke/ananke) for [Hugo](https://gohugo.io/).
+This guide creates a new Hugo site named `quickstart` and adds the [Ananke theme](https://github.com/gohugo-ananke/ananke) as a Git submodule in `themes/ananke`. Your repository then records the exact theme commit. To compare this method with a Hugo Module, read [Choose an installation method](/get-started/installation/).
 
-## Installation methods
-
-* [Install as a Hugo Module](/get-started/hugo-module/)
-* **[Install as a Git submodule](/get-started/git-submodule/) (this page)**
+<!-- markdownlint-disable-next-line MD033 -->
+<span id="installation-methods"></span>
 
 ## Requirements
 
-1. [Install Hugo](https://gohugo.io/installation/) v0.160.0 or later, standard or deploy edition. We recommend the latest Hugo version. See [Confirm Hugo version compatibility](/get-started/#2-confirm-hugo-version-compatibility).
-2. [Install Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+* [Hugo](https://gohugo.io/installation/), in a version that the current Ananke release supports. See [Hugo version compatibility](/get-started/compatibility/). We recommend the latest Hugo release.
+* [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
 
-## Installation
-
-To install or create a Hugo website from scratch with the Ananke theme using the submodule method, follow these steps:
-
-Verify that you have installed Hugo v0.160.0 or later.
+Check the installed versions:
 
 ```bash
 hugo version
+git --version
 ```
 
-Create the project structure `quickstart` directory:
+## Installation
+
+1. Create the site and change into its directory:
+
+   ```bash
+   hugo new site quickstart
+   cd quickstart
+   git init
+   ```
+
+2. Add the theme as a [Git submodule](https://git-scm.com/book/en/v2/Git-Tools-Submodules):
+
+   ```bash
+   git submodule add https://github.com/gohugo-ananke/ananke.git themes/ananke
+   ```
+
+   Git clones the theme's default branch, `main`, which contains the latest release.
+
+3. Optional: select a specific release instead, for example v2.23.0:
+
+   ```bash
+   git -C themes/ananke checkout v2.23.0
+   ```
+
+4. Select the theme in the site configuration:
+
+   ```bash
+   echo "theme = 'ananke'" >> hugo.toml
+   ```
+
+5. Commit the submodule:
+
+   ```bash
+   git add .gitmodules themes/ananke hugo.toml
+   git commit -m "Add the Ananke theme"
+   ```
+
+6. Start the development server:
+
+   ```bash
+   hugo server
+   ```
+
+## Check the result
+
+* `git -C themes/ananke describe --tags` shows the theme release, for example `v2.23.0`.
+* [http://localhost:1313/](http://localhost:1313/) shows the site with a dark header bar and the site title. The new site has no content yet.
+
+Stop the server with `Ctrl + C`.
+
+If the build fails, compare your Hugo version with [Hugo version compatibility](/get-started/compatibility/), and see [Troubleshooting](/help/troubleshooting/).
+
+## Clone a site that uses the submodule
+
+A normal `git clone` leaves `themes/ananke` empty. Clone with the submodule:
 
 ```bash
-hugo new site quickstart
+git clone --recurse-submodules https://github.com/username/reponame.git
 ```
 
-Change into the newly created directory:
+In an existing clone, run `git submodule update --init`.
 
-```bash
-cd quickstart
-```
+## Next steps
 
-Initialize Git in the current directory:
-
-```bash
-git init
-```
-
-Clone the theme into the `themes` directory, adding it to your project as a [Git submodule].
-
-```bash
-git submodule add https://github.com/gohugo-ananke/ananke.git themes/ananke
-```
-
-Append a line to the site configuration file, indicating the current theme.
-
-```bash
-echo "theme = 'ananke'" >> hugo.toml
-```
-
-Start Hugo's development server to view the site.
-
-```bash
-hugo server
-```
-
-Running this command will start the development server and you can see your website at [http://localhost:1313/](http://localhost:1313/). To stop the development server press `Ctrl + C`.
-
-To set up details like the comment system, follow the steps in the [Ananke theme's getting started guide](https://github.com/gohugo-ananke/ananke#getting-started).
+* Add a homepage, a post, and a menu: [Build your first Ananke site](/tutorials/first-site/#give-the-site-a-name).
+* Set your site's options: [Configuration](/configuration/).
+* Update the theme later: [Update Ananke](/get-started/update-ananke/#update-a-git-submodule).

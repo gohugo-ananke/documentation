@@ -143,7 +143,7 @@ reports an unsupported feature.
 **Fix:** check `hugo version` against the theme's minimum (declared in the
 theme's `module.toml`). Use the same Hugo version locally and in production.
 We recommend the latest Hugo version. See
-[Confirm Hugo version compatibility](/get-started/#2-confirm-hugo-version-compatibility).
+[Hugo version compatibility](/get-started/compatibility/).
 
 ### Content denied after an upgrade
 

@@ -56,10 +56,22 @@ parent = "get-started"
 weight = 30
 
 [[main]]
+name = "Update Ananke"
+pageRef = "/get-started/update-ananke/"
+parent = "get-started"
+weight = 35
+
+[[main]]
 name = "Upgrade from theNewDynamic to gohugo-ananke"
 pageRef = "/get-started/upgrade-from-thenewdynamic/"
 parent = "get-started"
 weight = 40
+
+[[main]]
+name = "Hugo version compatibility"
+pageRef = "/get-started/compatibility/"
+parent = "get-started"
+weight = 5
 
 [[main]]
 name = "General configuration"

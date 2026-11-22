@@ -11,6 +11,7 @@ Use these guides when you have a specific result in mind. If you want a guided l
 
 * [Install as a Hugo Module](/get-started/hugo-module/), the recommended method.
 * [Install as a Git submodule](/get-started/git-submodule/).
+* [Update Ananke to a newer release](/get-started/update-ananke/).
 * [Upgrade from theNewDynamic](/get-started/upgrade-from-thenewdynamic/).
 
 ## Configure your site
