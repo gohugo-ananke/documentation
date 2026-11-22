@@ -155,7 +155,7 @@ other = "Overview"
 
 Use `hover` when the parent should remain a direct link. Hover opening applies only to a mouse on a device that supports hover and has a fine pointer, from 60em. From 60em, touch and keyboard users can use the separate toggle button; Enter or Space activates it. Below 60em, only the hamburger opens and closes the list, and all included child levels remain expanded. Moving the pointer into an open dropdown keeps it open. Leaving the entry closes it after a short delay, unless keyboard focus is still inside. Escape dismisses it without requiring pointer movement.
 
-The documentation site's development configuration selects `hover` so that local previews exercise this mode. Without JavaScript, `split`, `hover`, and `click` show the parent links and nested child lists, with no toggle buttons. `toplevel` always omits child lists. A top-level entry without a target URL remains a plain text label.
+This documentation site uses `hover`. Without JavaScript, `split`, `hover`, and `click` show the parent links and nested child lists, with no toggle buttons. `toplevel` always omits child lists. A top-level entry without a target URL remains a plain text label.
 
 ### Override the mode for one menu
 
