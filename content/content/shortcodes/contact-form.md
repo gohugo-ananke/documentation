@@ -18,8 +18,7 @@ The fields and browser validation work without JavaScript. Name and email are re
 
 ## Required configuration
 
-The `action` parameter is required — it is the URL that receives the submitted
-form. Without a form backend the form has nowhere to send data.
+The `action` parameter is required — it is the URL that receives the submitted form. Ananke does not check it: without `action`, the form renders, prints no build warning, and sends the data back to the page itself.
 
 ```go-html-template
 {{</* form-contact action="https://formspree.io/your@email.com" */>}}
@@ -75,8 +74,17 @@ shortcode.
 
 ## Customising labels
 
-The field labels (Your Name, Email Address, Message, Send) come from the theme's
-i18n strings. Override them in your project's `i18n/<language>.toml` rather than
+The field labels come from the theme's i18n strings:
+
+| Key | Used for |
+| --- | --- |
+| `yourName` | The label of the name field. |
+| `emailAddress` | The label of the email field. |
+| `emailRequiredNote` | The note below the email field. |
+| `message` | The label of the message field. |
+| `send` | The text of the submit button. |
+
+Override them in your project's `i18n/<language>.toml` rather than
 editing the shortcode — see
 [Overriding theme interface strings](/configuration/multilingual/#overriding-theme-interface-strings).
 
@@ -84,5 +92,6 @@ editing the shortcode — see
 
 * The fields are fixed (name, email, message). To add or remove fields, override
   the shortcode in your own `layouts/_shortcodes/form-contact.html`.
+* The fields have fixed `id` values (`name`, `email`, `message`). Use the shortcode only once per page, because two forms would repeat these IDs and break the label links.
 * The shortcode renders the form only; it does not send email itself. You must
   provide a backend via `action`.

@@ -64,8 +64,7 @@ styled like the rest of the site without extra setup.
   show_categories = false
   ```
 
-* **Tags** appear on the term and list pages described above and link content
-  together by topic.
+* **Tags** are shown on single pages too, below the categories, as links to each tag's list page. Unlike categories, they have no option to hide them; override `layouts/_partials/tags.html` to change them.
 
 ## Changing or adding taxonomies
 
