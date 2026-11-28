@@ -57,6 +57,10 @@ Both build modes use a temporary source tree and force production configuration.
 
 GitHub Pages is the only production documentation host, at `https://gohugo-ananke.github.io/documentation/`. Pushes to `main` or manual dispatch of the GitHub Pages workflow build and publish the site. Build commands alone do not publish anything. Netlify production serves permanent redirects to the matching GitHub Pages paths; Netlify deploy previews and branch deploys still build review sites, with indexing disabled by an HTTP header. See the [build and deploy settings](https://github.com/gohugo-ananke/documentation#build-and-deploy-selection) for the configuration.
 
+The retired demos at `ananke-theme.netlify.app` and `ananke-theme-submodule.netlify.app` also redirect to GitHub Pages. Their rules live in `static/_redirects` in the `template-hugo-mod` and `template-git-submod` repositories. Hugo copies these files into the published output. Each rule matches only its original Netlify hostname, so template users' sites and deploy previews are unaffected. Redirects preserve paths and query parameters; old sample pages without an equivalent documentation path can return 404 at the destination.
+
+To update a retired demo without rebuilding its sample content, copy its `static/_redirects` file into an otherwise empty temporary directory, and deploy that directory with `netlify deploy --prod --no-build --dir <directory> --site <site-id>`. Check the site ID against the intended Netlify project before publishing. After deployment, check the HTTP status and `Location` header for the homepage, a nested path, and a URL with query parameters. The expected result is HTTP 301 to `https://gohugo-ananke.github.io/documentation/` with the original path and query.
+
 ## Release and publication order
 
 A commit on `main` and a published stable release are different until the release tag exists. The theme's stable release command is restricted to `main`; documentation production builds select its latest stable version. Preview builds can target `main` when testing changes before tagging.
